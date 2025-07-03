@@ -20,6 +20,24 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Internal Styles -->
+    <style>
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0; transform: scale(0.95) translateY(5px); }
+            50% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .tech-background .tech-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.6);
+            opacity: 0; /* Start invisible */
+        }
+
+        .cert-item.hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -39,6 +57,9 @@
                     <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
+                <button id="theme-toggle" class="btn btn-outline-light ms-3" aria-label="Toggle theme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </nav>
@@ -77,23 +98,23 @@
                         <p class="lead mb-4">
                             I am an innovative and result-oriented Electronics and Telecommunication Engineer with a strong passion for bridging the gap between hardware and software. My journey is driven by a curiosity for embedded systems, IoT, and creating intelligent, automated solutions.
                         </p>
-                        <p class="text-muted">
+                        <p class="lead mb-4">
                             Currently, as a <strong>Jr. Software Developer at Manasvi Tech Solution</strong>, I contribute to full-stack development and automation projects, applying my skills in Python, modern web frameworks, and cloud technologies. My academic and project work, including an award-winning Smart Irrigation System, has provided me with a robust foundation in integrating hardware (like Raspberry Pi and various sensors) with software (APIs, Machine Learning models) to build scalable and efficient systems.
                         </p>
-                        <p class="text-muted">
+                        <p class="lead mb-4">
                             I am a quick learner, deeply committed to research, development, and product innovation, always seeking new challenges to solve complex problems.
                         </p>
                     </div>
                     <div class="col-lg-4">
-                        <div class="card bg-light border-0">
+                        <div class="card h-100">
                             <div class="card-body">
                                 <h5 class="card-title mb-3"><i class="fas fa-star me-2" aria-hidden="true"></i>Key Highlights</h5>
-                                <ul class="list-unstyled">
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Full-Stack Development</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>IoT & Embedded Systems</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>AI & Machine Learning</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Cloud & Automation (AWS)</li>
-                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Product Innovation & R&D</li>
+                                <ul class="list-unstyled text-white">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>Full-Stack Development</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>IoT & Embedded Systems</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>AI & Machine Learning</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>Cloud & Automation (AWS)</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>Product Innovation & R&D</li>
                                 </ul>
                             </div>
                         </div>
@@ -103,7 +124,7 @@
         </section>
         
         <!-- Experience Section -->
-        <section id="experience" class="bg-light py-5">
+        <section id="experience" class="py-5">
             <div class="container">
                 <h2 class="section-heading text-center"><i class="fas fa-briefcase me-2" aria-hidden="true"></i>Work Experience</h2>
                 <hr class="my-4">
@@ -227,7 +248,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="py-5 bg-light">
+        <section id="projects" class="py-5">
             <div class="container">
                 <h2 class="section-heading text-center"><i class="fas fa-project-diagram me-2" aria-hidden="true"></i>Projects</h2>
                 <hr class="my-4">
@@ -292,7 +313,7 @@
         </section>
 
         <!-- Certifications Section -->
-        <section id="certifications" class="py-5 bg-light">
+        <section id="certifications" class="py-5">
             <div class="container">
                 <h2 class="section-heading text-center"><i class="fas fa-certificate me-2" aria-hidden="true"></i>Certifications</h2>
                 <hr class="my-4">
@@ -397,277 +418,11 @@
     <!-- Footer -->
     <footer class="py-4 bg-dark text-white">
         <div class="container text-center">
-            <p class="m-0">Copyright &copy; Shubham Kulkarni <span id="copyright
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h2 class="section-heading">Contact Me</h2>
-                    <hr class="my-4">
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col-lg-4 ms-auto text-center">
-                    <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
-                    <div>+91 8308003684</div>
-                </div>
-                <div class="col-lg-4 me-auto text-center">
-                    <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
-                    <a class="d-block" href="mailto:kulkarnishub377@gmail.com">kulkarnishub377@gmail.com</a>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" placeholder="Your Name" required>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="email" class="form-control" placeholder="Your Email" required>
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-gradient">Send Message</button>
-                        <div id="formAlert" class="mt-3"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Shubham Kulkarni 2025</p>
+            <p class="m-0">Copyright &copy; Shubham Kulkarni <span id="copyright-year"></span></p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            /**
-             * Initializes a floating, fading background of tech icons in the hero section.
-             * This creates a subtle and professional ambiance with icons fading in and out at random positions.
-             */
-            const initAnimatedBackground = () => {
-            const background = document.querySelector('.tech-background');
-            if (!background) return;
-
-            const config = {
-            iconCount: 40, // Increased icon count for a more dynamic feel
-            icons: [
-            'fab fa-html5', 'fab fa-css3-alt', 'fab fa-js-square', 'fab fa-react',
-            'fab fa-node-js', 'fab fa-python', 'fas fa-database', 'fas fa-server',
-            'fas fa-code', 'fas fa-microchip', 'fab fa-git-alt', 'fab fa-bootstrap',
-            'fab fa-docker', 'fab fa-aws', 'fas fa-cogs', 'fas fa-cloud', 'fab fa-github'
-            ],
-            sizeRange: { min: 1.5, max: 3.5 }, // in rem
-            durationRange: { min: 3, max: 8 }, // Faster animation speed
-            opacityRange: { min: 0.1, max: 0.5 }
-            };
-
-            const getRandom = (min, max) => Math.random() * (max - min) + min;
-
-            // Define the keyframe animation in a style tag once
-            const styleSheet = document.createElement("style");
-            styleSheet.type = "text/css";
-            styleSheet.innerText = `
-            @keyframes fadeInOut {
-            0%, 100% { opacity: 0; transform: scale(0.95) translateY(5px); }
-            50% { opacity: 1; transform: scale(1) translateY(0); }
-            }
-            `;
-            document.head.appendChild(styleSheet);
-
-            const fragment = document.createDocumentFragment();
-            for (let i = 0; i < config.iconCount; i++) {
-            const icon = document.createElement('i');
-            const iconClass = config.icons[Math.floor(Math.random() * config.icons.length)];
-            
-            icon.className = iconClass;
-            icon.style.position = 'absolute';
-            icon.style.color = 'rgba(255, 255, 255, 0.6)';
-            
-            // Set random properties
-            const duration = getRandom(config.durationRange.min, config.durationRange.max);
-            const delay = getRandom(0, config.durationRange.max);
-            
-            icon.style.fontSize = `${getRandom(config.sizeRange.min, config.sizeRange.max)}rem`;
-            icon.style.top = `${getRandom(-5, 105)}%`;
-            icon.style.left = `${getRandom(-5, 105)}%`;
-            icon.style.opacity = '0'; // Start invisible
-            
-            // Assign the CSS animation with randomized duration and delay
-            icon.style.animation = `fadeInOut ${duration}s ease-in-out ${delay}s infinite`;
-            // Use a custom property for the max opacity in the animation
-            icon.style.setProperty('--max-opacity', getRandom(config.opacityRange.min, config.opacityRange.max));
-            
-            fragment.appendChild(icon);
-            }
-            background.appendChild(fragment);
-            };
-
-            /**
-             * Initializes Intersection Observers for scroll-triggered animations.
-             */
-            const initScrollAnimations = () => {
-            // Observer for general fade-in animations
-            const animateOnScrollObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                animateOnScrollObserver.unobserve(entry.target);
-            }
-            });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => animateOnScrollObserver.observe(el));
-
-            // Observer for skill progress bars
-            const progressObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target.querySelector('.progress-bar');
-                if (progressBar) {
-                const progress = progressBar.getAttribute('data-progress');
-                progressBar.style.width = `${progress}%`;
-                }
-                progressObserver.unobserve(entry.target);
-            }
-            });
-            }, { threshold: 0.5 });
-
-            document.querySelectorAll('.skill-item').forEach(item => progressObserver.observe(item));
-            };
-
-            /**
-             * Sets up smooth scrolling for navigation links and closes the mobile menu on click.
-             */
-            const initSmoothScroll = () => {
-            document.querySelectorAll('.navbar-nav .nav-link[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close the collapsible navbar if it's open (on mobile)
-                const navbarCollapseEl = document.getElementById('navbarNav');
-                if (navbarCollapseEl && navbarCollapseEl.classList.contains('show')) {
-                const bsCollapse = new bootstrap.Collapse(navbarCollapseEl, {
-                toggle: false
-                });
-                bsCollapse.hide();
-                }
-                targetElement.scrollIntoView({ behavior: 'smooth' });
-            }
-            });
-            });
-            };
-
-            /**
-             * Handles the certification filter functionality.
-             */
-            const initCertFilter = () => {
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const certItems = document.querySelectorAll('.cert-item');
-            if (filterButtons.length === 0) return;
-
-            filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-            const filterValue = button.getAttribute('data-filter');
-            
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            certItems.forEach(item => {
-                const itemCategory = item.getAttribute('data-category');
-                const shouldShow = (filterValue === 'all' || itemCategory === filterValue);
-                item.style.display = shouldShow ? 'block' : 'none';
-            });
-            });
-            });
-            };
-
-            /**
-             * Handles the contact form submission with user feedback.
-             */
-            const initContactForm = () => {
-            const contactForm = document.getElementById('contactForm');
-            if (!contactForm) return;
-
-            contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formAlert = document.getElementById('formAlert');
-            formAlert.innerHTML = `<div class="alert alert-success" role="alert">Thank you for your message! I will get back to you soon.</div>`;
-            this.reset();
-            setTimeout(() => {
-            formAlert.innerHTML = '';
-            }, 5000);
-            });
-            };
-
-            // Initialize all functionalities
-            initAnimatedBackground();
-            initScrollAnimations();
-            initSmoothScroll();
-            initCertFilter();
-            initContactForm();
-
-            // --- Contact form fake submit ---
-            const contactForm = document.getElementById('contactForm');
-            if (contactForm) {
-                contactForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const formAlert = document.getElementById('formAlert');
-                    formAlert.innerHTML = '<div class="alert alert-success">Thank you for contacting me! I will get back to you soon.</div>';
-                    this.reset();
-                    setTimeout(() => {
-                        formAlert.innerHTML = '';
-                    }, 5000);
-                });
-            }
-
-            // --- Filter certifications ---
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const certItems = document.querySelectorAll('.cert-item');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const filterValue = button.getAttribute('data-filter');
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active');
-
-                    certItems.forEach(item => {
-                        item.style.display = 'none'; // Hide all items first
-                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-                            item.style.display = 'block'; // Show matching items
-                        }
-                    });
-                });
-            });
-
-            // --- Scroll-triggered Animations ---
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                observer.observe(el);
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+   <script src="js/script.js"></script>
 </body>
 </html>

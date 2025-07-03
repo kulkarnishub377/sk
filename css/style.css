@@ -1,47 +1,68 @@
 /* Global Styles */
 :root {
-    --dark-navy: #101010;
-    --navy: #181818;
-    --light-navy: #282828;
-    --slate: #999999;
-    --light-slate: #e0e0e0;
-    --lightest-slate: #ffffff;
+    --background: #0a0a0a;
+    --surface-1: #121212;
+    --surface-2: #1f1f1f;
+    --border-color: #2c2c2c;
+    --text-primary: #f5f5f5;
+    --text-secondary: #b3b3b3;
+    --text-muted: #808080;
     --white: #ffffff;
     --primary-color: #E50914;
     --primary-color-tint: rgba(229, 9, 20, 0.1);
     --font-sans: 'Montserrat', 'Segoe UI', Arial, sans-serif;
     --font-display: 'Bebas Neue', 'Segoe UI', Arial, sans-serif;
-    --shadow-color: rgba(0, 0, 0, 0.5);
+    --shadow-color: rgba(0, 0, 0, 0.7);
     --glow-color: rgba(229, 9, 20, 0.4);
 }
 
-/* Smooth Scrolling & Font Smoothing */
+/* Light Theme */
+body.light-theme {
+    --background: #f4f4f9;
+    --surface-1: #ffffff;
+    --surface-2: #fafafa;
+    --border-color: #e0e0e0;
+    --text-primary: #121212;
+    --text-secondary: #555555;
+    --text-muted: #888888;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --glow-color: rgba(229, 9, 20, 0.2);
+}
+
+/* Box Sizing & Font Smoothing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background-color: var(--dark-navy);
-    background-image: radial-gradient(circle at 50% 0%, #2a2a2a 0%, var(--dark-navy) 60%);
+    background-color: var(--background);
+    background-image: radial-gradient(circle at 50% 0%, #2a2a2a 0%, var(--background) 60%);
     font-family: var(--font-sans);
-    color: var(--light-slate);
+    color: var(--text-secondary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar for WebKit browsers (Chrome, Safari, Edge) to ensure cross-browser compatibility */
 body::-webkit-scrollbar {
     width: 10px;
 }
 body::-webkit-scrollbar-track {
-    background: var(--dark-navy);
+    background: var(--background);
 }
 body::-webkit-scrollbar-thumb {
     background-color: var(--primary-color);
     border-radius: 20px;
-    border: 2px solid var(--dark-navy);
+    border: 2px solid var(--background);
 }
+
 
 main {
     overflow-x: hidden;
@@ -58,29 +79,32 @@ a {
     text-decoration: none;
     transition: filter 0.3s ease;
 }
+.text-muted {
+    color: var(--text-muted);
+}
 
 a:hover {
     filter: brightness(1.2);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: var(--lightest-slate);
+    color: var(--text-primary);
     font-weight: 700;
 }
 
 p {
-    color: var(--slate);
+    color: var(--text-secondary);
     line-height: 1.7;
 }
 
 .lead {
-    color: var(--light-slate);
+    color: var(--text-secondary);
     font-size: 1.2rem;
 }
 
 /* Navbar */
 .navbar {
-    background: rgba(16, 16, 16, 0.7);
+    background: rgba(18, 18, 18, 0.7);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
@@ -89,21 +113,56 @@ p {
 }
 
 .navbar.scrolled {
-    background: rgba(16, 16, 16, 0.9);
+    background: rgba(18, 18, 18, 0.9);
     box-shadow: 0 10px 30px -10px var(--shadow-color);
-    border-bottom-color: var(--light-navy);
+    border-bottom-color: var(--border-color);
 }
 
 .navbar-brand {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    letter-spacing: 1px;
+    font-family: 'Dancing Script', cursive; /* Add a calligraphy-style font */
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    text-shadow:
+        0 0 5px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 20px var(--primary-color),
+        0 0 40px var(--glow-color),
+        0 0 60px var(--glow-color);
+    animation: flicker 1.5s infinite alternate;
+    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+    color: var(--white);
+    text-shadow:
+        0 0 6px var(--primary-color),
+        0 0 12px var(--primary-color),
+        0 0 25px var(--primary-color),
+        0 0 50px var(--glow-color),
+        0 0 70px var(--glow-color);
+}
+
+/* Add this keyframe animation for the flickering neon effect */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow:
+            0 0 4px var(--primary-color),
+            0 0 11px var(--primary-color),
+            0 0 19px var(--primary-color),
+            0 0 40px var(--glow-color),
+            0 0 80px var(--glow-color);
+        color: var(--text-primary);
+    }
+    20%, 24%, 55% {
+        text-shadow: none;
+        color: var(--text-muted);
+    }
 }
 
 .navbar-nav .nav-link {
     font-weight: 500;
     margin: 0 1rem;
-    color: var(--slate);
+    color: var(--text-muted);
     position: relative;
     padding-bottom: 0.5rem;
     transition: color 0.3s ease;
@@ -196,8 +255,8 @@ p {
 
 .btn-secondary-outline {
     background: transparent;
-    color: var(--slate);
-    border-color: var(--slate);
+    color: var(--text-secondary);
+    border-color: var(--text-muted);
 }
 
 .btn-secondary-outline:hover {
@@ -224,8 +283,8 @@ hr.my-4 {
 
 /* Card Styles */
 .card {
-    background: var(--navy);
-    border: 1px solid var(--light-navy);
+    background: var(--surface-1);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     height: 100%;
@@ -239,25 +298,25 @@ hr.my-4 {
 }
 
 .card-title {
-    color: var(--lightest-slate);
+    color: var(--text-primary);
     font-weight: 600;
 }
 
 .card-subtitle {
-    color: var(--slate);
+    color: var(--text-muted);
 }
 
 .card-text {
-    color: var(--light-slate);
+    color: var(--text-secondary);
 }
 
 #about .card {
-    background: var(--light-navy);
+    background: var(--surface-2);
 }
 
 /* Experience Section */
 #experience {
-    background-color: var(--dark-navy);
+    background-color: var(--surface-1);
 }
 
 .timeline {
@@ -271,7 +330,7 @@ hr.my-4 {
     left: 50%;
     width: 2px;
     height: 100%;
-    background: var(--light-navy);
+    background: var(--border-color);
     transform: translateX(-50%);
 }
 
@@ -289,7 +348,7 @@ hr.my-4 {
     top: 32px;
     width: 16px;
     height: 16px;
-    background: var(--dark-navy);
+    background: var(--background);
     border-radius: 50%;
     border: 3px solid var(--primary-color);
     z-index: 1;
@@ -306,13 +365,13 @@ hr.my-4 {
 
 /* Skills Section */
 #skills {
-    background-color: var(--navy);
+    background-color: var(--surface-1);
 }
 
 .skill-item {
     text-align: left;
     padding: 1.5rem;
-    background: var(--light-navy);
+    background: var(--surface-2);
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -338,7 +397,7 @@ hr.my-4 {
 .progress {
     height: 10px;
     border-radius: 50px;
-    background-color: var(--dark-navy);
+    background-color: var(--background);
     overflow: visible;
     position: relative;
 }
@@ -355,13 +414,14 @@ hr.my-4 {
 }
 
 /* Projects & Education Section */
-#projects, #education {
-    background-color: var(--dark-navy);
+#projects,
+#education {
+    background-color: var(--surface-1);
 }
 
 /* Certifications Section */
 #certifications {
-    background-color: var(--navy);
+    background-color: var(--surface-1);
 }
 
 .cert-filter-bar {
@@ -374,8 +434,8 @@ hr.my-4 {
 
 .filter-btn {
     background: transparent;
-    border: 1px solid var(--light-navy);
-    color: var(--slate);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
     padding: 10px 22px;
     border-radius: 50px;
     cursor: pointer;
@@ -412,29 +472,29 @@ hr.my-4 {
 
 /* Contact Section */
 #contact {
-    background-color: var(--dark-navy);
+    background-color: var(--background);
 }
 
 #contact .form-control {
-    background-color: var(--navy);
-    color: var(--lightest-slate);
-    border: 1px solid var(--light-navy);
+    background-color: var(--surface-1);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
     padding: 1rem;
     border-radius: 8px;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #contact .form-control:focus {
-    background-color: var(--navy);
-    color: var(--lightest-slate);
+    background-color: var(--surface-1);
+    color: var(--text-primary);
     border-color: var(--primary-color);
     box-shadow: 0 0 0 0.25rem var(--primary-color-tint);
 }
 
-#contact .form-control::placeholder { color: var(--slate); }
+#contact .form-control::placeholder { color: var(--text-muted); }
 
 #contact .form-label {
-    color: var(--light-slate);
+    color: var(--text-secondary);
     margin-bottom: .5rem;
 }
 
@@ -454,7 +514,7 @@ hr.my-4 {
     flex-direction: column;
     gap: 5px;
     padding: 10px 0;
-    border: 1px solid var(--light-navy);
+    border: 1px solid var(--border-color);
     border-left: none;
 }
 
@@ -463,7 +523,7 @@ hr.my-4 {
     place-items: center;
     width: 45px;
     height: 45px;
-    color: var(--slate);
+    color: var(--text-muted);
     font-size: 1.5rem;
     margin: 0 5px;
     transition: all 0.3s ease;
@@ -477,27 +537,27 @@ hr.my-4 {
 /* Footer */
 footer {
     padding: 40px 0;
-    background-color: var(--dark-navy);
-    border-top: 1px solid var(--light-navy);
-    color: var(--slate);
+    background-color: var(--background);
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
     text-align: center;
 }
 
 /* Modal Styles */
 .modal-content {
-    background-color: var(--navy);
-    border: 1px solid var(--light-navy);
-    color: var(--light-slate);
+    background-color: var(--surface-1);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
     border-radius: 8px;
 }
 
 .modal-header {
-    border-bottom: 1px solid var(--light-navy);
+    border-bottom: 1px solid var(--border-color);
     font-family: var(--font-display);
 }
 
 .modal-header .modal-title {
-    color: var(--lightest-slate);
+    color: var(--text-primary);
 }
 
 .btn-close {
@@ -511,7 +571,7 @@ footer {
 
 .modal-body ul li {
     padding: 8px 0;
-    border-bottom: 1px solid var(--light-navy);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .modal-body ul li:last-child {
@@ -529,6 +589,23 @@ footer {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 
 /* Responsive Design */
 @media (max-width: 991.98px) {
@@ -557,4 +634,82 @@ footer {
         width: 100%;
         margin: 8px 0;
     }
+}
+
+/* Update component styles for light theme */
+body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+body.light-theme .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+body.light-theme .navbar-brand,
+body.light-theme h1, body.light-theme h2, body.light-theme h3, body.light-theme h4, body.light-theme h5, body.light-theme h6,
+body.light-theme .card-title,
+body.light-theme #contact .form-control {
+    color: var(--text-primary);
+}
+
+body.light-theme p,
+body.light-theme .lead,
+body.light-theme .card-text,
+body.light-theme #contact .form-label {
+    color: var(--text-secondary);
+}
+
+body.light-theme .navbar-nav .nav-link,
+body.light-theme .card-subtitle,
+body.light-theme .btn-secondary-outline,
+body.light-theme #contact .form-control::placeholder {
+    color: var(--text-muted);
+}
+
+body.light-theme .card,
+body.light-theme #about .card,
+body.light-theme #experience,
+body.light-theme #skills,
+body.light-theme #projects,
+body.light-theme #education,
+body.light-theme #certifications,
+body.light-theme #contact,
+body.light-theme .skill-item,
+body.light-theme #contact .form-control {
+    background-color: var(--surface-1);
+}
+
+body.light-theme .social-sidebar {
+    background: rgba(245, 245, 245, 0.85);
+}
+
+body.light-theme .progress {
+    background-color: #e9ecef;
+}
+
+body.light-theme .timeline::before {
+    background: var(--border-color);
+}
+
+body.light-theme .timeline-dot {
+    background: var(--surface-1);
+}
+
+body.light-theme .filter-btn {
+    border-color: var(--border-color);
+}
+
+body.light-theme .filter-btn:hover {
+    background-color: var(--primary-color-tint);
+    border-color: var(--primary-color);
+}
+
+body.light-theme .filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+body.light-theme .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
