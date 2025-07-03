@@ -3,17 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Kulkarni's Portfolio</title>
+    <meta name="description" content="Portfolio of Shubham Kulkarni, an Electronics & Telecommunication Engineer and Jr. Software Developer specializing in full-stack development, IoT, and AI.">
+    <meta name="author" content="Shubham Kulkarni">
+    <title>Shubham Kulkarni | Software Developer Portfolio</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" aria-label="Main navigation">
         <div class="container">
             <a class="navbar-brand" href="#">Shubham Kulkarni</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,371 +43,361 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <!-- Animated Background -->
-        <div class="tech-background"></div>
-        <div class="container text-center hero-content">
-            <img src="WhatsApp Image 2025-06-24 at 23.09.43_0d86bf7d.jpg" alt="Shubham Kulkarni" class="profile-img">
-            <h1 class="display-4 fw-bold">Shubham Kulkarni</h1>
-            <p class="lead mb-3">Electronics & Telecommunication Engineer | Jr. Software Developer at Manasvi Tech Solution</p>
-            <a href="#contact" class="btn btn-gradient">Hire Me</a>
-            <a href="Shubham_resume.pdf" class="btn btn-secondary-outline" download>Download Resume</a>
-        </div>
-    </header>
-
     <!-- Social Sidebar -->
-    <div class="social-sidebar">
-        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yourgithub" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:kulkarnishub377@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/918308003684" target="_blank" rel="noopener" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+918308003684" title="Phone"><i class="fas fa-phone"></i></a>
-    </div>
-    <!-- About Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-user-circle me-2"></i>About Me</h2>
-            <hr class="my-4">
-            <div class="row align-items-center">
-                <div class="col-lg-8">
-                    <p class="lead mb-4">
-                        I am an innovative and result-oriented Electronics and Telecommunication Engineer with a strong passion for bridging the gap between hardware and software. My journey is driven by a curiosity for embedded systems, IoT, and creating intelligent, automated solutions.
-                    </p>
-                    <p class="text-muted">
-                        Currently, as a <strong>Jr. Software Developer at Manasvi Tech Solution</strong>, I contribute to full-stack development and automation projects, applying my skills in Python, modern web frameworks, and cloud technologies. My academic and project work, including an award-winning Smart Irrigation System, has provided me with a robust foundation in integrating hardware (like Raspberry Pi and various sensors) with software (APIs, Machine Learning models) to build scalable and efficient systems.
-                    </p>
-                    <p class="text-muted">
-                        I am a quick learner, deeply committed to research, development, and product innovation, always seeking new challenges to solve complex problems.
-                    </p>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card bg-light border-0">
-                        <div class="card-body">
-                            <h5 class="card-title mb-3"><i class="fas fa-star me-2"></i>Key Highlights</h5>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Full-Stack Development</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>IoT & Embedded Systems</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>AI & Machine Learning</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Cloud & Automation (AWS)</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Product Innovation & R&D</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Experience Section with Timeline -->
-    <section id="experience" class="bg-light py-5">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-briefcase me-2"></i>Work Experience</h2>
-            <hr class="my-4">
-            <div class="timeline">
-                <div class="timeline-item left mb-5 animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-building me-2"></i>Jr. Software Developer</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Manasvi Tech Solution (Apr 2024 – Present)</h6>
-                            <p class="card-text">Developing and maintaining web applications using modern frameworks, collaborating with cross-functional teams, and automating business processes for clients. Leading UI/UX improvements and integrating RESTful APIs.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item right mb-5 animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-microchip me-2"></i>Embedded Systems Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Emertxe Information Technologies (Feb 2024 – Apr 2024)</h6>
-                            <p class="card-text">Designed and implemented multi-mode architecture for a simulated washing machine using PIC microcontrollers and developed a PICsimlab-based simulation model, improving mode-switching accuracy by 20%.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item left mb-5 animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-robot me-2"></i>Artificial Intelligence Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">IBM India Pvt. Ltd. (Jun 2023 – Aug 2023)</h6>
-                            <p class="card-text">Designed and deployed a sophisticated AI-based Mental Health Fitness Tracker, achieving a 90% accuracy rate in mood detection through advanced natural language processing techniques.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="timeline-item right mb-5 animate-on-scroll">
-                    <div class="timeline-dot"></div>
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-brain me-2"></i>Artificial Intelligence Intern</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">MathWorks (May 2023 – Sep 2023)</h6>
-                            <p class="card-text">Gained hands-on experience with AI workflows including data preprocessing, model training, and performance evaluation using MATLAB.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <aside class="social-sidebar">
+        <a href="https://linkedin.com/in/yourlinkedin" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+        <a href="https://github.com/yourgithub" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+        <a href="mailto:kulkarnishub377@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+        <a href="https://wa.me/918308003684" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="tel:+918308003684" aria-label="Phone" title="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
+    </aside>
 
-    <!-- Skills Section with Progress Bars -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-cogs me-2"></i>Skills</h2>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-python me-2 text-primary"></i>Python</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="Python skill level">90%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fas fa-database me-2 text-primary"></i>SQL</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="SQL skill level">80%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-html5 me-2 text-primary"></i>HTML5</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="95" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" aria-label="HTML5 skill level">95%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-css3-alt me-2 text-primary"></i>CSS3</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="90" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" aria-label="CSS3 skill level">90%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-aws me-2 text-primary"></i>AWS</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="70" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" aria-label="AWS skill level">70%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-docker me-2 text-primary"></i>Docker</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="75" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Docker skill level">75%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-react me-2 text-primary"></i>React</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="85" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" aria-label="React skill level">85%</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4 animate-on-scroll">
-                    <div class="skill-item">
-                        <h5 class="skill-title"><i class="fab fa-raspberry-pi me-2 text-primary"></i>Raspberry Pi</h5>
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" data-progress="80" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" aria-label="Raspberry Pi skill level">80%</div>
-                        </div>
-                    </div>
+    <main>
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="tech-background"></div>
+            <div class="container text-center hero-content">
+                <img src="WhatsApp Image 2025-06-24 at 23.09.43_0d86bf7d.jpg" alt="Shubham Kulkarni" class="profile-img">
+                <h1 class="display-4 fw-bold">Shubham Kulkarni</h1>
+                <p class="lead mb-4">Electronics & Telecommunication Engineer | Jr. Software Developer at Manasvi Tech Solution</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#contact" class="btn btn-gradient">Hire Me</a>
+                    <a href="Shubham_resume.pdf" class="btn btn-secondary-outline" download>Download Resume</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Projects Section with Modal Details -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-project-diagram me-2"></i>Projects</h2>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-users me-2"></i>Alumni Management Portal</h5>
-                            <p class="card-text">Architected a highly scalable backend infrastructure using Django, Flask, and MySQL to facilitate seamless alumni interactions.</p>
-                            <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">More Info</button>
-                        </div>
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-user-circle me-2" aria-hidden="true"></i>About Me</h2>
+                <hr class="my-4">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <p class="lead mb-4">
+                            I am an innovative and result-oriented Electronics and Telecommunication Engineer with a strong passion for bridging the gap between hardware and software. My journey is driven by a curiosity for embedded systems, IoT, and creating intelligent, automated solutions.
+                        </p>
+                        <p class="text-muted">
+                            Currently, as a <strong>Jr. Software Developer at Manasvi Tech Solution</strong>, I contribute to full-stack development and automation projects, applying my skills in Python, modern web frameworks, and cloud technologies. My academic and project work, including an award-winning Smart Irrigation System, has provided me with a robust foundation in integrating hardware (like Raspberry Pi and various sensors) with software (APIs, Machine Learning models) to build scalable and efficient systems.
+                        </p>
+                        <p class="text-muted">
+                            I am a quick learner, deeply committed to research, development, and product innovation, always seeking new challenges to solve complex problems.
+                        </p>
                     </div>
-                </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-seedling me-2"></i>Smart Irrigation System</h5>
-                            <p class="card-text">Engineered an IoT-powered irrigation solution integrating AI models and sensor data to optimize water usage, achieving a 30% reduction in water wastage.</p>
-                            <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">More Info</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-on-scroll">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-robot me-2"></i>Line Following Robot</h5>
-                            <p class="card-text">Designed and developed an autonomous line-following robot using Arduino Mega and IR sensors for real-time path detection.</p>
-                            <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">More Info</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Project Modals -->
-        <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="project1ModalLabel">Alumni Management Portal</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li>Role-based authentication and secure data management</li>
-                  <li>RESTful APIs for alumni-student communication</li>
-                  <li>Admin dashboard for event and user management</li>
-                  <li>Deployed on AWS EC2 with CI/CD pipelines</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="project2ModalLabel">Smart Irrigation System</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li>Real-time soil moisture and weather data integration</li>
-                  <li>AI-based water scheduling and alert system</li>
-                  <li>Mobile app for remote monitoring and control</li>
-                  <li>Ranked 2nd at SPPU Startup Olympiad 2025</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="project3ModalLabel">Line Following Robot</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <ul>
-                  <li>PID control for smooth navigation</li>
-                  <li>Obstacle detection and avoidance</li>
-                  <li>Custom PCB design for compactness</li>
-                  <li>Open-source code on GitHub</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education" class="py-5">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-graduation-cap me-2"></i>Education</h2>
-            <hr class="my-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-university me-2"></i>BE in Electronics and Telecommunication</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Dr. Vithalrao Vikhe Patil College of Engineering, Ahilyanagar (2021 – 2025)</h6>
-                            <p class="card-text">CGPA: 7.5/10</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-school me-2"></i>HSC</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Residential Arts, Commerce, and Science Junior College (2020 – 2021)</h6>
-                            <p class="card-text">Percentage: 87.5%</p>
+                    <div class="col-lg-4">
+                        <div class="card bg-light border-0">
+                            <div class="card-body">
+                                <h5 class="card-title mb-3"><i class="fas fa-star me-2" aria-hidden="true"></i>Key Highlights</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Full-Stack Development</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>IoT & Embedded Systems</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>AI & Machine Learning</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Cloud & Automation (AWS)</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2" aria-hidden="true"></i>Product Innovation & R&D</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+        
+        <!-- Experience Section -->
+        <section id="experience" class="bg-light py-5">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-briefcase me-2" aria-hidden="true"></i>Work Experience</h2>
+                <hr class="my-4">
+                <div class="timeline">
+                    <div class="timeline-item left mb-5 animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-building me-2" aria-hidden="true"></i>Jr. Software Developer</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Manasvi Tech Solution (Apr 2024 – Present)</h6>
+                                <p class="card-text">Developing and maintaining web applications using modern frameworks, collaborating with cross-functional teams, and automating business processes for clients. Leading UI/UX improvements and integrating RESTful APIs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right mb-5 animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-microchip me-2" aria-hidden="true"></i>Embedded Systems Intern</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Emertxe Information Technologies (Feb 2024 – Apr 2024)</h6>
+                                <p class="card-text">Designed and implemented multi-mode architecture for a simulated washing machine using PIC microcontrollers and developed a PICsimlab-based simulation model, improving mode-switching accuracy by 20%.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item left mb-5 animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-robot me-2" aria-hidden="true"></i>Artificial Intelligence Intern</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">IBM India Pvt. Ltd. (Jun 2023 – Aug 2023)</h6>
+                                <p class="card-text">Designed and deployed a sophisticated AI-based Mental Health Fitness Tracker, achieving a 90% accuracy rate in mood detection through advanced natural language processing techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item right mb-5 animate-on-scroll">
+                        <div class="timeline-dot"></div>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-brain me-2" aria-hidden="true"></i>Artificial Intelligence Intern</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">MathWorks (May 2023 – Sep 2023)</h6>
+                                <p class="card-text">Gained hands-on experience with AI workflows including data preprocessing, model training, and performance evaluation using MATLAB.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="section-heading text-center"><i class="fas fa-certificate me-2"></i>Certifications</h2>
-            <hr class="my-4">
-
-            <!-- Filter Bar -->
-            <div class="cert-filter-bar text-center mb-5">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="data">Data & Analytics</button>
-                <button class="filter-btn" data-filter="tech">Technology</button>
-                <button class="filter-btn" data-filter="business">Business</button>
-                <button class="filter-btn" data-filter="ai">Generative AI</button>
+        <!-- Skills Section -->
+        <section id="skills" class="py-5">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-cogs me-2" aria-hidden="true"></i>Technical Skills</h2>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-python me-2 text-primary" aria-hidden="true"></i>Python</h5>
+                            <div class="progress" role="progressbar" aria-label="Python skill level" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="90">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fas fa-database me-2 text-primary" aria-hidden="true"></i>SQL</h5>
+                            <div class="progress" role="progressbar" aria-label="SQL skill level" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="80">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-html5 me-2 text-primary" aria-hidden="true"></i>HTML5</h5>
+                            <div class="progress" role="progressbar" aria-label="HTML5 skill level" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="95">95%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-css3-alt me-2 text-primary" aria-hidden="true"></i>CSS3</h5>
+                            <div class="progress" role="progressbar" aria-label="CSS3 skill level" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="90">90%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-aws me-2 text-primary" aria-hidden="true"></i>AWS</h5>
+                            <div class="progress" role="progressbar" aria-label="AWS skill level" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="70">70%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-docker me-2 text-primary" aria-hidden="true"></i>Docker</h5>
+                            <div class="progress" role="progressbar" aria-label="Docker skill level" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="75">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-react me-2 text-primary" aria-hidden="true"></i>React</h5>
+                            <div class="progress" role="progressbar" aria-label="React skill level" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="85">85%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4 animate-on-scroll">
+                        <div class="skill-item">
+                            <h5 class="skill-title"><i class="fab fa-raspberry-pi me-2 text-primary" aria-hidden="true"></i>Raspberry Pi</h5>
+                            <div class="progress" role="progressbar" aria-label="Raspberry Pi skill level" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                                <div class="progress-bar" data-progress="80">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="row" id="certifications-grid">
-                <!-- Certification Items -->
-                <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="ai">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="cert-icon"><i class="fas fa-robot"></i></div>
-                            <h5 class="card-title mt-3">Career Essentials in Generative AI</h5>
-                            <p class="card-text text-muted">Microsoft and LinkedIn</p>
-                        </div>
+        <!-- Projects Section -->
+        <section id="projects" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-project-diagram me-2" aria-hidden="true"></i>Projects</h2>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                        <article class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><i class="fas fa-users me-2" aria-hidden="true"></i>Alumni Management Portal</h5>
+                                <p class="card-text">Architected a highly scalable backend infrastructure using Django, Flask, and MySQL to facilitate seamless alumni interactions.</p>
+                                <button class="btn btn-gradient btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#project1Modal">More Info</button>
+                            </div>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="data">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="cert-icon"><i class="fas fa-chart-line"></i></div>
-                            <h5 class="card-title mt-3">Statistics Onramp</h5>
-                            <p class="card-text text-muted">MathWorks</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                        <article class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><i class="fas fa-seedling me-2" aria-hidden="true"></i>Smart Irrigation System</h5>
+                                <p class="card-text">Engineered an IoT-powered irrigation solution integrating AI models and sensor data to optimize water usage, achieving a 30% reduction in water wastage.</p>
+                                <button class="btn btn-gradient btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#project2Modal">More Info</button>
+                            </div>
+                        </article>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="data">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="cert-icon"><i class="fas fa-file-excel"></i></div>
-                            <h5 class="card-title mt-3">Advanced Excel</h5>
-                            <p class="card-text text-muted">Coursera</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="tech">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="cert-icon"><i class="fas fa-microchip"></i></div>
-                            <h5 class="card-title mt-3">Industrial Electronics</h5>
-                            <p class="card-text text-muted">NPTEL</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="business">
-                    <div class="card h-100">
-                        <div class="card-body text-center">
-                            <div class="cert-icon"><i class="fas fa-briefcase"></i></div>
-                            <h5 class="card-title mt-3">What Is Business Analysis?</h5>
-                            <p class="card-text text-muted">LinkedIn Learning</p>
-                        </div>
+                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                        <article class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><i class="fas fa-robot me-2" aria-hidden="true"></i>Line Following Robot</h5>
+                                <p class="card-text">Designed and developed an autonomous line-following robot using Arduino Mega and IR sensors for real-time path detection.</p>
+                                <button class="btn btn-gradient btn-sm mt-auto" data-bs-toggle="modal" data-bs-target="#project3Modal">More Info</button>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-5">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>Education</h2>
+                <hr class="my-4">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <article class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-university me-2" aria-hidden="true"></i>BE in Electronics and Telecommunication</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Dr. Vithalrao Vikhe Patil College of Engineering, Ahilyanagar (2021 – 2025)</h6>
+                                <p class="card-text">CGPA: 7.5/10</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <article class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-school me-2" aria-hidden="true"></i>HSC</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Residential Arts, Commerce, and Science Junior College (2020 – 2021)</h6>
+                                <p class="card-text">Percentage: 87.5%</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-heading text-center"><i class="fas fa-certificate me-2" aria-hidden="true"></i>Certifications</h2>
+                <hr class="my-4">
+                <div class="cert-filter-bar text-center mb-5" role="tablist" aria-label="Certification categories">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button class="filter-btn" data-filter="ai" role="tab" aria-selected="false">Generative AI</button>
+                    <button class="filter-btn" data-filter="data" role="tab" aria-selected="false">Data & Analytics</button>
+                    <button class="filter-btn" data-filter="tech" role="tab" aria-selected="false">Technology</button>
+                    <button class="filter-btn" data-filter="business" role="tab" aria-selected="false">Business</button>
+                </div>
+                <div class="row" id="certifications-grid">
+                    <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="ai">
+                        <article class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="cert-icon"><i class="fas fa-robot" aria-hidden="true"></i></div>
+                                <h5 class="card-title mt-3">Career Essentials in Generative AI</h5>
+                                <p class="card-text text-muted">Microsoft and LinkedIn</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="data">
+                        <article class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="cert-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+                                <h5 class="card-title mt-3">Statistics Onramp</h5>
+                                <p class="card-text text-muted">MathWorks</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="data">
+                        <article class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="cert-icon"><i class="fas fa-file-excel" aria-hidden="true"></i></div>
+                                <h5 class="card-title mt-3">Advanced Excel</h5>
+                                <p class="card-text text-muted">Coursera</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="tech">
+                        <article class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="cert-icon"><i class="fas fa-microchip" aria-hidden="true"></i></div>
+                                <h5 class="card-title mt-3">Industrial Electronics</h5>
+                                <p class="card-text text-muted">NPTEL</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 cert-item" data-category="business">
+                        <article class="card h-100">
+                            <div class="card-body text-center">
+                                <div class="cert-icon"><i class="fas fa-briefcase" aria-hidden="true"></i></div>
+                                <h5 class="card-title mt-3">What Is Business Analysis?</h5>
+                                <p class="card-text text-muted">LinkedIn Learning</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-5">
+            <div class="container">
+                <h2 class="section-heading text-center">Contact Me</h2>
+                <hr class="my-4">
+                <div class="row mb-5">
+                    <div class="col-md-6 text-center mb-4 mb-md-0">
+                        <i class="fas fa-phone fa-3x mb-3 text-muted" aria-hidden="true"></i>
+                        <h5>Phone</h5>
+                        <a href="tel:+918308003684">+91 8308003684</a>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted" aria-hidden="true"></i>
+                        <h5>Email</h5>
+                        <a href="mailto:kulkarnishub377@gmail.com">kulkarnishub377@gmail.com</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <form id="contactForm" novalidate>
+                            <div class="mb-3">
+                                <label for="contactName" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="contactEmail" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMessage" class="form-label">Message</label>
+                                <textarea class="form-control" id="contactMessage" rows="4" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gradient">Send Message</button>
+                            <div id="formAlert" class="mt-3" role="alert" aria-live="polite"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-white">
+        <div class="container text-center">
+            <p class="m-0">Copyright &copy; Shubham Kulkarni <span id="copyright
 
     <!-- Contact Section -->
     <section id="contact" class="py-5">
