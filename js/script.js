@@ -6,10 +6,11 @@ const PortfolioApp = {
             baseIconCount: 20, // Base number of icons for mobile.
             iconsPerPixel: 0.025, // Additional icons per pixel of screen width.
             icons: [
-                'fab fa-html5', 'fab fa-css3-alt', 'fab fa-js-square', 'fab fa-react',
-                'fab fa-node-js', 'fab fa-python', 'fas fa-database', 'fas fa-server',
-                'fas fa-code', 'fas fa-microchip', 'fab fa-git-alt', 'fab fa-bootstrap',
-                'fab fa-docker', 'fab fa-aws', 'fas fa-cogs', 'fas fa-cloud', 'fab fa-github'
+                  'fab fa-python', 'fas fa-database', 'fab fa-html5', 'fab fa-css3-alt',
+                            'fab fa-aws', 'fab fa-windows', 'fab fa-linux', 'fab fa-git-alt',
+                            'fab fa-docker', 'fab fa-react', 'fab fa-raspberry-pi', 'fas fa-microchip',
+                            'fas fa-code', 'fas fa-cloud', 'fas fa-cogs', 'fas fa-server',
+                            'fab fa-js-square', 'fab fa-node-js'
             ],
             colors: [ // Palette for colorful icons
                 '#00A8E8', '#0077B6', '#48CAE4', '#90E0EF', '#ADE8F4', '#0096C7'
@@ -37,6 +38,7 @@ const PortfolioApp = {
     // Application state.
     state: {
         isMobile: () => window.innerWidth < 768,
+        isFirstIconLoad: true // Track the initial creation of background icons
     },
 
     /**
@@ -83,7 +85,8 @@ const PortfolioApp = {
                 icon.className = `tech-icon ${iconClass}`;
                 
                 const duration = this.getRandom(cfg.durationRange.min, cfg.durationRange.max);
-                const delay = this.getRandom(0, cfg.durationRange.max);
+                // On first load, use a much smaller delay to make icons appear faster.
+                const delay = this.state.isFirstIconLoad ? this.getRandom(0, 1) : this.getRandom(0, cfg.durationRange.max);
                 const floatDuration = this.getRandom(4, 8);
                 
                 icon.style.fontSize = `${this.getRandom(cfg.sizeRange.min, cfg.sizeRange.max)}rem`;
@@ -98,12 +101,19 @@ const PortfolioApp = {
                 fragment.appendChild(icon);
             }
             background.appendChild(fragment);
+
+            // After the first run, set the flag to false.
+            if (this.state.isFirstIconLoad) {
+                this.state.isFirstIconLoad = false;
+            }
         };
 
         createIcons();
         // Recreate icons on resize to adjust density, but debounced for performance.
         window.addEventListener('resize', this.debounce(createIcons, this.config.debounceDelay));
     },
+
+
 
     /**
      * Adds an interactive spotlight effect to cards on mouse move.
