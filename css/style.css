@@ -44,6 +44,39 @@
     --container-padding: 20px;
 }
 
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+#preloader .spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid var(--surface-2);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
 /* Base Styles */
 *,
 *::before,
@@ -422,6 +455,15 @@ hr.my-4 {
 /* Skills Section */
 .skill-item {
     margin-bottom: 1.5rem;
+    background-color: var(--surface-1);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+}
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -8px var(--shadow-color);
+    border-color: #6FAFF3; /* Fallback for color-mix() */
 }
 .skill-info {
     display: flex;
@@ -573,6 +615,11 @@ hr.my-4 {
 }
 
 /* Contact Section */
+#contact .form-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
 #contact .form-control {
     background-color: var(--surface-2);
     color: var(--text-primary);
@@ -591,6 +638,9 @@ hr.my-4 {
 }
 #contact .form-control:invalid:focus {
     box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--accent-color) 40%, transparent);
+}
+#formAlert .alert {
+    border-radius: var(--border-radius-sm);
 }
 
 /* Footer */
@@ -714,7 +764,7 @@ footer .social-icons a:hover {
     left: 50%;
     padding-left: 80px;
 }
-.timeline-dot {
+.timeline-marker { /* Renamed from .timeline-dot to match HTML */
     content: '';
     position: absolute;
     top: 45px;
@@ -731,13 +781,13 @@ footer .social-icons a:hover {
 @keyframes pulse {
     50% { box-shadow: 0 0 0 10px var(--background), 0 0 45px var(--glow-color); }
 }
-.timeline-item:nth-child(odd) .timeline-dot {
+.timeline-item:nth-child(odd) .timeline-marker {
     right: -12px;
 }
-.timeline-item:nth-child(even) .timeline-dot {
+.timeline-item:nth-child(even) .timeline-marker {
     left: -12px;
 }
-.timeline-item.visible .timeline-dot {
+.timeline-item.visible .timeline-marker {
     transform: scale(1.1);
 }
 .timeline-content {
@@ -745,6 +795,16 @@ footer .social-icons a:hover {
 }
 .timeline-content .card {
     text-align: left;
+}
+.timeline-content .card-header {
+    background-color: var(--surface-2);
+    border-bottom: 1px solid var(--border-color);
+}
+.timeline-content .tech-tags .badge {
+    background-color: var(--primary-color-tint) !important;
+    color: var(--primary-color) !important;
+    font-weight: 500;
+    border: 1px solid rgba(0, 123, 255, 0.2); /* Fallback for older browsers */
 }
 .timeline-content .card-arrow {
     content: '';
@@ -844,6 +904,9 @@ footer .social-icons a:hover {
     .navbar {
         height: auto;
         padding: 1rem 1.5rem;
+        background: var(--surface-1); /* Solid background on mobile for readability */
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
     .navbar-nav {
         padding-top: 1rem;
@@ -870,8 +933,8 @@ footer .social-icons a:hover {
         padding-right: 20px;
         text-align: left;
     }
-    .timeline-dot,
-    .timeline-item:nth-child(even) .timeline-dot {
+    .timeline-marker,
+    .timeline-item:nth-child(even) .timeline-marker {
         left: 18px; /* 30px - (24px / 2) */
     }
     .card-arrow,
