@@ -1,0 +1,266 @@
+/*--------------------------------------------------------------
+# Responsive Design
+--------------------------------------------------------------*/
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+@media (min-width: 1281px) {
+  .container {
+    max-width: 1200px; /* Wider container for large screens */
+  }
+
+  h1.display-4 {
+      font-size: 5rem;
+  }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  section {
+    padding: 80px 20px;
+  }
+
+  .navbar {
+    padding: 0 1.5rem;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - var(--navbar-height));
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  h1.display-4 {
+    font-size: 3.5rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+  }
+
+  .project-card .card-body {
+    padding: 1.75rem;
+  }
+
+  .skill-item {
+      padding: 1.5rem !important;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .hero-section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .navbar {
+    height: 70px;
+    padding: 0 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.6rem;
+  }
+
+  .social-sidebar {
+    display: none;
+  }
+
+  section {
+    padding: 70px 20px;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - 70px);
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  h1.display-4 {
+    font-size: 3rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 45px;
+  }
+
+  .timeline-item .timeline-icon {
+    left: 0;
+  }
+
+  .project-card .card-body {
+    padding: 1.5rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  body {
+    padding-top: 60px; /* Adjust for smaller navbar */
+  }
+
+  .navbar {
+    height: 60px;
+    padding: 0 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .social-sidebar {
+    display: none; /* Hide for smaller screens */
+  }
+
+  section {
+    padding: 60px 15px;
+  }
+
+  .hero-section {
+    min-height: calc(100vh - 60px);
+  }
+
+  .profile-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  h1.display-4 {
+    font-size: 2.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+    padding-right: 0;
+  }
+
+  .timeline-item .timeline-icon {
+    left: 0;
+  }
+}
+
+/* Social Sidebar for Mobile */
+.social-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--navbar-bg);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 10px 0;
+    box-shadow: 0 -5px 15px var(--shadow-color);
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+}
+
+.social-mobile a {
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.social-mobile a:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 767px) {
+    .social-sidebar {
+        display: none; /* Hide original sidebar */
+    }
+    .social-mobile {
+        display: flex; /* Show mobile bar */
+    }
+
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 50px; /* Increased padding to make space for icon */
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        padding-right: 0;
+    }
+
+    .timeline-content {
+        width: 100%;
+    }
+
+    .timeline-marker {
+        left: 12px; /* Adjust position */
+    }
+
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+    }
+
+    .card-header .badge {
+        margin-top: 0.5rem;
+    }
+}

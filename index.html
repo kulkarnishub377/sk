@@ -20,6 +20,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 <body>
@@ -42,7 +43,6 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -119,7 +119,7 @@
                 <hr class="my-4">
                 <p class="lead text-muted mb-5">My professional journey in technology, from internships to my current developer role.</p>
             </div>
-            <div class="timeline">
+            <div class="timeline d-none d-md-block">
                 <!-- Timeline Item 1 -->
                 <div class="timeline-item animate-on-scroll" data-aos="fade-up">
                 <div class="timeline-marker"></div>
@@ -215,84 +215,178 @@
                 </div>
                 </div>
             </div>
-            </div>
-        </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="container">
-                <div class="text-center animate-on-scroll">
-                    <h2 class="section-heading"><i class="fas fa-cogs me-2" aria-hidden="true"></i>Technical Skills</h2>
-                    <hr class="my-4">
+            <!-- Mobile Experience Cards -->
+            <div class="mobile-experience d-block d-md-none">
+                <div class="card experience-card animate-on-scroll">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="experience-icon me-3">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Jr. Software Developer</h5>
+                                <h6 class="card-subtitle text-muted mb-2">Manasvi Tech Solution</h6>
+                                <span class="badge bg-primary">Apr 2024 – Present</span>
+                                <p class="mt-3">Architecting and developing full-stack web applications and automation scripts. Key contributions include enhancing UI/UX, integrating third-party RESTful APIs, and optimizing application performance.</p>
+                                <div class="tech-tags mt-3">
+                                    <span class="badge rounded-pill text-bg-info">Python</span>
+                                    <span class="badge rounded-pill text-bg-info">Django</span>
+                                    <span class="badge rounded-pill text-bg-info">React</span>
+                                    <span class="badge rounded-pill text-bg-info">AWS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-python me-2 text-primary" aria-hidden="true"></i>Python</h5>
-                            <div class="progress" role="progressbar" aria-label="Python skill level" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="90"></div>
+                <div class="card experience-card animate-on-scroll">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="experience-icon me-3">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Embedded Systems Intern</h5>
+                                <h6 class="card-subtitle text-muted mb-2">Emertxe Information Technologies</h6>
+                                <span class="badge bg-secondary">Feb 2024 – Apr 2024</span>
+                                <p class="mt-3">Engineered a multi-mode architecture for a simulated washing machine using PIC microcontrollers. Developed a PICsimlab-based simulation model, which improved mode-switching accuracy by 20%.</p>
+                                <div class="tech-tags mt-3">
+                                    <span class="badge rounded-pill text-bg-info">C Programming</span>
+                                    <span class="badge rounded-pill text-bg-info">PIC Microcontroller</span>
+                                    <span class="badge rounded-pill text-bg-info">PICsimlab</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fas fa-database me-2 text-primary" aria-hidden="true"></i>SQL</h5>
-                            <div class="progress" role="progressbar" aria-label="SQL skill level" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="80"></div>
+                </div>
+                <div class="card experience-card animate-on-scroll">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="experience-icon me-3">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div>
+                                <h5 class="card-title">Artificial Intelligence Intern</h5>
+                                <h6 class="card-subtitle text-muted mb-2">IBM India Pvt. Ltd.</h6>
+                                <span class="badge bg-secondary">Jun 2023 – Aug 2023</span>
+                                <p class="mt-3">Designed and deployed an AI-powered Mental Health Fitness Tracker. Utilized advanced NLP techniques to achieve a 90% accuracy rate in mood detection from user text inputs, contributing to a proactive mental wellness tool.</p>
+                                <div class="tech-tags mt-3">
+                                    <span class="badge rounded-pill text-bg-info">Python</span>
+                                    <span class="badge rounded-pill text-bg-info">NLP</span>
+                                    <span class="badge rounded-pill text-bg-info">Scikit-learn</span>
+                                    <span class="badge rounded-pill text-bg-info">Flask</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-html5 me-2 text-primary" aria-hidden="true"></i>HTML5</h5>
-                            <div class="progress" role="progressbar" aria-label="HTML5 skill level" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="95"></div>
+                </div>
+                <div class="card experience-card animate-on-scroll">
+                    <div class="card-body">
+                        <div class="d-flex align-items-start">
+                            <div class="experience-icon me-3">
+                                <i class="fas fa-cogs"></i>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-css3-alt me-2 text-primary" aria-hidden="true"></i>CSS3</h5>
-                            <div class="progress" role="progressbar" aria-label="CSS3 skill level" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="90"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-aws me-2 text-primary" aria-hidden="true"></i>AWS</h5>
-                            <div class="progress" role="progressbar" aria-label="AWS skill level" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="70"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-docker me-2 text-primary" aria-hidden="true"></i>Docker</h5>
-                            <div class="progress" role="progressbar" aria-label="Docker skill level" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="75"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-react me-2 text-primary" aria-hidden="true"></i>React</h5>
-                            <div class="progress" role="progressbar" aria-label="React skill level" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="85"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4 animate-on-scroll">
-                        <div class="skill-item p-4">
-                            <h5 class="skill-title mb-3"><i class="fab fa-raspberry-pi me-2 text-primary" aria-hidden="true"></i>Raspberry Pi</h5>
-                            <div class="progress" role="progressbar" aria-label="Raspberry Pi skill level" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                <div class="progress-bar" data-progress="80"></div>
+                            <div>
+                                <h5 class="card-title">Artificial Intelligence Intern</h5>
+                                <h6 class="card-subtitle text-muted mb-2">MathWorks</h6>
+                                <span class="badge bg-secondary">May 2023 – Sep 2023</span>
+                                <p class="mt-3">Acquired hands-on expertise in the complete AI workflow, from data preprocessing and feature engineering to model training and performance evaluation, utilizing the MATLAB environment for robust analysis.</p>
+                                <div class="tech-tags mt-3">
+                                    <span class="badge rounded-pill text-bg-info">MATLAB</span>
+                                    <span class="badge rounded-pill text-bg-info">AI/ML</span>
+                                    <span class="badge rounded-pill text-bg-info">Data Preprocessing</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+    <div class="container">
+        <div class="text-center animate-on-scroll">
+            <h2 class="section-heading"><i class="fas fa-cogs me-2" aria-hidden="true"></i>Technical Skills</h2>
+            <hr class="my-4">
+            <p class="lead text-muted mb-5">A showcase of my technical expertise, from programming languages to cloud technologies.</p>
+        </div>
+
+        <div class="skills-grid">
+            <!-- Languages -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-code me-2"></i>Languages</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Python</span>
+                    <span class="skill-tag"><i class="fab fa-js-square me-2"></i>JavaScript</span>
+                    <span class="skill-tag"><i class="fab fa-html5 me-2"></i>HTML5</span>
+                    <span class="skill-tag"><i class="fab fa-css3-alt me-2"></i>CSS3</span>
+                    <span class="skill-tag"><i class="fas fa-database me-2"></i>SQL</span>
+                </div>
+            </div>
+
+            <!-- Frameworks & Libraries -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-cubes me-2"></i>Frameworks & Libraries</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Django</span>
+                    <span class="skill-tag"><i class="fas fa-flask me-2"></i>Flask</span>
+                    <span class="skill-tag"><i class="fab fa-bootstrap me-2"></i>Bootstrap</span>
+                    <span class="skill-tag"><i class="fab fa-js me-2"></i>jQuery</span>
+                    <span class="skill-tag"><i class="fas fa-brain me-2"></i>Scikit-learn</span>
+                    <span class="skill-tag"><i class="fas fa-table me-2"></i>Pandas</span>
+                    <span class="skill-tag"><i class="fas fa-calculator me-2"></i>NumPy</span>
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-database me-2"></i>Databases</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fas fa-database me-2"></i>MySQL</span>
+                    <span class="skill-tag"><i class="fas fa-database me-2"></i>PostgreSQL</span>
+                    <span class="skill-tag"><i class="fas fa-database me-2"></i>MongoDB</span>
+                </div>
+            </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-cloud me-2"></i>Cloud & DevOps</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fab fa-aws me-2"></i>AWS (EC2, S3, RDS)</span>
+                    <span class="skill-tag"><i class="fab fa-docker me-2"></i>Docker</span>
+                    <span class="skill-tag"><i class="fab fa-git-alt me-2"></i>Git</span>
+                    <span class="skill-tag"><i class="fab fa-github me-2"></i>GitHub</span>
+                </div>
+            </div>
+
+            <!-- Embedded Systems -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-microchip me-2"></i>Embedded Systems</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fas fa-microchip me-2"></i>Arduino</span>
+                    <span class="skill-tag"><i class="fab fa-raspberry-pi me-2"></i>Raspberry Pi</span>
+                    <span class="skill-tag"><i class="fas fa-microchip me-2"></i>PIC Microcontroller</span>
+                    <span class="skill-tag"><i class="fas fa-square-root-alt me-2"></i>MATLAB</span>
+                    <span class="skill-tag"><i class="fas fa-project-diagram me-2"></i>Simulink</span>
+                </div>
+            </div>
+
+            <!-- Other Tools -->
+            <div class="skill-category animate-on-scroll">
+                <h4 class="category-title"><i class="fas fa-tools me-2"></i>Other Tools</h4>
+                <div class="skills-tags">
+                    <span class="skill-tag"><i class="fas fa-rocket me-2"></i>Postman</span>
+                    <span class="skill-tag"><i class="fas fa-code me-2"></i>VS Code</span>
+                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Jupyter Notebook</span>
+                    <span class="skill-tag"><i class="fab fa-linux me-2"></i>Linux</span>
+                    <span class="skill-tag"><i class="fas fa-terminal me-2"></i>Shell Scripting</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- Projects Section -->
         <section id="projects">
@@ -493,6 +587,15 @@
         </div>
     </footer>
 
+    <!-- Mobile Social Bar -->
+    <div class="social-mobile">
+        <a href="https://linkedin.com/in/shubham-kulkarni-dev" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/shubham-kulkarni-dev" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:kulkarnishub377@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        <a href="https://wa.me/918308003684" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+918308003684" aria-label="Phone"><i class="fas fa-phone"></i></a>
+    </div>
+
     <!-- Project Modals -->
     <!-- Project 1 Modal -->
     <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
@@ -578,9 +681,6 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <!-- Custom JS -->
-    <script src="js/script.js"></script>
-</body>
-</html>
     <script src="js/script.js"></script>
 </body>
 </html>
