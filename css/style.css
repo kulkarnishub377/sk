@@ -206,9 +206,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-brand {
     font-family: var(--font-brand);
-    font-size: 1.8rem;
-    color: var(--text-primary) !important;
-    transition: transform var(--transition-speed) ease;
+    font-size: 1.9rem; /* Slightly larger for more presence */
+    font-weight: 400;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 5px 0; /* Add some padding for hover effect */
+    transition: transform var(--transition-long) cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .navbar-brand:hover {
     transform: scale(1.05) rotate(-2deg);
@@ -649,6 +654,7 @@ footer {
     color: var(--text-secondary);
     border-top: 1px solid var(--border-color);
     padding: 40px 0;
+    text-align: center;
 }
 footer .social-icons a {
     color: var(--text-secondary);
@@ -659,6 +665,11 @@ footer .social-icons a {
 footer .social-icons a:hover {
     color: var(--primary-color);
     transform: translateY(-5px);
+}
+footer p {
+    margin-top: 20px;
+    color: var(--text-muted);
+    font-size: var(--fs-sm);
 }
 
 /* Modal Styles */
