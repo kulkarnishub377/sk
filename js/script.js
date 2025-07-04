@@ -125,53 +125,22 @@ const PortfolioApp = {
      */
     initTypedJs() {
         const typedEl = document.querySelector('.hero-content .typed-text');
-        
-        if (!typedEl) {
-            console.warn('Typed.js: Target element ".hero-content .typed-text" not found.');
-            return;
+        if (typedEl && typeof Typed !== 'undefined') {
+            new Typed(typedEl, {
+                strings: [
+                    "Electronics & Telecommunication Engineer",
+                    "Jr. Software Developer at Manasvi Tech Solution",
+                    "Full-Stack Enthusiast",
+                    "IoT & AI Innovator"
+                ],
+                typeSpeed: 50,
+                backSpeed: 25,
+                backDelay: 2000,
+                startDelay: 500,
+                loop: true,
+                smartBackspace: true
+            });
         }
-
-        if (typeof window.Typed === 'undefined') {
-            console.error('Typed.js library is not loaded. Please make sure the script is included.');
-            // As a fallback, set the first text content directly.
-            const fallbackText = "Electronics & Telecommunication Engineer";
-            typedEl.textContent = fallbackText;
-            return;
-        }
-
-        // Clear the element to prevent a flash of the full text before typing begins.
-        typedEl.textContent = '';
-
-        // Ensure the parent has a minimum height to prevent layout shifts during typing.
-        const parent = typedEl.parentElement;
-        if (parent && !parent.style.minHeight) {
-            parent.style.minHeight = parent.offsetHeight + 'px';
-        }
-
-        // Use strings from the data attribute or a default set.
-        const strings = typedEl.dataset.typedStrings 
-            ? JSON.parse(typedEl.dataset.typedStrings)
-            : [
-                "Electronics & Telecommunication Engineer",
-                "Jr. Software Developer",
-                "A Full-Stack Enthusiast",
-                "An IoT & AI Innovator"
-              ];
-
-        new window.Typed(typedEl, {
-            strings: strings,
-            typeSpeed: 50,       // Slightly faster typing speed
-            backSpeed: 25,       // Slightly slower backspacing
-            backDelay: 2000,     // Pause before backspacing
-            startDelay: 500,     // Initial delay
-            loop: true,
-            smartBackspace: true,// Backspace only what's needed
-            fadeOut: true,       // Add a fade-out effect
-            fadeOutClass: 'typed-fade-out', // CSS class for fade animation
-            fadeOutDelay: 500,   // Time for the fade-out effect
-            cursorChar: '|',     // A more common cursor character
-            autoInsertCss: true  // Let Typed.js inject its default CSS for the cursor
-        });
     },
 
     /**
@@ -291,27 +260,56 @@ const PortfolioApp = {
     },
 
     /**
-     * Handles the certification filter functionality.
+     * Handles the certification filter functionality with enhanced animations.
      */
     initCertFilter() {
         const filterContainer = document.querySelector('.filter-buttons');
         if (!filterContainer) return;
 
         const certItems = document.querySelectorAll('.cert-item');
+        const certGrid = document.querySelector('.cert-grid'); // Assuming items are in a grid container
+
+        // Add initial transition styles to items
+        certItems.forEach(item => {
+            item.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        });
 
         filterContainer.addEventListener('click', (e) => {
             const targetButton = e.target.closest('.filter-btn');
-            if (!targetButton) return;
+            if (!targetButton || targetButton.classList.contains('active')) return;
 
             const filterValue = targetButton.dataset.filter;
             
+            // Update active state on buttons
             filterContainer.querySelector('.active')?.classList.remove('active');
             targetButton.classList.add('active');
 
+            // Animate items out
             certItems.forEach(item => {
-                const shouldShow = (filterValue === 'all' || item.dataset.category === filterValue);
-                item.classList.toggle('hidden', !shouldShow);
+                item.style.transform = 'scale(0.9)';
+                item.style.opacity = '0';
             });
+
+            // After the fade-out animation, filter and fade-in
+            setTimeout(() => {
+                certItems.forEach(item => {
+                    const shouldShow = (filterValue === 'all' || item.dataset.category === filterValue);
+                    
+                    // Hide or show items based on the filter
+                    if (shouldShow) {
+                        item.style.display = ''; // Or 'block', 'flex', etc., depending on your layout
+                        // We need a tiny delay for the browser to apply 'display' before starting the transition
+                        setTimeout(() => {
+                            item.style.transform = 'scale(1)';
+                            item.style.opacity = '1';
+                        }, 20);
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                // Optional: Trigger a layout recalculation if using a library like Isotope or Masonry
+                // if (window.isotope) { certGrid.isotope('layout'); }
+            }, 400); // This duration should match the CSS transition duration
         });
     },
 
@@ -366,6 +364,7 @@ const PortfolioApp = {
         });
     },
 
+    
     /**
      * Adds a class to the navbar when the page is scrolled.
      */
