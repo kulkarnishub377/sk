@@ -1122,6 +1122,94 @@ footer p a:hover {
     50% { transform: translateY(-6px); }
 }
 
+/*--------------------------------------------------------------
+# Certifications Section
+--------------------------------------------------------------*/
+#certifications {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+#certifications .section-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+
+#certifications .section-heading .fas {
+    color: #007bff;
+}
+
+#certifications .lead {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.certification-card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card .card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.certification-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #343a40;
+    margin-bottom: 0.5rem;
+}
+
+.certification-card .card-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+.certification-card .card-text {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1.5rem;
+}
+
+.certification-card .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.certification-card .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Responsive Design */
 @media (max-width: 992px) {
     .social-sidebar {

@@ -211,19 +211,20 @@ const PortfolioApp = {
 
         document.querySelectorAll('.animate-on-scroll').forEach(el => animateOnScrollObserver.observe(el));
 
-        const progressObserver = new IntersectionObserver((entries) => {
+        // Animate on scroll
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const progressBar = entry.target.querySelector('.progress-bar');
-                    if (progressBar) {
-                        progressBar.style.width = `${progressBar.dataset.progress}%`;
-                    }
-                    progressObserver.unobserve(entry.target);
+                    entry.target.classList.add('is-visible');
                 }
             });
-        }, { threshold: this.config.scroll.progressThreshold });
+        }, {
+            threshold: 0.1
+        });
 
-        document.querySelectorAll('.skill-item').forEach(item => progressObserver.observe(item));
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+            observer.observe(element);
+        });
     },
 
     /**
