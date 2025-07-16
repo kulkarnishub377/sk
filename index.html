@@ -140,7 +140,7 @@
                         <span class="badge bg-primary">Apr 2024 – Present</span>
                     </div>
                     <div class="card-body">
-                        <p>Architecting and developing full-stack web applications and automation scripts. Key contributions include enhancing UI/UX, integrating third-party RESTful APIs, and optimizing application performance.</p>
+                        <p>I am actively working on intelligent backend solutions, automation, and integrating advanced Python libraries for data processing and model deployment. My work includes building RESTful APIs, implementing ML models, and leveraging frameworks like Django to create scalable, AI-powered applications.</p>
                         <div class="tech-tags mt-3">
                         <span class="badge rounded-pill text-bg-info">Python</span>
                         <span class="badge rounded-pill text-bg-info">Django</span>
@@ -235,7 +235,7 @@
                                 <h5 class="card-title">Jr. Software Developer</h5>
                                 <h6 class="card-subtitle text-muted mb-2">Manasvi Tech Solution</h6>
                                 <span class="badge bg-primary">Apr 2024 – Present</span>
-                                <p class="mt-3">Architecting and developing full-stack web applications and automation scripts. Key contributions include enhancing UI/UX, integrating third-party RESTful APIs, and optimizing application performance.</p>
+                                <p class="mt-3">I am actively working on intelligent backend solutions, automation, and integrating advanced Python libraries for data processing and model deployment. My work includes building RESTful APIs, implementing ML models, and leveraging frameworks like Django to create scalable, AI-powered applications.</p>
                                 <div class="tech-tags mt-3">
                                     <span class="badge rounded-pill text-bg-info">Python</span>
                                     <span class="badge rounded-pill text-bg-info">Django</span>
@@ -471,77 +471,207 @@
                     <h2 class="section-heading"><i class="fas fa-certificate me-2" aria-hidden="true"></i>Certifications</h2>
                     <hr class="my-4">
                     <p class="lead text-muted mb-5">A collection of my professional certifications and credentials.</p>
-                </div>
-                <div class="row" id="certifications-grid">
-                    <!-- Certification 1 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Postman API Fundamentals Student Expert</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Postman</h6>
-                                <p class="card-text">Issued: May 2024</p>
-                                <a href="https://api.badgr.io/public/assertions/GLDMnLdNRiWFWW0DbvzBDw" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
-                            </div>
-                        </div>
                     </div>
-                    <!-- Certification 2 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">What Is Business Analysis?</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">LinkedIn</h6>
-                                <p class="card-text">Issued: Feb 2024</p>
-                                <a href="https://www.linkedin.com/learning/certificates/db34d18ffe44b7dd6b0d1954b87ea3fc9f980422adddf2c13784f0da573962a3" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
-                            </div>
-                        </div>
+                    <div class="row" id="certifications-grid">
+                        <!-- Certificates will be rendered here by JS -->
                     </div>
-                    <!-- Certification 3 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Geodata Processing using Python</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">ISRO</h6>
-                                <p class="card-text">Issued: Jan 2024</p>
-                                <a href="https://www.linkedin.com/in/shubhkulk21/details/certifications/1709784096382/single-media-viewer?type=IMAGE&profileId=ACoAAD_RI18BIVyTeFPNykfkkxOCzmq8iTPELno" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
-                            </div>
-                        </div>
+                    <div class="text-center mt-4">
+                        <button id="load-more-cert-btn" type="button" class="btn btn-gradient">Load More</button>
+                        <button id="show-less-cert-btn" type="button" class="btn btn-secondary-outline d-none">Show Less</button>
                     </div>
-                    <!-- Certification 4 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Overview of Global Navigation Satellite System</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">ISRO</h6>
-                                <p class="card-text">Issued: Dec 2023</p>
-                                <a href="https://drive.google.com/file/d/1jMDc_po_n-aW2sIxlm8s28NZSTEupbX4/view?usp=drivesdk" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
+                    </section>
+                    <script>
+                    // Certificate data
+                    const certifications = [
+                        {
+                            title: 'Postman API Fundamentals Student Expert',
+                            issuer: 'Postman',
+                            date: 'May 2024',
+                            link: 'https://api.badgr.io/public/assertions/GLDMnLdNRiWFWW0DbvzBDw',
+                            icon: 'fas fa-rocket',
+                            category: ['api', 'programming']
+                        },
+                        {
+                            title: 'What Is Business Analysis?',
+                            issuer: 'LinkedIn',
+                            date: 'Feb 2024',
+                            link: 'https://www.linkedin.com/learning/certificates/db34d18ffe44b7dd6b0d1954b87ea3fc9f980422adddf2c13784f0da573962a3',
+                            icon: 'fab fa-linkedin',
+                            category: ['data']
+                        },
+                        {
+                            title: 'Geodata Processing using Python',
+                            issuer: 'ISRO',
+                            date: 'Jan 2024',
+                            link: 'https://www.linkedin.com/in/shubhkulk21/details/certifications/1709784096382/single-media-viewer?type=IMAGE&profileId=ACoAAD_RI18BIVyTeFPNykfkkxOCzmq8iTPELno',
+                            icon: 'fab fa-python',
+                            category: ['python', 'data']
+                        },
+                        {
+                            title: 'Overview of Global Navigation Satellite System',
+                            issuer: 'ISRO',
+                            date: 'Dec 2023',
+                            link: 'https://drive.google.com/file/d/1jMDc_po_n-aW2sIxlm8s28NZSTEupbX4/view?usp=drivesdk',
+                            icon: 'fas fa-satellite-dish',
+                            category: ['networking', 'data']
+                        },
+                        {
+                            title: 'Career Essentials in Generative AI',
+                            issuer: 'Microsoft',
+                            date: 'Sep 2023',
+                            link: 'https://www.linkedin.com/learning/certificates/945343f8575e0958170e8038fbcd6a8166106a24ee9b329e1ac77714289ac0f0',
+                            icon: 'fab fa-microsoft',
+                            category: ['ai']
+                        },
+                        {
+                            title: 'Industrial Electronics',
+                            issuer: 'Yash Autotech Systems',
+                            date: 'Sep 2023',
+                            link: 'https://drive.google.com/file/d/1Pw6hLlcP2m36YylGZxecvf75DnY1wv_7/view?usp=drivesdk',
+                            icon: 'fas fa-microchip',
+                            category: ['programming']
+                        },
+                        {
+                            title: 'A.I. for India 2.0',
+                            issuer: 'HCL GUVI',
+                            date: 'Aug 2023',
+                            link: 'https://www.guvi.in/verify-certificate?id=vp07016N8b16X9S192&course=ai_for_in_mar',
+                            icon: 'fas fa-brain',
+                            category: ['ai']
+                        },
+                        {
+                            title: 'Deep Learning Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Aug 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=12dd9cad7-1d2c-4b4b-91b7-beeda802f680&',
+                            icon: 'fas fa-robot',
+                            category: ['matlab', 'ai']
+                        },
+                        {
+                            title: 'Machine Learning Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Aug 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=2c86c398-7a86-4d7d-95e5-9c7f70362202&',
+                            icon: 'fas fa-robot',
+                            category: ['matlab', 'ai']
+                        },
+                        {
+                            title: 'Python',
+                            issuer: 'HCL GUVI',
+                            date: 'Aug 2023',
+                            link: 'https://www.guvi.in/certificate.html?id=p311V940S06c17J01A',
+                            icon: 'fab fa-python',
+                            category: ['python', 'programming']
+                        },
+                        {
+                            title: 'Signal Processing Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Aug 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=6751fc9b-6713-4017-834a-9f4eb8af104f&',
+                            icon: 'fas fa-wave-square',
+                            category: ['matlab']
+                        },
+                        {
+                            title: 'Statistics Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Aug 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f32a1077-a3a1-4679-b95e-86ae5fe24fb0&',
+                            icon: 'fas fa-chart-bar',
+                            category: ['matlab', 'data']
+                        },
+                        {
+                            title: 'Image Processing Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Jul 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=0fdab258-1727-4ad4-a074-7c5cea443ec8&',
+                            icon: 'fas fa-image',
+                            category: ['matlab']
+                        },
+                        {
+                            title: 'MATLAB Onramp',
+                            issuer: 'MathWorks',
+                            date: 'Jun 2023',
+                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=65e8ff3c-a083-4e76-b4a2-5184255056e3&',
+                            icon: 'fas fa-file-code',
+                            category: ['matlab', 'programming']
+                        },
+                        {
+                            title: 'What is Data Science?',
+                            issuer: 'IBM',
+                            date: 'Mar 2023',
+                            link: 'https://www.coursera.org/account/accomplishments/certificate/BTKY4E35PW5Z',
+                            icon: 'fas fa-database',
+                            category: ['data']
+                        },
+                        {
+                            title: 'Advanced Excel',
+                            issuer: 'MKCL',
+                            date: 'Feb 2021',
+                            link: '#',
+                            icon: 'fas fa-file-excel',
+                            category: ['data']
+                        },
+                        {
+                            title: 'Geospatial Analysis using Google Earth Engine',
+                            issuer: 'ISRO',
+                            date: 'N/A',
+                            link: 'https://drive.google.com/file/d/13qAyJBVKxWHpG2FTyF2gGBZjdrZU9z6U/view?usp=drivesdk',
+                            icon: 'fas fa-globe-asia',
+                            category: ['data']
+                        }
+                    ];
+
+                    // Render certificates
+                    const certGrid = document.getElementById('certifications-grid');
+                    const loadMoreBtn = document.getElementById('load-more-cert-btn');
+                    const showLessBtn = document.getElementById('show-less-cert-btn');
+                    let certsToShow = 6;
+
+                    function renderCertifications() {
+                        certGrid.innerHTML = '';
+                        certifications.slice(0, certsToShow).forEach(cert => {
+                            certGrid.innerHTML += `
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="mb-3 text-primary">
+                                            <i class="${cert.icon} fa-2x" aria-hidden="true"></i>
+                                        </div>
+                                        <h5 class="card-title mb-1">${cert.title}</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">${cert.issuer}</h6>
+                                        <p class="mb-2"><small class="text-muted">${cert.date}</small></p>
+                                        <a href="${cert.link}" class="btn btn-gradient btn-sm mt-auto" target="_blank" rel="noopener">View Certificate</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- Certification 5 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Career Essentials in Generative AI</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Microsoft</h6>
-                                <p class="card-text">Issued: Sep 2023</p>
-                                <a href="https://www.linkedin.com/learning/certificates/945343f8575e0958170e8038fbcd6a8166106a24ee9b329e1ac77714289ac0f0" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Certification 6 -->
-                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
-                        <div class="card h-100 certification-card">
-                            <div class="card-body">
-                                <h5 class="card-title">Industrial Electronics</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Yash Autotech Systems</h6>
-                                <p class="card-text">Issued: Sep 2023</p>
-                                <a href="https://drive.google.com/file/d/1Pw6hLlcP2m36YylGZxecvf75DnY1wv_7/view?usp=drivesdk" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener">Show Credential</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            `;
+                        });
+                        // Button visibility
+                        if (certsToShow >= certifications.length) {
+                            loadMoreBtn.classList.add('d-none');
+                        } else {
+                            loadMoreBtn.classList.remove('d-none');
+                        }
+                        if (certsToShow > 6) {
+                            showLessBtn.classList.remove('d-none');
+                        } else {
+                            showLessBtn.classList.add('d-none');
+                        }
+                    }
+
+                    loadMoreBtn.addEventListener('click', () => {
+                        certsToShow = Math.min(certsToShow + 6, certifications.length);
+                        renderCertifications();
+                    });
+
+                    showLessBtn.addEventListener('click', () => {
+                        certsToShow = 6;
+                        renderCertifications();
+                    });
+
+                    // Initial render
+                    renderCertifications();
+                    </script>
 
         <!-- Contact Section -->
         <section id="contact">
