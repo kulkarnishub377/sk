@@ -138,17 +138,25 @@ const PortfolioApp = {
         if (typedEl && typeof Typed !== 'undefined') {
             new Typed(typedEl, {
                 strings: [
-                    "Electronics & Telecommunication Engineer",
+                    "Electronics and Telecommunication Engineer",
                     "Jr. Software Developer at Manasvi Tech Solution",
-                    "Full-Stack Enthusiast",
-                    "IoT & AI Innovator"
+                    "IoT and AI Innovator",
+                    "Python Enthusiast and Automation Expert",
+                    "AI/ML Developer | Deep Learning Practitioner",
+                    "Machine Learning Model Builder",
+                    "OpenCV & Computer Vision Hobbyist",
+                    "Building Smart Systems with Python",
+                    "Exploring Generative AI & LLMs"
                 ],
                 typeSpeed: 50,
                 backSpeed: 25,
                 backDelay: 2000,
                 startDelay: 500,
                 loop: true,
-                smartBackspace: true
+                smartBackspace: true,   
+                showCursor: true,
+                cursorChar: '|',
+                autoInsertCss: true
             });
         }
     },
