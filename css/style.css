@@ -1,3 +1,41 @@
+/* Maintenance page redesign styles moved to index.html for atomicity. */
+/* Maintenance upgrade title */
+.maintenance-upgrade-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0072ff;
+}
+
+/* Progress bar container */
+.progress {
+    height: 18px;
+    background: #e3e9f7;
+    border-radius: 10px;
+}
+.maintenance-progress-bar {
+    width: 60%;
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+    font-weight: 600;
+}
+
+/* Social icon links */
+.github-link {
+    background: #fff;
+    color: #222;
+    border: 1px solid #0072ff;
+}
+.github-link:hover {
+    background: #0072ff;
+    color: #fff;
+}
+.whatsapp-link {
+    background: #25d366;
+    color: #fff;
+}
+.whatsapp-link:hover {
+    background: #128c7e;
+    color: #fff;
+}
 /* Project Card Live Badge */
 /* Project Card Live Badge */
 .project-live-badge {
