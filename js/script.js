@@ -384,6 +384,7 @@ const PortfolioApp = {
     },
 
     
+    
     /**
      * Adds a class to the navbar when the page is scrolled.
      */
@@ -471,6 +472,7 @@ const PortfolioApp = {
         });
     }
 };
+
 
 // Start the application.
 PortfolioApp.init();
