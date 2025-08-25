@@ -1,0 +1,375 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Under Maintenance | Shubham Kulkarni</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+   <style>
+    .maintenance-avatar {
+      margin-bottom: 1rem;
+    }
+    .maintenance-avatar img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #0072ff33;
+      object-fit: cover;
+    }
+    .maintenance-status-badge {
+      font-size: 1rem;
+      padding: 0.3em 1em;
+      border-radius: 1rem;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 2px 8px #00c6ff22;
+      display: inline-block;
+    }
+    .maintenance-error-code {
+      font-size: 1.1rem;
+      padding: 0.5em 1em;
+      letter-spacing: 1px;
+      background: #fffbe6;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px #ffe06644;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .maintenance-title {
+      margin-bottom: 0.2rem;
+    }
+    .maintenance-illustration {
+      margin-bottom: 0.7rem;
+    }
+    #progress-label {
+      font-weight: 600;
+      color: #0072ff;
+    }
+    .maintenance-progress {
+      height: 22px;
+      background: #e3e9f7;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      overflow: hidden;
+    }
+    .maintenance-progress-bar {
+      width: 60%;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      font-weight: 600;
+      border-radius: 12px;
+      transition: width 0.8s cubic-bezier(.4,2,.3,1);
+      color: #fff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      box-shadow: 0 2px 8px #00c6ff33;
+    }
+    .maintenance-features {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 0.5rem 0;
+      text-align: left;
+      max-width: 340px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .maintenance-features li {
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .maintenance-features .feature-title {
+      color: #0072ff;
+      font-weight: 600;
+    }
+    .maintenance-features .feature-desc {
+      color: #222;
+    }
+    .maintenance-note {
+      margin-top: 0.5rem;
+    }
+  </style>
+  <style>
+    html, body {
+      background: linear-gradient(135deg, #e3e9f7 0%, #f8fafc 100%);
+      color: #222;
+      font-family: 'Poppins', Arial, sans-serif;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    }
+    .maintenance-logo {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0072ff;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+    }
+    .maintenance-main {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      position: relative;
+      margin-top: 0 !important;
+      padding-top: 0 !important;
+    }
+    .maintenance-bg-hero {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 0;
+      pointer-events: none;
+      background: radial-gradient(circle at 60% 40%, #00c6ff33 0%, #e3e9f7 80%);
+      opacity: 0.7;
+    }
+    .maintenance-card {
+      background: rgba(255,255,255,0.85);
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 540px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      z-index: 1;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .maintenance-illustration {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .maintenance-title {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #0072ff;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+    .maintenance-message {
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    .maintenance-upgrade-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0072ff;
+      letter-spacing: 0.5px;
+    }
+    .maintenance-error-code {
+      font-size: 1.1rem;
+      padding: 0.5em 1em;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      background: #fffbe6;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px #ffe06644;
+      font-weight: 600;
+    }
+    .maintenance-progress-section {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .maintenance-progress {
+      height: 20px;
+      background: #e3e9f7;
+      border-radius: 12px;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 8px #0072ff22;
+      overflow: hidden;
+    }
+    .maintenance-progress-bar {
+      width: 60%;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      font-weight: 600;
+      border-radius: 12px;
+      transition: width 0.8s cubic-bezier(.4,2,.3,1);
+      color: #fff;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      box-shadow: 0 2px 8px #00c6ff33;
+    }
+    .maintenance-note {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #888;
+    }
+    .maintenance-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 1rem;
+      margin-top: 1.2rem;
+      width: 100%;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+      border-radius: 2rem;
+      padding: 0.5rem 1.2rem;
+      margin: 0 auto;
+      width: fit-content;
+      text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,198,255,0.10);
+      transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+      font-size: 1rem;
+      justify-content: center;
+    }
+    .contact-link:hover {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      color: #0072ff;
+      box-shadow: 0 4px 16px rgba(0,198,255,0.18);
+    }
+    .contact-link i {
+      font-size: 1.3rem;
+    }
+    .github-link {
+      background: #fff;
+      color: #222;
+      border: 1px solid #0072ff;
+    }
+    .github-link:hover {
+      background: #0072ff;
+      color: #fff;
+    }
+    .whatsapp-link {
+      background: #25d366;
+      color: #fff;
+    }
+    .whatsapp-link:hover {
+      background: #128c7e;
+      color: #fff;
+    }
+    .maintenance-footer {
+      width: 100%;
+      text-align: center;
+      padding: 1.2rem 0 0.7rem 0;
+      color: #888;
+      font-size: 0.95rem;
+      background: transparent;
+    }
+    .maintenance-footer .footer-social {
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .footer-social a {
+      color: #0072ff;
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: #00c6ff;
+    }
+  </style>
+</head>
+<body>
+
+ 
+  <main class="maintenance-main">
+    <section>
+      <div class="maintenance-card">
+        <div class="maintenance-avatar">
+          <img src="WhatsApp Image 2025-06-24 at 23.09.43_0d86bf7d.jpg" alt="Shubham Kulkarni">
+        </div>
+        <span class="badge bg-warning text-dark maintenance-error-code mb-2">Error Code: 503 - Maintenance Mode</span>
+        <h1 class="maintenance-title">Site Under Maintenance</h1>
+        <span class="badge bg-info maintenance-status-badge">Status: Upgrading Experience</span>
+        <div class="maintenance-illustration">
+          <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="grad1" cx="60%" cy="40%" r="80%" fx="60%" fy="40%">
+                <stop offset="0%" stop-color="#00c6ff" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#e3e9f7" stop-opacity="0.1"/>
+              </radialGradient>
+            </defs>
+            <circle cx="60" cy="60" r="56" stroke="#0072ff" stroke-width="4" fill="url(#grad1)"/>
+            <g>
+              <rect x="44" y="60" width="32" height="10" rx="3" fill="#00c6ff">
+                <animate attributeName="width" values="32;44;32" dur="1.2s" repeatCount="indefinite"/>
+              </rect>
+              <rect x="56" y="38" width="10" height="32" rx="3" fill="#0072ff">
+                <animate attributeName="height" values="32;44;32" dur="1.2s" repeatCount="indefinite"/>
+              </rect>
+            </g>
+            <text x="60" y="110" text-anchor="middle" font-size="18" fill="#0072ff">503</text>
+          </svg>
+        </div>
+        <div class="maintenance-progress-section">
+          <span id="progress-label">Estimated Progress:</span>
+          <div class="progress maintenance-progress">
+            <div id="progress-bar" class="progress-bar maintenance-progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" title="Site maintenance progress">60%</div>
+          </div>
+        </div>
+        <ul class="maintenance-features">
+          <li><i class="fas fa-check-circle text-success"></i> <span class="feature-title">New features coming soon</span></li>
+          <li><i class="fas fa-shield-alt text-info"></i> <span class="feature-desc">Security upgrades in progress</span></li>
+          <li><i class="fas fa-sync-alt text-warning"></i> <span class="feature-desc">Performance improvements</span></li>
+        </ul>
+        <p class="maintenance-note text-muted">Please check back soon.<br>For urgent queries, contact me below:</p>
+        <div class="maintenance-contact-grid">
+          <a href="mailto:kulkarnishub377@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> kulkarnishub377@gmail.com</a>
+          <a href="Shubham_resume.pdf" class="contact-link" download><i class="fas fa-file-download"></i> Download Resume</a>
+          <a href="tel:+918308003684" class="contact-link"><i class="fas fa-phone"></i> +91 8308003684</a>
+          <a href="https://www.linkedin.com/in/shubhkulk21" class="contact-link" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/kulkarnishub377" target="_blank" rel="noopener" class="contact-link github-link" title="GitHub"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://wa.me/+918308003684" target="_blank" rel="noopener" class="contact-link whatsapp-link" title="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    // Copyright year
+    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    // Progress bar animation
+    var bar = document.getElementById('progress-bar');
+    var percent = 60;
+    var interval = setInterval(function() {
+      percent += Math.floor(Math.random()*3-1); // random walk
+      if(percent > 99) percent = 99;
+      bar.style.width = percent + '%';
+      bar.textContent = percent + '%';
+      bar.setAttribute('aria-valuenow', percent);
+    }, 1800);
+  </script>
+</body>
+</html>
