@@ -139,14 +139,14 @@ const PortfolioApp = {
             new Typed(typedEl, {
                 strings: [
                     "Electronics and Telecommunication Engineer",
-                    "Jr. Software Developer at Manasvi Tech Solution",
+                    "Software Developer at Arya Omnitalk",
                     "IoT and AI Innovator",
                     "Python Enthusiast and Automation Expert",
                     "AI/ML Developer | Deep Learning Practitioner",
                     "Machine Learning Model Builder",
-                    "OpenCV & Computer Vision Hobbyist",
+                    "OpenCV and Computer Vision Hobbyist",
                     "Building Smart Systems with Python",
-                    "Exploring Generative AI & LLMs"
+                    "Exploring Generative AI and LLMs"
                 ],
                 typeSpeed: 50,
                 backSpeed: 25,
