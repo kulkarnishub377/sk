@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Line-Following Robot — Design & Control</title>
+  <meta name="description" content="How to design and program a reliable line-following robot using Arduino Mega and IR sensors — hardware, sensors, and control strategies.">
+  <meta name="keywords" content="line following robot, Arduino, robotics, Shubham Kulkarni">
+  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/line-follower.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Line-Following Robot — Design & Control">
+  <meta property="og:description" content="Guide to building a line-following robot: sensor selection, algorithm design and practical tuning tips.">
+  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Line-Following Robot — Design & Control",
+    "description": "Design and programming details for a line-following robot using Arduino and IR sensors.",
+    "author": {"@type": "Person", "name": "Shubham Kulkarni"},
+    "publisher": {"@type": "Organization", "name": "Shubham Kulkarni", "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}},
+    "datePublished": "2024-12-11T00:00:00Z"
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <article class="mx-auto" style="max-width:900px;">
+        <header>
+          <h1>Line-Following Robot — Design & Control</h1>
+          <p class="text-muted"><i class="fas fa-calendar me-2"></i>Published Dec 11, 2024 · By <strong>Shubham Kulkarni</strong></p>
+        </header>
+
+        <figure class="mb-4 text-center">
+          <img src="../profile.jpg" alt="Line Follower" class="profile-img">
+        </figure>
+
+        <section>
+          <h2>Overview</h2>
+          <p>A practical robotics project using an Arduino Mega and IR sensors to track and follow lines. We focus on sensor placement, debouncing, PID-like control and robust tuning for different surfaces.</p>
+        </section>
+
+        <section>
+          <h2>Hardware & Sensors</h2>
+          <ul>
+            <li>Arduino Mega / Uno</li>
+            <li>IR reflectance sensors or QTR modules</li>
+            <li>Motor driver with encoder feedback for better control</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Control Strategy</h2>
+          <p>Simple proportional control on the error signal between left and right sensors works well. For better performance use PID and encoders, and perform surface-specific calibration.</p>
+        </section>
+
+        <section class="mt-4 bg-light p-3 rounded">
+          <h4>See the code</h4>
+          <p>Source & diagrams: <a href="https://github.com/kulkarnishub377/A_line_following_robot" target="_blank" rel="noopener">A_line_following_robot</a></p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="text-center py-4">
+    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+</body>
+</html>

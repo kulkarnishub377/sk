@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Smart Irrigation System — Case Study (JalTantra)</title>
+  <meta name="description" content="Case study of a Smart Irrigation System integrating IoT sensors, ML models and cloud deployment to reduce water usage.">
+  <meta name="keywords" content="smart irrigation, IoT, JalTantra, agriculture, Shubham Kulkarni">
+  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Smart Irrigation System — Case Study">
+  <meta property="og:description" content="A deep dive into the design and outcomes of JalTantra: real-time sensors, ML model and cloud architecture for optimized irrigation.">
+  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Smart Irrigation System — Case Study (JalTantra)",
+    "description": "Case study of JalTantra, an IoT-powered smart irrigation system that optimizes water usage.",
+    "author": {"@type": "Person", "name": "Shubham Kulkarni"},
+    "publisher": {"@type": "Organization", "name": "Shubham Kulkarni", "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}},
+    "datePublished": "2024-12-11T00:00:00Z"
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="../iot-projects.html">IoT Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <article class="mx-auto" style="max-width:900px;">
+        <header>
+          <h1>Smart Irrigation System — Case Study (JalTantra)</h1>
+          <p class="text-muted"><i class="fas fa-calendar me-2"></i>Published Dec 11, 2024 · By <strong>Shubham Kulkarni</strong></p>
+        </header>
+
+        <figure class="mb-4 text-center">
+          <img src="../profile.jpg" alt="Smart Irrigation" class="profile-img">
+          <figcaption class="small text-muted mt-2">JalTantra — Smart Irrigation</figcaption>
+        </figure>
+
+        <section>
+          <h2>Project Summary</h2>
+          <p>JalTantra is an IoT-powered irrigation project integrating soil moisture sensors, weather APIs, a predictive ML model and AWS IoT Core. It reduced water usage by ~30% in trials and won recognition at SPPU and Smart India Hackathon.</p>
+        </section>
+
+        <section>
+          <h2>Architecture & Components</h2>
+          <ul>
+            <li>Hardware: Raspberry Pi, soil moisture sensors, relay modules</li>
+            <li>Edge Software: Python scripts for sensor reading and local decision logic</li>
+            <li>ML Model: Predictive model to decide irrigation schedule based on sensor data and weather inputs</li>
+            <li>Cloud: AWS IoT Core for device management and data streaming</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Results & Lessons</h2>
+          <p>In-field analysis showed a 30% drop in water usage where the system was deployed. Important lessons: robust sensor calibration, handling noisy streams, and designing fallback behavior for connectivity loss.</p>
+        </section>
+
+        <section class="mt-4 bg-light p-3 rounded">
+          <h4>Get the code / demo</h4>
+          <p>Live demo: <a href="https://kulkarnishub377.github.io/JalTantra/" target="_blank" rel="noopener">JalTantra Live</a>. For source code, check the repository linked from the project's demo page.</p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="text-center py-4">
+    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+</body>
+</html>

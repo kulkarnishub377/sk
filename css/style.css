@@ -473,7 +473,14 @@ h1, h2, h3, h4, h5, h6 {
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .profile-img:hover {
-    transform: scale(1.08) rotate(5deg);
+    /* Subtle professional hover effect */
+    transform: scale(1.04);
+}
+
+/* Larger profile image variant for headers */
+.profile-img-lg {
+    width: 360px;
+    height: 360px;
 }
 
 /* Buttons */

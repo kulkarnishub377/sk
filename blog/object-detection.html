@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Real-Time Object Detection with OpenCV — Shubham Kulkarni</title>
+  <meta name="description" content="Step-by-step guide to building a real-time object detection system using OpenCV and deep learning models — tips for data, model selection, and deployment.">
+  <meta name="keywords" content="object detection, OpenCV, real-time detection, Shubham Kulkarni, computer vision, tutorial">
+  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/object-detection.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Real-Time Object Detection with OpenCV">
+  <meta property="og:description" content="Build and deploy a real-time object detection system using OpenCV and efficient deep learning models.">
+  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Real-Time Object Detection with OpenCV",
+    "description": "Step-by-step guide to building a real-time object detection system using OpenCV and deep learning models.",
+    "author": {"@type": "Person", "name": "Shubham Kulkarni"},
+    "publisher": {"@type": "Organization", "name": "Shubham Kulkarni", "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}},
+    "datePublished": "2024-12-11T00:00:00Z"
+  }
+  </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../blog/index.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="../ai-projects.html">AI Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <article class="mx-auto" style="max-width:900px;">
+        <header>
+          <h1>Real-Time Object Detection with OpenCV</h1>
+          <p class="text-muted"><i class="fas fa-calendar me-2"></i>Published Dec 11, 2024 · By <strong>Shubham Kulkarni</strong></p>
+        </header>
+
+        <figure class="mb-4 text-center">
+          <img src="../profile.jpg" alt="Object Detection" class="profile-img">
+          <figcaption class="small text-muted mt-2">Real-time object detection demo</figcaption>
+        </figure>
+
+        <section>
+          <h2>Overview</h2>
+          <p>This post explains how to build a real-time object detection pipeline using OpenCV and an efficient deep-learning model. It includes tips on data, model choice, performance tuning, and deployment options.</p>
+        </section>
+
+        <section>
+          <h2>Key steps</h2>
+          <ol>
+            <li>Collect and prepare labeled data (COCO, VOC or custom datasets).</li>
+            <li>Choose a model: YOLOv5/YOLOv8, MobileNet-SSD, or TensorFlow Lite for edge devices.</li>
+            <li>Optimize inference: use ONNX/TensorRT or move to GPU where available.</li>
+            <li>Use OpenCV for video capture, pre-processing and visualization.</li>
+            <li>Package the model with a lightweight server (Flask/Gunicorn + Docker) for production.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Resources & Code</h2>
+          <p>Repository: <a href="https://github.com/kulkarnishub377/Python_object_detection" target="_blank" rel="noopener">Python_object_detection</a>. Check the README in the repository for step-by-step instructions and sample scripts.</p>
+        </section>
+
+        <section class="mt-4 bg-light p-3 rounded">
+          <h4>Want help building this?</h4>
+          <p>If you'd like a customized solution or deployment for your dataset, <a href="../index.html#contact">get in touch</a> — I provide prototyping and production-ready model deployment.</p>
+        </section>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="text-center py-4">
+    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
+  </footer>
+  <script src="../js/script.js"></script>
+  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+</body>
+</html>

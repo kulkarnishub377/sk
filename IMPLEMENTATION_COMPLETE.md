@@ -84,6 +84,13 @@ All SEO optimizations have been successfully implemented according to the requir
 - Content: ATMS, Object Detection, Mental Health Tracker, AI Learning
 - Canonical URL and full metadata
 
+✅ **New blog posts added**
+- `/blog/index.html` (blog landing page)
+- `/blog/object-detection.html` (Real-Time Object Detection walkthrough)
+- `/blog/smart-irrigation.html` (Smart Irrigation case study — JalTantra)
+- `/blog/line-follower.html` (Line-Following Robot design notes)
+- `/blog/dev-notes.html` (Developer notes & ML deployment best practices)
+
 ✅ **iot-projects.html Created**
 - Title: "IoT Projects by Shubham Kulkarni"
 - Name mentioned 30+ times naturally

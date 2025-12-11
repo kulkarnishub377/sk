@@ -1,127 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+    xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+    xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
-    <!-- Homepage -->
+
+    <!-- Canonical Homepage -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+    <loc>https://kulkarnishub377.github.io/sk/</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <!-- Alternate language versions (example) -->
+    <xhtml:link rel="alternate" hreflang="en" href="https://kulkarnishub377.github.io/sk/"/>
     </url>
-    
-    <!-- Main page -->
+
+    <!-- Index (kept for explicit URL) -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/index.html</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
+    <loc>https://kulkarnishub377.github.io/sk/index.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
     </url>
-    
-    <!-- About Section -->
+
+    <!-- About -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#about</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+    <loc>https://kulkarnishub377.github.io/sk/about.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+        <image:loc>https://kulkarnishub377.github.io/sk/assets/images/profile.jpg</image:loc>
+        <image:caption>Shubham Kulkarni — profile image</image:caption>
+    </image:image>
     </url>
-    
-    <!-- Experience Section -->
+
+    <!-- Contact -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#experience</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+    <loc>https://kulkarnishub377.github.io/sk/contact.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
     </url>
-    
-    <!-- Skills Section -->
+
+    <!-- Projects main -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#skills</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+    <loc>https://kulkarnishub377.github.io/sk/projects.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
     </url>
-    
-    <!-- Projects Section -->
+
+    <!-- AI Projects (list) -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#projects</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+    <loc>https://kulkarnishub377.github.io/sk/ai-projects.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
     </url>
-    
-    <!-- Education Section -->
+
+    <!-- Example AI project detail page -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#education</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.7</priority>
+    <loc>https://kulkarnishub377.github.io/sk/projects/ai-chatbot.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+        <image:loc>https://kulkarnishub377.github.io/sk/assets/images/ai-chatbot-screenshot.png</image:loc>
+        <image:caption>AI Chatbot demo screenshot</image:caption>
+    </image:image>
     </url>
-    
-    <!-- Certifications Section -->
+
+    <!-- IoT projects list -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#certifications</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+    <loc>https://kulkarnishub377.github.io/sk/iot-projects.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
     </url>
-    
-    <!-- Contact Section -->
+
+    <!-- Example IoT project detail -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/#contact</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.8</priority>
+    <loc>https://kulkarnishub377.github.io/sk/projects/iot-weather-station.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+        <image:loc>https://kulkarnishub377.github.io/sk/assets/images/weather-station.png</image:loc>
+        <image:caption>IoT Weather Station</image:caption>
+    </image:image>
     </url>
-    
-    <!-- About Page -->
+
+    <!-- Resume and PDF assets -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/about.html</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.95</priority>
+    <loc>https://kulkarnishub377.github.io/sk/Shubham_resume.pdf</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
     </url>
-    
-    <!-- AI Projects Blog -->
+
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/ai-projects.html</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+    <loc>https://kulkarnishub377.github.io/sk/Alumni_app.pdf</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
     </url>
-    
-    <!-- IoT Projects Blog -->
+
+    <!-- Blog/news items — add Google News metadata for recent posts -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/iot-projects.html</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
+    <loc>https://kulkarnishub377.github.io/sk/blog/ai-nlp-intro.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <news:news>
+        <news:publication>
+        <news:name>Shubham Kulkarni Blog</news:name>
+        <news:language>en</news:language>
+        </news:publication>
+        <news:publication_date>2025-12-11T00:00:00+00:00</news:publication_date>
+        <news:title>Introduction to NLP and AI projects</news:title>
+    </news:news>
     </url>
-    
-    <!-- Resume PDF -->
+
+    <!-- RSS / Feed -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/Shubham_resume.pdf</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+    <loc>https://kulkarnishub377.github.io/sk/feed.xml</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
     </url>
-    
-    <!-- Alumni App PDF -->
+
+    <!-- Blog index and new posts -->
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/Alumni_app.pdf</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.5</priority>
+    <loc>https://kulkarnishub377.github.io/sk/blog/index.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
     </url>
-    
-    <!-- Demo Page -->
+
     <url>
-        <loc>https://kulkarnishub377.github.io/sk/demo.html</loc>
-        <lastmod>2025-12-11</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.3</priority>
+    <loc>https://kulkarnishub377.github.io/sk/blog/object-detection.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    </url>
+
+    <url>
+    <loc>https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    </url>
+
+    <url>
+    <loc>https://kulkarnishub377.github.io/sk/blog/line-follower.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    </url>
+
+    <url>
+    <loc>https://kulkarnishub377.github.io/sk/blog/dev-notes.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    </url>
+
+    <!-- Demo page -->
+    <url>
+    <loc>https://kulkarnishub377.github.io/sk/demo.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    </url>
+
+    <!-- 404 page (helps crawlers detect site structure) -->
+    <url>
+    <loc>https://kulkarnishub377.github.io/sk/404.html</loc>
+    <lastmod>2025-12-11T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
     </url>
 
 </urlset>
