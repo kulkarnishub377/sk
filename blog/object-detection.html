@@ -5,8 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Real-Time Object Detection with OpenCV — Shubham Kulkarni</title>
   <meta name="description" content="Step-by-step guide to building a real-time object detection system using OpenCV and deep learning models — tips for data, model selection, and deployment.">
-  <meta name="keywords" content="object detection, OpenCV, real-time detection, Shubham Kulkarni, computer vision, tutorial">
+  <meta name="keywords" content="object detection, OpenCV, real-time detection, Shubham Kulkarni, computer vision, tutorial, YOLO, deep learning">
+  <meta name="author" content="Shubham Kulkarni">
   <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/object-detection.html">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Real-Time Object Detection with OpenCV">
   <meta property="og:description" content="Build and deploy a real-time object detection system using OpenCV and efficient deep learning models.">
@@ -14,6 +16,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -22,7 +25,9 @@
     "description": "Step-by-step guide to building a real-time object detection system using OpenCV and deep learning models.",
     "author": {"@type": "Person", "name": "Shubham Kulkarni"},
     "publisher": {"@type": "Organization", "name": "Shubham Kulkarni", "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}},
-    "datePublished": "2024-12-11T00:00:00Z"
+    "datePublished": "2024-12-11T00:00:00Z",
+    "dateModified": "2024-12-11T00:00:00Z",
+    "keywords": ["object detection", "OpenCV", "computer vision", "deep learning", "YOLO"]
   }
   </script>
 </head>
@@ -46,14 +51,35 @@
 
   <main class="py-5">
     <div class="container">
-      <article class="mx-auto" style="max-width:900px;">
-        <header>
-          <h1>Real-Time Object Detection with OpenCV</h1>
-          <p class="text-muted"><i class="fas fa-calendar me-2"></i>Published Dec 11, 2024 · By <strong>Shubham Kulkarni</strong></p>
+      <article class="blog-post-content mx-auto" style="max-width:900px;">
+        <header class="blog-post-header">
+          <h1 class="blog-post-title">Real-Time Object Detection with OpenCV</h1>
+          <div class="blog-post-meta">
+            <span class="blog-card-category">Computer Vision</span>
+            <div class="blog-post-author">
+              <img src="../profile.jpg" alt="Shubham Kulkarni" class="blog-post-author-avatar">
+              <span><strong>Shubham Kulkarni</strong></span>
+            </div>
+            <span><i class="fas fa-calendar-alt"></i> December 11, 2024</span>
+            <span class="blog-reading-time"><i class="fas fa-clock"></i> 8 min read</span>
+          </div>
         </header>
 
+        <!-- Social Share Buttons -->
+        <div class="blog-social-share">
+          <a href="#" class="social-share-btn share-twitter" data-share="twitter">
+            <i class="fab fa-twitter"></i> Share on Twitter
+          </a>
+          <a href="#" class="social-share-btn share-linkedin" data-share="linkedin">
+            <i class="fab fa-linkedin"></i> Share on LinkedIn
+          </a>
+          <a href="#" class="social-share-btn share-copy" data-share="copy">
+            <i class="fas fa-link"></i> Copy Link
+          </a>
+        </div>
+
         <figure class="mb-4 text-center">
-          <img src="../profile.jpg" alt="Object Detection" class="profile-img">
+          <img src="../profile.jpg" alt="Object Detection" class="blog-post-image">
           <figcaption class="small text-muted mt-2">Real-time object detection demo</figcaption>
         </figure>
 
@@ -78,6 +104,18 @@
           <p>Repository: <a href="https://github.com/kulkarnishub377/Python_object_detection" target="_blank" rel="noopener">Python_object_detection</a>. Check the README in the repository for step-by-step instructions and sample scripts.</p>
         </section>
 
+        <section>
+          <h2>Technologies Used</h2>
+          <div class="blog-tags">
+            <span class="blog-tag">OpenCV</span>
+            <span class="blog-tag">Python</span>
+            <span class="blog-tag">YOLO</span>
+            <span class="blog-tag">Deep Learning</span>
+            <span class="blog-tag">Computer Vision</span>
+            <span class="blog-tag">TensorFlow</span>
+          </div>
+        </section>
+
         <section class="mt-4 bg-light p-3 rounded">
           <h4>Want help building this?</h4>
           <p>If you'd like a customized solution or deployment for your dataset, <a href="../index.html#contact">get in touch</a> — I provide prototyping and production-ready model deployment.</p>
@@ -91,6 +129,7 @@
     <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
   </footer>
   <script src="../js/script.js"></script>
+  <script src="../js/blog.js"></script>
   <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
 </body>
 </html>
