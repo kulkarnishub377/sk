@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Video Processing & Analysis with AI — Shubham Kulkarni</title>
-  <meta name="description" content="Advanced techniques for video analytics including motion detection, activity recognition, and real-time processing using deep learning models and OpenCV.">
-  <meta name="keywords" content="video processing, computer vision, AI, motion detection, activity recognition, OpenCV, deep learning, Shubham Kulkarni">
+  <title>VIDES: Vehicle Image Detection System — Shubham Kulkarni</title>
+  <meta name="description" content="Production-grade vehicle detection and tracking system for building perfect AI training datasets using YOLO, OpenCV, and advanced multi-object tracking.">
+  <meta name="keywords" content="vehicle detection, VIDES, YOLO, ByteTrack, computer vision, AI training datasets, RTSP streams, Shubham Kulkarni">
   <meta name="author" content="Shubham Kulkarni">
-  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/video-processing.html">
+  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Video Processing & Analysis with AI">
-  <meta property="og:description" content="Advanced techniques for video analytics using AI and computer vision.">
+  <meta property="og:title" content="VIDES: Vehicle Image Detection System">
+  <meta property="og:description" content="Production-grade vehicle detection and tracking system with multi-camera support and advanced quality control.">
   <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="manifest" href="/site.webmanifest">
@@ -21,8 +21,8 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Video Processing & Analysis with AI",
-    "description": "Advanced techniques for video analytics including motion detection, activity recognition, and real-time processing using deep learning.",
+    "headline": "VIDES: Vehicle Image Detection System",
+    "description": "Production-grade vehicle detection and tracking system for building perfect AI training datasets.",
     "author": {"@type": "Person", "name": "Shubham Kulkarni"},
     "publisher": {
       "@type": "Organization", 
@@ -31,7 +31,7 @@
     },
     "datePublished": "2024-12-08T00:00:00Z",
     "dateModified": "2024-12-08T00:00:00Z",
-    "keywords": ["video processing", "computer vision", "AI", "deep learning", "OpenCV"]
+    "keywords": ["vehicle detection", "YOLO", "computer vision", "ByteTrack", "AI training", "RTSP"]
   }
   </script>
 </head>
@@ -58,7 +58,7 @@
       <article class="blog-post-content mx-auto" style="max-width:900px;">
         <!-- Article Header -->
         <header class="blog-post-header">
-          <h1 class="blog-post-title">Video Processing & Analysis with AI: From Motion Detection to Activity Recognition</h1>
+          <h1 class="blog-post-title">VIDES: Professional Vehicle Image Detection System</h1>
           <div class="blog-post-meta">
             <span class="blog-card-category">AI & ML</span>
             <div class="blog-post-author">
@@ -85,9 +85,346 @@
 
         <!-- Article Content -->
         <section>
-          <h2>Introduction to Video Analytics</h2>
-          <p>Video processing and analysis have become critical components of modern AI applications, from surveillance systems to autonomous vehicles. This comprehensive guide explores advanced techniques for extracting meaningful insights from video data using computer vision and deep learning.</p>
+          <h2>Introduction to VIDES</h2>
+          <p>The Vehicle Image Detection System (VIDES) is a production-grade vehicle detection and tracking system designed specifically for building high-quality AI training datasets. This comprehensive system handles multiple RTSP camera streams simultaneously, employs advanced tracking algorithms to prevent duplicate captures, and implements sophisticated quality control mechanisms to ensure every saved image is perfect for machine learning model training.</p>
         </section>
+
+        <section>
+          <h2>System Architecture</h2>
+          <h3>Modular Design</h3>
+          <p>VIDES follows a clean, modular architecture with clear separation of concerns:</p>
+          <pre><code>├── main.py              # System orchestrator
+├── config.py            # Configuration management
+├── stream_reader.py     # RTSP stream handling
+├── roi_manager.py       # ROI management
+├── tracker.py           # Advanced vehicle tracking
+└── utils.py             # Utility functions</code></pre>
+          
+          <p>This architecture ensures maintainability, scalability, and ease of testing while providing production-grade reliability.</p>
+        </section>
+
+        <section>
+          <h2>Core Features</h2>
+          <h3>1. Multi-Camera Support</h3>
+          <p>VIDES can simultaneously process multiple RTSP streams from different cameras, making it ideal for large-scale surveillance or traffic monitoring systems. Each camera operates independently with its own configuration:</p>
+          <pre><code>CAMERAS = {
+    "overview": "rtsp://admin:password@192.168.1.100:554/stream1",
+    "anpr": "rtsp://admin:password@192.168.1.101:554/stream1",
+    "ptz": "rtsp://admin:password@192.168.1.102:554/stream1"
+}</code></pre>
+
+          <h3>2. Advanced Vehicle Tracking</h3>
+          <p>The system uses ByteTrack combined with Kalman filtering to achieve zero-duplicate tracking. Each vehicle is assigned a unique ID and tracked throughout its journey in the frame:</p>
+          <ul>
+            <li><strong>ByteTrack Algorithm:</strong> Multi-object tracking with ID persistence</li>
+            <li><strong>Kalman Filtering:</strong> Smooth trajectory prediction for handling occlusions</li>
+            <li><strong>IoU Association:</strong> Match detections to existing tracks</li>
+            <li><strong>Lost Track Management:</strong> Automatic cleanup of stale tracks after 30 frames</li>
+          </ul>
+
+          <h3>3. ROI-Based Filtering</h3>
+          <p>Users can draw custom polygon regions of interest (ROI) for each camera. Only vehicles with their center point inside the ROI are tracked and saved, eliminating irrelevant detections:</p>
+          <ul>
+            <li>Interactive ROI drawing with mouse clicks</li>
+            <li>Support for complex polygon shapes</li>
+            <li>Per-camera ROI configuration saved to JSON</li>
+            <li>Real-time visualization of active ROIs</li>
+          </ul>
+
+          <h3>4. Quality Control</h3>
+          <p>VIDES implements rigorous quality checks to ensure only high-quality images are saved for training:</p>
+          <ul>
+            <li><strong>Blur Detection:</strong> Laplacian variance analysis (threshold: 100+)</li>
+            <li><strong>Brightness Validation:</strong> Ensures proper illumination (30-220 range)</li>
+            <li><strong>Stationary Vehicle Filtering:</strong> Rejects parked vehicles with minimal movement</li>
+            <li><strong>Resolution Check:</strong> Validates minimum vehicle size requirements</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Implementation Details</h2>
+          <h3>Detection Pipeline</h3>
+          <p>The system uses a custom-trained YOLO model for vehicle detection with the following classes:</p>
+          <pre><code># Custom Vehicle Classes
+VEHICLE_CLASSES = [
+    'auto_rickshaw',
+    'bike',
+    'bus',
+    'car',
+    'mini_bus',
+    'tractor',
+    'truck'
+]
+
+# YOLO Configuration
+CONFIDENCE_THRESHOLD = 0.5
+IOU_THRESHOLD = 0.45
+MODEL_PATH = 'bestv4.pt'</code></pre>
+
+          <h3>Multi-Threading Architecture</h3>
+          <p>For optimal performance, VIDES uses a multi-threaded approach:</p>
+          <pre><code>class StreamReader(Thread):
+    def __init__(self, stream_url, camera_id):
+        super().__init__(daemon=True)
+        self.stream_url = stream_url
+        self.camera_id = camera_id
+        self.latest_frame = None
+        self.lock = Lock()
+        
+    def run(self):
+        cap = cv2.VideoCapture(self.stream_url)
+        while self.running:
+            ret, frame = cap.read()
+            if ret:
+                with self.lock:
+                    self.latest_frame = frame
+            else:
+                self.reconnect()
+                
+    def get_frame(self):
+        with self.lock:
+            return self.latest_frame.copy() if self.latest_frame is not None else None</code></pre>
+        </section>
+
+        <section>
+          <h2>Advanced Capabilities</h2>
+          <h3>Speed Estimation</h3>
+          <p>VIDES can estimate vehicle speed in real-time using pixel displacement and calibrated distance:</p>
+          <pre><code>def estimate_speed(track_id, current_pos, previous_pos, fps):
+    # Calculate pixel displacement
+    dx = current_pos[0] - previous_pos[0]
+    dy = current_pos[1] - previous_pos[1]
+    pixel_distance = np.sqrt(dx**2 + dy**2)
+    
+    # Convert to real-world distance
+    real_distance = pixel_distance / PIXELS_PER_METER
+    
+    # Calculate speed (m/s to km/h)
+    speed_mps = real_distance * fps
+    speed_kmh = speed_mps * 3.6
+    
+    return speed_kmh</code></pre>
+
+          <h3>Direction Detection</h3>
+          <p>The system provides 8-way direction classification for vehicle movement:</p>
+          <ul>
+            <li>North, South, East, West</li>
+            <li>Northeast, Northwest, Southeast, Southwest</li>
+            <li>Based on trajectory analysis over multiple frames</li>
+          </ul>
+
+          <h3>Trajectory Analysis</h3>
+          <p>Vehicle paths are smoothed and analyzed for pattern recognition:</p>
+          <ul>
+            <li>Path smoothing using moving average</li>
+            <li>Turn detection and classification</li>
+            <li>Lane change identification</li>
+            <li>Abnormal behavior detection</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Dataset Generation</h2>
+          <h3>Output Structure</h3>
+          <p>VIDES organizes captured images in a clean, camera-wise folder structure:</p>
+          <pre><code>images/
+├── frame/          # Full frame captures
+│   ├── overview/
+│   │   ├── frame_0.jpg
+│   │   ├── frame_1.jpg
+│   │   └── ...
+│   ├── anpr/
+│   └── ptz/
+└── cropped/        # Vehicle crops
+    ├── overview/
+    │   ├── frame_0.jpg
+    │   ├── frame_1.jpg
+    │   └── ...
+    ├── anpr/
+    └── ptz/</code></pre>
+
+          <h3>Image Quality Settings</h3>
+          <pre><code># Maximum quality for training datasets
+JPEG_QUALITY = 100
+IMAGE_FORMAT = 'jpg'  # or 'png' for lossless
+
+# Alternative: PNG for lossless compression
+USE_PNG = False  # Set to True for maximum quality</code></pre>
+        </section>
+
+        <section>
+          <h2>Real-World Applications</h2>
+          <h3>1. Traffic Monitoring Systems</h3>
+          <ul>
+            <li>Highway traffic analysis and counting</li>
+            <li>Intersection vehicle flow monitoring</li>
+            <li>Traffic violation detection</li>
+            <li>Congestion analysis</li>
+          </ul>
+
+          <h3>2. Dataset Creation for AI Training</h3>
+          <ul>
+            <li>Building large-scale vehicle detection datasets</li>
+            <li>Creating annotated training data for YOLO models</li>
+            <li>Gathering diverse vehicle type samples</li>
+            <li>Collecting different lighting and weather conditions</li>
+          </ul>
+
+          <h3>3. Smart City Infrastructure</h3>
+          <ul>
+            <li>Parking lot management</li>
+            <li>Automatic Number Plate Recognition (ANPR) integration</li>
+            <li>Security and surveillance</li>
+            <li>Emergency vehicle detection</li>
+          </ul>
+
+          <h3>4. Research Applications</h3>
+          <ul>
+            <li>Transportation research</li>
+            <li>Urban planning studies</li>
+            <li>Environmental impact analysis</li>
+            <li>Behavioral pattern research</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Performance Optimization</h2>
+          <h3>For Maximum FPS</h3>
+          <pre><code># Configuration for speed
+BUFFER_SIZE = 1           # Lower latency
+DEVICE = "0"              # Use GPU
+ENABLE_QUALITY_CHECK = False  # Skip quality validation
+RESIZE_WIDTH = 640        # Lower resolution</code></pre>
+
+          <h3>For Best Quality</h3>
+          <pre><code># Configuration for quality
+MIN_BLUR_THRESHOLD = 150   # Stricter blur check
+ENABLE_QUALITY_CHECK = True
+USE_PNG = True            # Lossless format
+RESIZE_WIDTH = 1920       # Full HD resolution</code></pre>
+
+          <h3>Multi-Threading Benefits</h3>
+          <ul>
+            <li>Each camera has a dedicated capture thread</li>
+            <li>Minimal buffer size for low latency (latest frame always available)</li>
+            <li>Lock-free reads for maximum throughput</li>
+            <li>Asynchronous image saving doesn't block processing</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Statistics and Monitoring</h2>
+          <p>VIDES provides comprehensive statistics for system monitoring:</p>
+          <h3>Real-Time Metrics</h3>
+          <ul>
+            <li>FPS per camera stream</li>
+            <li>Active vehicle tracks</li>
+            <li>Total vehicles detected</li>
+            <li>Frames saved count</li>
+            <li>Rejection statistics</li>
+            <li>Processing latency</li>
+          </ul>
+
+          <h3>Logging System</h3>
+          <pre><code># Detailed logging to file and console
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('vehicle_capture.log'),
+        logging.StreamHandler()
+    ]
+)</code></pre>
+        </section>
+
+        <section>
+          <h2>Best Practices</h2>
+          <ol>
+            <li><strong>ROI Placement:</strong> Draw tight ROIs around lanes of interest for better accuracy</li>
+            <li><strong>Camera Angles:</strong> Prefer frontal or rear views for better vehicle recognition</li>
+            <li><strong>Lighting:</strong> Ensure adequate lighting; use IR cameras for night operations</li>
+            <li><strong>Storage:</strong> Use SSD storage for fast image write operations</li>
+            <li><strong>Network:</strong> Ensure stable network connection for RTSP streams</li>
+            <li><strong>Calibration:</strong> Calibrate pixels_per_meter for accurate speed estimation</li>
+            <li><strong>Monitoring:</strong> Regularly check statistics and logs for system health</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>System Requirements</h2>
+          <h3>Hardware</h3>
+          <ul>
+            <li><strong>CPU:</strong> Intel i5 or better (i7/i9 recommended for multiple cameras)</li>
+            <li><strong>RAM:</strong> 8GB minimum, 16GB+ recommended</li>
+            <li><strong>GPU:</strong> NVIDIA GPU with CUDA support (optional but recommended)</li>
+            <li><strong>Storage:</strong> SSD with sufficient space (100GB+ for large datasets)</li>
+            <li><strong>Network:</strong> Stable connection for RTSP streams</li>
+          </ul>
+
+          <h3>Software</h3>
+          <ul>
+            <li>Python 3.8 or higher</li>
+            <li>Ultralytics YOLO</li>
+            <li>OpenCV (cv2)</li>
+            <li>NumPy</li>
+            <li>Custom trained YOLO model (bestv4.pt)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Installation and Setup</h2>
+          <h3>Quick Start</h3>
+          <pre><code># Install dependencies
+pip install ultralytics opencv-python numpy
+
+# Clone the repository
+git clone https://github.com/kulkarnishub377/Image_collection_vechile_dectetion.git
+cd Image_collection_vechile_dectetion
+
+# Configure cameras in config.py
+# Run the system
+python main.py
+
+# Draw ROIs for each camera
+# Press 'q' to quit, 's' for statistics</code></pre>
+        </section>
+
+        <section>
+          <h2>Technologies Used</h2>
+          <div class="blog-tags">
+            <span class="blog-tag">YOLO</span>
+            <span class="blog-tag">Ultralytics</span>
+            <span class="blog-tag">OpenCV</span>
+            <span class="blog-tag">Python</span>
+            <span class="blog-tag">ByteTrack</span>
+            <span class="blog-tag">Kalman Filter</span>
+            <span class="blog-tag">RTSP</span>
+            <span class="blog-tag">Computer Vision</span>
+            <span class="blog-tag">NumPy</span>
+            <span class="blog-tag">Multi-threading</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Future Enhancements</h2>
+          <ul>
+            <li>Deep learning-based quality assessment</li>
+            <li>Automated ANPR integration</li>
+            <li>Cloud storage support (AWS S3, Azure Blob)</li>
+            <li>Web-based monitoring dashboard</li>
+            <li>Mobile app for remote monitoring</li>
+            <li>Integration with traffic management systems</li>
+          </ul>
+        </section>
+
+        <section class="mt-4 bg-light p-3 rounded">
+          <h4>Need a Custom Vehicle Detection Solution?</h4>
+          <p>If you're working on traffic monitoring, smart city projects, or need a customized vehicle detection system, <a href="../index.html#contact">let's connect</a>! I specialize in building production-ready computer vision systems.</p>
+        </section>
+
+      </article>
+    </div>
+  </main>
 
         <section>
           <h2>Core Concepts in Video Processing</h2>

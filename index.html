@@ -684,10 +684,10 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-video me-2" aria-hidden="true"></i>Video Processing & AI Analytics</h5>
-                                <p class="card-text">Advanced video analytics system using computer vision for motion detection, object tracking, and activity recognition in real-time.</p>
+                                <h5 class="card-title"><i class="fas fa-car me-2" aria-hidden="true"></i>VIDES: Vehicle Detection System</h5>
+                                <p class="card-text">Production-grade vehicle detection and tracking system with multi-camera RTSP support, ByteTrack algorithm, and quality control for AI training datasets.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
-                                    <a href="blog/video-processing.html" class="btn btn-gradient btn-sm">Read More</a>
+                                    <a href="blog/vehicle-detection-system.html" class="btn btn-gradient btn-sm">Read More</a>
                                     <a href="#project7Modal" class="btn btn-secondary-outline btn-sm" data-bs-toggle="modal">Details</a>
                                 </div>
                             </div>
@@ -1186,34 +1186,47 @@
         </div>
     </div>
 
-    <!-- Video Processing & AI Analytics Modal -->
+    <!-- VIDES: Vehicle Detection System Modal -->
     <div class="modal fade" id="project7Modal" tabindex="-1" aria-labelledby="project7ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="project7ModalLabel"><i class="fas fa-video me-2" aria-hidden="true"></i>Video Processing & AI Analytics</h5>
+                    <h5 class="modal-title" id="project7ModalLabel"><i class="fas fa-car me-2" aria-hidden="true"></i>VIDES: Vehicle Image Detection System</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Advanced video analytics system leveraging computer vision and deep learning for real-time video processing, motion detection, object tracking, and activity recognition. Applicable to surveillance, traffic monitoring, sports analytics, and healthcare.</p>
-                    <strong>Capabilities:</strong>
+                    <p>A production-grade vehicle detection and tracking system designed for building high-quality AI training datasets. VIDES handles multiple RTSP camera streams simultaneously with advanced tracking algorithms to prevent duplicates and sophisticated quality control mechanisms.</p>
+                    <strong>Key Features:</strong>
                     <ul>
-                        <li>Real-time motion detection and background subtraction</li>
-                        <li>Multi-object tracking with Deep SORT algorithm</li>
-                        <li>Human activity recognition using 3D CNNs</li>
-                        <li>Optical flow analysis for movement patterns</li>
-                        <li>GPU-accelerated processing for real-time performance</li>
+                        <li>Multi-camera RTSP stream support with independent processing</li>
+                        <li>ByteTrack + Kalman filtering for zero-duplicate tracking</li>
+                        <li>ROI-based filtering with custom polygon drawing</li>
+                        <li>Quality control: blur detection, brightness check, stationary vehicle filtering</li>
+                        <li>Real-time speed estimation and direction detection</li>
+                        <li>Custom YOLO model supporting 7 vehicle classes (auto_rickshaw, bike, bus, car, mini_bus, tractor, truck)</li>
+                        <li>High-performance multi-threaded architecture</li>
+                        <li>Organized dataset generation with camera-wise folder structure</li>
                     </ul>
                     <strong>Technologies:</strong>
                     <ul>
-                        <li>OpenCV, PyTorch, TensorFlow</li>
-                        <li>YOLO, Deep SORT, MediaPipe</li>
-                        <li>Python, CUDA, NumPy</li>
-                        <li>Video stream processing and analysis</li>
+                        <li>Ultralytics YOLO for vehicle detection</li>
+                        <li>ByteTrack for multi-object tracking</li>
+                        <li>OpenCV for image processing and RTSP streaming</li>
+                        <li>Python with multi-threading for optimal performance</li>
+                        <li>Kalman filters for trajectory smoothing</li>
+                        <li>NumPy for numerical computations</li>
+                    </ul>
+                    <strong>Applications:</strong>
+                    <ul>
+                        <li>Traffic monitoring and analysis systems</li>
+                        <li>AI training dataset creation</li>
+                        <li>Smart city infrastructure</li>
+                        <li>ANPR (Automatic Number Plate Recognition) integration</li>
+                        <li>Parking management systems</li>
                     </ul>
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
-                    <a href="blog/video-processing.html" class="btn btn-gradient">Read Full Article</a>
+                    <a href="blog/vehicle-detection-system.html" class="btn btn-gradient">Read Full Article</a>
                     <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
