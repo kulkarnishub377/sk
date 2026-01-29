@@ -3,16 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Shubham Kulkarni</title>
-  <meta name="description" content="Developer blog by Shubham Kulkarni: AI/ML, Computer Vision, IoT, tutorials, and case studies.">
-  <meta name="keywords" content="Shubham Kulkarni blog, AI tutorials, IoT case studies, computer vision blog, developer articles">
-  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/index.html">
-  <meta name="robots" content="index,follow">
-  <meta property="og:title" content="Developer Blog — Shubham Kulkarni">
-  <meta property="og:description" content="Read technical posts, case studies and tutorials on AI, Computer Vision, IoT and more by Shubham Kulkarni.">
+  <title>Developer Blog - AI, IoT & Tech Insights by Shubham Kulkarni</title>
+  <meta name="description" content="Explore in-depth articles on AI/ML, Computer Vision, IoT, E-Waste Management, and Software Development. Learn from real-world projects and tutorials by Shubham Kulkarni.">
+  <meta name="keywords" content="Shubham Kulkarni blog, AI tutorials, IoT projects, computer vision, e-waste management, video processing, machine learning, Python development, tech articles">
+  <meta name="author" content="Shubham Kulkarni">
+  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/">
+  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/">
+  <meta property="og:title" content="Developer Blog — AI, IoT & Tech Insights by Shubham Kulkarni">
+  <meta property="og:description" content="Read technical posts, case studies and tutorials on AI, Computer Vision, IoT, E-Waste Management and more by Shubham Kulkarni.">
   <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
+  <meta property="og:site_name" content="Shubham Kulkarni Blog">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Developer Blog — AI, IoT & Tech Insights">
+  <meta name="twitter:description" content="Technical articles and tutorials on AI/ML, IoT, Computer Vision, and more.">
+  <meta name="twitter:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
+  
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "Shubham Kulkarni Developer Blog",
+    "description": "Technical blog covering AI/ML, IoT, Computer Vision, E-Waste Management, and Software Development",
+    "url": "https://kulkarnishub377.github.io/sk/blog/",
+    "author": {
+      "@type": "Person",
+      "name": "Shubham Kulkarni",
+      "url": "https://kulkarnishub377.github.io/sk/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Shubham Kulkarni",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kulkarnishub377.github.io/sk/profile.jpg"
+      }
+    }
+  }
+  </script>
+  
   <link rel="manifest" href="/site.webmanifest">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/blog.css">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
@@ -41,49 +79,113 @@
   </nav>
 
   <main class="py-5">
-    <div class="container">
-      <header class="text-center mb-4">
+    <div class="blog-container">
+      <!-- Blog Header -->
+      <header class="blog-header">
         <h1>Developer Blog</h1>
-        <p class="lead text-muted">Technical articles, tutorials and project case-studies on AI, Computer Vision, and IoT.</p>
+        <p class="blog-subtitle">Technical articles, tutorials and project case-studies on AI, Computer Vision, IoT, E-Waste Management, and Modern Software Development.</p>
       </header>
 
-      <div class="row g-4">
-        <div class="col-md-6">
-          <article class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Real-Time Object Detection with OpenCV</h3>
-              <p class="card-text text-muted">A practical walkthrough on building an efficient object detector using OpenCV and deep models, including tips for deployment.</p>
-              <div class="mt-auto"><a href="object-detection.html" class="btn btn-gradient btn-sm">Read Post</a></div>
+      <!-- Search Box -->
+      <div class="blog-search">
+        <input type="text" class="blog-search-input" placeholder="🔍 Search articles..." aria-label="Search blog posts">
+      </div>
+
+      <!-- Category Filter -->
+      <div class="blog-filter">
+        <button class="blog-filter-btn active" data-filter="all">All Posts</button>
+        <button class="blog-filter-btn" data-filter="ai-ml">AI & ML</button>
+        <button class="blog-filter-btn" data-filter="iot">IoT</button>
+        <button class="blog-filter-btn" data-filter="computer-vision">Computer Vision</button>
+        <button class="blog-filter-btn" data-filter="environment">Environment & Sustainability</button>
+        <button class="blog-filter-btn" data-filter="development">Development</button>
+      </div>
+
+      <!-- Blog Grid -->
+      <div class="blog-grid">
+        <!-- Real-Time Object Detection -->
+        <article class="blog-card" data-category="computer-vision">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Computer Vision</span>
+            <h2 class="blog-card-title">Real-Time Object Detection with OpenCV</h2>
+            <p class="blog-card-excerpt">A practical walkthrough on building an efficient object detector using OpenCV and deep models, including tips for deployment and optimization.</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 11, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 8 min read</span>
             </div>
-          </article>
-        </div>
-        <div class="col-md-6">
-          <article class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Smart Irrigation — A Case Study</h3>
-              <p class="card-text text-muted">System architecture, sensor design, ML model integration and cloud deployment details of the Smart Irrigation System (JalTantra).</p>
-              <div class="mt-auto"><a href="smart-irrigation.html" class="btn btn-gradient btn-sm">Read Post</a></div>
+            <a href="object-detection.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Smart Irrigation System -->
+        <article class="blog-card" data-category="iot">
+          <div class="blog-card-content">
+            <span class="blog-card-category">IoT</span>
+            <h2 class="blog-card-title">Smart Irrigation — A Case Study</h2>
+            <p class="blog-card-excerpt">System architecture, sensor design, ML model integration and cloud deployment details of the award-winning Smart Irrigation System (JalTantra).</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 10, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 10 min read</span>
             </div>
-          </article>
-        </div>
-        <div class="col-md-6">
-          <article class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Line-Following Robot: Design & Control</h3>
-              <p class="card-text text-muted">From hardware selection to control algorithm — building a reliable line-following robot with Arduino.</p>
-              <div class="mt-auto"><a href="line-follower.html" class="btn btn-gradient btn-sm">Read Post</a></div>
+            <a href="smart-irrigation.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- E-Waste Management System -->
+        <article class="blog-card" data-category="environment">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Environment & Sustainability</span>
+            <h2 class="blog-card-title">E-Waste Management System: IoT Solution</h2>
+            <p class="blog-card-excerpt">Building a comprehensive e-waste collection and tracking system using IoT sensors, real-time monitoring, and data analytics for sustainable waste management.</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 9, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 12 min read</span>
             </div>
-          </article>
-        </div>
-        <div class="col-md-6">
-          <article class="card h-100">
-            <div class="card-body d-flex flex-column">
-              <h3 class="card-title">Dev Notes: Deploying ML Models</h3>
-              <p class="card-text text-muted">Best practices for model packaging, containerization, and serving with Flask and Docker.</p>
-              <div class="mt-auto"><a href="dev-notes.html" class="btn btn-gradient btn-sm">Read Post</a></div>
+            <a href="e-waste-management.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Video Processing & Analysis -->
+        <article class="blog-card" data-category="ai-ml">
+          <div class="blog-card-content">
+            <span class="blog-card-category">AI & ML</span>
+            <h2 class="blog-card-title">Video Processing & Analysis with AI</h2>
+            <p class="blog-card-excerpt">Advanced techniques for video analytics, including motion detection, activity recognition, and real-time processing using deep learning models.</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 8, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 15 min read</span>
             </div>
-          </article>
-        </div>
+            <a href="video-processing.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Line-Following Robot -->
+        <article class="blog-card" data-category="iot">
+          <div class="blog-card-content">
+            <span class="blog-card-category">IoT</span>
+            <h2 class="blog-card-title">Line-Following Robot: Design & Control</h2>
+            <p class="blog-card-excerpt">From hardware selection to control algorithm — building a reliable line-following robot with Arduino and advanced sensor integration.</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 7, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+            <a href="line-follower.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <!-- Dev Notes: ML Deployment -->
+        <article class="blog-card" data-category="development">
+          <div class="blog-card-content">
+            <span class="blog-card-category">Development</span>
+            <h2 class="blog-card-title">Dev Notes: Deploying ML Models</h2>
+            <p class="blog-card-excerpt">Best practices for model packaging, containerization, and serving with Flask and Docker. Production-ready deployment strategies.</p>
+            <div class="blog-card-meta">
+              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 6, 2024</span>
+              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 9 min read</span>
+            </div>
+            <a href="dev-notes.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </article>
       </div>
 
     </div>
@@ -93,6 +195,7 @@
     <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
   </footer>
   <script src="../js/script.js"></script>
+  <script src="../js/blog.js"></script>
   <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
 </body>
 </html>
