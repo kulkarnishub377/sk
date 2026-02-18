@@ -1,288 +1,397 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>E-Waste Management System: IoT Solution — Shubham Kulkarni</title>
-  <meta name="description" content="Comprehensive guide to building an IoT-based e-waste management system with real-time monitoring, tracking, and analytics for sustainable waste management.">
-  <meta name="keywords" content="e-waste management, IoT, waste tracking, environmental technology, Shubham Kulkarni, sustainability, smart cities">
-  <meta name="author" content="Shubham Kulkarni">
-  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/e-waste-management.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="E-Waste Management System: IoT Solution">
-  <meta property="og:description" content="Building a comprehensive e-waste collection and tracking system using IoT sensors and analytics.">
-  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/blog.css">
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "E-Waste Management System: IoT Solution",
-    "description": "Building a comprehensive e-waste collection and tracking system using IoT sensors, real-time monitoring, and data analytics.",
-    "author": {"@type": "Person", "name": "Shubham Kulkarni"},
-    "publisher": {
-      "@type": "Organization", 
-      "name": "Shubham Kulkarni", 
-      "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}
-    },
-    "datePublished": "2024-12-09T00:00:00Z",
-    "dateModified": "2024-12-09T00:00:00Z",
-    "keywords": ["e-waste", "IoT", "environmental technology", "waste management", "sustainability"]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>E-Zero: AI-Powered E-Waste Management Platform | Shubham Kulkarni</title>
+    <meta name="description" content="E-Zero is an AI-powered PWA that revolutionizes e-waste recycling using TensorFlow.js for item valuation and Gamification for user engagement.">
+    <meta name="author" content="Shubham Kulkarni">
+    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/e-waste-management.html">
+    <meta property="og:title" content="E-Zero: AI & Gamification for E-Waste">
+    <meta property="og:description" content="A Smart City PWA for sustainable e-waste disposal and rewards.">
+    <meta property="og:image" content="https://tse2.mm.bing.net/th/id/OIP.oPOro95WYspZ-UV2gaLy_gHaE4?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3">
+    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/e-waste-management.html">
+    <meta property="og:type" content="article">
+
+    <!-- Schema.org Authority -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kulkarnishub377.github.io/sk/blog/e-waste-management.html"
+      },
+      "headline": "E-Zero: AI & Gamification for E-Waste",
+      "description": "A PWA platform using TensorFlow.js for instant AI valuation of old electronics, rewarding users with crypto-badges.",
+      "image": "https://tse2.mm.bing.net/th/id/OIP.oPOro95WYspZ-UV2gaLy_gHaE4?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "jobTitle": "Full Stack Engineer"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni"
+      },
+      "datePublished": "2025-12-10",
+      "dateModified": "2026-02-18"
+    }
+    </script>
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* --------------------------------------------------------------------------
+           INTERNAL MAGAZINE STYLES
+           -------------------------------------------------------------------------- */
+        
+        .article-content-wrapper {
+            font-family: 'Inter', sans-serif;
+            color: #2c3e50;
+        }
+
+        .article-content-wrapper p {
+            font-size: 1.25rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            color: #374151;
+        }
+
+        .article-content-wrapper h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2.25rem;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: #111827;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .article-content-wrapper h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(90deg, #10B981, transparent); /* Green for Eco */
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .article-content-wrapper h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            color: #065F46; /* Darker Green */
+        }
+
+        .dropcap::first-letter {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.85;
+            margin-right: 1.25rem;
+            margin-top: 0.2rem;
+            color: #10B981;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: #F0FDF4;
+            border-left: 6px solid #10B981;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3.5rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box::before {
+            content: '\f4c4'; /* FontAwesome Recycle */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(16, 185, 129, 0.05);
+            transform: rotate(30deg);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3.5rem 0;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: rgba(16, 185, 129, 0.2);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #10B981 0%, #065F46 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6B7280;
+            font-weight: 700;
+        }
+        
+        .toc-wrapper {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border: 1px solid #E5E7EB;
+        }
+
+        .toc-list { list-style: none; padding: 0; margin: 0; }
+        .toc-list li { margin-bottom: 1rem; }
+        .toc-list a { text-decoration: none; color: #4B5563; font-weight: 500; transition: color 0.2s ease; }
+        .toc-list a:hover { color: #10B981; }
+
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.75rem; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .toc-wrapper { display: none; }
+            .article-content-wrapper { padding: 0 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-            <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><a class="dropdown-item" href="index.html">All Posts</a></li>
-              <li><a class="dropdown-item" href="../ai-projects.html">AI Projects</a></li>
-              <li><a class="dropdown-item" href="../iot-projects.html">IoT Projects</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <main class="py-5">
-    <div class="container">
-      <article class="blog-post-content mx-auto" style="max-width:900px;">
-        <!-- Article Header -->
-        <header class="blog-post-header">
-          <h1 class="blog-post-title">E-Waste Management System: IoT Solution for Sustainable Waste Handling</h1>
-          <div class="blog-post-meta">
-            <span class="blog-card-category">Environment & Sustainability</span>
-            <div class="blog-post-author">
-              <img src="../profile.jpg" alt="Shubham Kulkarni" class="blog-post-author-avatar">
-              <span><strong>Shubham Kulkarni</strong></span>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-premium">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <i class="fas fa-arrow-left text-secondary" style="font-size: 0.9rem;"></i>
+                <span style="font-family: var(--font-mono); color: var(--text-primary);">Back to Blog</span>
+            </a>
+            
+             <div class="ms-auto d-none d-md-block">
+                <span class="badge bg-light text-dark border fw-medium px-3 py-2">
+                    <i class="fas fa-clock me-2"></i> 7 min read
+                </span>
             </div>
-            <span><i class="fas fa-calendar-alt"></i> December 9, 2024</span>
-            <span class="blog-reading-time"><i class="fas fa-clock"></i> 12 min read</span>
-          </div>
-        </header>
-
-        <!-- Social Share Buttons -->
-        <div class="blog-social-share">
-          <a href="#" class="social-share-btn share-twitter" data-share="twitter">
-            <i class="fab fa-twitter"></i> Share on Twitter
-          </a>
-          <a href="#" class="social-share-btn share-linkedin" data-share="linkedin">
-            <i class="fab fa-linkedin"></i> Share on LinkedIn
-          </a>
-          <a href="#" class="social-share-btn share-copy" data-share="copy">
-            <i class="fas fa-link"></i> Copy Link
-          </a>
         </div>
+    </nav>
 
-        <!-- Article Content -->
-        <section>
-          <h2>The E-Waste Challenge</h2>
-          <p>Electronic waste (e-waste) is one of the fastest-growing waste streams globally, with over 50 million tons generated annually. Improper disposal of electronic devices leads to environmental pollution, health hazards, and loss of valuable resources. This project demonstrates how IoT technology can revolutionize e-waste collection and management.</p>
-        </section>
+    <!-- Header -->
+    <header class="article-header pt-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                     <span class="hero-tag mb-3 d-inline-block text-white bg-secondary border-secondary" style="background-color: #10B981 !important; border-color: #10B981 !important;">Sustainability</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">E-Zero: AI & Gamification for E-Waste</h1>
+                    <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
+                        A cutting-edge PWA that uses Computer Vision (TensorFlow.js) to value old electronics and rewards users for recycling.
+                    </p>
+                    
+                    <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="../photo_sk.jpg" alt="Shubham" class="rounded-circle shadow-sm" width="56" height="56">
+                            <div class="text-start">
+                                <span class="d-block fw-bold text-dark">Shubham Kulkarni</span>
+                                <span class="small text-secondary">Full Stack Developer</span>
+                            </div>
+                        </div>
+                        <div class="vr opacity-25"></div>
+                        <div class="text-start">
+                            <span class="d-block fw-bold text-dark">Published</span>
+                            <time class="small text-secondary" datetime="2026-02-18">Feb 18, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <section>
-          <h2>System Overview</h2>
-          <p>The E-Waste Management System is a comprehensive IoT solution designed to track, monitor, and optimize the collection and recycling of electronic waste. The system integrates hardware sensors, cloud infrastructure, and data analytics to provide real-time insights into e-waste collection operations.</p>
-        </section>
+    <!-- Main Body -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                
+                <!-- Sidebar TOC -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-top" style="top: 120px;">
+                        <div class="toc-wrapper">
+                            <h6 class="text-uppercase text-muted fw-bold mb-4 small" style="letter-spacing: 1px;">Contents</h6>
+                            <ul class="toc-list">
+                                <li><a href="#the-problem">1. The E-Waste Crisis</a></li>
+                                <li><a href="#features">2. E-Zero Features</a></li>
+                                <li><a href="#tech-stack">3. Tech Stack: PWA & AI</a></li>
+                                <li><a href="#ai-valuation">4. AI Valuation Logic</a></li>
+                                <li><a href="#gamification">5. Gamification</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        <section>
-          <h2>Key Features</h2>
-          <ul>
-            <li><strong>Smart Collection Bins:</strong> IoT-enabled bins with weight sensors and fill-level monitoring</li>
-            <li><strong>Real-Time Tracking:</strong> GPS-based location tracking of collection vehicles</li>
-            <li><strong>Automated Alerts:</strong> Notifications when bins reach capacity or scheduled collection times</li>
-            <li><strong>Data Analytics Dashboard:</strong> Visual insights into collection patterns, volumes, and efficiency</li>
-            <li><strong>User Mobile App:</strong> Citizens can request pickups and track collection status</li>
-            <li><strong>QR Code Scanning:</strong> Track individual e-waste items through the recycling process</li>
-          </ul>
-        </section>
+                 <!-- Content -->
+                <div class="col-lg-8 article-content-wrapper">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.oPOro95WYspZ-UV2gaLy_gHaE4?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         alt="E-Waste Circuit Board" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
 
-        <section>
-          <h2>Technical Architecture</h2>
-          <h3>Hardware Components</h3>
-          <ul>
-            <li><strong>Microcontroller:</strong> ESP32 with Wi-Fi and Bluetooth connectivity</li>
-            <li><strong>Sensors:</strong> Load cells for weight measurement, ultrasonic sensors for fill-level detection</li>
-            <li><strong>GPS Module:</strong> NEO-6M for real-time location tracking</li>
-            <li><strong>RFID Reader:</strong> For bin identification and access control</li>
-            <li><strong>Display:</strong> OLED display for local status indication</li>
-          </ul>
+                    <p class="dropcap">
+                        Electronic waste is the fastest-growing waste stream globally. Toxic materials like lead, mercury, and cadmium from old gadgets pose a severe threat to the environment, yet only 17.4% of e-waste is properly recycled.
+                    </p>
+                    
+                    <p>
+                        We built **E-Zero**, a comprehensive ecosystem to solve this. It connects citizens, collection agents, and recycling centers through a seamless, rewarding digital experience.
+                    </p>
 
-          <h3>Software Stack</h3>
-          <ul>
-            <li><strong>Backend:</strong> Django REST Framework for API development</li>
-            <li><strong>Database:</strong> PostgreSQL with PostGIS extension for geospatial data</li>
-            <li><strong>Cloud Platform:</strong> AWS IoT Core for device management and data ingestion</li>
-            <li><strong>Frontend:</strong> React.js for admin dashboard, React Native for mobile app</li>
-            <li><strong>Analytics:</strong> Python with Pandas and Matplotlib for data visualization</li>
-            <li><strong>Message Queue:</strong> MQTT protocol for efficient device communication</li>
-          </ul>
-        </section>
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <span class="stat-value">40%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">PWA</span>
+                            <span class="stat-label">Offline First</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">AI</span>
+                            <span class="stat-label">Auto Valuation</span>
+                        </div>
+                    </div>
 
-        <section>
-          <h2>Implementation Details</h2>
-          <h3>Step 1: Smart Bin Setup</h3>
-          <p>Each collection bin is equipped with an ESP32 microcontroller connected to weight sensors and ultrasonic distance sensors. The system continuously monitors:</p>
-          <ul>
-            <li>Current weight of e-waste in the bin</li>
-            <li>Fill percentage (height measurement)</li>
-            <li>Bin location (GPS coordinates)</li>
-            <li>Environmental conditions (temperature, humidity)</li>
-          </ul>
+                    <h2 id="the-problem">1. Why E-Zero?</h2>
+                    <p>
+                        Current recycling systems are opaque. Users don't know where to go, what their device is worth, or if it will actually be recycled. E-Zero fixes this with **transparency** and **incentives**.
+                    </p>
 
-          <h3>Step 2: Data Collection & Transmission</h3>
-          <p>Sensor data is collected every 5 minutes and transmitted to the cloud using MQTT over Wi-Fi. The ESP32 firmware includes:</p>
-          <pre><code>// Pseudocode for sensor data collection
-void loop() {
-  float weight = readWeightSensor();
-  float fillLevel = calculateFillLevel();
-  String location = getGPSCoordinates();
-  
-  // Create JSON payload
-  JSONObject data = {
-    "bin_id": BIN_ID,
-    "weight": weight,
-    "fill_level": fillLevel,
-    "location": location,
-    "timestamp": getCurrentTime()
-  };
-  
-  // Publish to MQTT broker
-  mqttClient.publish("ewaste/bins/data", data);
-  delay(300000); // 5 minutes
+                    <h2 id="features">2. Key Features</h2>
+                    <div class="highlight-box">
+                         <div class="row g-4">
+                            <div class="col-md-6">
+                                <h5 class="fw-bold"><i class="fas fa-camera text-success me-2"></i>AI Identification</h5>
+                                <p class="small mb-0">Upload a photo of your old phone, and TensorFlow.js identifies the model and estimates its scrap value instantly.</p>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="fw-bold"><i class="fas fa-map-marked-alt text-success me-2"></i>Smart Map</h5>
+                                <p class="small mb-0">Real-time locator for the nearest e-waste drop-off bin using Leaflet.js and OpenStreetMap.</p>
+                            </div>
+                         </div>
+                    </div>
+
+                    <h2 id="tech-stack">3. The Tech Stack</h2>
+                    <p>
+                        We chose a **MERN Stack** (MongoDB, Express, React, Node.js) architected as a **Progressive Web App (PWA)** to ensure accessibility even in areas with poor connectivity.
+                    </p>
+
+                    <div class="code-block-wrapper my-4">
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">system_architecture.mermaid</span>
+                            <i class="fas fa-code text-muted"></i>
+                        </div>
+<pre><code class="language-mermaid">graph TD
+    User[User (PWA)] -->|Upload Image| AI[TensorFlow.js Model]
+    AI -->|Valuation Result| UI[App Interface]
+    User -->|Book Pickup| API[Node.js API]
+    API --> DB[(MongoDB Atlas)]
+    API --> Map[Leaflet Map Service]
+    Map -- Find Route --> Truck[Collection Agent]</code></pre>
+                    </div>
+
+                    <h2 id="ai-valuation">4. AI Valuation Logic</h2>
+                    <p>
+                        Using **TensorFlow.js**, we run the MobileNet model directly in the browser. This ensures user privacy (images aren't sent to a server) and gives instant feedback.
+                    </p>
+
+                    <div class="code-block-wrapper my-4">
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">identification.js</span>
+                            <i class="fas fa-code text-muted"></i>
+                        </div>
+<pre><code class="language-javascript">import * as tf from '@tensorflow/tfjs';
+import * as mobilenet from '@tensorflow-models/mobilenet';
+
+async function classifyImage(imgElement) {
+    // Load the model
+    const model = await mobilenet.load();
+    
+    // Classify
+    const predictions = await model.classify(imgElement);
+    
+    // Check if it's electronic waste
+    const eWasteKeywords = ['monitor', 'keyboard', 'phone', 'laptop'];
+    const isEWaste = predictions.some(p => 
+        eWasteKeywords.some(key => p.className.includes(key))
+    );
+    
+    return isEWaste ? calculateValue(predictions[0]) : 0;
 }</code></pre>
+                    </div>
 
-          <h3>Step 3: Cloud Processing</h3>
-          <p>AWS IoT Core receives the MQTT messages and triggers Lambda functions for data processing. The processed data is stored in PostgreSQL and triggers alerts based on predefined rules:</p>
-          <ul>
-            <li>Bin fill level > 80% → Send collection alert</li>
-            <li>Bin not emptied for > 7 days → Send maintenance alert</li>
-            <li>Unusual weight patterns → Potential contamination alert</li>
-          </ul>
+                    <h2 id="gamification">5. Gamification Rewards</h2>
+                    <p>
+                        To drive engagement, we implemented a rewards system. Users earn "Eco-Points" for every kg of waste recycled.
+                    </p>
+                    <ul>
+                         <li><strong>Leaderboards:</strong> Compete with neighbors to be the "Greenest Citizen".</li>
+                         <li><strong>NFT Badges:</strong> Unique digital collectibles for milestones (e.g., "100kg Recycled").</li>
+                         <li><strong>Redemption:</strong> Points can be exchanged for coupons at partner electronics stores.</li>
+                    </ul>
 
-          <h3>Step 4: Dashboard & Analytics</h3>
-          <p>The React-based dashboard provides real-time visualization of:</p>
-          <ul>
-            <li>Interactive map showing all bin locations and status</li>
-            <li>Collection route optimization suggestions</li>
-            <li>Historical trends in e-waste collection</li>
-            <li>Environmental impact metrics (CO₂ saved, materials recovered)</li>
-            <li>Performance metrics for collection teams</li>
-          </ul>
-        </section>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-          <h2>Impact & Results</h2>
-          <ul>
-            <li><strong>40% reduction</strong> in collection vehicle fuel costs through optimized routes</li>
-            <li><strong>60% increase</strong> in e-waste collection efficiency</li>
-            <li><strong>Real-time monitoring</strong> of 150+ collection bins across the city</li>
-            <li><strong>85% citizen satisfaction</strong> rate with the mobile app for pickup requests</li>
-            <li><strong>Prevented 12 tons</strong> of e-waste from reaching landfills in the first 6 months</li>
-          </ul>
-        </section>
+    <!-- Footer -->
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="text-secondary small mb-4">Code for a cleaner planet.</p>
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
+        </div>
+    </footer>
 
-        <section>
-          <h2>Mobile App Features</h2>
-          <p>The companion mobile app (built with React Native) enables citizens to:</p>
-          <ul>
-            <li>Schedule e-waste pickup from home</li>
-            <li>Locate nearest e-waste collection centers</li>
-            <li>Scan QR codes to learn proper disposal methods</li>
-            <li>Track environmental impact (points system)</li>
-            <li>Receive notifications about collection events</li>
-            <li>View educational content about e-waste recycling</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Challenges & Solutions</h2>
-          <h3>Power Management</h3>
-          <p><strong>Challenge:</strong> Bins located in areas without power supply</p>
-          <p><strong>Solution:</strong> Solar panels with battery backup, deep sleep mode for ESP32 to extend battery life to 6+ months</p>
-
-          <h3>Connectivity Issues</h3>
-          <p><strong>Challenge:</strong> Some bin locations have poor Wi-Fi coverage</p>
-          <p><strong>Solution:</strong> Implemented offline data buffering with automatic sync when connection is restored, added 4G LTE fallback</p>
-
-          <h3>Data Security</h3>
-          <p><strong>Challenge:</strong> Protecting user data and preventing unauthorized access</p>
-          <p><strong>Solution:</strong> TLS/SSL encryption for all communications, AWS IAM for access control, regular security audits</p>
-        </section>
-
-        <section>
-          <h2>Future Enhancements</h2>
-          <ul>
-            <li><strong>AI-Powered Classification:</strong> Computer vision to identify and sort e-waste types automatically</li>
-            <li><strong>Blockchain Integration:</strong> Transparent tracking of e-waste from collection to recycling</li>
-            <li><strong>Predictive Maintenance:</strong> ML models to predict bin maintenance needs</li>
-            <li><strong>Gamification:</strong> Reward system to encourage citizen participation</li>
-            <li><strong>Integration with Smart City:</strong> Connect with other city management systems</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Technologies Used</h2>
-          <div class="blog-tags">
-            <span class="blog-tag">IoT</span>
-            <span class="blog-tag">ESP32</span>
-            <span class="blog-tag">Python</span>
-            <span class="blog-tag">Django</span>
-            <span class="blog-tag">React</span>
-            <span class="blog-tag">AWS IoT</span>
-            <span class="blog-tag">PostgreSQL</span>
-            <span class="blog-tag">MQTT</span>
-            <span class="blog-tag">GPS</span>
-            <span class="blog-tag">Sensors</span>
-          </div>
-        </section>
-
-        <section class="mt-4 bg-light p-3 rounded">
-          <h4>Interested in Building Similar Solutions?</h4>
-          <p>If you're working on environmental technology projects or need help implementing IoT-based waste management systems, <a href="../index.html#contact">let's connect</a>! I provide consulting and development services for smart city and sustainability projects.</p>
-        </section>
-
-      </article>
-    </div>
-  </main>
-
-  <footer class="text-center py-4">
-    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
-  </footer>
-  
-  
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  <!-- Custom Scripts -->
-  <script src="../js/script.js"></script>
-  <script src="../js/blog.js"></script>
-  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
 </body>
 </html>

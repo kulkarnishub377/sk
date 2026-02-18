@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO -->
-    <title>JalTantra: Saving 30% Water with IoT | Shubham Kulkarni</title>
-    <meta name="description" content="A detailed engineering case study on JalTantra, an IoT-based smart irrigation system using PIC Microcontrollers and capacitive soil sensors.">
+    <title>Demystifying Transformers & LLMs | Shubham Kulkarni</title>
+    <meta name="description" content="A technical deep dive into the Self-Attention mechanism. Understanding Query, Key, and Value vectors in modern Large Language Models.">
     <meta name="author" content="Shubham Kulkarni">
-    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html">
-    <meta property="og:title" content="JalTantra: IoT Smart Irrigation System">
-    <meta property="og:description" content="How we saved 30% water using Embedded C and Soil Sensors.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1563514227146-5913d80b4352?auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html">
+    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/generative-ai.html">
+    <meta property="og:title" content="Demystifying Transformers: How LLMs Think">
+    <meta property="og:description" content="The math behind the magic: Self-Attention explained.">
+    <meta property="og:image" content="https://th.bing.com/th/id/R.e9f32b9ad5f2ba35b68ba6384e601669?rik=2KVzyToeNt9prw&riu=http%3a%2f%2fhekate.ai%2fwp-content%2fuploads%2f2024%2f01%2fgenerative-ai-la-gi.jpg&ehk=Z6iLVPLbSt%2fl%2fXfxTlul6l0GDD1NWr2llMJoIEc6LSE%3d&risl=&pid=ImgRaw&r=0">
+    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/generative-ai.html">
     <meta property="og:type" content="article">
+
+    <!-- Schema.org Authority -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kulkarnishub377.github.io/sk/blog/generative-ai.html"
+      },
+      "headline": "Demystifying Transformers & LLMs",
+      "description": "A technical breakdown of the Self-Attention mechanism, Positional Encodings, and why 'Attention is All You Need'.",
+      "image": "https://th.bing.com/th/id/R.e9f32b9ad5f2ba35b68ba6384e601669?rik=2KVzyToeNt9prw&riu=http%3a%2f%2fhekate.ai%2fwp-content%2fuploads%2f2024%2f01%2fgenerative-ai-la-gi.jpg&ehk=Z6iLVPLbSt%2fl%2fXfxTlul6l0GDD1NWr2llMJoIEc6LSE%3d&risl=&pid=ImgRaw&r=0",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "jobTitle": "AI Researcher"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni"
+      },
+      "datePublished": "2026-02-18",
+      "dateModified": "2026-02-18"
+    }
+    </script>
 
     <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +82,7 @@
             display: block;
             width: 80px;
             height: 6px;
-            background: linear-gradient(90deg, #059669, transparent); /* Emerald for Agriculture */
+            background: linear-gradient(90deg, #DB2777, transparent); /* Pink for Neural Nets */
             margin-top: 15px;
             border-radius: 4px;
         }
@@ -66,7 +93,7 @@
             font-size: 1.75rem;
             margin-top: 3rem;
             margin-bottom: 1.25rem;
-            color: #047857; /* Darker Emerald */
+            color: #BE185D; /* Darker Pink */
         }
 
         .dropcap::first-letter {
@@ -76,13 +103,13 @@
             line-height: 0.85;
             margin-right: 1.25rem;
             margin-top: 0.2rem;
-            color: #059669;
+            color: #DB2777;
             font-weight: 700;
         }
 
         .highlight-box {
-            background: #ECFDF5;
-            border-left: 6px solid #059669;
+            background: #FDF2F8;
+            border-left: 6px solid #DB2777;
             padding: 2.5rem;
             border-radius: 16px;
             margin: 3.5rem 0;
@@ -92,14 +119,14 @@
         }
 
         .highlight-box::before {
-            content: '\f4d8'; /* FontAwesome Seedling */
+            content: '\f2db'; /* FontAwesome Microchip/Brain */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             top: -20px;
             right: -20px;
             font-size: 8rem;
-            color: rgba(5, 150, 105, 0.05);
+            color: rgba(219, 39, 119, 0.05);
             transform: rotate(30deg);
         }
 
@@ -123,13 +150,13 @@
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: rgba(5, 150, 105, 0.2);
+            border-color: rgba(219, 39, 119, 0.2);
         }
 
         .stat-value {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            background: linear-gradient(135deg, #DB2777 0%, #BE185D 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -157,7 +184,7 @@
         .toc-list { list-style: none; padding: 0; margin: 0; }
         .toc-list li { margin-bottom: 1rem; }
         .toc-list a { text-decoration: none; color: #4B5563; font-weight: 500; transition: color 0.2s ease; }
-        .toc-list a:hover { color: #059669; }
+        .toc-list a:hover { color: #DB2777; }
 
         @media (max-width: 992px) {
             .hero-title { font-size: 2.75rem; }
@@ -179,7 +206,7 @@
             
              <div class="ms-auto d-none d-md-block">
                 <span class="badge bg-light text-dark border fw-medium px-3 py-2">
-                    <i class="fas fa-clock me-2"></i> 8 min read
+                    <i class="fas fa-clock me-2"></i> 11 min read
                 </span>
             </div>
         </div>
@@ -190,10 +217,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                     <span class="hero-tag mb-3 d-inline-block text-white bg-success border-success" style="background-color: #059669 !important; border-color: #059669 !important;">Embedded IoT</span>
-                    <h1 class="hero-title display-4 fw-bolder mb-4">JalTantra: Saving 30% Water with IoT</h1>
+                     <span class="hero-tag mb-3 d-inline-block text-white bg-danger border-danger" style="background-color: #DB2777 !important; border-color: #DB2777 !important;">Deep Learning</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">Demystifying Transformers: How LLMs Think</h1>
                     <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
-                        How we engineered an award-winning smart irrigation system using PIC Microcontrollers and capacitive sensors to fight water scarcity.
+                        Beyond the hype: A technical breakdown of the Self-Attention mechanism, Positional Encodings, and why "Attention is All You Need".
                     </p>
                     
                     <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
@@ -201,13 +228,13 @@
                             <img src="../photo_sk.jpg" alt="Shubham" class="rounded-circle shadow-sm" width="56" height="56">
                             <div class="text-start">
                                 <span class="d-block fw-bold text-dark">Shubham Kulkarni</span>
-                                <span class="small text-secondary">Embedded Systems Engineer</span>
+                                <span class="small text-secondary">AI Researcher</span>
                             </div>
                         </div>
                         <div class="vr opacity-25"></div>
                         <div class="text-start">
                             <span class="d-block fw-bold text-dark">Published</span>
-                            <time class="small text-secondary" datetime="2026-01-15">Jan 15, 2026</time>
+                            <time class="small text-secondary" datetime="2026-02-18">Feb 18, 2026</time>
                         </div>
                     </div>
                 </div>
@@ -226,11 +253,11 @@
                         <div class="toc-wrapper">
                             <h6 class="text-uppercase text-muted fw-bold mb-4 small" style="letter-spacing: 1px;">Contents</h6>
                             <ul class="toc-list">
-                                <li><a href="#the-problem">1. The Water Crisis</a></li>
-                                <li><a href="#architecture">2. System Architecture</a></li>
-                                <li><a href="#embedded-c">3. Embedded Logic</a></li>
-                                <li><a href="#results">4. Impact & Awards</a></li>
-                                <li><a href="#future">5. Future: LoRaWAN</a></li>
+                                <li><a href="#the-bottleneck">1. The RNN Bottleneck</a></li>
+                                <li><a href="#self-attention">2. Self-Attention Mechanism</a></li>
+                                <li><a href="#qkv-analogy">3. The Q, K, V Analogy</a></li>
+                                <li><a href="#architecture">4. Transformer Architecture</a></li>
+                                <li><a href="#future">5. Beyond Transformers</a></li>
                             </ul>
                         </div>
                     </div>
@@ -238,106 +265,115 @@
 
                  <!-- Content -->
                 <div class="col-lg-8 article-content-wrapper">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Smart Irrigation Field" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
+                    <img src="https://th.bing.com/th/id/R.e9f32b9ad5f2ba35b68ba6384e601669?rik=2KVzyToeNt9prw&riu=http%3a%2f%2fhekate.ai%2fwp-content%2fuploads%2f2024%2f01%2fgenerative-ai-la-gi.jpg&ehk=Z6iLVPLbSt%2fl%2fXfxTlul6l0GDD1NWr2llMJoIEc6LSE%3d&risl=&pid=ImgRaw&r=0" 
+                         alt="Neural Network Visualization" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
 
                     <p class="dropcap">
-                        Agriculture consumes 70% of the world's freshwater, yet 40% of it is wasted due to inefficient irrigation methods. "JalTantra" (Water Mechanism) is my solution to this global crisis—an intelligent, sensor-based irrigation system.
+                        In 2017, the paper "Attention is All You Need" changed everything. Before that, we relied on RNNs and LSTMs, which processed text sequentially—word by word. This made training slow and context limited.
                     </p>
                     
                     <p>
-                        Unlike traditional timer-based systems that water even when it rains, JalTantra uses real-time ground data to make decisions. The result? precise hydration that mimics nature.
+                        Transformers introduced <strong>Parallelization</strong>. They could read an entire book at once (in theory), understanding the relationship between the first word and the last word instantly.
                     </p>
 
                     <div class="stat-grid">
                         <div class="stat-card">
-                            <span class="stat-value">32%</span>
-                            <span class="stat-label">Water Saved</span>
+                            <span class="stat-value">175B</span>
+                            <span class="stat-label">Parameters (GPT-3)</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">500</span>
-                            <span class="stat-label">Sq. Ft. Pilot</span>
+                            <span class="stat-value">2048</span>
+                            <span class="stat-label">Context Window</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">1st</span>
-                            <span class="stat-label">Eco-Innovation</span>
+                            <span class="stat-value">O(N²)</span>
+                            <span class="stat-label">Complexity</span>
                         </div>
                     </div>
 
-                    <h2 id="the-problem">1. The Core Problem</h2>
+                    <h2 id="the-bottleneck">1. The RNN Bottleneck</h2>
                     <p>
-                        Manual irrigation is labor-intensive and error-prone. Farmers often over-water, leading to soil nutrient leaching and root rot, or under-water during sudden heatwaves.
+                        Recurrent Neural Networks (RNNs) suffer from the "Vanishing Gradient" problem. If you have a sentence like: "The <strong>cat</strong>, which was already full... [100 words] ... <strong>slept</strong>.", an RNN forgets "cat" by the time it reaches "slept".
                     </p>
+
+                    <h2 id="self-attention">2. Self-Attention Mechanism</h2>
+                    <p>
+                        Self-attention allows the model to look at other positions in the input sequence for clues that can help lead to a better encoding for this word.
+                    </p>
+                    
                     <div class="highlight-box">
-                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-tint text-primary me-2" style="color: #059669 !important;"></i>The Efficiency Gap</h4>
+                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-search text-primary me-2" style="color: #DB2777 !important;"></i>Contextual Awareness</h4>
                         <p class="mb-0">
-                            A standard sprinkler system operates on a schedule. JalTantra operates on <strong>Demand</strong>. If the soil moisture is above 80%, the pump stays off, saving electricity and water.
+                            In the sentence "The animal didn't cross the street because <strong>it</strong> was too tired", what does "it" refer to? Self-attention assigns a higher weight to "animal" than "street" for the word "it".
                         </p>
                     </div>
 
-                    <h2 id="architecture">2. System Architecture</h2>
+                    <h2 id="qkv-analogy">3. The Query, Key, Value Analogy</h2>
                     <p>
-                         The system is built around the **PIC16F877A** microcontroller, chosen for its robustness in industrial environments. It interfaces with capacitive soil moisture sensors (corrosion-resistant v1.2) and controls a submersible pump via a relay.
+                        Think of a database retrieval system.
+                    </p>
+                    <ul>
+                        <li><strong>Query (Q):</strong> What you are looking for.</li>
+                        <li><strong>Key (K):</strong> The labels in the database.</li>
+                        <li><strong>Value (V):</strong> The actual content.</li>
+                    </ul>
+                    <p>
+                        The attention score is calculated by the dot product of the Query and Key. If they align (high similarity), we retrieve more of the Value.
                     </p>
 
                     <div class="code-block-wrapper my-4">
                         <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">architecture_diagram.mermaid</span>
+                            <span class="font-monospace small text-muted">attention.py</span>
                             <i class="fas fa-code text-muted"></i>
                         </div>
-<pre><code class="language-mermaid">graph LR
-    Sensor[Soil Moisture Sensor] -- Analog Signal --> ADC[PIC16F877A ADC]
-    ADC -- Digital Value --> MCU{Processing Unit}
-    MCU -- Moisture < 30% --> Relay[Relay ON]
-    Relay --> Pump[Submersible Pump]
-    MCU -- Data --> LCD[16x2 Display]
-    MCU -- Alert --> GSM[GSM Module]</code></pre>
+<pre><code class="language-python">import torch
+import torch.nn.functional as F
+
+def scaled_dot_product_attention(query, key, value):
+    # 1. Matmul Q and K
+    scores = torch.matmul(query, key.transpose(-2, -1))
+    
+    # 2. Scale
+    d_k = query.size(-1)
+    scores = scores / math.sqrt(d_k)
+    
+    # 3. Softmax
+    attention_weights = F.softmax(scores, dim=-1)
+    
+    # 4. Matmul with V
+    return torch.matmul(attention_weights, value)</code></pre>
                     </div>
 
-                    <h2 id="embedded-c">3. Embedded Implementation</h2>
+                    <h2 id="architecture">4. The Architecture</h2>
                     <p>
-                        The logic is written in Embedded C using the **XC8 Compiler**. We use the internal 10-bit ADC to map sensor values to a percentage.
+                        The original Transformer has an Encoder and Decoder stack. GPT (Generative Pre-trained Transformer) only uses the **Decoder** stack to predict the next token.
                     </p>
 
                     <div class="code-block-wrapper my-4">
-                         <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">controller.c</span>
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">transformer.mermaid</span>
                             <i class="fas fa-code text-muted"></i>
                         </div>
-<pre><code class="language-c">#define _XTAL_FREQ 20000000
-#define PUMP_RELAY RC0  
-
-void main() {
-    ADC_Init();   // Initialize ADC
+<pre><code class="language-mermaid">graph TD
+    Input[Input Embeddings] --> Pos[Positional Encoding]
+    Pos --> Block1[Transformer Block 1]
+    Block1 --> Block2[Transformer Block 2]
+    Block2 --> BlockN[Transformer Block N]
+    BlockN --> Norm[Layer Norm]
+    Norm --> Linear[Linear Head]
+    Linear --> Soft[Softmax]
+    Soft --> Output[Next Token Probability]
     
-    while(1) {
-        int moisture_val = ADC_Read(0);
-        // Map 0-1023 to 0-100%
-        int percentage = map(moisture_val, 0, 1023, 0, 100);
-        
-        if (percentage < 30) {
-            PUMP_RELAY = 1; // Turn ON Pump
-            LCD_String("Status: Watering");
-        } else if (percentage > 80) {
-            PUMP_RELAY = 0; // Turn OFF Pump
-            LCD_String("Status: Optimal");
-        }
-        __delay_ms(1000);
-    }
-}</code></pre>
+    subgraph Transformer Block
+        MultiHead[Multi-Head Attention] --> AddNorm1[Add & Norm]
+        AddNorm1 --> FeedForward[Feed Forward Net]
+        FeedForward --> AddNorm2[Add & Norm]
+    end</code></pre>
                     </div>
 
-                    <h2 id="results">4. Impact & Awards</h2>
+                    <h2 id="future">5. Future: Efficient Attention?</h2>
                     <p>
-                        We deployed JalTantra in a local garden plot for 3 months. Not only did we reduce water usage, but we also observed a visible improvement in leaf turgidity.
-                    </p>
-                    <p>
-                        This project was recognized as the <strong>"Best Eco-Innovation"</strong> at the College Tech Fest 2024, validating the need for simple, effective IoT solutions in agriculture.
-                    </p>
-
-                    <h2 id="future">5. Future Scope: LoRaWAN</h2>
-                    <p>
-                        To make this commercially viable for large farms (50+ acres), Wi-Fi is insufficient. The next version of JalTantra will utilize **LoRaWAN** for long-range, low-power communication, sending data to AWS IoT Core for predictive analytics.
+                        The main limitation of Transformers is the O(N²) quadratic complexity required for the attention matrix. New research like **Mamba (State Space Models)** and **Ring Attention** aims to solve this, enabling 1M+ token context windows.
                     </p>
 
                 </div>
@@ -354,7 +390,7 @@ void main() {
                 <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
                 <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
             </div>
-            <p class="text-secondary small mb-4">Innovating for a Greener Tomorrow.</p>
+            <p class="text-secondary small mb-4">Deciphering Intelligence.</p>
             <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
         </div>
     </footer>

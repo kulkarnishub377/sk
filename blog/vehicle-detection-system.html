@@ -1,458 +1,402 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>VIDES: Vehicle Image Detection System — Shubham Kulkarni</title>
-  <meta name="description" content="Production-grade vehicle detection and tracking system for building perfect AI training datasets using YOLO, OpenCV, and advanced multi-object tracking.">
-  <meta name="keywords" content="vehicle detection, VIDES, YOLO, ByteTrack, computer vision, AI training datasets, RTSP streams, Shubham Kulkarni">
-  <meta name="author" content="Shubham Kulkarni">
-  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html">
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="VIDES: Vehicle Image Detection System">
-  <meta property="og:description" content="Production-grade vehicle detection and tracking system with multi-camera support and advanced quality control.">
-  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/blog.css">
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "VIDES: Vehicle Image Detection System",
-    "description": "Production-grade vehicle detection and tracking system for building perfect AI training datasets.",
-    "author": {"@type": "Person", "name": "Shubham Kulkarni"},
-    "publisher": {
-      "@type": "Organization", 
-      "name": "Shubham Kulkarni", 
-      "logo": {"@type": "ImageObject", "url": "https://kulkarnishub377.github.io/sk/profile.jpg"}
-    },
-    "datePublished": "2024-12-08T00:00:00Z",
-    "dateModified": "2024-12-08T00:00:00Z",
-    "keywords": ["vehicle detection", "YOLO", "computer vision", "ByteTrack", "AI training", "RTSP"]
-  }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <title>AI in Traffic Management (HTMS) | Shubham Kulkarni</title>
+    <meta name="description" content="Architecting the VIDES system at Arya Omnitalk: A real-time Traffic Management System (HTMS) for detecting accidents and speeding on highways.">
+    <meta name="author" content="Shubham Kulkarni">
+    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html">
+    <meta property="og:title" content="AI in Traffic Management (HTMS)">
+    <meta property="og:description" content="How we built the VIDES system to detect highway accidents in milliseconds.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html">
+    <meta property="og:type" content="article">
+
+    <!-- Schema.org Authority -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html"
+      },
+      "headline": "AI in Traffic Management (HTMS)",
+      "description": "Architecting the VIDES system at Arya Omnitalk: A real-time Traffic Management System for detecting accidents.",
+      "image": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "jobTitle": "System Architect"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni"
+      },
+      "datePublished": "2026-02-10",
+      "dateModified": "2026-02-18"
+    }
+    </script>
+
+    <!-- Fonts & CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* --------------------------------------------------------------------------
+           INTERNAL MAGAZINE STYLES
+           -------------------------------------------------------------------------- */
+        
+        .article-content-wrapper {
+            font-family: 'Inter', sans-serif;
+            color: #2c3e50;
+        }
+
+        .article-content-wrapper p {
+            font-size: 1.25rem;
+            line-height: 1.85;
+            margin-bottom: 2rem;
+            color: #374151;
+        }
+
+        .article-content-wrapper h2 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 2.25rem;
+            margin-top: 4rem;
+            margin-bottom: 1.5rem;
+            color: #111827;
+            position: relative;
+            letter-spacing: -0.02em;
+        }
+
+        .article-content-wrapper h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 6px;
+            background: linear-gradient(90deg, #EA580C, transparent); /* Orange for Traffic/Alert */
+            margin-top: 15px;
+            border-radius: 4px;
+        }
+
+        .article-content-wrapper h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            color: #C2410C; /* Darker Orange */
+        }
+
+        .dropcap::first-letter {
+            font-family: 'Libre Baskerville', serif;
+            font-size: 4.5rem;
+            float: left;
+            line-height: 0.85;
+            margin-right: 1.25rem;
+            margin-top: 0.2rem;
+            color: #EA580C;
+            font-weight: 700;
+        }
+
+        .highlight-box {
+            background: #FFF7ED;
+            border-left: 6px solid #EA580C;
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin: 3.5rem 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box::before {
+            content: '\f0d1'; /* FontAwesome Truck/Car */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: rgba(234, 88, 12, 0.05);
+            transform: rotate(30deg);
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3.5rem 0;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            border-color: rgba(234, 88, 12, 0.2);
+        }
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+             -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #6B7280;
+            font-weight: 700;
+        }
+        
+        .toc-wrapper {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            border: 1px solid #E5E7EB;
+        }
+
+        .toc-list { list-style: none; padding: 0; margin: 0; }
+        .toc-list li { margin-bottom: 1rem; }
+        .toc-list a { text-decoration: none; color: #4B5563; font-weight: 500; transition: color 0.2s ease; }
+        .toc-list a:hover { color: #EA580C; }
+
+        @media (max-width: 992px) {
+            .hero-title { font-size: 2.75rem; }
+            .stat-grid { grid-template-columns: 1fr; }
+            .toc-wrapper { display: none; }
+            .article-content-wrapper { padding: 0 0.5rem; }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#skills">Skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-            <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><a class="dropdown-item" href="index.html">All Posts</a></li>
-              <li><a class="dropdown-item" href="../ai-projects.html">AI Projects</a></li>
-              <li><a class="dropdown-item" href="../iot-projects.html">IoT Projects</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <main class="py-5">
-    <div class="container">
-      <article class="blog-post-content mx-auto" style="max-width:900px;">
-        <!-- Article Header -->
-        <header class="blog-post-header">
-          <h1 class="blog-post-title">VIDES: Professional Vehicle Image Detection System</h1>
-          <div class="blog-post-meta">
-            <span class="blog-card-category">AI & ML</span>
-            <div class="blog-post-author">
-              <img src="../profile.jpg" alt="Shubham Kulkarni" class="blog-post-author-avatar">
-              <span><strong>Shubham Kulkarni</strong></span>
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-premium">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <i class="fas fa-arrow-left text-secondary" style="font-size: 0.9rem;"></i>
+                <span style="font-family: var(--font-mono); color: var(--text-primary);">Back to Blog</span>
+            </a>
+            
+             <div class="ms-auto d-none d-md-block">
+                <span class="badge bg-light text-dark border fw-medium px-3 py-2">
+                    <i class="fas fa-clock me-2"></i> 9 min read
+                </span>
             </div>
-            <span><i class="fas fa-calendar-alt"></i> December 8, 2024</span>
-            <span class="blog-reading-time"><i class="fas fa-clock"></i> 15 min read</span>
-          </div>
-        </header>
-
-        <!-- Social Share Buttons -->
-        <div class="blog-social-share">
-          <a href="#" class="social-share-btn share-twitter" data-share="twitter">
-            <i class="fab fa-twitter"></i> Share on Twitter
-          </a>
-          <a href="#" class="social-share-btn share-linkedin" data-share="linkedin">
-            <i class="fab fa-linkedin"></i> Share on LinkedIn
-          </a>
-          <a href="#" class="social-share-btn share-copy" data-share="copy">
-            <i class="fas fa-link"></i> Copy Link
-          </a>
         </div>
+    </nav>
 
-        <!-- Article Content -->
-        <section>
-          <h2>Introduction to VIDES</h2>
-          <p>The Vehicle Image Detection System (VIDES) is a production-grade vehicle detection and tracking system designed specifically for building high-quality AI training datasets. This comprehensive system handles multiple RTSP camera streams simultaneously, employs advanced tracking algorithms to prevent duplicate captures, and implements sophisticated quality control mechanisms to ensure every saved image is perfect for machine learning model training.</p>
-        </section>
+    <!-- Header -->
+    <header class="article-header pt-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                     <span class="hero-tag mb-3 d-inline-block text-white bg-warning border-warning" style="background-color: #EA580C !important; border-color: #EA580C !important;">Smart Cities</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">AI in Traffic Management: Building VIDES</h1>
+                    <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
+                        How we architected a real-time Highway Traffic Management System (HTMS) to detect accidents in milliseconds using YOLOv8 and DeepSORT.
+                    </p>
+                    
+                    <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="../photo_sk.jpg" alt="Shubham" class="rounded-circle shadow-sm" width="56" height="56">
+                            <div class="text-start">
+                                <span class="d-block fw-bold text-dark">Shubham Kulkarni</span>
+                                <span class="small text-secondary">System Architect</span>
+                            </div>
+                        </div>
+                        <div class="vr opacity-25"></div>
+                        <div class="text-start">
+                            <span class="d-block fw-bold text-dark">Published</span>
+                            <time class="small text-secondary" datetime="2026-02-10">Feb 10, 2026</time>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <section>
-          <h2>System Architecture</h2>
-          <h3>Modular Design</h3>
-          <p>VIDES follows a clean, modular architecture with clear separation of concerns:</p>
-          <pre><code>├── main.py              # System orchestrator
-├── config.py            # Configuration management
-├── stream_reader.py     # RTSP stream handling
-├── roi_manager.py       # ROI management
-├── tracker.py           # Advanced vehicle tracking
-└── utils.py             # Utility functions</code></pre>
-          
-          <p>This architecture ensures maintainability, scalability, and ease of testing while providing production-grade reliability.</p>
-        </section>
-
-        <section>
-          <h2>Core Features</h2>
-          <h3>1. Multi-Camera Support</h3>
-          <p>VIDES can simultaneously process multiple RTSP streams from different cameras, making it ideal for large-scale surveillance or traffic monitoring systems. Each camera operates independently with its own configuration:</p>
-          <pre><code>CAMERAS = {
-    "overview": "rtsp://admin:password@192.168.1.100:554/stream1",
-    "anpr": "rtsp://admin:password@192.168.1.101:554/stream1",
-    "ptz": "rtsp://admin:password@192.168.1.102:554/stream1"
-}</code></pre>
-
-          <h3>2. Advanced Vehicle Tracking</h3>
-          <p>The system uses ByteTrack combined with Kalman filtering to achieve zero-duplicate tracking. Each vehicle is assigned a unique ID and tracked throughout its journey in the frame:</p>
-          <ul>
-            <li><strong>ByteTrack Algorithm:</strong> Multi-object tracking with ID persistence</li>
-            <li><strong>Kalman Filtering:</strong> Smooth trajectory prediction for handling occlusions</li>
-            <li><strong>IoU Association:</strong> Match detections to existing tracks</li>
-            <li><strong>Lost Track Management:</strong> Automatic cleanup of stale tracks after 30 frames</li>
-          </ul>
-
-          <h3>3. ROI-Based Filtering</h3>
-          <p>Users can draw custom polygon regions of interest (ROI) for each camera. Only vehicles with their center point inside the ROI are tracked and saved, eliminating irrelevant detections:</p>
-          <ul>
-            <li>Interactive ROI drawing with mouse clicks</li>
-            <li>Support for complex polygon shapes</li>
-            <li>Per-camera ROI configuration saved to JSON</li>
-            <li>Real-time visualization of active ROIs</li>
-          </ul>
-
-          <h3>4. Quality Control</h3>
-          <p>VIDES implements rigorous quality checks to ensure only high-quality images are saved for training:</p>
-          <ul>
-            <li><strong>Blur Detection:</strong> Laplacian variance analysis (threshold: 100+)</li>
-            <li><strong>Brightness Validation:</strong> Ensures proper illumination (30-220 range)</li>
-            <li><strong>Stationary Vehicle Filtering:</strong> Rejects parked vehicles with minimal movement</li>
-            <li><strong>Resolution Check:</strong> Validates minimum vehicle size requirements</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Implementation Details</h2>
-          <h3>Detection Pipeline</h3>
-          <p>The system uses a custom-trained YOLO model for vehicle detection with the following classes:</p>
-          <pre><code># Custom Vehicle Classes
-VEHICLE_CLASSES = [
-    'auto_rickshaw',
-    'bike',
-    'bus',
-    'car',
-    'mini_bus',
-    'tractor',
-    'truck'
-]
-
-# YOLO Configuration
-CONFIDENCE_THRESHOLD = 0.5
-IOU_THRESHOLD = 0.45
-MODEL_PATH = 'bestv4.pt'</code></pre>
-
-          <h3>Multi-Threading Architecture</h3>
-          <p>For optimal performance, VIDES uses a multi-threaded approach:</p>
-          <pre><code>class StreamReader(Thread):
-    def __init__(self, stream_url, camera_id):
-        super().__init__(daemon=True)
-        self.stream_url = stream_url
-        self.camera_id = camera_id
-        self.latest_frame = None
-        self.lock = Lock()
-        
-    def run(self):
-        cap = cv2.VideoCapture(self.stream_url)
-        while self.running:
-            ret, frame = cap.read()
-            if ret:
-                with self.lock:
-                    self.latest_frame = frame
-            else:
-                self.reconnect()
+    <!-- Main Body -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
                 
-    def get_frame(self):
-        with self.lock:
-            return self.latest_frame.copy() if self.latest_frame is not None else None</code></pre>
-        </section>
+                <!-- Sidebar TOC -->
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-top" style="top: 120px;">
+                        <div class="toc-wrapper">
+                            <h6 class="text-uppercase text-muted fw-bold mb-4 small" style="letter-spacing: 1px;">Contents</h6>
+                            <ul class="toc-list">
+                                <li><a href="#the-challenge">1. The Need for Speed</a></li>
+                                <li><a href="#architecture">2. VIDES Architecture</a></li>
+                                <li><a href="#detection-pipeline">3. YOLO + DeepSORT</a></li>
+                                <li><a href="#edge-optimization">4. Edge Deployments</a></li>
+                                <li><a href="#impact">5. Real World Impact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
-        <section>
-          <h2>Advanced Capabilities</h2>
-          <h3>Speed Estimation</h3>
-          <p>VIDES can estimate vehicle speed in real-time using pixel displacement and calibrated distance:</p>
-          <pre><code>def estimate_speed(track_id, current_pos, previous_pos, fps):
-    # Calculate pixel displacement
-    dx = current_pos[0] - previous_pos[0]
-    dy = current_pos[1] - previous_pos[1]
-    pixel_distance = np.sqrt(dx**2 + dy**2)
+                 <!-- Content -->
+                <div class="col-lg-8 article-content-wrapper">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Highway Traffic Control" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
+
+                    <p class="dropcap">
+                        At Arya Omnitalk, I had the opportunity to work on the <strong>Highway Traffic Management System (HTMS)</strong>, specifically the VIDES module. The goal was ambitious: automate the detection of traffic violations and accidents on high-speed expressways without a human in the loop.
+                    </p>
+                    
+                    <p>
+                        A car moving at 120 km/h covers 33 meters per second. That means our system had to capture, process, and analyze a frame in **under 200ms** to successfully trigger an alert before the vehicle exited the camera's field of view.
+                    </p>
+
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <span class="stat-value">60%</span>
+                            <span class="stat-label">Faster Response</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">5k+</span>
+                            <span class="stat-label">Monthly Challans</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">30FPS</span>
+                            <span class="stat-label">Real-time Inf</span>
+                        </div>
+                    </div>
+
+                    <h2 id="the-challenge">1. The Need for Speed (and Accuracy)</h2>
+                    <p>
+                        Detecting a car is easy. Detecting a car in heavy rain, at night, while it's hidden behind a truck? That's hard.
+                    </p>
+                    <div class="highlight-box">
+                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Core Problems</h4>
+                        <ul class="mb-0">
+                            <li><strong>Occlusion:</strong> Large trucks often hide smaller cars entirely for seconds at a time.</li>
+                            <li><strong>Motion Blur:</strong> At 120km/h, standard shutter speeds blur license plates beyond recognition.</li>
+                            <li><strong>Ghosting:</strong> Reflections on wet roads can be mistaken for vehicles.</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="architecture">2. The VIDES Pipeline</h2>
+                    <p>
+                        We architected a pipeline that splits the workload between Edge Devices (on the highway gantry) and the Cloud Server.
+                    </p>
+
+                    <div class="code-block-wrapper my-4">
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">pipeline.mermaid</span>
+                            <i class="fas fa-code text-muted"></i>
+                        </div>
+<pre><code class="language-mermaid">flowchart TD
+    Cam[High Speed Camera] -->|RTSP Feed| Edge[NVIDIA Jetson Edge]
     
-    # Convert to real-world distance
-    real_distance = pixel_distance / PIXELS_PER_METER
+    subgraph Edge Processing
+        Edge --> Detect[YOLOv8 Detection]
+        Detect --> Track[DeepSORT Tracking]
+        Track --> Logic{Violation Check}
+    end
     
-    # Calculate speed (m/s to km/h)
-    speed_mps = real_distance * fps
+    Logic -- Speeding --> Crop[Crop License Plate]
+    Logic -- Accident --> Alert[Immediate SOS]
+    
+    Crop --> Cloud[Cloud Server]
+    Cloud --> OCR[Tesseract ANPR]
+    OCR --> DB[(Challan Database)]</code></pre>
+                    </div>
+
+                    <h2 id="detection-pipeline">3. YOLO + DeepSORT: The Golden Pair</h2>
+                    <p>
+                        We used **YOLOv8** for detection because of its balance between speed and accuracy (mAP). But detection alone isn't enough; you can't calculate speed without tracking the *same* vehicle across frames.
+                    </p>
+                    <p>
+                        Enter **DeepSORT** (Simple Online and Realtime Tracking with a Deep Association Metric). It assigns a unique ID to each car.
+                    </p>
+
+                    <div class="code-block-wrapper my-4">
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">tracker.py</span>
+                            <i class="fas fa-code text-muted"></i>
+                        </div>
+<pre><code class="language-python">def calculate_speed(track_id, current_pos, fps):
+    # Retrieve previous position from history
+    prev_pos = history[track_id][-1]
+    
+    # Pixel to Meter conversion (Calibrated per camera)
+    distance_pixels = euclidean_dist(current_pos, prev_pos)
+    distance_meters = distance_pixels * PIXEL_METER_RATIO
+    
+    # Speed = Distance / Time
+    time_sec = 1 / fps
+    speed_mps = distance_meters / time_sec
     speed_kmh = speed_mps * 3.6
     
     return speed_kmh</code></pre>
+                    </div>
 
-          <h3>Direction Detection</h3>
-          <p>The system provides 8-way direction classification for vehicle movement:</p>
-          <ul>
-            <li>North, South, East, West</li>
-            <li>Northeast, Northwest, Southeast, Southwest</li>
-            <li>Based on trajectory analysis over multiple frames</li>
-          </ul>
+                    <h2 id="edge-optimization">4. Edge Optimization</h2>
+                    <p>
+                        Running this on a full server is expensive. We optimized the model to run on **NVIDIA Jetson Xavier** modules mounted directly on the gantries.
+                    </p>
+                    <ul>
+                        <li><strong>TensorRT:</strong> We converted the PyTorch weights to TensorRT engines, achieving a 4x speedup.</li>
+                        <li><strong>FP16 Quantization:</strong> Reduced precision from 32-bit to 16-bit floating point with negligible accuracy loss.</li>
+                    </ul>
 
-          <h3>Trajectory Analysis</h3>
-          <p>Vehicle paths are smoothed and analyzed for pattern recognition:</p>
-          <ul>
-            <li>Path smoothing using moving average</li>
-            <li>Turn detection and classification</li>
-            <li>Lane change identification</li>
-            <li>Abnormal behavior detection</li>
-          </ul>
-        </section>
+                    <h2 id="impact">5. Real World Impact</h2>
+                    <p>
+                        The system is now live on major expressways. Not only has it automated over 5,000 fines per month, but more importantly, the **Accident Detection Module** alerts highway patrol within 15 seconds of a vehicle stopping in a high-speed lane, potentially saving lives.
+                    </p>
 
-        <section>
-          <h2>Dataset Generation</h2>
-          <h3>Output Structure</h3>
-          <p>VIDES organizes captured images in a clean, camera-wise folder structure:</p>
-          <pre><code>images/
-├── frame/          # Full frame captures
-│   ├── overview/
-│   │   ├── frame_0.jpg
-│   │   ├── frame_1.jpg
-│   │   └── ...
-│   ├── anpr/
-│   └── ptz/
-└── cropped/        # Vehicle crops
-    ├── overview/
-    │   ├── frame_0.jpg
-    │   ├── frame_1.jpg
-    │   └── ...
-    ├── anpr/
-    └── ptz/</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
 
-          <h3>Image Quality Settings</h3>
-          <pre><code># Maximum quality for training datasets
-JPEG_QUALITY = 100
-IMAGE_FORMAT = 'jpg'  # or 'png' for lossless
+    <!-- Footer -->
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="text-secondary small mb-4">Engineering Safer Cities.</p>
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
+        </div>
+    </footer>
 
-# Alternative: PNG for lossless compression
-USE_PNG = False  # Set to True for maximum quality</code></pre>
-        </section>
-
-        <section>
-          <h2>Real-World Applications</h2>
-          <h3>1. Traffic Monitoring Systems</h3>
-          <ul>
-            <li>Highway traffic analysis and counting</li>
-            <li>Intersection vehicle flow monitoring</li>
-            <li>Traffic violation detection</li>
-            <li>Congestion analysis</li>
-          </ul>
-
-          <h3>2. Dataset Creation for AI Training</h3>
-          <ul>
-            <li>Building large-scale vehicle detection datasets</li>
-            <li>Creating annotated training data for YOLO models</li>
-            <li>Gathering diverse vehicle type samples</li>
-            <li>Collecting different lighting and weather conditions</li>
-          </ul>
-
-          <h3>3. Smart City Infrastructure</h3>
-          <ul>
-            <li>Parking lot management</li>
-            <li>Automatic Number Plate Recognition (ANPR) integration</li>
-            <li>Security and surveillance</li>
-            <li>Emergency vehicle detection</li>
-          </ul>
-
-          <h3>4. Research Applications</h3>
-          <ul>
-            <li>Transportation research</li>
-            <li>Urban planning studies</li>
-            <li>Environmental impact analysis</li>
-            <li>Behavioral pattern research</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Performance Optimization</h2>
-          <h3>For Maximum FPS</h3>
-          <pre><code># Configuration for speed
-BUFFER_SIZE = 1           # Lower latency
-DEVICE = "0"              # Use GPU
-ENABLE_QUALITY_CHECK = False  # Skip quality validation
-RESIZE_WIDTH = 640        # Lower resolution</code></pre>
-
-          <h3>For Best Quality</h3>
-          <pre><code># Configuration for quality
-MIN_BLUR_THRESHOLD = 150   # Stricter blur check
-ENABLE_QUALITY_CHECK = True
-USE_PNG = True            # Lossless format
-RESIZE_WIDTH = 1920       # Full HD resolution</code></pre>
-
-          <h3>Multi-Threading Benefits</h3>
-          <ul>
-            <li>Each camera has a dedicated capture thread</li>
-            <li>Minimal buffer size for low latency (latest frame always available)</li>
-            <li>Lock-free reads for maximum throughput</li>
-            <li>Asynchronous image saving doesn't block processing</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Statistics and Monitoring</h2>
-          <p>VIDES provides comprehensive statistics for system monitoring:</p>
-          <h3>Real-Time Metrics</h3>
-          <ul>
-            <li>FPS per camera stream</li>
-            <li>Active vehicle tracks</li>
-            <li>Total vehicles detected</li>
-            <li>Frames saved count</li>
-            <li>Rejection statistics</li>
-            <li>Processing latency</li>
-          </ul>
-
-          <h3>Logging System</h3>
-          <pre><code># Detailed logging to file and console
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.FileHandler('vehicle_capture.log'),
-        logging.StreamHandler()
-    ]
-)</code></pre>
-        </section>
-
-        <section>
-          <h2>Best Practices</h2>
-          <ol>
-            <li><strong>ROI Placement:</strong> Draw tight ROIs around lanes of interest for better accuracy</li>
-            <li><strong>Camera Angles:</strong> Prefer frontal or rear views for better vehicle recognition</li>
-            <li><strong>Lighting:</strong> Ensure adequate lighting; use IR cameras for night operations</li>
-            <li><strong>Storage:</strong> Use SSD storage for fast image write operations</li>
-            <li><strong>Network:</strong> Ensure stable network connection for RTSP streams</li>
-            <li><strong>Calibration:</strong> Calibrate pixels_per_meter for accurate speed estimation</li>
-            <li><strong>Monitoring:</strong> Regularly check statistics and logs for system health</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2>System Requirements</h2>
-          <h3>Hardware</h3>
-          <ul>
-            <li><strong>CPU:</strong> Intel i5 or better (i7/i9 recommended for multiple cameras)</li>
-            <li><strong>RAM:</strong> 8GB minimum, 16GB+ recommended</li>
-            <li><strong>GPU:</strong> NVIDIA GPU with CUDA support (optional but recommended)</li>
-            <li><strong>Storage:</strong> SSD with sufficient space (100GB+ for large datasets)</li>
-            <li><strong>Network:</strong> Stable connection for RTSP streams</li>
-          </ul>
-
-          <h3>Software</h3>
-          <ul>
-            <li>Python 3.8 or higher</li>
-            <li>Ultralytics YOLO</li>
-            <li>OpenCV (cv2)</li>
-            <li>NumPy</li>
-            <li>Custom trained YOLO model (bestv4.pt)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Installation and Setup</h2>
-          <h3>Quick Start</h3>
-          <pre><code># Install dependencies
-pip install ultralytics opencv-python numpy
-
-# Clone the repository
-git clone https://github.com/kulkarnishub377/Image_collection_vechile_dectetion.git
-cd Image_collection_vechile_dectetion
-
-# Configure cameras in config.py
-# Run the system
-python main.py
-
-# Draw ROIs for each camera
-# Press 'q' to quit, 's' for statistics</code></pre>
-        </section>
-
-        <section>
-          <h2>Technologies Used</h2>
-          <div class="blog-tags">
-            <span class="blog-tag">YOLO</span>
-            <span class="blog-tag">Ultralytics</span>
-            <span class="blog-tag">OpenCV</span>
-            <span class="blog-tag">Python</span>
-            <span class="blog-tag">ByteTrack</span>
-            <span class="blog-tag">Kalman Filter</span>
-            <span class="blog-tag">RTSP</span>
-            <span class="blog-tag">Computer Vision</span>
-            <span class="blog-tag">NumPy</span>
-            <span class="blog-tag">Multi-threading</span>
-          </div>
-        </section>
-
-        <section>
-          <h2>Future Enhancements</h2>
-          <ul>
-            <li>Deep learning-based quality assessment</li>
-            <li>Automated ANPR integration</li>
-            <li>Cloud storage support (AWS S3, Azure Blob)</li>
-            <li>Web-based monitoring dashboard</li>
-            <li>Mobile app for remote monitoring</li>
-            <li>Integration with traffic management systems</li>
-          </ul>
-        </section>
-
-        <section class="mt-4 bg-light p-3 rounded">
-          <h4>Need a Custom Vehicle Detection Solution?</h4>
-          <p>If you're working on traffic monitoring, smart city projects, or need a customized vehicle detection system, <a href="../index.html#contact">let's connect</a>! I specialize in building production-ready computer vision systems.</p>
-        </section>
-
-      </article>
-    </div>
-  </main>
-
-  <footer class="text-center py-4">
-    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
-  </footer>
-  
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  <!-- Custom Scripts -->
-  <script src="../js/script.js"></script>
-  <script src="../js/blog.js"></script>
-  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
 </body>
 </html>

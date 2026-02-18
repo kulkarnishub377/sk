@@ -1,0 +1,359 @@
+/* 
+   --------------------------------------------------------------------------
+   DESIGN SYSTEM 2.0 - PREMIUM BLOG THEME (2026)
+   Style: Clean, "Linear", Minimalist, Content-First
+   -------------------------------------------------------------------------- 
+*/
+
+:root {
+    /* Color Palette - Inter System */
+    --bg-body: #FAFAFA;
+    --bg-surface: #FFFFFF;
+    --border-light: #E5E7EB; /* Gray-200 */
+    --border-hover: #D1D5DB; /* Gray-300 */
+    
+    --text-primary: #111827; /* Gray-900 */
+    --text-secondary: #4B5563; /* Gray-600 */
+    --text-muted: #9CA3AF; /* Gray-400 */
+    
+    --accent-primary: #2563EB; /* Blue-600 */
+    --accent-hover: #1D4ED8; /* Blue-700 */
+    --accent-subtle: #EFF6FF; /* Blue-50 */
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #111827 0%, #374151 100%);
+    --gradient-text: linear-gradient(to right, #2563EB, #7C3AED);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    /* Typography */
+    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Resets */
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--text-primary);
+    letter-spacing: -0.025em; /* Tight tracking for modern feel */
+}
+
+a {
+    transition: all 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   COMPONENT: HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+    position: relative;
+    padding: 6rem 0 4rem;
+    overflow: hidden;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 16px;
+    background: var(--accent-subtle);
+    color: var(--accent-primary);
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+.hero-title {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #111827, #4B5563);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   COMPONENT: BLOG CARDS (The Core Redesign)
+   -------------------------------------------------------------------------- */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2.5rem;
+    padding: 4rem 0;
+}
+
+.article-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.article-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-hover);
+}
+
+.card-image-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    overflow: hidden;
+    background-color: #f3f4f6; /* Skeleton loading color */
+}
+
+.card-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s var(--ease-out);
+}
+
+/* Checkered Pattern Overlay for technical feel */
+.card-image-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#000 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+.article-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.75rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Metadata Row */
+.card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.meta-dot {
+    width: 4px;
+    height: 4px;
+    background: var(--text-muted);
+    border-radius: 50%;
+}
+
+.category-tag {
+    color: var(--accent-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Typography */
+.card-heading {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.35;
+    color: var(--text-primary);
+}
+
+.card-excerpt {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Pushes footer down */
+}
+
+/* Footer & Author */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border-light);
+    margin-top: auto;
+}
+
+.author-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid var(--bg-surface);
+    box-shadow: 0 0 0 1px var(--border-light);
+}
+
+.author-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.read-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: gap 0.2s ease;
+}
+
+.article-card:hover .read-link {
+    gap: 8px; /* Arrow slide effect */
+}
+
+/* --------------------------------------------------------------------------
+   COMPONENT: STICKY NAV REWRITE
+   -------------------------------------------------------------------------- */
+.navbar-premium {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.nav-link.active {
+    color: var(--accent-primary) !important;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-primary);
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   COMPONENT: ARTICLE PAGE TYPOGRAPHY
+   -------------------------------------------------------------------------- */
+.article-header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.article-body {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.125rem; /* Larger text for reading */
+    color: #374151;
+}
+
+.article-body p {
+    margin-bottom: 1.75rem;
+}
+
+/* Code Blocks */
+pre, code {
+    font-family: var(--font-mono);
+}
+
+.code-block-wrapper {
+    background: #1e1e1e; /* VS Code Dark */
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+    border: 1px solid #333;
+    overflow: hidden;
+    color: #d4d4d4;
+    padding: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+/* Tables */
+.table-premium {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-premium th {
+    background: #F9FAFB;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.table-premium td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}

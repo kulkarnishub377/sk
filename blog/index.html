@@ -1,214 +1,410 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Blog - AI, IoT & Tech Insights by Shubham Kulkarni</title>
-  <meta name="description" content="Explore in-depth articles on AI/ML, Computer Vision, IoT, E-Waste Management, and Software Development. Learn from real-world projects and tutorials by Shubham Kulkarni.">
-  <meta name="keywords" content="Shubham Kulkarni blog, AI tutorials, IoT projects, computer vision, e-waste management, video processing, machine learning, Python development, tech articles">
-  <meta name="author" content="Shubham Kulkarni">
-  <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/">
-  <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
-  
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/">
-  <meta property="og:title" content="Developer Blog — AI, IoT & Tech Insights by Shubham Kulkarni">
-  <meta property="og:description" content="Read technical posts, case studies and tutorials on AI, Computer Vision, IoT, E-Waste Management and more by Shubham Kulkarni.">
-  <meta property="og:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
-  <meta property="og:site_name" content="Shubham Kulkarni Blog">
-  
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Developer Blog — AI, IoT & Tech Insights">
-  <meta name="twitter:description" content="Technical articles and tutorials on AI/ML, IoT, Computer Vision, and more.">
-  <meta name="twitter:image" content="https://kulkarnishub377.github.io/sk/profile.jpg">
-  
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Blog",
-    "name": "Shubham Kulkarni Developer Blog",
-    "description": "Technical blog covering AI/ML, IoT, Computer Vision, E-Waste Management, and Software Development",
-    "url": "https://kulkarnishub377.github.io/sk/blog/",
-    "author": {
-      "@type": "Person",
-      "name": "Shubham Kulkarni",
-      "url": "https://kulkarnishub377.github.io/sk/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Shubham Kulkarni",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://kulkarnishub377.github.io/sk/profile.jpg"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO & Metadata -->
+    <title>Engineering Blog | Shubham Kulkarni</title>
+    <meta name="description" content="Technical deep dives into Full Stack Architecture, Embedded Systems, and Agentic AI.">
+    <meta name="author" content="Shubham Kulkarni">
+    
+    <!-- Schema.org: Global Person Entity -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "jobTitle": "Senior AI Engineer",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "sameAs": [
+          "https://github.com/kulkarnishub377",
+          "https://linkedin.com/in/shubhamkulkarni"
+        ],
+        "image": "https://kulkarnishub377.github.io/sk/photo_sk.jpg",
+        "description": "Full Stack AI Engineer specializing in Scalable Microservices, Embedded IoT Systems, and Agentic AI."
       }
     }
-  }
-  </script>
-  
-  <link rel="manifest" href="/site.webmanifest">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/blog.css">
+    </script>
+    
+    <!-- Fonts: Inter + Outfit + JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Dependencies -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Premium Design System -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg" aria-label="Main navigation">
-    <div class="container">
-      <a class="navbar-brand" href="../index.html">Shubham Kulkarni</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="../about.html">About Me</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="#" id="blogDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
-            <ul class="dropdown-menu" aria-labelledby="blogDropdown">
-              <li><a class="dropdown-item active" href="index.html">All Posts</a></li>
-              <li><a class="dropdown-item" href="../ai-projects.html">AI Projects</a></li>
-              <li><a class="dropdown-item" href="../iot-projects.html">IoT Projects</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <main class="py-5">
-    <div class="blog-container">
-      <!-- Blog Header -->
-      <header class="blog-header">
-        <h1>Developer Blog</h1>
-        <p class="blog-subtitle">Technical articles, tutorials and project case-studies on AI, Computer Vision, IoT, E-Waste Management, and Modern Software Development.</p>
-      </header>
-
-      <!-- Search Box -->
-      <div class="blog-search">
-        <input type="text" class="blog-search-input" placeholder="🔍 Search articles..." aria-label="Search blog posts">
-      </div>
-
-      <!-- Category Filter -->
-      <div class="blog-filter">
-        <button class="blog-filter-btn active" data-filter="all">All Posts</button>
-        <button class="blog-filter-btn" data-filter="ai-ml">AI & ML</button>
-        <button class="blog-filter-btn" data-filter="iot">IoT</button>
-        <button class="blog-filter-btn" data-filter="computer-vision">Computer Vision</button>
-        <button class="blog-filter-btn" data-filter="environment">Environment & Sustainability</button>
-        <button class="blog-filter-btn" data-filter="development">Development</button>
-      </div>
-
-      <!-- Blog Grid -->
-      <div class="blog-grid">
-        <!-- Real-Time Object Detection -->
-        <article class="blog-card" data-category="computer-vision">
-          <div class="blog-card-content">
-            <span class="blog-card-category">Computer Vision</span>
-            <h2 class="blog-card-title">Real-Time Object Detection with OpenCV</h2>
-            <p class="blog-card-excerpt">A practical walkthrough on building an efficient object detector using OpenCV and deep models, including tips for deployment and optimization.</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 11, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+    <!-- Navigation (Sticky, Blurry) -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-premium">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="../index.html">
+                <span style="font-family: var(--font-mono); color: var(--accent-primary);">&lt;SK/&gt;</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4" style="font-size: 0.95rem;">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#work">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Engineering Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                </ul>
             </div>
-            <a href="object-detection.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
+        </div>
+    </nav>
 
-        <!-- Smart Irrigation System -->
-        <article class="blog-card" data-category="iot">
-          <div class="blog-card-content">
-            <span class="blog-card-category">IoT</span>
-            <h2 class="blog-card-title">Smart Irrigation — A Case Study</h2>
-            <p class="blog-card-excerpt">System architecture, sensor design, ML model integration and cloud deployment details of the award-winning Smart Irrigation System (JalTantra).</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 10, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 10 min read</span>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <div class="container">
+            <div class="animate-fade-up">
+                <span class="hero-tag">
+                    <i class="fas fa-terminal me-2"></i>Engineering Journal 2026
+                </span>
+                <h1 class="hero-title">Building the Future, <br> One Commit at a Time.</h1>
+                <p class="hero-description mt-3">
+                    A collection of technical articles on Scalable Microservices, Embedded IoT Systems, and the next generation of Agentic AI.
+                </p>
             </div>
-            <a href="smart-irrigation.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
+        </div>
+    </section>
 
-        <!-- E-Waste Management System -->
-        <article class="blog-card" data-category="environment">
-          <div class="blog-card-content">
-            <span class="blog-card-category">Environment & Sustainability</span>
-            <h2 class="blog-card-title">E-Waste Management System: IoT Solution</h2>
-            <p class="blog-card-excerpt">Building a comprehensive e-waste collection and tracking system using IoT sensors, real-time monitoring, and data analytics for sustainable waste management.</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 9, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 12 min read</span>
+    <!-- Main Content -->
+    <main class="container">
+        <h2 class="mb-4 d-none">Latest Articles</h2> <!-- Hidden for semantics/SEO -->
+        
+        <div class="blog-grid">
+            
+            <!-- Article 1: Agentic AI (Trends) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="Agentic AI Future">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Trends</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-02-20">Feb 20, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="ai-ml-trends.html" class="stretched-link text-decoration-none text-reset">
+                            AI Trends 2026: The Year of Agentic AI
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Why 2026 is the year of "Action Bots". Exploring how autonomous agents and Edge AI are redefining software engineering.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 2: Generative AI (Transformers) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://th.bing.com/th/id/R.e9f32b9ad5f2ba35b68ba6384e601669?rik=2KVzyToeNt9prw&riu=http%3a%2f%2fhekate.ai%2fwp-content%2fuploads%2f2024%2f01%2fgenerative-ai-la-gi.jpg&ehk=Z6iLVPLbSt%2fl%2fXfxTlul6l0GDD1NWr2llMJoIEc6LSE%3d&risl=&pid=ImgRaw&r=0" 
+                         loading="lazy" class="card-image" alt="Neural Networks">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Deep Learning</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-02-18">Feb 18, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="generative-ai.html" class="stretched-link text-decoration-none text-reset">
+                            Demystifying Transformers & LLMs
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        A technical dive into the Self-Attention mechanism. Understanding Query, Key, and Value vectors in modern LLMs.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 3: Object Detection (OpenCV) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <!-- NEW VERIFIED URL for CV -->
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="Computer Vision">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Computer Vision</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-02-15">Feb 15, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="object-detection.html" class="stretched-link text-decoration-none text-reset">
+                            Real-Time Object Detection at 30FPS
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Optimizing Python & OpenCV for Edge Devices. How I used MobileNet SSD to achieve real-time inference monitoring on CPU.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4: Vehicle System (HTMS) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                     <!-- NEW VERIFIED URL for Traffic -->
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="Traffic Systems">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">IoT & Smart Cities</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-02-10">Feb 10, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="vehicle-detection-system.html" class="stretched-link text-decoration-none text-reset">
+                            AI in Traffic Management (HTMS)
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        My experience at Arya Omnitalk: Architecting the VIDES system to detect accidents and speeding in milliseconds.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5: Alumni Portal (System Design) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="System Architecture">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">System Design</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-02-05">Feb 05, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="alumni-portal.html" class="stretched-link text-decoration-none text-reset">
+                            Scalable Alumni Portal Architecture
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Designing a scalable Alumni Portal using Django and Flask. Handling concurrency, database optimization, and REST APIs.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6: Mental Health (IBM) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="Mental Health AI">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">AI for Good</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-01-28">Jan 28, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="mental-health-ai.html" class="stretched-link text-decoration-none text-reset">
+                            Mental Health AI: Fitness Tracker for Minds
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Using NLP and Sentiment Analysis (VADER) to detect micro-anomalies in user behavior and predict burnout.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 7: JalTantra (Embedded) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <!-- Tech Farming Image -->
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=800&q=80" 
+                         loading="lazy" class="card-image" alt="Smart Farming">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Embedded IoT</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-01-15">Jan 15, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="smart-irrigation.html" class="stretched-link text-decoration-none text-reset">
+                            JalTantra: Saving 30% Water with IoT
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Deep dive into PIC Microcontrollers and capacitive sensors. How we built an award-winning irrigation system.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 8: E-Waste (E-Zero) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.oPOro95WYspZ-UV2gaLy_gHaE4?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         loading="lazy" class="card-image" alt="E-Waste Recycling">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Sustainability</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2025-12-10">Dec 10, 2025</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="e-waste-management.html" class="stretched-link text-decoration-none text-reset">
+                            E-Zero: AI & Gamification for E-Waste
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        A PWA platform using TensorFlow.js for instant AI valuation of old electronics, rewarding users with crypto-badges.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 9: Line Follower Robot -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://raw.githubusercontent.com/kulkarnishub377/Line-Following-Robot/refs/heads/main/3-Media/Line-Following-img.png" 
+                         loading="lazy" class="card-image" alt="Line Follower Robot">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">Robotics</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-03-10">Mar 10, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="line-follower.html" class="stretched-link text-decoration-none text-reset">
+                            Line Follower Robot: PID Control & Arduino
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        How to build a precision autonomous robot using PID logic, Arduino Mega, and IR arrays. A complete engineering guide.
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 10: Trending AI Languages (Mojo/Rust) -->
+            <article class="article-card">
+                <div class="card-image-wrapper">
+                    <img src="https://tse2.mm.bing.net/th/id/OIP.z5_wxteHbHj9SVhEm7B2jAHaFj?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3" 
+                         loading="lazy" class="card-image" alt="Python vs Mojo vs Rust">
+                </div>
+                <div class="card-content">
+                    <div class="card-meta">
+                        <span class="category-tag">AI Trends</span>
+                        <span class="meta-dot"></span>
+                        <time datetime="2026-04-02">Apr 02, 2026</time>
+                    </div>
+                    <h3 class="card-heading">
+                        <a href="trending-ai-langs.html" class="stretched-link text-decoration-none text-reset">
+                            AI Languages 2026: Python vs Mojo vs Rust
+                        </a>
+                    </h3>
+                    <p class="card-excerpt">
+                        Is Python dying? A deep benchmark comparison of the new contenders for AI supremacy. 
+                    </p>
+                    <div class="card-footer">
+                        <div class="author-block">
+                            <img src="../photo_sk.jpg" alt="SK" class="author-img">
+                            <span class="author-name">Shubham K.</span>
+                        </div>
+                        <span class="read-link">Read Article <i class="fas fa-arrow-right"></i></span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Minimized Footer -->
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5 mt-5">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="text-secondary hover-primary"><i class="fab fa-github fs-4"></i></a>
+                <a href="#" class="text-secondary hover-primary"><i class="fab fa-linkedin fs-4"></i></a>
+                <a href="#" class="text-secondary hover-primary"><i class="fa-solid fa-envelope fs-4"></i></a>
             </div>
-            <a href="e-waste-management.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
+            <p class="text-secondary small mb-0">&copy; 2026 Shubham Kulkarni. All rights reserved.</p>
+        </div>
+    </footer>
 
-        <!-- VIDES - Vehicle Detection System -->
-        <article class="blog-card" data-category="ai-ml">
-          <div class="blog-card-content">
-            <span class="blog-card-category">AI & ML</span>
-            <h2 class="blog-card-title">VIDES: Vehicle Image Detection System</h2>
-            <p class="blog-card-excerpt">Production-grade vehicle detection and tracking system with multi-camera support, ByteTrack algorithm, and advanced quality control for building perfect AI training datasets.</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 8, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 15 min read</span>
-            </div>
-            <a href="vehicle-detection-system.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <!-- Line-Following Robot -->
-        <article class="blog-card" data-category="iot">
-          <div class="blog-card-content">
-            <span class="blog-card-category">IoT</span>
-            <h2 class="blog-card-title">Line-Following Robot: Design & Control</h2>
-            <p class="blog-card-excerpt">From hardware selection to control algorithm — building a reliable line-following robot with Arduino and advanced sensor integration.</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 7, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 7 min read</span>
-            </div>
-            <a href="line-follower.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <!-- Dev Notes: ML Deployment -->
-        <article class="blog-card" data-category="development">
-          <div class="blog-card-content">
-            <span class="blog-card-category">Development</span>
-            <h2 class="blog-card-title">Dev Notes: Deploying ML Models</h2>
-            <p class="blog-card-excerpt">Best practices for model packaging, containerization, and serving with Flask and Docker. Production-ready deployment strategies.</p>
-            <div class="blog-card-meta">
-              <span class="blog-card-date"><i class="fas fa-calendar-alt"></i> Dec 6, 2024</span>
-              <span class="blog-card-read-time"><i class="fas fa-clock"></i> 9 min read</span>
-            </div>
-            <a href="dev-notes.html" class="blog-card-cta">Read Article <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="text-center py-4">
-    <p class="mb-0">© <span id="copyright-year">2024</span> Shubham Kulkarni</p>
-  </footer>
-  
-  <!-- Bootstrap JS Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
-  <!-- Custom Scripts -->
-  <script src="../js/script.js"></script>
-  <script src="../js/blog.js"></script>
-  <script>try{document.getElementById('copyright-year').textContent=new Date().getFullYear()}catch(e){};</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO -->
-    <title>JalTantra: Saving 30% Water with IoT | Shubham Kulkarni</title>
-    <meta name="description" content="A detailed engineering case study on JalTantra, an IoT-based smart irrigation system using PIC Microcontrollers and capacitive soil sensors.">
+    <title>Mental Health AI: Fitness Tracker for Minds | Shubham Kulkarni</title>
+    <meta name="description" content="My IBM Internship Project: Using NLP and VADER Sentiment Analysis to detect behavioral micro-anomalies and predict user burnout.">
     <meta name="author" content="Shubham Kulkarni">
-    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html">
-    <meta property="og:title" content="JalTantra: IoT Smart Irrigation System">
-    <meta property="og:description" content="How we saved 30% water using Embedded C and Soil Sensors.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1563514227146-5913d80b4352?auto=format&fit=crop&w=1200&q=80">
-    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html">
+    <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/mental-health-ai.html">
+    <meta property="og:title" content="Mental Health AI: NLP for Well-being">
+    <meta property="og:description" content="Using Python, Flask, and Scikit-learn to build a proactive mental health tracker.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/mental-health-ai.html">
     <meta property="og:type" content="article">
+
+    <!-- Schema.org Authority -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://kulkarnishub377.github.io/sk/blog/mental-health-ai.html"
+      },
+      "headline": "Mental Health AI: Fitness Tracker for Minds",
+      "description": "Using NLP and VADER Sentiment Analysis to detect behavioral micro-anomalies and predict user burnout.",
+      "image": "https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=1200&q=80",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "jobTitle": "AI Engineer"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni"
+      },
+      "datePublished": "2026-01-28",
+      "dateModified": "2026-02-18"
+    }
+    </script>
 
     <!-- Fonts & CSS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +82,7 @@
             display: block;
             width: 80px;
             height: 6px;
-            background: linear-gradient(90deg, #059669, transparent); /* Emerald for Agriculture */
+            background: linear-gradient(90deg, #8B5CF6, transparent); /* Purple for AI/Mind */
             margin-top: 15px;
             border-radius: 4px;
         }
@@ -66,7 +93,7 @@
             font-size: 1.75rem;
             margin-top: 3rem;
             margin-bottom: 1.25rem;
-            color: #047857; /* Darker Emerald */
+            color: #5B21B6; /* Darker Purple */
         }
 
         .dropcap::first-letter {
@@ -76,13 +103,13 @@
             line-height: 0.85;
             margin-right: 1.25rem;
             margin-top: 0.2rem;
-            color: #059669;
+            color: #8B5CF6;
             font-weight: 700;
         }
 
         .highlight-box {
-            background: #ECFDF5;
-            border-left: 6px solid #059669;
+            background: #F5F3FF;
+            border-left: 6px solid #8B5CF6;
             padding: 2.5rem;
             border-radius: 16px;
             margin: 3.5rem 0;
@@ -92,14 +119,14 @@
         }
 
         .highlight-box::before {
-            content: '\f4d8'; /* FontAwesome Seedling */
+            content: '\f0e0'; /* FontAwesome Brain */
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
             position: absolute;
             top: -20px;
             right: -20px;
             font-size: 8rem;
-            color: rgba(5, 150, 105, 0.05);
+            color: rgba(139, 92, 246, 0.05);
             transform: rotate(30deg);
         }
 
@@ -123,15 +150,15 @@
         .stat-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            border-color: rgba(5, 150, 105, 0.2);
+            border-color: rgba(139, 92, 246, 0.2);
         }
 
         .stat-value {
             font-size: 3rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);
             -webkit-background-clip: text;
-            background-clip: text;
+            background-clip: text; /* Standard property */
             -webkit-text-fill-color: transparent;
             display: block;
             margin-bottom: 0.5rem;
@@ -157,7 +184,7 @@
         .toc-list { list-style: none; padding: 0; margin: 0; }
         .toc-list li { margin-bottom: 1rem; }
         .toc-list a { text-decoration: none; color: #4B5563; font-weight: 500; transition: color 0.2s ease; }
-        .toc-list a:hover { color: #059669; }
+        .toc-list a:hover { color: #8B5CF6; }
 
         @media (max-width: 992px) {
             .hero-title { font-size: 2.75rem; }
@@ -179,7 +206,7 @@
             
              <div class="ms-auto d-none d-md-block">
                 <span class="badge bg-light text-dark border fw-medium px-3 py-2">
-                    <i class="fas fa-clock me-2"></i> 8 min read
+                    <i class="fas fa-clock me-2"></i> 7 min read
                 </span>
             </div>
         </div>
@@ -190,10 +217,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                     <span class="hero-tag mb-3 d-inline-block text-white bg-success border-success" style="background-color: #059669 !important; border-color: #059669 !important;">Embedded IoT</span>
-                    <h1 class="hero-title display-4 fw-bolder mb-4">JalTantra: Saving 30% Water with IoT</h1>
+                     <span class="hero-tag mb-3 d-inline-block text-white bg-primary border-primary" style="background-color: #8B5CF6 !important; border-color: #8B5CF6 !important;">AI for Good</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">Mental Health AI: A Fitness Tracker for the Mind</h1>
                     <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
-                        How we engineered an award-winning smart irrigation system using PIC Microcontrollers and capacitive sensors to fight water scarcity.
+                        How we used NLP and VADER Sentiment Analysis to detect behavioral micro-anomalies and predict burnout before it happens.
                     </p>
                     
                     <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
@@ -201,13 +228,13 @@
                             <img src="../photo_sk.jpg" alt="Shubham" class="rounded-circle shadow-sm" width="56" height="56">
                             <div class="text-start">
                                 <span class="d-block fw-bold text-dark">Shubham Kulkarni</span>
-                                <span class="small text-secondary">Embedded Systems Engineer</span>
+                                <span class="small text-secondary">IBM Project Lead</span>
                             </div>
                         </div>
                         <div class="vr opacity-25"></div>
                         <div class="text-start">
                             <span class="d-block fw-bold text-dark">Published</span>
-                            <time class="small text-secondary" datetime="2026-01-15">Jan 15, 2026</time>
+                            <time class="small text-secondary" datetime="2026-01-28">Jan 28, 2026</time>
                         </div>
                     </div>
                 </div>
@@ -226,11 +253,11 @@
                         <div class="toc-wrapper">
                             <h6 class="text-uppercase text-muted fw-bold mb-4 small" style="letter-spacing: 1px;">Contents</h6>
                             <ul class="toc-list">
-                                <li><a href="#the-problem">1. The Water Crisis</a></li>
-                                <li><a href="#architecture">2. System Architecture</a></li>
-                                <li><a href="#embedded-c">3. Embedded Logic</a></li>
-                                <li><a href="#results">4. Impact & Awards</a></li>
-                                <li><a href="#future">5. Future: LoRaWAN</a></li>
+                                <li><a href="#the-challenge">1. The Quantified Self</a></li>
+                                <li><a href="#nlp-pipeline">2. The NLP Pipeline</a></li>
+                                <li><a href="#sentiment-scoring">3. VADER Logic</a></li>
+                                <li><a href="#anomaly-detection">4. Anomaly Detection</a></li>
+                                <li><a href="#results">5. Real World Impact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -238,106 +265,107 @@
 
                  <!-- Content -->
                 <div class="col-lg-8 article-content-wrapper">
-                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=1200&q=80" 
-                         alt="Smart Irrigation Field" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
+                    <img src="https://images.unsplash.com/photo-1527137342181-19aab11a8ee8?auto=format&fit=crop&w=1200&q=80" 
+                         alt="Mental Health Data Visualization" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
 
                     <p class="dropcap">
-                        Agriculture consumes 70% of the world's freshwater, yet 40% of it is wasted due to inefficient irrigation methods. "JalTantra" (Water Mechanism) is my solution to this global crisis—an intelligent, sensor-based irrigation system.
+                        During my internship at IBM, I stared at my Apple Watch and asked a simple question: "We track steps, calories, and sleep with obsessively high fidelity. Why are we effectively blind to our own mental load?"
                     </p>
                     
                     <p>
-                        Unlike traditional timer-based systems that water even when it rains, JalTantra uses real-time ground data to make decisions. The result? precise hydration that mimics nature.
+                        This question led to the development of a <strong>Proactive Mental Health Tracker</strong>. Unlike traditional apps that ask "How are you feeling?", our system uses Natural Language Processing (NLP) to analyze passive data—journal entries, slack messages (with consent), and voice notes—to detect the invisible signs of burnout.
                     </p>
 
                     <div class="stat-grid">
                         <div class="stat-card">
-                            <span class="stat-value">32%</span>
-                            <span class="stat-label">Water Saved</span>
+                            <span class="stat-value">90%</span>
+                            <span class="stat-label">Mood Accuracy</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">500</span>
-                            <span class="stat-label">Sq. Ft. Pilot</span>
+                            <span class="stat-value">45%</span>
+                            <span class="stat-label">Intervention Rate</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">1st</span>
-                            <span class="stat-label">Eco-Innovation</span>
+                            <span class="stat-value">200+</span>
+                            <span class="stat-label">Beta Users</span>
                         </div>
                     </div>
 
-                    <h2 id="the-problem">1. The Core Problem</h2>
+                    <h2 id="the-challenge">1. The Quantified Self Challenge</h2>
                     <p>
-                        Manual irrigation is labor-intensive and error-prone. Farmers often over-water, leading to soil nutrient leaching and root rot, or under-water during sudden heatwaves.
+                        Mental health is deeply subjective. Unlike a heart rate of 120bpm which is an objective fact, "anxiety" is a spectrum. Our goal was to create a non-intrusive system that could identify <strong>Micro-Anomalies</strong> in behavior.
                     </p>
                     <div class="highlight-box">
-                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-tint text-primary me-2" style="color: #059669 !important;"></i>The Efficiency Gap</h4>
+                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-microscope text-primary me-2" style="color: #8B5CF6 !important;"></i>What is a Micro-Anomaly?</h4>
                         <p class="mb-0">
-                            A standard sprinkler system operates on a schedule. JalTantra operates on <strong>Demand</strong>. If the soil moisture is above 80%, the pump stays off, saving electricity and water.
+                            A single angry message isn't an issue. But a 15% drop in vocabulary richness combined with a 20% increase in negative sentiment over 7 days? That is a digital biomarker for stress.
                         </p>
                     </div>
 
-                    <h2 id="architecture">2. System Architecture</h2>
+                    <h2 id="nlp-pipeline">2. The NLP Pipeline</h2>
                     <p>
-                         The system is built around the **PIC16F877A** microcontroller, chosen for its robustness in industrial environments. It interfaces with capacitive soil moisture sensors (corrosion-resistant v1.2) and controls a submersible pump via a relay.
+                        We built the backend using Python and Flask, utilizing NLTK for the linguistic heavy lifting. Here is how raw text travels through our system to become a "Mental Health Score".
                     </p>
 
                     <div class="code-block-wrapper my-4">
                         <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">architecture_diagram.mermaid</span>
+                            <span class="font-monospace small text-muted">pipeline_diagram.mermaid</span>
                             <i class="fas fa-code text-muted"></i>
                         </div>
-<pre><code class="language-mermaid">graph LR
-    Sensor[Soil Moisture Sensor] -- Analog Signal --> ADC[PIC16F877A ADC]
-    ADC -- Digital Value --> MCU{Processing Unit}
-    MCU -- Moisture < 30% --> Relay[Relay ON]
-    Relay --> Pump[Submersible Pump]
-    MCU -- Data --> LCD[16x2 Display]
-    MCU -- Alert --> GSM[GSM Module]</code></pre>
+<pre><code class="language-mermaid">flowchart LR
+    Input[User Journal / Text] --> Tokenize[Tokenization (NLTK)]
+    Tokenize --> Clean[Remove Stopwords]
+    Clean --> Vectorize[VADER Analysis]
+    Vectorize --> Score{Compound Score}
+    
+    Score -- > 0.05 --> Pos[Positive Mood]
+    Score -- < -0.05 --> Neg[Negative Mood]
+    Score -- Else --> Neu[Neutral]
+    
+    Neg --> Rolling[7-Day Moving Avg]
+    Rolling --> Alert{Threshold < -0.3?}
+    Alert -- Yes --> Trigger[Trigger Intervention]</code></pre>
                     </div>
 
-                    <h2 id="embedded-c">3. Embedded Implementation</h2>
+                    <h2 id="sentiment-scoring">3. Why VADER?</h2>
                     <p>
-                        The logic is written in Embedded C using the **XC8 Compiler**. We use the internal 10-bit ADC to map sensor values to a percentage.
+                        We chose <strong>VADER (Valence Aware Dictionary and sEntiment Reasoner)</strong> over more complex Transformers like BERT for one reason: Explainability and Speed. VADER is rule-based and specifically tuned for social media contexts, meaning it understands ALL CAPS and multiple exclamation marks!!!
                     </p>
 
                     <div class="code-block-wrapper my-4">
-                         <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">controller.c</span>
+                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
+                            <span class="font-monospace small text-muted">analyzer.py</span>
                             <i class="fas fa-code text-muted"></i>
                         </div>
-<pre><code class="language-c">#define _XTAL_FREQ 20000000
-#define PUMP_RELAY RC0  
+<pre><code class="language-python">from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-void main() {
-    ADC_Init();   // Initialize ADC
+def analyze_mood(text_entry):
+    analyzer = SentimentIntensityAnalyzer()
     
-    while(1) {
-        int moisture_val = ADC_Read(0);
-        // Map 0-1023 to 0-100%
-        int percentage = map(moisture_val, 0, 1023, 0, 100);
-        
-        if (percentage < 30) {
-            PUMP_RELAY = 1; // Turn ON Pump
-            LCD_String("Status: Watering");
-        } else if (percentage > 80) {
-            PUMP_RELAY = 0; // Turn OFF Pump
-            LCD_String("Status: Optimal");
-        }
-        __delay_ms(1000);
-    }
-}</code></pre>
+    # VADER handles negations brilliantly
+    # "The party wasn't boring" -> Positive Score
+    scores = analyzer.polarity_scores(text_entry)
+    
+    return {
+        "compound": scores['compound'], # Normalized -1 to +1
+        "pos": scores['pos'],
+        "neu": scores['neu'],
+        "neg": scores['neg']
+    }</code></pre>
                     </div>
 
-                    <h2 id="results">4. Impact & Awards</h2>
+                    <h2 id="anomaly-detection">4. Detecting "Burnout Pattern"</h2>
                     <p>
-                        We deployed JalTantra in a local garden plot for 3 months. Not only did we reduce water usage, but we also observed a visible improvement in leaf turgidity.
+                         A single data point is noise. A trend is a signal. We used a **Rolling 7-Day Window** to smooth out daily fluctuations.
                     </p>
-                    <p>
-                        This project was recognized as the <strong>"Best Eco-Innovation"</strong> at the College Tech Fest 2024, validating the need for simple, effective IoT solutions in agriculture.
-                    </p>
+                    <ul>
+                        <li><strong>The Dip:</strong> If the 7-day average drops below -0.3, the system flags a "Low Mood Event".</li>
+                        <li><strong>The Nudge:</strong> The user receives a gentle prompt: <em>"You seem to have a lot on your mind this week. Want to try a 2-minute breathing exercise?"</em></li>
+                    </ul>
 
-                    <h2 id="future">5. Future Scope: LoRaWAN</h2>
+                    <h2 id="results">5. Real World Impact</h2>
                     <p>
-                        To make this commercially viable for large farms (50+ acres), Wi-Fi is insufficient. The next version of JalTantra will utilize **LoRaWAN** for long-range, low-power communication, sending data to AWS IoT Core for predictive analytics.
+                        During our beta test with 200 users, we found that the **"Gentle Nudge"** intervention had a 45% engagement rate. Users reported that simply being made aware of their trend helped them take corrective action before spiraling into burnout.
                     </p>
 
                 </div>
@@ -354,7 +382,7 @@ void main() {
                 <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
                 <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
             </div>
-            <p class="text-secondary small mb-4">Innovating for a Greener Tomorrow.</p>
+            <p class="text-secondary small mb-4">Engineering AI for Humans.</p>
             <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
         </div>
     </footer>
