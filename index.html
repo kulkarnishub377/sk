@@ -213,7 +213,7 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -239,7 +239,7 @@
                 <h1 class="display-4 fw-bold">Shubham Kulkarni</h1>
                 <p class="lead mb-4"><span class="typed-text"></span></p>
                 <div class="d-flex justify-content-center gap-3">
-                    <a href="#contact" class="btn btn-gradient">Hire Me</a>
+                    <a href="#" class="btn btn-gradient" data-bs-toggle="modal" data-bs-target="#contactModal">Hire Me</a>
                     <a href="Shubham_resume.pdf" class="btn btn-secondary-outline" download>Download Resume</a>
                 </div>
             </div>
@@ -350,6 +350,7 @@
                     </div>
                     <div class="card-body">
                         <p>Designed and deployed an AI-powered Mental Health Fitness Tracker. Utilized advanced NLP techniques to achieve a 90% accuracy rate in mood detection from user text inputs, contributing to a proactive mental wellness tool.</p>
+                        <a href="blog/mental-health-ai.html" class="btn btn-sm btn-outline-dark mt-2 mb-2">Read Case Study</a>
                         <div class="tech-tags mt-3">
                         <span class="badge rounded-pill text-bg-info">Python</span>
                         <span class="badge rounded-pill text-bg-info">NLP</span>
@@ -914,16 +915,20 @@
                     </script>
 
         <!-- Contact Section -->
+        <!-- Contact Section (Simplified) -->
         <section id="contact">
             <div class="container">
                 <div class="text-center animate-on-scroll">
                     <h2 class="section-heading"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Contact Me</h2>
                     <hr class="my-4">
                     <p class="lead text-muted mb-4">
-                        Feel free to reach out for collaborations, opportunities, or just to connect! Please use the form below and I will get back to you soon.
+                        Feel free to reach out for collaborations, opportunities, or just to connect!
                     </p>
+                    <button class="btn btn-gradient btn-lg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                        <i class="fas fa-paper-plane me-2"></i> Send Message
+                    </button>
                 </div>
-                <div class="row text-center animate-on-scroll">
+                <div class="row text-center animate-on-scroll mt-5">
                     <div class="col-md-4 mb-4 mb-md-0">
                         <i class="fas fa-map-marker-alt fa-3x mb-3 text-muted" aria-hidden="true"></i>
                         <h5>Location</h5>
@@ -940,30 +945,12 @@
                         <a href="mailto:kulkarnishub377@gmail.com" class="text-decoration-none">kulkarnishub377@gmail.com</a>
                     </div>
                 </div>
-                <div class="row justify-content-center animate-on-scroll mb-5">
-                    <div class="col-lg-8">
-                        <div class="card shadow-sm p-4 border-primary bg-light">
-                            <iframe 
-                                class="google-form-iframe"
-                                src="https://docs.google.com/forms/d/e/1FAIpQLSf9DJN5xv1zo8QQVXuTURYFYw_7GIqBCmpeN6SZWLgzXjzB9g/viewform?embedded=true" 
-                                width="100%" 
-                                height="400" 
-                                frameborder="0" 
-                                marginheight="0" 
-                                marginwidth="0"
-                                title="Contact Form"
-                                aria-label="Google Contact Form"
-                                loading="lazy"
-                            >Loading…</iframe>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class=" text-white">
+    <footer class="text-white">
         <div class="container text-center">
             <div class="social-icons mb-3">
                 <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=shubhkulk21" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
@@ -986,11 +973,34 @@
         <a href="tel:+918308003684" aria-label="Phone"><i class="fas fa-phone"></i></a>
     </div>
 
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="fas fa-paper-plane me-2"></i>Send Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <iframe 
+                        class="google-form-iframe"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSf9DJN5xv1zo8QQVXuTURYFYw_7GIqBCmpeN6SZWLgzXjzB9g/viewform?embedded=true" 
+                        width="100%" 
+                        height="500" 
+                        title="Contact Form"
+                        aria-label="Google Contact Form"
+                        loading="lazy"
+                    >Loading…</iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Project Modals -->
     <!-- Project 1 Modal -->
     <div class="modal fade" id="project1Modal" tabindex="-1" aria-labelledby="project1ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project1ModalLabel"><i class="fas fa-users me-2" aria-hidden="true"></i>Alumni Management Portal</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1005,8 +1015,11 @@
                     </ul>
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
-                    <a href="Alumni_app.pdf" class="btn btn-secondary-outline" download>Download PDF</a>
-                    <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">Close</button>
+                    <div>
+                        <a href="blog/alumni-portal.html" class="btn btn-gradient me-2">Read Full Article</a>
+                        <a href="Alumni_app.pdf" class="btn btn-secondary-outline" download>Download PDF</a>
+                    </div>
+                    <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -1015,7 +1028,7 @@
     <!-- Project 2 Modal -->
     <div class="modal fade" id="project2Modal" tabindex="-1" aria-labelledby="project2ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project2ModalLabel"><i class="fas fa-seedling me-2" aria-hidden="true"></i>Smart Irrigation System</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1031,8 +1044,11 @@
                     </ul>
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
-                    <a href="https://kulkarnishub377.github.io/JalTantra/" class="btn btn-secondary-outline" target="_blank" rel="noopener">Live Demo</a>
-                    <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">Close</button>
+                    <div>
+                        <a href="blog/smart-irrigation.html" class="btn btn-gradient me-2">Read Full Article</a>
+                        <a href="https://kulkarnishub377.github.io/JalTantra/" class="btn btn-secondary-outline" target="_blank" rel="noopener">Live Demo</a>
+                    </div>
+                    <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -1041,7 +1057,7 @@
     <!-- Project 3 Modal -->
     <div class="modal fade" id="project3Modal" tabindex="-1" aria-labelledby="project3ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project3ModalLabel"><i class="fas fa-robot me-2" aria-hidden="true"></i>Line Following Robot</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1055,8 +1071,11 @@
                     </ul>
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
-                    <a href="https://github.com/kulkarnishub377/A_line_following_robot" class="btn btn-secondary-outline" target="_blank" rel="noopener">GitHub</a>
-                    <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">Close</button>
+                    <div>
+                        <a href="blog/line-follower.html" class="btn btn-gradient me-2">Read Full Article</a>
+                        <a href="https://github.com/kulkarnishub377/A_line_following_robot" class="btn btn-secondary-outline" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -1064,7 +1083,7 @@
     <!-- Project 4 Modal -->
     <div class="modal fade" id="project4Modal" tabindex="-1" aria-labelledby="project4ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project4ModalLabel"><i class="fas fa-eye me-2" aria-hidden="true"></i>Python Object Detection (OpenCV)</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1078,8 +1097,11 @@
                     </ul>
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
-                    <a href="https://github.com/kulkarnishub377/Python_object_detection" class="btn btn-secondary-outline" target="_blank" rel="noopener">GitHub</a>
-                    <button type="button" class="btn btn-gradient" data-bs-dismiss="modal">Close</button>
+                    <div>
+                        <a href="blog/object-detection.html" class="btn btn-gradient me-2">Read Full Article</a>
+                        <a href="https://github.com/kulkarnishub377/Python_object_detection" class="btn btn-secondary-outline" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -1087,7 +1109,7 @@
     <!-- Project 5 Modal -->
     <div class="modal fade" id="project5Modal" tabindex="-1" aria-labelledby="project5ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project5ModalLabel"><i class="fas fa-globe me-2" aria-hidden="true"></i>Portfolio Website <span class="badge bg-success ms-2">Live</span></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1113,7 +1135,7 @@
     <!-- E-Waste Management System Modal -->
     <div class="modal fade" id="project6Modal" tabindex="-1" aria-labelledby="project6ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project6ModalLabel"><i class="fas fa-recycle me-2" aria-hidden="true"></i>E-Waste Management System</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -1148,7 +1170,7 @@
     <!-- VIDES: Vehicle Detection System Modal -->
     <div class="modal fade" id="project7Modal" tabindex="-1" aria-labelledby="project7ModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
                 <div class="modal-header">
                     <h5 class="modal-title" id="project7ModalLabel"><i class="fas fa-car me-2" aria-hidden="true"></i>VIDES: Vehicle Image Detection System</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

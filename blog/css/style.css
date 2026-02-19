@@ -38,6 +38,8 @@
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+
 /* Base Resets */
 body {
     background-color: var(--bg-body);
@@ -87,6 +89,7 @@ a {
     line-height: 1.1;
     margin-bottom: 1rem;
     background: linear-gradient(to right, #111827, #4B5563);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -256,10 +259,12 @@ a {
    COMPONENT: STICKY NAV REWRITE
    -------------------------------------------------------------------------- */
 .navbar-premium {
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.85); /* Fallback */
+    background: var(--bg-surface); /* Context-aware */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-light);
+    background-color: color-mix(in srgb, var(--bg-surface), transparent 15%); /* Modern transparency */
 }
 
 .nav-link.active {
@@ -344,6 +349,57 @@ pre, code {
     padding: 1rem;
     border-bottom: 1px solid var(--border-light);
     font-size: 0.95rem;
+}
+
+/* --------------------------------------------------------------------------
+   COMPONENT: SHARE BUTTONS
+   -------------------------------------------------------------------------- */
+.share-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.share-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--border-light);
+    background: var(--bg-surface);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1.1rem;
+    text-decoration: none;
+}
+
+/* Brand Colors for Standard Buttons */
+.share-btn:not(.share-btn-sm).linkedin:hover { background: #0077b5; color: white; }
+.share-btn:not(.share-btn-sm).twitter:hover { background: #1da1f2; color: white; }
+.share-btn:not(.share-btn-sm).whatsapp:hover { background: #25d366; color: white; }
+.share-btn:not(.share-btn-sm).copy-link:hover { background: var(--text-secondary); color: white; }
+
+/* Small Button Overrides */
+.share-btn-sm {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    position: relative; /* Ensure it's above stretched-link */
+    z-index: 2;         /* Ensure it's above stretched-link */
+}
+
+.share-btn-sm:hover {
+    background: var(--accent-subtle) !important;
+    color: var(--accent-primary) !important;
+    transform: none;
+    box-shadow: none;
 }
 
 /* --------------------------------------------------------------------------
