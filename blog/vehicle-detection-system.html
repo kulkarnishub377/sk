@@ -325,24 +325,20 @@
                         We architected a split pipeline: heavy compute (detection + tracking) runs on <strong>edge devices</strong> mounted on the highway gantry, while OCR and database operations run in the <strong>cloud</strong>. This minimizes bandwidth — only violation crops are uploaded, not full video streams.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">pipeline.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
+                    <div class="mermaid my-4">
+flowchart TD
     Cam["📹 High-Speed Camera\n120fps Shutter"] -->|RTSP Stream| Edge
     
-    subgraph Edge ["⚡ Edge Device (Jetson Xavier)"]
+    subgraph Edge ["⚡ Edge Device - Jetson Xavier"]
         Detect["🔍 YOLOv8 Detection\nmAP 0.92"]
         Track["🏷️ DeepSORT Tracking\nUnique Vehicle IDs"]
         Logic{"⚠️ Violation\nCheck"}
         Detect --> Track --> Logic
     end
     
-    Logic -->|🚗 Speeding > 120km/h| Crop["✂️ Crop License Plate"]
-    Logic -->|💥 Accident Detected| Alert["🚨 Immediate SOS\nPatrol Alerted < 15s"]
-    Logic -->|✅ Normal| Discard["Skip Frame"]
+    Logic -->|"🚗 Speeding > 120km/h"| Crop["✂️ Crop License Plate"]
+    Logic -->|"💥 Accident Detected"| Alert["🚨 Immediate SOS\nPatrol Alerted < 15s"]
+    Logic -->|"✅ Normal"| Discard["Skip Frame"]
     
     subgraph Cloud ["☁️ Cloud Processing"]
         OCR["📝 Tesseract ANPR\nPlate Recognition"]
@@ -350,7 +346,7 @@
         OCR --> DB
     end
     
-    Crop -->|Encrypted Upload| OCR</code></pre>
+    Crop -->|Encrypted Upload| OCR
                     </div>
 
                     <!-- Section 3 -->
@@ -536,16 +532,12 @@ def read_plate(crop, confidence_threshold=85):
                         The most impactful feature isn't speed enforcement — it's <strong>accident detection</strong>. On high-speed expressways, a stopped vehicle in a live lane is a death trap. Our system detects stopped/abnormally slow vehicles and alerts highway patrol within 15 seconds.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">accident_detector.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart LR
+                    <div class="mermaid my-4">
+flowchart LR
     subgraph Monitor ["🔍 Continuous Monitoring"]
         Speed{"Vehicle Speed\n< 15 km/h?"}
         Duration{"Stationary\n> 10 seconds?"}
-        Lane{"In Live Lane\n(not shoulder)?"}
+        Lane{"In Live Lane\nnot shoulder?"}
     end
     
     Speed -->|Yes| Duration
@@ -553,7 +545,7 @@ def read_plate(crop, confidence_threshold=85):
     Duration -->|Yes| Lane
     Duration -->|No| Watch["⏳ Keep Watching"]
     Lane -->|Yes| SOS["🚨 ALERT!\nPatrol + Ambulance\nDispatched"]
-    Lane -->|No| Shoulder["📋 Log Only\n(Breakdown)"]</code></pre>
+    Lane -->|No| Shoulder["📋 Log Only\nBreakdown"]
                     </div>
 
                     <p>

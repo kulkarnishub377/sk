@@ -357,14 +357,10 @@
 
                     <!-- System Diagram -->
                     <h2 id="circuit">System Diagram</h2>
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">circuit_diagram.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
+                    <div class="mermaid my-4">
+flowchart TD
     subgraph Sensors ["👁️ Perception"]
-        IR["5× IR Sensor Array\n(TCRT5000)"]
+        IR["5× IR Sensor Array\nTCRT5000"]
     end
     
     subgraph Brain ["🧠 Processing"]
@@ -384,7 +380,7 @@
     Arduino --> PID
     PID -->|PWM Signal| L293D
     L293D -->|Voltage| LM
-    L293D -->|Voltage| RM</code></pre>
+    L293D -->|Voltage| RM
                     </div>
 
                     <!-- Section 3 -->

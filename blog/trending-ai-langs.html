@@ -435,13 +435,9 @@ fn classify(text: &str) -> Result&lt;Vec&lt;f32&gt;, candle_core::Error&gt; {
 
                     <!-- Section 4 -->
                     <h2 id="ecosystem">4. Ecosystem Diagram: Where Each Language Fits</h2>
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">ecosystem.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
-    subgraph Research ["🧪 Research & Prototyping"]
+                    <div class="mermaid my-4">
+flowchart TD
+    subgraph Research ["🧪 Research and Prototyping"]
         Python["🐍 Python\nPyTorch · JAX · HuggingFace"]
         Jupyter["📓 Jupyter Notebooks"]
         Python --> Jupyter
@@ -464,7 +460,7 @@ fn classify(text: &str) -> Result&lt;Vec&lt;f32&gt;, candle_core::Error&gt; {
     
     style Research fill:#e8f5e9,stroke:#4caf50
     style Optimization fill:#fff3e0,stroke:#ff9800
-    style Production fill:#fce4ec,stroke:#ef5350</code></pre>
+    style Production fill:#fce4ec,stroke:#ef5350
                     </div>
 
                     <!-- Section 5 -->
@@ -590,6 +586,10 @@ fn classify(text: &str) -> Result&lt;Vec&lt;f32&gt;, candle_core::Error&gt; {
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="../js/script.js"></script>
 </body>

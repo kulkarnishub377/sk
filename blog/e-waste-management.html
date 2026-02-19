@@ -325,12 +325,8 @@
                         Every feature in E-Zero maps to a real friction point we identified in our research. Here's the complete user flow:
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">user_journey.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
+                    <div class="mermaid my-4">
+flowchart TD
     A[📱 Open E-Zero PWA] --> B[📸 Take Photo of Device]
     B --> C{AI Identifies Device}
     C -->|Detected| D[💰 Show Estimated Value]
@@ -344,7 +340,7 @@
     I --> J
     J --> K[🏆 Earn Eco-Points]
     K --> L[🎮 Check Leaderboard]
-    K --> M[🎁 Redeem Rewards]</code></pre>
+    K --> M[🎁 Redeem Rewards]
                     </div>
 
                     <div class="row g-4 mb-5">
@@ -367,13 +363,9 @@
                         We chose a <strong>MERN Stack</strong> (MongoDB, Express, React, Node.js) architected as a <strong>Progressive Web App (PWA)</strong>. The "why" is critical: our target users are in Tier-2 and Tier-3 Indian cities where 4G can be spotty. A PWA lets us ship a native-app experience that works offline, weighs under 2MB, and doesn't require a Play Store download.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">system_architecture.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">graph TD
-    subgraph Client ["📱 Client (PWA)"]
+                    <div class="mermaid my-4">
+graph TD
+    subgraph Client ["📱 Client PWA"]
         UI[React UI] --> SW[Service Worker]
         UI --> TF[TensorFlow.js - On-Device AI]
         UI --> Map[Leaflet.js Map]
@@ -394,7 +386,7 @@
     UI -->|REST API| API
     API --> DB
     API --> S3
-    Scheduler -->|Notify| Agent[Collection Agent App]</code></pre>
+    Scheduler -->|Notify| Agent[Collection Agent App]
                     </div>
 
                     <h3>Why PWA Over Native?</h3>

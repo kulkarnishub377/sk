@@ -389,39 +389,35 @@
                     </p>
 
                     <!-- System Architecture Diagram -->
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">system_architecture.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
-    subgraph Client ["🖥️ Frontend (React + Redux)"]
+                    <div class="mermaid my-4">
+flowchart TD
+    subgraph Client ["🖥️ Frontend - React + Redux"]
         UI["React SPA"] --> RTK["RTK Query Cache"]
         UI --> WS["WebSocket Client"]
     end
 
-    subgraph Gateway ["🔒 API Gateway (Nginx)"]
-        LB["Load Balancer\n(Round Robin)"]
-        Rate["Rate Limiter\n(100 req/min)"]
+    subgraph Gateway ["🔒 API Gateway - Nginx"]
+        LB["Load Balancer\n Round Robin"]
+        Rate["Rate Limiter\n 100 req/min"]
         LB --> Rate
     end
 
-    subgraph Core ["🏛️ Core Service (Django)"]
+    subgraph Core ["🏛️ Core Service - Django"]
         Auth["JWT Auth\nMiddleware"]
-        API["REST API\n(DRF)"]
-        Celery["Celery Workers\n(Background Tasks)"]
+        API["REST API\n DRF"]
+        Celery["Celery Workers\n Background Tasks"]
         Auth --> API
     end
 
-    subgraph Events ["⚡ Event Service (Flask)"]
+    subgraph Events ["⚡ Event Service - Flask"]
         WSGI["Flask API"]
         Socket["Socket.IO\nServer"]
     end
 
     subgraph Data ["🗄️ Data Layer"]
-        PG[("PostgreSQL\n(Primary)")]
-        Redis[("Redis\n(Cache + Queue)")]
-        S3[("S3\n(Profile Pics)")]
+        PG[("PostgreSQL\n Primary")]
+        Redis[("Redis\n Cache + Queue")]
+        S3[("S3\n Profile Pics")]
     end
 
     UI -->|REST API| LB
@@ -433,7 +429,7 @@
     Celery --> PG
     Celery --> Redis
     WSGI --> PG
-    Socket --> Redis</code></pre>
+    Socket --> Redis
                     </div>
 
                     <h3 class="mt-4 mb-3">Authentication Flow (JWT + OAuth)</h3>
@@ -441,33 +437,29 @@
                         Handling session state across two different frameworks (Django & Flask) is tricky. We solved this using <strong>Stateless JWTs</strong> signed by a shared <code>HMAC-SHA256</code> secret key, stored in environment variables. The JWT payload carries the user's role, so both Django and Flask can enforce RBAC without hitting the database on every request.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">auth_flow.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">sequenceDiagram
+                    <div class="mermaid my-4">
+sequenceDiagram
     participant User
     participant Nginx as 🔒 API Gateway
     participant Django as 🏛️ Auth Service
     participant Flask as ⚡ Event Service
     participant DB as 🗄️ Redis/PostgreSQL
 
-    User->>Nginx: POST /login (Credentials)
+    User->>Nginx: POST /login Credentials
     Nginx->>Django: Proxy Request
-    Django->>DB: Validate User & Role
-    DB-->>Django: User Valid (role: alumni_verified)
-    Django->>Django: Generate JWT (Exp: 15min, Role: verified)
+    Django->>DB: Validate User and Role
+    DB-->>Django: User Valid role alumni_verified
+    Django->>Django: Generate JWT Exp 15min Role verified
     Django-->>User: Return Access + Refresh Tokens
 
-    Note over User, Flask: Subsequent Request (Cross-Service Auth)
+    Note over User, Flask: Subsequent Request Cross-Service Auth
     
-    User->>Nginx: GET /api/events (Bearer Token)
+    User->>Nginx: GET /api/events Bearer Token
     Nginx->>Flask: Proxy with Auth Headers
-    Flask->>Flask: Verify JWT Signature (Shared Secret)
-    Flask->>DB: Check Token Blacklist (Redis, O(1))
+    Flask->>Flask: Verify JWT Signature Shared Secret
+    Flask->>DB: Check Token Blacklist Redis O1
     DB-->>Flask: Token Valid
-    Flask-->>User: Return Event Data (200 OK)</code></pre>
+    Flask-->>User: Return Event Data 200 OK
                     </div>
 
                     <!-- Section 3 -->
@@ -601,15 +593,11 @@ def invalidate_cache(sender, instance, **kwargs):
                         Handling money requires zero tolerance for error. We integrated with <strong>Razorpay</strong> as the payment gateway and used Django's <code>transaction.atomic()</code> to ensure that money is never deducted without a corresponding database record. If <em>any</em> step in the chain fails, everything rolls back.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">payment_flow.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
-    A["💳 User Initiates Donation"] --> B{"🏦 Payment Gateway\n(Razorpay)"}
+                    <div class="mermaid my-4">
+flowchart TD
+    A["💳 User Initiates Donation"] --> B{"🏦 Payment Gateway\nRazorpay"}
     B -->|✅ Success| C["🔔 Webhook Triggered"]
-    B -->|❌ Failed| Z["Show Error & Retry"]
+    B -->|❌ Failed| Z["Show Error and Retry"]
     
     subgraph ACID ["🔒 Django Transaction Atomic"]
         E["📝 Create Donation Record"]
@@ -621,7 +609,7 @@ def invalidate_cache(sender, instance, **kwargs):
     ACID --> H{"All Operations\nSucceeded?"}
     H -->|Yes| I["✅ Commit Transaction\nSend Confirmation Email"]
     H -->|No| J["⚠️ Rollback Everything"]
-    J --> K["🚨 Log Critical Error\nAlert Admin"]</code></pre>
+    J --> K["🚨 Log Critical Error\nAlert Admin"]
                     </div>
 
                     <div class="code-block-wrapper my-4">

@@ -328,20 +328,16 @@
                         The system is built around the <strong>PIC16F877A microcontroller</strong>, chosen over Arduino for two reasons: industrial temperature rating (-40°C to +85°C) and a built-in 10-bit ADC with 8 channels. In agricultural environments where temperatures can exceed 45°C in Indian summers, consumer-grade boards fail.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">architecture_diagram.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">graph TB
+                    <div class="mermaid my-4">
+graph TB
     subgraph Sensors ["📡 Sensor Layer"]
         S1["Capacitive Soil Moisture v1.2"]
-        S2["DHT22 (Temp + Humidity)"]
+        S2["DHT22 Temp + Humidity"]
         S3["Rain Detection Module"]
     end
     
-    subgraph MCU ["🧠 Processing (PIC16F877A)"]
-        ADC["10-bit ADC (AN0-AN3)"]
+    subgraph MCU ["🧠 Processing PIC16F877A"]
+        ADC["10-bit ADC AN0-AN3"]
         Logic["Hysteresis Controller"]
         LCD["16×2 LCD Driver"]
     end
@@ -358,7 +354,7 @@
     ADC --> Logic
     Logic --> Relay --> Pump
     Logic --> LCD
-    Logic -->|SMS Alert| GSM</code></pre>
+    Logic -->|SMS Alert| GSM
                     </div>
 
                     <h2 id="calibration">3. Sensor Calibration: The Unsexy Critical Step</h2>

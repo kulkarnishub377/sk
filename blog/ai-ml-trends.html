@@ -386,24 +386,19 @@
                         The fundamental difference lies in the <strong>OODA Loop</strong> (Observe, Orient, Decide, Act). Traditional Chatbots only "Decide" (generate text). Agents must complete the full loop. They need to observe the state of the world (read a file, see a browser DOM), orient themselves (understand the context), decide on an action (click a button, run a command), and then act.
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">ooda_loop.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart LR
+                    <div class="mermaid my-4">
+flowchart LR
     subgraph Traditional ["💬 Traditional LLM"]
         Input["📝 User Prompt"] --> Generate["🧠 Generate Text"] --> Output["📄 Text Response"]
     end
     
-    subgraph Agentic ["🤖 Agentic AI (OODA Loop)"]
+    subgraph Agentic ["🤖 Agentic AI OODA Loop"]
         Observe["👁️ Observe\nRead files, DOM, APIs"] --> Orient["🧭 Orient\nContext + Memory"] --> Decide["🧠 Decide\nPlan next action"] --> Act["⚡ Act\nRun tool, click, code"] --> Observe
     end
     
     style Traditional fill:#fee2e2,stroke:#ef4444
-    style Agentic fill:#d1fae5,stroke:#10b981</code></pre>
+    style Agentic fill:#d1fae5,stroke:#10b981
                     </div>
-                    </p>
 
                     <div class="highlight-box">
                         <h4 class="h5 fw-bold mb-3"><i class="fas fa-lightbulb text-primary me-2"></i>Why "Chat" is Dead</h4>

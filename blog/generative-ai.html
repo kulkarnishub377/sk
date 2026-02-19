@@ -491,28 +491,24 @@ def positional_encoding(max_seq_len, d_model):
                         <li><strong>T5 / BART</strong> = Full Encoder-Decoder — maps input sequence to output sequence. Great for translation, summarization.</li>
                     </ul>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">architecture.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart TD
-    Input["📝 Input Tokens"] --> Embed["Token Embedding\n(d_model = 512)"]
+                    <div class="mermaid my-4">
+flowchart TD
+    Input["📝 Input Tokens"] --> Embed["Token Embedding\nd_model = 512"]
     Embed --> PE["➕ Positional Encoding\nsin/cos waves"]
 
     subgraph Block ["🔁 Transformer Block × N"]
-        MHA["🧠 Multi-Head\nSelf-Attention\n(h=8 heads)"]
-        AN1["Add & LayerNorm"]
-        FFN["⚡ Feed-Forward\n(2048 → 512)"]
-        AN2["Add & LayerNorm"]
+        MHA["🧠 Multi-Head\nSelf-Attention\nh=8 heads"]
+        AN1["Add and LayerNorm"]
+        FFN["⚡ Feed-Forward\n2048 → 512"]
+        AN2["Add and LayerNorm"]
         MHA --> AN1 --> FFN --> AN2
     end
 
     PE --> Block
     AN2 --> LN["Final LayerNorm"]
-    LN --> Linear["Linear Projection\n(vocab_size)"]
+    LN --> Linear["Linear Projection\nvocab_size"]
     Linear --> SM["Softmax"]
-    SM --> Output["🎯 Next Token\nProbabilities"]</code></pre>
+    SM --> Output["🎯 Next Token\nProbabilities"]
                     </div>
 
                     <h2 id="training">7. Training vs Inference: Two Very Different Games</h2>

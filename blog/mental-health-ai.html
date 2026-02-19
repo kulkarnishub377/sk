@@ -326,14 +326,10 @@
                         We built the backend using <strong>Python and Flask</strong>, utilizing NLTK for the linguistic heavy lifting. The pipeline transforms raw text into a "Mental Health Score" through five stages:
                     </p>
 
-                    <div class="code-block-wrapper my-4">
-                        <div class="d-flex justify-content-between border-bottom border-secondary border-opacity-25 pb-2 mb-3">
-                            <span class="font-monospace small text-muted">pipeline_diagram.mermaid</span>
-                            <i class="fas fa-code text-muted"></i>
-                        </div>
-<pre><code class="language-mermaid">flowchart LR
-    Input["User Text Input"] --> Tokenize["Tokenization (NLTK)"]
-    Tokenize --> Clean["Remove Stopwords & Normalize"]
+                    <div class="mermaid my-4">
+flowchart LR
+    Input["User Text Input"] --> Tokenize["Tokenization NLTK"]
+    Tokenize --> Clean["Remove Stopwords and Normalize"]
     Clean --> Features["Feature Extraction"]
     Features --> VADER["VADER Sentiment"]
     Features --> Lex["Lexical Diversity"]
@@ -347,7 +343,7 @@
     Emotion --> Rolling
     Rolling --> Alert{"Score < Threshold?"}
     Alert -->|Yes| Trigger["🔔 Trigger Gentle Nudge"]
-    Alert -->|No| Store["📊 Store & Display"]</code></pre>
+    Alert -->|No| Store["📊 Store and Display"]
                     </div>
 
                     <p>
