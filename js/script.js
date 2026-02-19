@@ -170,16 +170,15 @@ const PortfolioApp = {
     if (typedEl && typeof Typed !== "undefined") {
       new Typed(typedEl, {
         strings: [
-          "Electronics and Telecommunication Engineer",
-          "Software Developer at Arya Omnitalk",
-          "IoT and AI Innovator",
-          "Python Enthusiast and Automation Expert",
-          "AI/ML Developer | Deep Learning Practitioner",
-          "Machine Learning Model Builder",
-          "OpenCV and Computer Vision Hobbyist",
-          "Building Smart Systems with Python",
-          "Exploring Generative AI and LLMs",
-        ],
+        "AI/ML Engineer | Computer Vision Specialist",
+        "Building Production AI Systems at Scale",
+        "YOLOv8 · TensorRT · Edge AI · DeepSORT",
+        "Smart India Hackathon 2023 — AIR 1 Winner",
+        "Python · PyTorch · OpenCV · LangChain",
+        "Full-Stack AI: Django · React · FastAPI",
+        "50,000+ Vehicles Processed Daily on Indian Highways",
+        "From Jupyter Notebooks to Production Pipelines",
+      ],
         typeSpeed: 50,
         backSpeed: 25,
         backDelay: 2000,
@@ -245,6 +244,7 @@ const PortfolioApp = {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            entry.target.classList.add("is-visible");
             animateOnScrollObserver.unobserve(entry.target);
           }
         });
@@ -256,23 +256,14 @@ const PortfolioApp = {
       .querySelectorAll(".animate-on-scroll")
       .forEach((el) => animateOnScrollObserver.observe(el));
 
-    // Animate on scroll
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-          }
-        });
-      },
-      {
-        threshold: 0.1,
-      },
-    );
-
-    document.querySelectorAll(".animate-on-scroll").forEach((element) => {
-      observer.observe(element);
-    });
+    // Fallback: force all animate-on-scroll elements visible after 3s
+    // in case IntersectionObserver doesn't fire (e.g. already in viewport)
+    setTimeout(() => {
+      document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+        el.classList.add("visible");
+        el.classList.add("is-visible");
+      });
+    }, 3000);
   },
 
   /**

@@ -63,6 +63,11 @@
   .skill-item {
       padding: 1.5rem !important;
   }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
 }
 
 /* 
@@ -138,6 +143,20 @@
   .cert-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skill-category {
+    padding: 1.25rem;
+  }
+
+  .skill-tag {
+    font-size: 0.8rem;
+    padding: 0.4em 0.75em;
+  }
 }
 
 /* 
@@ -194,6 +213,24 @@
 
   .timeline-item .timeline-icon {
     left: 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .skill-category {
+    padding: 1rem;
+  }
+
+  .skill-tag {
+    font-size: 0.78rem;
+    padding: 0.35em 0.65em;
+  }
+
+  .skills-tags {
+    gap: 0.5rem;
   }
 }
 
