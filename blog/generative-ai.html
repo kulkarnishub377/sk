@@ -496,21 +496,23 @@ def positional_encoding(max_seq_len, d_model):
                             <span class="font-monospace small text-muted">architecture.mermaid</span>
                             <i class="fas fa-code text-muted"></i>
                         </div>
-<pre><code class="language-mermaid">graph TD
-    Input["Input Tokens"] --> Embed["Token Embedding"]
-    Embed --> PE["+ Positional Encoding"]
-    PE --> Block1["Transformer Block × N"]
-    
-    subgraph Block ["Each Transformer Block"]
-        MHA["Multi-Head Self-Attention"] --> AN1["Add & LayerNorm"]
-        AN1 --> FFN["Feed-Forward Network (2 layers)"]
-        FFN --> AN2["Add & LayerNorm"]
+<pre><code class="language-mermaid">flowchart TD
+    Input["📝 Input Tokens"] --> Embed["Token Embedding\n(d_model = 512)"]
+    Embed --> PE["➕ Positional Encoding\nsin/cos waves"]
+
+    subgraph Block ["🔁 Transformer Block × N"]
+        MHA["🧠 Multi-Head\nSelf-Attention\n(h=8 heads)"]
+        AN1["Add & LayerNorm"]
+        FFN["⚡ Feed-Forward\n(2048 → 512)"]
+        AN2["Add & LayerNorm"]
+        MHA --> AN1 --> FFN --> AN2
     end
-    
-    Block1 --> LN["Final LayerNorm"]
-    LN --> Linear["Linear Projection"]
+
+    PE --> Block
+    AN2 --> LN["Final LayerNorm"]
+    LN --> Linear["Linear Projection\n(vocab_size)"]
     Linear --> SM["Softmax"]
-    SM --> Output["Next Token Probabilities"]</code></pre>
+    SM --> Output["🎯 Next Token\nProbabilities"]</code></pre>
                     </div>
 
                     <h2 id="training">7. Training vs Inference: Two Very Different Games</h2>
