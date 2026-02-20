@@ -17,6 +17,14 @@
     <meta property="og:description" content="How we built a winning Smart Irrigation system under extreme pressure.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80">
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kulkarnishub377.github.io/sk/blog/sih-win-2023.html">
+    <meta name="twitter:title" content="36 Hours, No Sleep, One Win: The SIH 2023 Story">
+    <meta name="twitter:description" content="How we built a winning Smart Irrigation system under extreme pressure.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80">
+    <meta name="robots" content="index, follow">
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -30,8 +38,8 @@
         "name": "Shubham Kulkarni",
         "url": "https://kulkarnishub377.github.io/sk/"
       },
-      "datePublished": "2026-07-01",
-      "dateModified": "2026-07-01"
+      "datePublished": "2026-02-16",
+      "dateModified": "2026-02-16"
     }
     </script>
 
@@ -164,7 +172,7 @@
                         <div class="vr opacity-25"></div>
                         <div class="text-start">
                             <span class="d-block fw-bold text-dark">Published</span>
-                            <time class="small text-secondary" datetime="2026-07-01">Jul 01, 2026</time>
+                            <time class="small text-secondary" datetime="2026-02-16">Feb 16, 2026</time>
                         </div>
                     </div>
 
@@ -244,7 +252,73 @@
                         <li><strong>Hours 0-6 (Brainstorming):</strong> Whiteboarding the "Star Topology" with LoRa. We decided to ditch Wi-Fi immediately.</li>
                         <li><strong>Hours 6-18 (Dev):</strong> I handled the Embedded C code (PIC16F). My teammate worked on the Python Flask backend.</li>
                         <li><strong>Hours 18-24 (Hell):</strong> Integration failed. The GSM module refused to talk to the Cloud due to weak signal in the hackathon hall.</li>
+                        <li><strong>Hours 24-30 (The Pivot):</strong> We made the critical decision to move intelligence to the edge. I rewrote the gateway logic while two teammates built the local SQLite schema.</li>
+                        <li><strong>Hours 30-34 (Testing):</strong> Stress testing the offline-first system. We simulated 100 sensor readings, disconnected the network, and verified local decision-making still worked.</li>
+                        <li><strong>Hours 34-36 (Polish):</strong> Building the demo pitch deck. We rehearsed the "pull the ethernet cable" moment 5 times.</li>
                     </ul>
+
+                    <h3>The Architecture Decision Record (ADR)</h3>
+                    <p>
+                        At Hour 25, we documented our pivot as a formal Architecture Decision Record. This is a practice I now use in every project — it forces you to articulate <em>why</em> you made a decision, not just <em>what</em> you changed.
+                    </p>
+                    <pre><code># ADR-001: Move Decision Logic to Edge Gateway
+
+## Status: ACCEPTED (Hour 25)
+
+## Context
+GSM signal in hackathon hall is unreliable (-95 dBm).
+Cloud-dependent architecture fails during demo.
+
+## Decision
+Move pump control logic from AWS Lambda to local
+Raspberry Pi Gateway with SQLite persistence.
+Use cloud ONLY for async dashboard sync.
+
+## Consequences
++ System works offline (demo-proof)
++ Reduced latency (local decisions in <100ms)
++ Reduced AWS costs (free tier sufficient)
+- Lose real-time cloud monitoring during outages
+- Must implement async sync protocol (MQTT + retry)</code></pre>
+
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered table-premium">
+                            <thead>
+                                <tr>
+                                    <th>Factor</th>
+                                    <th>Cloud Architecture (Original)</th>
+                                    <th>Edge Architecture (Pivot)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Demo Reliability</strong></td>
+                                    <td><span style="color: #EF4444;">Depends on internet</span></td>
+                                    <td class="bg-primary-subtle fw-bold">Works offline ✅</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Latency</strong></td>
+                                    <td>500ms–2s (round trip)</td>
+                                    <td class="bg-primary-subtle fw-bold">&lt;100ms (local)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cost</strong></td>
+                                    <td>AWS Lambda + IoT Core (~$15/mo)</td>
+                                    <td class="bg-primary-subtle fw-bold">Free (runs on Pi)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Complexity</strong></td>
+                                    <td>Lower (serverless)</td>
+                                    <td>Higher (local DB + sync)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Farmer Adoption</strong></td>
+                                    <td><span style="color: #EF4444;">Needs constant internet</span></td>
+                                    <td class="bg-primary-subtle fw-bold">Works in zero-connectivity areas ✅</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
                     <h2 id="pivot">4. The Great Pivot (Hour 25)</h2>
                     <p>
@@ -281,15 +355,39 @@
                         <div class="col-md-6">
                             <div class="p-4 rounded-4 bg-light h-100 border">
                                 <h5 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i>Focus on Core</h5>
-                                <p class="mb-0 small text-secondary">Don't build features. Build a solution to the core problem.</p>
+                                <p class="mb-0 small text-secondary">Don't build features. Build a solution to the core problem. We won because we did one thing perfectly while others scattered across 5 half-built features.</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="p-4 rounded-4 bg-light h-100 border">
                                 <h5 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i>Demo is King</h5>
-                                <p class="mb-0 small text-secondary">If it doesn't work in the demo, it doesn't exist. Always have a backup.</p>
+                                <p class="mb-0 small text-secondary">If it doesn't work in the demo, it doesn't exist. We rehearsed the "pull the cable" moment 5 times. The judges' reaction proved it was worth it.</p>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 bg-light h-100 border">
+                                <h5 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i>Pivot Early, Pivot Hard</h5>
+                                <p class="mb-0 small text-secondary">When your architecture fails under real conditions, don't patch it — redesign it. Our Hour 25 pivot from Cloud to Edge was the single decision that won us the hackathon.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="p-4 rounded-4 bg-light h-100 border">
+                                <h5 class="fw-bold"><i class="fas fa-check-circle text-success me-2"></i>Document Decisions</h5>
+                                <p class="mb-0 small text-secondary">Write ADRs even in hackathons. The judges asked "why Edge over Cloud?" — having a formal decision record made our answer crisp and credible.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Takeaways (Summary Box) -->
+                    <div class="highlight-box mt-5" style="border-left-color: #F59E0B;">
+                        <h4 class="fw-bold mb-3"><i class="fas fa-graduation-cap me-2" style="color: #F59E0B;"></i>What I Learned</h4>
+                        <ul class="mb-0">
+                            <li><strong>Hackathons are won by architects, not coders.</strong> The teams writing the most code lost. The teams making the best design decisions won.</li>
+                            <li><strong>Offline-First is not a compromise — it's a feature.</strong> In Tier-3 India, internet is the exception, not the rule. Designing for disconnection is designing for reality.</li>
+                            <li><strong>Hardware hackathons are different.</strong> Software can be hot-fixed. A fried sensor node at 3 AM cannot. Always bring spares.</li>
+                            <li><strong>The "pull the cable" test.</strong> If your system survives losing connectivity mid-demo, judges take notice. Reliability > features, every time.</li>
+                            <li><strong>Team dynamics matter.</strong> We assigned clear roles (Embedded, Backend, Frontend, Demo) in Hour 0. Zero overlap, zero conflicts.</li>
+                        </ul>
                     </div>
 
                     <!-- Share Section -->
@@ -314,9 +412,16 @@
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5 mt-5">
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5">
         <div class="container text-center">
-            <p class="text-secondary small mb-0">&copy; 2026 Shubham Kulkarni. All rights reserved.</p>
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="text-secondary small mb-4">Engineering the future, one hackathon at a time.</p>
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
         </div>
     </footer>
 
@@ -326,3 +431,6 @@
     <script>
         mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
     </script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

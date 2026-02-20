@@ -17,6 +17,14 @@
     <meta property="og:description" content="Move beyond simple chains. Build autonomous agents that can plan, loop, and execute tools using LangGraph.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80">
     
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://kulkarnishub377.github.io/sk/blog/ai-agent-langgraph.html">
+    <meta name="twitter:title" content="Building Your First AI Agent with LangGraph">
+    <meta name="twitter:description" content="Move beyond simple chains. Build autonomous agents that can plan, loop, and execute tools using LangGraph.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80">
+    <meta name="robots" content="index, follow">
+    
     <!-- Structured Data -->
     <script type="application/ld+json">
     {
@@ -30,8 +38,8 @@
         "name": "Shubham Kulkarni",
         "url": "https://kulkarnishub377.github.io/sk/"
       },
-      "datePublished": "2026-06-01",
-      "dateModified": "2026-06-01",
+      "datePublished": "2026-02-12",
+      "dateModified": "2026-02-12",
       "proficiencyLevel": "Advanced"
     }
     </script>
@@ -168,7 +176,7 @@
                         <div class="vr opacity-25"></div>
                         <div class="text-start">
                             <span class="d-block fw-bold text-dark">Published</span>
-                            <time class="small text-secondary" datetime="2026-06-01">Jun 01, 2026</time>
+                            <time class="small text-secondary" datetime="2026-02-12">Feb 12, 2026</time>
                         </div>
                     </div>
 
@@ -328,6 +336,123 @@ app = workflow.compile(
                         Now, when you run this, the graph will pause exactly before executing the tool, giving you a chance to inspect the state and approve (or modify) the action. This is critical for enterprise safety.
                     </p>
 
+                    <h3>Error Handling & Retry Logic</h3>
+                    <p>
+                        In production, tools fail. APIs time out. LLMs hallucinate tool names. You need robust error handling baked into your agent loop, not bolted on as an afterthought.
+                    </p>
+                    <pre><code>from langgraph.prebuilt import ToolNode
+from langchain_core.runnables import RunnableConfig
+
+class ResilientToolNode(ToolNode):
+    """A tool node that retries on transient failures."""
+    
+    def invoke(self, state, config: RunnableConfig):
+        max_retries = 3
+        for attempt in range(max_retries):
+            try:
+                return super().invoke(state, config)
+            except TimeoutError:
+                if attempt == max_retries - 1:
+                    # Return error message instead of crashing
+                    return {"messages": [
+                        AIMessage(content=f"Tool timed out after {max_retries} attempts.")
+                    ]}
+            except Exception as e:
+                return {"messages": [
+                    AIMessage(content=f"Tool error: {str(e)}. Trying alternative approach.")
+                ]}</code></pre>
+                    <div class="pro-tip">
+                        <i class="fas fa-lightbulb"></i>
+                        <div>
+                            <strong>Pro Tip:</strong> Never let a tool error crash your agent. Return the error as a message back to the LLM — it can often self-correct by choosing a different tool or rephrasing the query.
+                        </div>
+                    </div>
+
+                    <h3>Deploying with LangServe</h3>
+                    <p>
+                        Once your agent works locally, you need to ship it. <strong>LangServe</strong> turns any LangChain/LangGraph runnable into a production API with streaming support, batch processing, and built-in playground.
+                    </p>
+                    <pre><code>from fastapi import FastAPI
+from langserve import add_routes
+
+app = FastAPI(title="Research Agent API")
+
+# Your compiled graph from above
+add_routes(
+    app,
+    compiled_graph,
+    path="/research",
+    enable_feedback_endpoint=True,  # Collect user feedback
+    playground_type="chat",
+)
+
+# Now accessible at:
+# POST /research/invoke   (single run)
+# POST /research/stream    (streaming)
+# GET  /research/playground (interactive UI)</code></pre>
+
+                    <h2 id="comparison">7. Agent Framework Comparison</h2>
+                    <p>
+                        LangGraph is not the only game in town. Here's how it stacks up against other popular agent frameworks in 2026.
+                    </p>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered table-premium">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>LangGraph</th>
+                                    <th>AutoGen</th>
+                                    <th>CrewAI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Graph Type</strong></td>
+                                    <td class="bg-primary-subtle fw-bold">Cyclic (loops allowed)</td>
+                                    <td>Multi-agent chat</td>
+                                    <td>Sequential / Hierarchical</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>State Management</strong></td>
+                                    <td class="bg-primary-subtle fw-bold">Built-in TypedDict</td>
+                                    <td>Shared context</td>
+                                    <td>Task-based</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Human-in-Loop</strong></td>
+                                    <td class="bg-primary-subtle fw-bold">Native breakpoints</td>
+                                    <td>Custom callbacks</td>
+                                    <td>Limited</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Persistence</strong></td>
+                                    <td>SQLite / Postgres checkpointer</td>
+                                    <td>Custom implementation</td>
+                                    <td>File-based</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Best For</strong></td>
+                                    <td class="bg-primary-subtle fw-bold">Complex tool-using agents</td>
+                                    <td>Multi-agent conversations</td>
+                                    <td>Role-playing workflows</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Key Takeaways -->
+                    <hr class="my-5">
+                    <div class="highlight-box" style="border-left-color: #F59E0B;">
+                        <h4 class="fw-bold mb-3"><i class="fas fa-graduation-cap me-2" style="color: #F59E0B;"></i>Key Takeaways</h4>
+                        <ul class="mb-0">
+                            <li><strong>Chains are linear; Agents are graphs.</strong> LangGraph's cyclic architecture lets your agent check its own work, retry, and self-correct — something linear chains fundamentally cannot do.</li>
+                            <li><strong>State is everything.</strong> The TypedDict state schema is the "shared blackboard" that makes multi-step reasoning possible. Design it carefully.</li>
+                            <li><strong>Human-in-the-Loop is non-negotiable.</strong> For any agent that can take destructive actions (delete files, send emails, execute code), always add <code>interrupt_before</code> breakpoints.</li>
+                            <li><strong>Error handling > happy path.</strong> Production agents need resilient tool nodes that return errors as messages, not crashes.</li>
+                            <li><strong>LangServe for deployment.</strong> Turn your graph into a streaming API with zero extra infrastructure code.</li>
+                        </ul>
+                    </div>
+
                     <!-- Share Section -->
                     <div class="share-section my-5 p-4 bg-light rounded-4 text-center">
                         <h5 class="fw-bold mb-3">Share this Tutorial</h5>
@@ -350,9 +475,16 @@ app = workflow.compile(
     </section>
 
     <!-- Footer -->
-    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5 mt-5">
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5">
         <div class="container text-center">
-            <p class="text-secondary small mb-0">&copy; 2026 Shubham Kulkarni. All rights reserved.</p>
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="#" class="text-secondary"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="#" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="text-secondary small mb-4">Engineering the future, one agent at a time.</p>
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
         </div>
     </footer>
 
@@ -362,3 +494,6 @@ app = workflow.compile(
     <script>
         mermaid.initialize({ startOnLoad: true, theme: 'neutral' });
     </script>
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,31 +1,35 @@
 # robots.txt for Shubham Kulkarni Portfolio
-# This file tells search engine crawlers which pages or files the crawler can or can't request from your site
+# https://kulkarnishub377.github.io/sk/
 
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 # Sitemap location
 Sitemap: https://kulkarnishub377.github.io/sk/sitemap.xml
 
-# Allow all search engines to crawl all content
+# Google (ignores Crawl-delay, but respects Allow/Disallow)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
+# Bing
 User-agent: Bingbot
 Allow: /
-
-User-agent: Slurp
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
-
-# Crawl-delay (optional, good practice for politeness)
 Crawl-delay: 1
 
-# Disallow any admin or maintenance pages (if they exist in future)
+# Yahoo
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+# Disallow admin/private directories
 Disallow: /admin/
 Disallow: /private/
