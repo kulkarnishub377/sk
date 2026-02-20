@@ -3,33 +3,26 @@
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /private/
 Crawl-delay: 1
 
-# Sitemap location
 Sitemap: https://kulkarnishub377.github.io/sk/sitemap.xml
 
-# Google (ignores Crawl-delay, but respects Allow/Disallow)
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
-# Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# Yahoo
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
-
-# Disallow admin/private directories
-Disallow: /admin/
-Disallow: /private/
