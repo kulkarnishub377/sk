@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- SEO Masterclass -->
-    <title>DocuAI Studio v3.1: Production Document AI + RAG Pipeline | Shubham Kulkarni</title>
-    <meta name="description" content="Deep dive into DocuAI Studio v3.1 - a production-grade Document AI + RAG platform with FastAPI, FAISS + BM25 + RRF, reranking, analytics, and 40+ endpoints.">
-    <meta name="keywords" content="Document AI, RAG Pipeline, FastAPI, FAISS, BM25, RRF, LangChain, Ollama, OpenAI, Shubham Kulkarni">
+    <title>Building a Production RAG Pipeline: LangChain + ChromaDB | Shubham Kulkarni</title>
+    <meta name="description" content="A comprehensive guide to building Production-Grade Retrieval-Augmented Generation (RAG) systems. Covers Hybrid Search, Re-ranking, and Evaluation using RAGAS.">
+    <meta name="keywords" content="RAG, LangChain, ChromaDB, Hybrid Search, Re-ranking, Vector Database, Python, AI Engineering">
     <meta name="author" content="Shubham Kulkarni">
     <link rel="canonical" href="https://kulkarnishub377.github.io/sk/blog/rag-pipeline.html">
 
@@ -19,15 +19,15 @@
     <!-- Open Graph -->
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://kulkarnishub377.github.io/sk/blog/rag-pipeline.html">
-    <meta property="og:title" content="DocuAI Studio v3.1: Production Document AI + RAG Pipeline">
-    <meta property="og:description" content="Architecture and implementation notes for a full Document AI + RAG system with FastAPI, FAISS, BM25 + RRF, and LLM provider switching.">
+    <meta property="og:title" content="Building a Production RAG Pipeline with LangChain">
+    <meta property="og:description" content="Stop building toy RAGs. Here's how to implement Hybrid Search, Re-ranking, and RAGAS evaluation.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://kulkarnishub377.github.io/sk/blog/rag-pipeline.html">
-    <meta name="twitter:title" content="DocuAI Studio v3.1: Production Document AI + RAG Pipeline">
-    <meta name="twitter:description" content="A practical production case study for Document AI + RAG with FastAPI, FAISS + BM25 + RRF, and Ollama/OpenAI support.">
+    <meta name="twitter:title" content="Building a Production RAG Pipeline with LangChain">
+    <meta name="twitter:description" content="Stop building toy RAGs. Here's how to implement Hybrid Search, Re-ranking, and RAGAS evaluation.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80">
     <meta name="robots" content="index, follow">
     
@@ -36,8 +36,8 @@
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-    "headline": "DocuAI Studio v3.1: Production Document AI + RAG Pipeline",
-    "description": "A technical case study for implementing a production Document AI + RAG platform with hybrid retrieval and LLM backend flexibility.",
+            "headline": "Building a Production RAG Pipeline: LangChain + ChromaDB",
+            "description": "A technical guide to implementing advanced RAG patterns with Python.",
       "image": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80",
       "author": {
         "@type": "Person",
@@ -179,19 +179,11 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
-                    <span class="hero-tag mb-3 d-inline-block text-white bg-primary border-primary" style="background-color: #8B5CF6 !important; border-color: #8B5CF6 !important;">Case Study: DocuAI Studio</span>
-                    <h1 class="hero-title display-4 fw-bolder mb-4">DocuAI Studio v3.1: Production Document AI + RAG Pipeline</h1>
+                    <span class="hero-tag mb-3 d-inline-block text-white bg-primary border-primary" style="background-color: #8B5CF6 !important; border-color: #8B5CF6 !important;">AI Engineering</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">Building a Production RAG Pipeline: LangChain + ChromaDB</h1>
                     <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
-                        How I engineered a full-stack RAG platform with 40+ FastAPI endpoints, hybrid retrieval (FAISS + BM25 + RRF), analytics, and local-first deployment via Ollama.
+                        Stop building toy RAGs. Learn how to implement Hybrid Search, Re-ranking, and RAGAS evaluation to build systems that actually work in production.
                     </p>
-                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-                        <a href="https://github.com/kulkarnishub377/Document-AI---RAG-Pipeline" target="_blank" rel="noopener" class="btn btn-outline-dark btn-sm rounded-pill px-3">
-                            <i class="fab fa-github me-2"></i>GitHub Repo
-                        </a>
-                        <a href="https://github.com/kulkarnishub377/Document-AI---RAG-Pipeline/blob/main/README.md" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm rounded-pill px-3">
-                            <i class="fas fa-book-open me-2"></i>README
-                        </a>
-                    </div>
                     
                     <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
                         <div class="d-flex align-items-center gap-2">
@@ -233,11 +225,10 @@
                             <ul class="toc-list">
                                 <li><a href="#naive-vs-prod">1. Naive vs Prod</a></li>
                                 <li><a href="#architecture">2. Architecture</a></li>
-                                <li><a href="#docuai-features">3. DocuAI v3.1 Features</a></li>
-                                <li><a href="#ingestion">4. Ingestion Strategy</a></li>
-                                <li><a href="#hybrid-search">5. Hybrid Search</a></li>
-                                <li><a href="#reranking">6. Re-ranking</a></li>
-                                <li><a href="#evaluation">7. Evaluation</a></li>
+                                <li><a href="#ingestion">3. Ingestion Strategy</a></li>
+                                <li><a href="#hybrid-search">4. Hybrid Search</a></li>
+                                <li><a href="#reranking">5. Re-ranking</a></li>
+                                <li><a href="#evaluation">6. Evaluation</a></li>
                             </ul>
                         </div>
                     </div>
@@ -253,16 +244,16 @@
 
                     <div class="stat-grid">
                         <div class="stat-card">
-                            <span class="stat-value">40+</span>
-                            <span class="stat-label">API Endpoints</span>
+                            <span class="stat-value">92%</span>
+                            <span class="stat-label">Retrieval Accuracy</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">3</span>
-                            <span class="stat-label">LLM Modes (Ollama/OpenAI/Demo)</span>
+                            <span class="stat-value">&lt;200ms</span>
+                            <span class="stat-label">P99 Latency</span>
                         </div>
                         <div class="stat-card">
-                            <span class="stat-value">v3.1</span>
-                            <span class="stat-label">Latest Release Track</span>
+                            <span class="stat-value">$0.02</span>
+                            <span class="stat-label">Cost per 1k Queries</span>
                         </div>
                     </div>
 
@@ -292,26 +283,17 @@
                         style G fill:#bbf,stroke:#333,stroke-width:2px
                     </div>
                     <div class="highlight-box">
-                        <h5 class="fw-bold">The Production Stack (from README)</h5>
+                        <h5 class="fw-bold">The Production Stack</h5>
                         <ul>
-                            <li><strong>Backend:</strong> FastAPI + WebSocket server with async operations and rate limiting</li>
-                            <li><strong>Retrieval:</strong> FAISS + BM25 with Reciprocal Rank Fusion (RRF)</li>
-                            <li><strong>Embeddings:</strong> all-MiniLM-L6-v2 (SentenceTransformers)</li>
-                            <li><strong>Reranker:</strong> Cross-encoder reranking for top-context precision</li>
-                            <li><strong>LLM:</strong> Ollama (Mistral default) with optional OpenAI provider</li>
+                            <li><strong>Orchestration:</strong> LangChain (Python)</li>
+                            <li><strong>Vector Store:</strong> ChromaDB (Local/Server mode)</li>
+                            <li><strong>Embedding Model:</strong> OpenAI `text-embedding-3-small` (Cost-efficient)</li>
+                            <li><strong>Re-ranker:</strong> Cohere Rerank or BAAI/bge-reranker</li>
+                            <li><strong>LLM:</strong> GPT-4o-mini (for speed)</li>
                         </ul>
                     </div>
 
-                    <h2 id="docuai-features">3.1 Highlights in DocuAI v3.1</h2>
-                    <ul>
-                        <li>Thread-safe FAISS vector store operations with locking improvements</li>
-                        <li>Batch Q&amp;A, semantic search endpoint, and query analytics dashboard</li>
-                        <li>Export/import FAISS index, document versioning, and scheduled web crawling</li>
-                        <li>Async ingestion task tracking and markdown-rendered chat responses</li>
-                        <li>Security hardening for file handling and WebSocket input validation</li>
-                    </ul>
-
-                    <h2 id="ingestion">4. Advanced Ingestion Strategy</h2>
+                    <h2 id="ingestion">3. Advanced Ingestion Strategy</h2>
                     <p>
                         Don't just blind-chunk. Use <strong>ParentDocumentRetriever</strong>. This technique chunks documents into small pieces for embedding (better semantic match) but retrieves the <em>entire parent section</em> for the LLM (better context).
                     </p>
@@ -383,7 +365,7 @@ retriever = ParentDocumentRetriever(
                         </div>
                     </div>
 
-                    <h2 id="hybrid-search">5. Implementing Hybrid Search</h2>
+                    <h2 id="hybrid-search">4. Implementing Hybrid Search</h2>
                     <p>
                         Vector search is great for concepts ("How do I fix a leak?"), but terrible for exact matches ("Error code 503"). We need <strong>EnsembleRetriever</strong>.
                     </p>
@@ -409,7 +391,7 @@ ensemble_retriever = EnsembleRetriever(
     weights=[0.4, 0.6]  # 40% Keyword, 60% Semantic
 )</code></pre>
 
-                    <h2 id="reranking">6. Re-ranking: The Secret Sauce</h2>
+                    <h2 id="reranking">5. Re-ranking: The Secret Sauce</h2>
                     <p>
                         Retrieving 10 documents is easy. Knowing which one <em>actually</em> contains the answer is hard. Embedding models compress meaning into dense vectors, losing nuance. A <strong>Cross-Encoder Re-ranker</strong> takes the query and the document pair and outputs a relevance score.
                     </p>
@@ -424,7 +406,7 @@ compression_retriever = ContextualCompressionRetriever(
 
 # This pipeline is now: Hybrid Search (Top 10) -> Re-rank -> Top 3 -> LLM</code></pre>
 
-                    <h2 id="evaluation">7. Evaluation with RAGAS</h2>
+                    <h2 id="evaluation">6. Evaluation with RAGAS</h2>
                     <p>
                         You can't improve what you don't measure. I use the <strong>RAGAS</strong> framework to effectively "unit test" the pipeline.
                     </p>
@@ -469,7 +451,7 @@ jobs:
                         </div>
                     </div>
 
-                    <h2 id="tools">8. Tools of the Trade</h2>
+                    <h2 id="tools">7. Tools of the Trade</h2>
                     <p>
                         Building production RAG in 2026 requires a modern stack. Here are the essential categories and my recommendations.
                     </p>
@@ -505,7 +487,7 @@ jobs:
                             <li><strong>Re-ranking is the secret sauce.</strong> A Cross-Encoder re-ranker improved our Context Precision by 18% — the single highest-impact change.</li>
                             <li><strong>Parent-Child chunking > Fixed-size.</strong> Small chunks for search, large chunks for context gives you the best of both worlds.</li>
                             <li><strong>Evaluation is not optional.</strong> Use RAGAS in CI/CD to catch regressions before they reach users.</li>
-                            <li><strong>Operational maturity matters.</strong> Versioning, backup/restore, analytics, and async ingestion are essential in real deployments.</li>
+                            <li><strong>Cost matters.</strong> With `text-embedding-3-small` + GPT-4o-mini, we hit $0.02/1k queries — 10x cheaper than GPT-4 alone.</li>
                         </ul>
                     </div>
 
