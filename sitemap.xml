@@ -7,13 +7,6 @@
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- About Page -->
-  <url>
-    <loc>https://kulkarnishub377.github.io/sk/about.html</loc>
-    <lastmod>2026-02-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
   <!-- Blog Index -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/index.html</loc>

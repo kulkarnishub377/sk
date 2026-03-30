@@ -6,17 +6,27 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initBlogAnimations() {
-    // Add fade-in up animation to cards staggeredly
-    const cards = document.querySelectorAll('.blog-card');
+    const cards = document.querySelectorAll('.blog-card, .article-card, .blog-post-item');
+    if (!cards.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        cards.forEach((card) => card.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
     cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        
-        setTimeout(() => {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }, 100 * index); // Stagger by 100ms
+        card.style.transitionDelay = `${Math.min(index * 60, 420)}ms`;
+        observer.observe(card);
     });
 }
 
@@ -26,21 +36,23 @@ function initSearch() {
 
     searchInput.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
-        const posts = document.querySelectorAll('.blog-post-item');
+        const posts = document.querySelectorAll('.blog-post-item, .article-card, .blog-card');
 
         posts.forEach(post => {
-            const title = post.querySelector('.blog-title').textContent.toLowerCase();
-            const category = post.querySelector('.blog-category').textContent.toLowerCase();
+            const titleEl = post.querySelector('.blog-title, .card-heading, .card-title, h3, h2');
+            const categoryEl = post.querySelector('.blog-category, .category-tag, .badge');
+            const title = titleEl ? titleEl.textContent.toLowerCase() : '';
+            const category = categoryEl ? categoryEl.textContent.toLowerCase() : '';
             
             if (title.includes(term) || category.includes(term)) {
-                post.style.display = 'block';
+                post.style.display = '';
                 setTimeout(() => {
                     post.style.opacity = '1';
-                    post.style.transform = 'scale(1)';
-                }, 50);
+                    post.style.transform = 'translateY(0) scale(1)';
+                }, 10);
             } else {
                 post.style.opacity = '0';
-                post.style.transform = 'scale(0.95)';
+                post.style.transform = 'translateY(10px) scale(0.98)';
                 setTimeout(() => {
                     post.style.display = 'none';
                 }, 300);

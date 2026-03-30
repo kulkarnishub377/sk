@@ -59,6 +59,7 @@ const PortfolioApp = {
   state: {
     isMobile: () => window.innerWidth < 768,
     isFirstIconLoad: true, // Track the initial creation of background icons
+    reduceMotion: false,
   },
 
   /**
@@ -84,10 +85,19 @@ const PortfolioApp = {
   },
 
   /**
+   * Returns true when the user prefers reduced motion.
+   */
+  prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  },
+
+  /**
    * Initializes a floating, fading background of tech icons.
    * This version is responsive and adjusts the number of icons based on screen width.
    */
   initAnimatedBackground() {
+    if (this.state.reduceMotion) return;
+
     const background = document.querySelector(".tech-background");
     if (!background) return;
 
@@ -151,6 +161,8 @@ const PortfolioApp = {
    * Adds an interactive spotlight effect to cards on mouse move.
    */
   initCardHoverEffect() {
+    const enableTilt = !this.state.isMobile() && !this.state.reduceMotion;
+
     document.querySelectorAll(".card").forEach((card) => {
       card.addEventListener("mousemove", (e) => {
         const rect = card.getBoundingClientRect();
@@ -158,6 +170,15 @@ const PortfolioApp = {
         const y = e.clientY - rect.top;
         card.style.setProperty("--mouse-x", `${x}px`);
         card.style.setProperty("--mouse-y", `${y}px`);
+
+        if (!enableTilt) return;
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+        const rotateY = ((x / rect.width) - 0.5) * 10;
+        card.style.transform = `translateY(-8px) perspective(1000px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.removeProperty("transform");
       });
     });
   },
@@ -197,12 +218,17 @@ const PortfolioApp = {
    * Icons near the cursor will be pushed away.
    */
   initBackgroundInteraction() {
+    if (this.state.reduceMotion || this.state.isMobile()) return;
+
     const heroSection = document.querySelector(".hero-section");
     if (!heroSection) return;
 
     const cfg = this.config.animatedBackground.interaction;
 
+    let rafId;
     heroSection.addEventListener("mousemove", (e) => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
       const icons = document.querySelectorAll(".tech-icon");
       const mouseX = e.clientX;
       const mouseY = e.clientY;
@@ -225,6 +251,7 @@ const PortfolioApp = {
         } else {
           icon.style.transform = "translate(0, 0)";
         }
+      });
       });
     });
 
@@ -284,7 +311,14 @@ const PortfolioApp = {
               const bsCollapse = new bootstrap.Collapse(navbarCollapseEl);
               bsCollapse.hide();
             }
-            targetElement.scrollIntoView({ behavior: "smooth" });
+            const navHeight =
+              document.querySelector(".navbar")?.offsetHeight || 0;
+            const top =
+              targetElement.getBoundingClientRect().top +
+              window.scrollY -
+              navHeight -
+              8;
+            window.scrollTo({ top, behavior: "smooth" });
           }
         });
       });
@@ -359,6 +393,28 @@ const PortfolioApp = {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+  },
+
+  /**
+   * Adds a dynamic scroll progress indicator in the navbar.
+   */
+  initScrollProgress() {
+    const navbar = document.querySelector(".navbar");
+    if (!navbar) return;
+
+    const progress = document.createElement("div");
+    progress.className = "scroll-progress";
+    navbar.appendChild(progress);
+
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio))}%`;
+    };
+
+    window.addEventListener("scroll", this.debounce(onScroll, 20));
+    onScroll();
   },
 
   /**
@@ -512,6 +568,7 @@ const PortfolioApp = {
     this.initPreloader();
     // Execute initialization methods when the DOM is fully loaded.
     document.addEventListener("DOMContentLoaded", () => {
+      this.state.reduceMotion = this.prefersReducedMotion();
       this.initAnimatedBackground();
       this.initCardHoverEffect();
       this.initTypedJs();
@@ -521,6 +578,7 @@ const PortfolioApp = {
       this.initNavHighlighting();
       this.initNavbarScroll();
       this.initBackToTopButton();
+      this.initScrollProgress();
       this.initBlogShare();
       this.initCopyrightYear();
       console.log("Portfolio App Initialized");
