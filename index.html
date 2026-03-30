@@ -612,6 +612,20 @@
                     <hr class="my-4">
                 </div>
                 <div class="row justify-content-around">
+                    <!-- DocuAI Studio v3.1: New RAG Project -->
+                    <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
+                        <article class="card h-100 position-relative">
+                            <span class="badge bg-danger text-white position-absolute top-0 end-0 m-2"><i class="fas fa-sparkles me-1"></i>New</span>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"><i class="fas fa-file-lines me-2" aria-hidden="true"></i>DocuAI Studio v3.1</h5>
+                                <p class="card-text">Production-ready <strong>Document AI + RAG</strong> platform with <strong>40+ FastAPI endpoints</strong>, hybrid retrieval (<strong>FAISS + BM25 + RRF</strong>), streaming Q&amp;A, and analytics.</p>
+                                <div class="mt-auto d-flex flex-wrap gap-2">
+                                    <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project8Modal">More Info</button>
+                                    <a href="https://github.com/kulkarnishub377/Document-AI---RAG-Pipeline" class="btn btn-secondary-outline btn-sm" target="_blank" rel="noopener">GitHub</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                     <!-- VIDES: Featured AI Project -->
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100 position-relative">
@@ -1389,6 +1403,62 @@
                 </div>
                 <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
                     <a href="blog/vehicle-detection-system.html" class="btn btn-gradient">Read Full Article</a>
+                    <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DocuAI Studio v3.1 Modal -->
+    <div class="modal fade" id="project8Modal" tabindex="-1" aria-labelledby="project8ModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: var(--modal-bg); color: var(--text-primary);">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="project8ModalLabel"><i class="fas fa-file-lines me-2" aria-hidden="true"></i>DocuAI Studio v3.1 - Document AI + RAG Pipeline</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>A production-ready, locally hosted Document AI system that supports multi-format ingestion and grounded AI answers with citations. The platform combines semantic retrieval and keyword retrieval with reranking for high-quality responses.</p>
+
+                    <strong>README Highlights:</strong>
+                    <ul>
+                        <li>Hybrid retrieval pipeline: FAISS + BM25 + Reciprocal Rank Fusion (RRF)</li>
+                        <li>40+ REST/WebSocket endpoints on FastAPI</li>
+                        <li>Supports PDF, DOCX, XLSX, PPTX, CSV, image OCR, text, and web URL ingestion</li>
+                        <li>Streaming chat, batch Q&amp;A, semantic search, and source-grounded answers</li>
+                        <li>Knowledge graph explorer, query analytics dashboard, and document versioning</li>
+                        <li>Index export/import, scheduled crawling, and async ingestion with task tracking</li>
+                        <li>Runs fully local with Ollama (Mistral) and supports OpenAI backend via env config</li>
+                    </ul>
+
+                    <strong>Architecture Snapshot:</strong>
+                    <ul>
+                        <li>Document -&gt; OCR/Parse -&gt; Semantic Chunking -&gt; Embeddings (MiniLM) -&gt; FAISS index</li>
+                        <li>Query -&gt; FAISS search -&gt; BM25 merge + RRF -&gt; Cross-encoder rerank -&gt; LLM response</li>
+                        <li>Session persistence, cache layer, analytics tracking, and WebSocket collaboration</li>
+                    </ul>
+
+                    <strong>Tech Stack:</strong>
+                    <ul>
+                        <li>Backend: Python, FastAPI, LangChain, FAISS, SQLite, Docker</li>
+                        <li>LLM: Ollama (default) with optional OpenAI provider support</li>
+                        <li>Frontend: HTML, CSS, JavaScript with markdown rendering and mobile-optimized UI</li>
+                        <li>Testing/Quality: Pytest suite, CI workflow, Makefile, pinned requirements</li>
+                    </ul>
+
+                    <strong>Why This Project Matters:</strong>
+                    <ul>
+                        <li>Demonstrates end-to-end AI product engineering, not just notebook experiments</li>
+                        <li>Balances local privacy-first deployment with cloud-LLM flexibility</li>
+                        <li>Includes production concerns: security hardening, async pipelines, observability, and backup/restore</li>
+                    </ul>
+                </div>
+                <div class="modal-footer d-flex flex-wrap gap-2 justify-content-between">
+                    <div class="d-flex flex-wrap gap-2">
+                        <a href="https://github.com/kulkarnishub377/Document-AI---RAG-Pipeline" class="btn btn-gradient" target="_blank" rel="noopener">Open GitHub</a>
+                        <a href="https://github.com/kulkarnishub377/Document-AI---RAG-Pipeline/blob/main/README.md" class="btn btn-secondary-outline" target="_blank" rel="noopener">View README</a>
+                        <a href="blog/rag-pipeline.html" class="btn btn-secondary-outline">Read Case Study</a>
+                    </div>
                     <button type="button" class="btn btn-secondary-outline" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
