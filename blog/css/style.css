@@ -155,14 +155,6 @@ body {
     }
 }
 
-/* Typography */
-    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-
-
-
-
 /* Base Resets */
 body {
     background-color: var(--bg-body);
@@ -535,4 +527,53 @@ pre, code {
     .blog-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* --------------------------------------------------------------------------
+   2026 FINAL LOCK - APPLIED AFTER LEGACY COMPONENTS
+   -------------------------------------------------------------------------- */
+
+.hero-title,
+.gradient-title {
+    background: var(--gradient-text) !important;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.article-card,
+.blog-card,
+.blog-post-item,
+.content-section,
+.toc-card,
+.metric-card,
+.result-card {
+    background: var(--bg-surface) !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: var(--shadow-md);
+}
+
+.article-card:hover,
+.blog-card:hover,
+.blog-post-item:hover,
+.content-section:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.card-heading,
+.article-title,
+.section-title,
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+    color: var(--text-primary) !important;
+}
+
+.card-excerpt,
+.article-content p,
+.article-content li,
+.meta-text,
+.text-muted {
+    color: var(--text-secondary) !important;
 }

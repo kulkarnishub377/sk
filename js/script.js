@@ -2,47 +2,6 @@
 const PortfolioApp = {
   // Configuration settings for various features.
   config: {
-    animatedBackground: {
-      baseIconCount: 20, // Base number of icons for mobile.
-      iconsPerPixel: 0.025, // Additional icons per pixel of screen width.
-      icons: [
-        "fab fa-python",
-        "fas fa-database",
-        "fab fa-html5",
-        "fab fa-css3-alt",
-        "fab fa-aws",
-        "fab fa-windows",
-        "fab fa-linux",
-        "fab fa-git-alt",
-        "fab fa-docker",
-        "fab fa-react",
-        "fab fa-raspberry-pi",
-        "fas fa-microchip",
-        "fas fa-code",
-        "fas fa-cloud",
-        "fas fa-cogs",
-        "fas fa-server",
-        "fab fa-js-square",
-        "fab fa-node-js",
-      ],
-      colors: [
-        // Palette for colorful icons
-        "#00A8E8",
-        "#0077B6",
-        "#48CAE4",
-        "#90E0EF",
-        "#ADE8F4",
-        "#0096C7",
-      ],
-      sizeRange: { min: 1.5, max: 3.5 }, // in rem
-      durationRange: { min: 5, max: 12 }, // Slower, more subtle animation
-      opacityRange: { min: 0.05, max: 0.4 },
-      interaction: {
-        // Config for mouse interaction
-        radius: 150, // pixels
-        pushFactor: 0.8, // how strongly icons are pushed away
-      },
-    },
     scroll: {
       threshold: 0.1,
       progressThreshold: 0.5,
@@ -58,7 +17,6 @@ const PortfolioApp = {
   // Application state.
   state: {
     isMobile: () => window.innerWidth < 768,
-    isFirstIconLoad: true, // Track the initial creation of background icons
     reduceMotion: false,
   },
 
@@ -89,72 +47,6 @@ const PortfolioApp = {
    */
   prefersReducedMotion() {
     return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  },
-
-  /**
-   * Initializes a floating, fading background of tech icons.
-   * This version is responsive and adjusts the number of icons based on screen width.
-   */
-  initAnimatedBackground() {
-    if (this.state.reduceMotion) return;
-
-    const background = document.querySelector(".tech-background");
-    if (!background) return;
-
-    const createIcons = () => {
-      background.innerHTML = ""; // Clear existing icons
-      const cfg = this.config.animatedBackground;
-      const iconCount = Math.floor(
-        cfg.baseIconCount + window.innerWidth * cfg.iconsPerPixel,
-      );
-
-      const fragment = document.createDocumentFragment();
-      for (let i = 0; i < iconCount; i++) {
-        const icon = document.createElement("i");
-        const iconClass =
-          cfg.icons[Math.floor(Math.random() * cfg.icons.length)];
-        const color = cfg.colors[Math.floor(Math.random() * cfg.colors.length)];
-
-        icon.className = `tech-icon ${iconClass}`;
-
-        const duration = this.getRandom(
-          cfg.durationRange.min,
-          cfg.durationRange.max,
-        );
-        // On first load, use a much smaller delay to make icons appear faster.
-        const delay = this.state.isFirstIconLoad
-          ? this.getRandom(0, 1)
-          : this.getRandom(0, cfg.durationRange.max);
-        const floatDuration = this.getRandom(4, 8);
-
-        icon.style.fontSize = `${this.getRandom(cfg.sizeRange.min, cfg.sizeRange.max)}rem`;
-        icon.style.top = `${this.getRandom(-10, 110)}%`;
-        icon.style.left = `${this.getRandom(-10, 110)}%`;
-        icon.style.color = color;
-        icon.style.textShadow = `0 0 15px ${color}60`; // Add a subtle glow with 60% opacity
-        icon.style.animationDuration = `${duration}s, ${floatDuration}s`;
-        icon.style.animationDelay = `${delay}s`;
-        icon.style.setProperty(
-          "--max-opacity",
-          this.getRandom(cfg.opacityRange.min, cfg.opacityRange.max),
-        );
-
-        fragment.appendChild(icon);
-      }
-      background.appendChild(fragment);
-
-      // After the first run, set the flag to false.
-      if (this.state.isFirstIconLoad) {
-        this.state.isFirstIconLoad = false;
-      }
-    };
-
-    createIcons();
-    // Recreate icons on resize to adjust density, but debounced for performance.
-    window.addEventListener(
-      "resize",
-      this.debounce(createIcons, this.config.debounceDelay),
-    );
   },
 
   /**
@@ -213,52 +105,31 @@ const PortfolioApp = {
     }
   },
 
+
   /**
-   * Initializes mouse-move interaction for the hero background.
-   * Icons near the cursor will be pushed away.
+   * Adds pointer-reactive ambient movement to the hero background layers.
    */
-  initBackgroundInteraction() {
-    if (this.state.reduceMotion || this.state.isMobile()) return;
+  initHeroAmbientMotion() {
+    if (this.state.reduceMotion) return;
 
     const heroSection = document.querySelector(".hero-section");
     if (!heroSection) return;
 
-    const cfg = this.config.animatedBackground.interaction;
-
-    let rafId;
+    let raf;
     heroSection.addEventListener("mousemove", (e) => {
-      if (rafId) cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-      const icons = document.querySelectorAll(".tech-icon");
-      const mouseX = e.clientX;
-      const mouseY = e.clientY;
-
-      icons.forEach((icon) => {
-        const iconRect = icon.getBoundingClientRect();
-        const iconCenterX = iconRect.left + iconRect.width / 2;
-        const iconCenterY = iconRect.top + iconRect.height / 2;
-
-        const dx = mouseX - iconCenterX;
-        const dy = mouseY - iconCenterY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < cfg.radius) {
-          const angle = Math.atan2(dy, dx);
-          const pushDistance = (cfg.radius - distance) * cfg.pushFactor;
-          const translateX = -Math.cos(angle) * pushDistance;
-          const translateY = -Math.sin(angle) * pushDistance;
-          icon.style.transform = `translate(${translateX}px, ${translateY}px)`;
-        } else {
-          icon.style.transform = "translate(0, 0)";
-        }
-      });
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const rect = heroSection.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        heroSection.style.setProperty("--hero-pointer-x", `${x.toFixed(2)}%`);
+        heroSection.style.setProperty("--hero-pointer-y", `${y.toFixed(2)}%`);
       });
     });
 
     heroSection.addEventListener("mouseleave", () => {
-      document.querySelectorAll(".tech-icon").forEach((icon) => {
-        icon.style.transform = "translate(0, 0)";
-      });
+      heroSection.style.setProperty("--hero-pointer-x", "50%");
+      heroSection.style.setProperty("--hero-pointer-y", "50%");
     });
   },
 
@@ -298,7 +169,7 @@ const PortfolioApp = {
    */
   initSmoothScroll() {
     document
-      .querySelectorAll('.navbar-nav .nav-link[href^="#"]')
+      .querySelectorAll('.navbar-nav .nav-link[href^="#"]:not([data-bs-toggle])')
       .forEach((link) => {
         link.addEventListener("click", (e) => {
           e.preventDefault();
@@ -562,6 +433,183 @@ const PortfolioApp = {
   },
 
   /**
+   * Initializes certification rendering with Load More/Show Less functionality.
+   */
+  initCertifications() {
+    const certifications = [
+      {
+        title: 'Career Essentials in Generative AI',
+        issuer: 'Microsoft',
+        date: 'Sep 2023',
+        link: 'https://www.linkedin.com/learning/certificates/945343f8575e0958170e8038fbcd6a8166106a24ee9b329e1ac77714289ac0f0',
+        icon: 'fab fa-microsoft',
+        category: ['ai']
+      },
+      {
+        title: 'Deep Learning Onramp',
+        issuer: 'MathWorks',
+        date: 'Aug 2023',
+        link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=12dd9cad7-1d2c-4b4b-91b7-beeda802f680&',
+        icon: 'fas fa-robot',
+        category: ['matlab', 'ai']
+      },
+      {
+        title: 'Machine Learning Onramp',
+        issuer: 'MathWorks',
+        date: 'Aug 2023',
+        link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=2c86c398-7a86-4d7d-95e5-9c7f70362202&',
+        icon: 'fas fa-robot',
+        category: ['matlab', 'ai']
+      },
+      {
+        title: 'What is Data Science?',
+        issuer: 'IBM',
+        date: 'Mar 2023',
+        link: 'https://www.coursera.org/account/accomplishments/certificate/BTKY4E35PW5Z',
+        icon: 'fas fa-database',
+        category: ['data']
+      },
+      {
+        title: 'Image Processing Onramp',
+        issuer: 'MathWorks',
+        date: 'Jul 2023',
+        link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=0fdab258-1727-4ad4-a074-7c5cea443ec8&',
+        icon: 'fas fa-image',
+        category: ['matlab']
+      },
+      {
+        title: 'Postman API Fundamentals Student Expert',
+        issuer: 'Postman',
+        date: 'May 2024',
+        link: 'https://api.badgr.io/public/assertions/GLDMnLdNRiWFWW0DbvzBDw',
+        icon: 'fas fa-rocket',
+        category: ['api', 'programming']
+      },
+      {
+        title: 'A.I. for India 2.0',
+        issuer: 'HCL GUVI',
+        date: 'Aug 2023',
+        link: 'https://www.guvi.in/verify-certificate?id=vp07016N8b16X9S192&course=ai_for_in_mar',
+        icon: 'fas fa-brain',
+        category: ['ai']
+      },
+      {
+        title: 'Geodata Processing using Python',
+        issuer: 'ISRO',
+        date: 'Jan 2024',
+        link: 'https://www.linkedin.com/in/shubhkulk21/details/certifications/1709784096382/single-media-viewer?type=IMAGE&profileId=ACoAAD_RI18BIVyTeFPNykfkkxOCzmq8iTPELno',
+        icon: 'fab fa-python',
+        category: ['python', 'data']
+      },
+      {
+        title: 'Geospatial Analysis using Google Earth Engine',
+        issuer: 'ISRO',
+        date: 'N/A',
+        link: 'https://drive.google.com/file/d/13qAyJBVKxWHpG2FTyF2gGBZjdrZU9z6U/view?usp=drivesdk',
+        icon: 'fas fa-globe-asia',
+        category: ['data']
+      },
+      {
+        title: 'Overview of Global Navigation Satellite System',
+        issuer: 'ISRO',
+        date: 'Dec 2023',
+        link: 'https://drive.google.com/file/d/1jMDc_po_n-aW2sIxlm8s28NZSTEupbX4/view?usp=drivesdk',
+        icon: 'fas fa-satellite-dish',
+        category: ['networking', 'data']
+      }
+    ];
+
+    const certGrid = document.getElementById('certifications-grid');
+    const loadMoreBtn = document.getElementById('load-more-cert-btn');
+    const showLessBtn = document.getElementById('show-less-cert-btn');
+    
+    if (!certGrid) return;
+
+    let certsToShow = 6;
+
+    const renderCertifications = () => {
+      certGrid.innerHTML = '';
+      certifications.slice(0, certsToShow).forEach(cert => {
+        certGrid.innerHTML += `
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <div class="mb-3 text-primary">
+                <i class="${cert.icon} fa-2x" aria-hidden="true"></i>
+              </div>
+              <h5 class="card-title mb-1">${cert.title}</h5>
+              <h6 class="card-subtitle mb-2 text-muted">${cert.issuer}</h6>
+              <p class="mb-2"><small class="text-muted">${cert.date}</small></p>
+              <a href="${cert.link}" class="btn btn-gradient btn-sm mt-auto" target="_blank" rel="noopener">View Certificate</a>
+            </div>
+          </div>
+        </div>
+        `;
+      });
+      
+      if (certsToShow >= certifications.length) {
+        loadMoreBtn.classList.add('d-none');
+      } else {
+        loadMoreBtn.classList.remove('d-none');
+      }
+      
+      if (certsToShow > 6) {
+        showLessBtn.classList.remove('d-none');
+      } else {
+        showLessBtn.classList.add('d-none');
+      }
+    };
+
+    if (loadMoreBtn) {
+      loadMoreBtn.addEventListener('click', () => {
+        certsToShow = Math.min(certsToShow + 6, certifications.length);
+        renderCertifications();
+      });
+    }
+
+    if (showLessBtn) {
+      showLessBtn.addEventListener('click', () => {
+        certsToShow = 6;
+        renderCertifications();
+      });
+    }
+
+    renderCertifications();
+  },
+
+  /**
+   * Initializes dark/light theme toggle functionality.
+   */
+  initThemeToggle() {
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+
+    if (!themeToggle) return;
+
+    // Load saved theme or set default
+    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    html.setAttribute('data-bs-theme', saved);
+    
+    if (themeIcon) {
+      themeIcon.className = saved === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+    }
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-bs-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      
+      html.setAttribute('data-bs-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+      
+      if (themeIcon) {
+        themeIcon.className = next === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      }
+    });
+  },
+
+  /**
    * Initializes all components of the application.
    */
   init() {
@@ -569,10 +617,14 @@ const PortfolioApp = {
     // Execute initialization methods when the DOM is fully loaded.
     document.addEventListener("DOMContentLoaded", () => {
       this.state.reduceMotion = this.prefersReducedMotion();
-      this.initAnimatedBackground();
+      if (this.state.reduceMotion) {
+        document.body.classList.add("reduced-motion");
+      }
       this.initCardHoverEffect();
+      this.initCertifications();
+      this.initThemeToggle();
       this.initTypedJs();
-      this.initBackgroundInteraction();
+      this.initHeroAmbientMotion();
       this.initScrollAnimations();
       this.initSmoothScroll();
       this.initNavHighlighting();

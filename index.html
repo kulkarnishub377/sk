@@ -7,7 +7,7 @@
     <!-- Primary Meta Tags for SEO -->
     <title>Shubham Kulkarni - AI Engineer & Software Developer</title>
     <meta name="description" content="Official Portfolio of Shubham Kulkarni - Award-winning AI/ML Engineer & Senior Software Developer. Specializing in Agentic AI, Computer Vision, and IoT Solutions. Winner of Smart India Hackathon 2023.">
-    <meta name="keywords" content="Shubham Kulkarni, Shubham Kulkarni Portfolio, Senior AI Engineer, Full Stack Developer, Generative AI, LLM, RAG, Computer Vision, IoT Expert, Smart India Hackathon Winner, Pune, Ahmednagar">
+    <meta name="keywords" content="Shubham Kulkarni, Shubham Kulkarni Portfolio, Senior AI Engineer, Full Stack Developer, Generative AI, LLM, RAG, Computer Vision, IoT Expert, Smart India Hackathon Winner, Pune, Maharashtra">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="language" content="English">
     <meta name="geo.region" content="IN-MH">
@@ -34,12 +34,12 @@
     
 
     <!-- Additional SEO Meta Tags -->
-    <meta name="theme-color" content="#6366f1">
+    <meta name="theme-color" content="#0a1326">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Shubham Kulkarni">
     <meta name="application-name" content="Shubham Kulkarni Portfolio">
-    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="msapplication-TileColor" content="#0a1326">
     <meta name="format-detection" content="telephone=no">
     <!-- Additional SEO & Performance hints -->
     <!-- Preconnect / DNS prefetch for external resources to improve load speed -->
@@ -52,10 +52,8 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 
-    <!-- Preload hero image and main CSS to improve Largest Contentful Paint -->
+    <!-- Preload hero image to improve Largest Contentful Paint -->
     <link rel="preload" as="image" href="photo_sk.jpg">
-    <link rel="preload" as="style" href="css/style.css">
-    <link rel="preload" as="style" href="css/responsive.css">
 
     <!-- Web App Manifest for better indexing and PWA features -->
     <link rel="manifest" href="site.webmanifest">
@@ -116,7 +114,7 @@
           },
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Ahmednagar",
+            "addressLocality": "Pune",
             "addressRegion": "Maharashtra",
             "addressCountry": "IN"
           },
@@ -141,37 +139,12 @@
           "award": "Winner of Smart India Hackathon 2023"
         },
         {
-          "@type": "WebSite",
-          "@id": "https://kulkarnishub377.github.io/sk/#website",
-          "url": "https://kulkarnishub377.github.io/sk/",
-          "name": "Shubham Kulkarni Portfolio",
-          "publisher": { "@id": "https://kulkarnishub377.github.io/sk/#person" },
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": "https://www.google.com/search?q=site:kulkarnishub377.github.io+{search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        },
-        {
           "@type": "BreadcrumbList",
           "@id": "https://kulkarnishub377.github.io/sk/#breadcrumb",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kulkarnishub377.github.io/sk/" },
-            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://kulkarnishub377.github.io/sk/#about" },
-            { "@type": "ListItem", "position": 3, "name": "Projects", "item": "https://kulkarnishub377.github.io/sk/#projects" },
-            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://kulkarnishub377.github.io/sk/#contact" }
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://kulkarnishub377.github.io/sk/blog/" }
           ]
-        },
-        {
-            "@type": "Organization",
-            "@id": "https://kulkarnishub377.github.io/sk/#organization",
-            "name": "Shubham Kulkarni",
-            "url": "https://kulkarnishub377.github.io/sk/",
-            "logo": "https://kulkarnishub377.github.io/sk/photo_sk.jpg",
-            "sameAs": [
-                "https://www.linkedin.com/in/shubhkulk21",
-                "https://github.com/kulkarnishub377"
-            ]
         }
       ]
     }
@@ -180,7 +153,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -214,13 +187,17 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="blog/index.html">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a></li>
+                    <li class="nav-item"><button class="btn btn-outline-secondary btn-sm ms-3" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon" id="themeIcon"></i></button></li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="visually-hidden-focusable">Skip to main content</a>
+
     <!-- Social Sidebar -->
-    <aside class="social-sidebar">
+    <aside class="social-sidebar" aria-label="Social media links">
         <a href="https://www.linkedin.com/in/shubhkulk21" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
         <a href="https://github.com/kulkarnishub377" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
         <a href="mailto:kulkarnishub377@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
@@ -228,47 +205,93 @@
         <a href="tel:+918308003684" aria-label="Phone" title="Phone"><i class="fas fa-phone" aria-hidden="true"></i></a>
     </aside>
 
-    <main>
+    <main id="main-content">
         <!-- Hero Section -->
         <header class="hero-section">
-            <div class="tech-background">
-                <!-- JS will populate this with animated icons -->
+            <div class="hero-bg-layers" aria-hidden="true">
+                <span class="hero-orb orb-one"></span>
+                <span class="hero-orb orb-two"></span>
+                <span class="hero-orb orb-three"></span>
+                <span class="hero-beam beam-one"></span>
+                <span class="hero-beam beam-two"></span>
+                <div class="hero-grid-overlay"></div>
             </div>
-            <div class="container text-center hero-content">
-                <div class="hero-badge-row">
-                    <span class="hero-badge"><i class="fas fa-rocket me-1" aria-hidden="true"></i>Open To Product Roles</span>
-                    <span class="hero-badge"><i class="fas fa-award me-1" aria-hidden="true"></i>SIH 2023 AIR 1</span>
-                </div>
-                <img src="photo_sk.jpg" alt="Shubham Kulkarni" class="profile-img" width="180" height="180">
-                <h1 class="display-4 fw-bold">Shubham Kulkarni</h1>
-                <p class="lead mb-4"><span class="typed-text"></span></p>
-                <div class="d-flex justify-content-center gap-3">
-                    <a href="#" class="btn btn-gradient" data-bs-toggle="modal" data-bs-target="#contactModal">Hire Me</a>
-                    <a href="Shubham_Kulkarni_Ao.pdf" class="btn btn-secondary-outline" download>Download Resume</a>
-                </div>
-                <div class="hero-kpi-grid">
-                    <div class="hero-kpi">
-                        <span class="hero-kpi-value">50K+</span>
-                        <span class="hero-kpi-label">Vehicles / Day</span>
+            <div class="hero-signal-field" aria-hidden="true">
+                <span class="signal-ring ring-a"></span>
+                <span class="signal-ring ring-b"></span>
+                <span class="signal-ring ring-c"></span>
+                <span class="signal-ping ping-a"></span>
+                <span class="signal-ping ping-b"></span>
+                <span class="signal-ping ping-c"></span>
+                <span class="signal-ping ping-d"></span>
+                <span class="signal-ping ping-e"></span>
+                <span class="signal-ping ping-f"></span>
+                <span class="signal-stream stream-a"></span>
+                <span class="signal-stream stream-b"></span>
+                <span class="signal-stream stream-c"></span>
+            </div>
+            <div class="container hero-content hero-shell">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7 text-center text-lg-start">
+                        <div class="hero-badge-row justify-content-lg-start">
+                            <span class="hero-badge"><i class="fas fa-rocket me-1" aria-hidden="true"></i>Open To Product Roles</span>
+                            <span class="hero-badge"><i class="fas fa-award me-1" aria-hidden="true"></i>SIH 2023 AIR 1</span>
+                            <span class="hero-badge"><i class="fas fa-microchip me-1" aria-hidden="true"></i>Edge + Cloud AI</span>
+                        </div>
+                        <h1 class="display-4 fw-bold">Shubham Kulkarni</h1>
+                        <p class="lead mb-4"><span class="typed-text">AI/ML Engineer · Computer Vision · Edge AI · IoT</span></p>
+                        <div class="d-flex justify-content-center justify-content-lg-start gap-3 flex-wrap">
+                            <a href="#" class="btn btn-gradient" data-bs-toggle="modal" data-bs-target="#contactModal">Hire Me</a>
+                            <a href="Shubham_Kulkarni_Ao.pdf" class="btn btn-secondary-outline" download>Download Resume</a>
+                            <a href="#projects" class="btn btn-secondary-outline">View Projects</a>
+                        </div>
+                        <div class="hero-kpi-grid mx-lg-0">
+                            <div class="hero-kpi">
+                                <span class="hero-kpi-value">50K+</span>
+                                <span class="hero-kpi-label">Vehicles / Day</span>
+                            </div>
+                            <div class="hero-kpi">
+                                <span class="hero-kpi-value">92%</span>
+                                <span class="hero-kpi-label">Detection mAP</span>
+                            </div>
+                            <div class="hero-kpi">
+                                <span class="hero-kpi-value">10-12ms</span>
+                                <span class="hero-kpi-label">Inference Latency</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="hero-kpi">
-                        <span class="hero-kpi-value">92%</span>
-                        <span class="hero-kpi-label">Detection mAP</span>
-                    </div>
-                    <div class="hero-kpi">
-                        <span class="hero-kpi-value">10-12ms</span>
-                        <span class="hero-kpi-label">Inference Latency</span>
+
+                    <div class="col-lg-5">
+                        <div class="hero-profile-card card h-100">
+                            <div class="card-body text-center">
+                                <img src="photo_sk.jpg" alt="Shubham Kulkarni" class="profile-img" width="180" height="180">
+                                <p class="hero-mini-title mb-2">Now Building</p>
+                                <p class="hero-mini-text mb-3">Production computer vision and RAG-powered AI systems for real-world operations.</p>
+                                <div class="hero-stack-tags">
+                                    <span class="skill-tag">YOLOv8</span>
+                                    <span class="skill-tag">TensorRT</span>
+                                    <span class="skill-tag">FastAPI</span>
+                                    <span class="skill-tag">LangChain</span>
+                                </div>
+                                <div class="hero-availability mt-3">
+                                    <i class="fas fa-circle me-2" aria-hidden="true"></i>Available for AI Product Engineering Roles
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="hero-section-divider" aria-hidden="true"></div>
         </header>
 
         <!-- About Section -->
         <section id="about">
             <div class="container">
                 <div class="text-center animate-on-scroll">
+                    <span class="section-kicker">Profile Snapshot</span>
                     <h2 class="section-heading"><i class="fas fa-user-circle me-2" aria-hidden="true"></i>About Shubham Kulkarni</h2>
                     <hr class="my-4">
+                    <p class="section-note mb-4">Engineer mindset with product execution: solving practical problems through scalable AI and robust software architecture.</p>
                 </div>
                 <div class="row align-items-center animate-on-scroll">
                     <div class="col-lg-8">
@@ -281,11 +304,25 @@
                             <p class="lead">
                                 I'm passionate about solving complex real-world problems through AI, and I'm actively seeking opportunities at <strong>product-based companies</strong> where I can build impactful, scalable AI systems.
                             </p>
+                            <div class="about-pulse-grid mt-4">
+                                <div class="about-pulse-card">
+                                    <span class="about-pulse-title">Current Focus</span>
+                                    <span class="about-pulse-value">Vision AI at Scale</span>
+                                </div>
+                                <div class="about-pulse-card">
+                                    <span class="about-pulse-title">Preferred Roles</span>
+                                    <span class="about-pulse-value">AI Engineer, Applied ML</span>
+                                </div>
+                                <div class="about-pulse-card">
+                                    <span class="about-pulse-title">Delivery Style</span>
+                                    <span class="about-pulse-value">Fast Iteration, Production-First</span>
+                                </div>
+                            </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="card h-100">
                             <div class="card-body">
-                                <h5 class="card-title mb-3"><i class="fas fa-star me-2" aria-hidden="true"></i>Core Competencies</h5>
+                                <h3 class="card-title mb-3"><i class="fas fa-star me-2" aria-hidden="true"></i>Core Competencies</h3>
                                 <ul class="list-unstyled">
                                     <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>Computer Vision & Object Detection</li>
                                     <li class="mb-2"><i class="fas fa-check-circle text-primary me-2" aria-hidden="true"></i>Edge AI & Model Optimization</li>
@@ -303,25 +340,37 @@
         <section id="experience">
             <div class="container">
             <div class="text-center animate-on-scroll">
+                <span class="section-kicker">Career Timeline</span>
                 <h2 class="section-heading"><i class="fas fa-briefcase me-2" aria-hidden="true"></i>Work Experience</h2>
                 <hr class="my-4">
-                <p class="lead text-muted mb-5">My professional journey in technology, from internships to my current developer role.</p>
+                <p class="lead text-muted mb-3">My professional journey from internships to production AI engineering, with measurable business impact across computer vision, NLP, and embedded systems.</p>
+                <div class="section-metrics justify-content-center">
+                    <span class="metric-pill"><i class="fas fa-road me-2" aria-hidden="true"></i>4+ Industry Roles</span>
+                    <span class="metric-pill"><i class="fas fa-car-side me-2" aria-hidden="true"></i>50,000+ Vehicles/Day Pipeline</span>
+                    <span class="metric-pill"><i class="fas fa-bolt me-2" aria-hidden="true"></i>12ms AI Inference Latency</span>
+                </div>
             </div>
             <div class="timeline d-none d-md-block">
                 <!-- Timeline Item 1: Arya Omnitalk -->
-                <div class="timeline-item animate-on-scroll" data-aos="fade-up">
+                <div class="timeline-item animate-on-scroll">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                   <div class="card shadow-sm">
                   <div class="card-header d-flex justify-content-between align-items-center">
                     <div>
-                    <h5 class="card-title mb-0">Software Developer</h5>
+                    <h3 class="card-title mb-0">Software Developer</h3>
                     <h6 class="card-subtitle text-muted mt-1">Arya Omnitalk</h6>
+                                        <p class="experience-meta mb-0">Pune, Maharashtra • Full-time • AI/ML Systems</p>
                     </div>
                     <span class="badge bg-primary">Aug 2025 – Present</span>
                   </div>
                   <div class="card-body">
                     <p class="card-text mb-3">Building production-grade AI/ML systems for highway traffic management — vehicle detection processing <strong>50,000+ vehicles/day</strong> with TensorRT-optimized inference at <strong>12ms latency</strong>.</p>
+                                        <div class="experience-highlights d-flex flex-wrap gap-2 mb-3">
+                                                <span class="badge rounded-pill text-bg-primary">Production AI</span>
+                                                <span class="badge rounded-pill text-bg-success">Real-Time Video</span>
+                                                <span class="badge rounded-pill text-bg-info">Edge Deployment</span>
+                                        </div>
                     <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                         <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#exp1Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
                         <a href="blog/vehicle-detection-system.html" class="btn btn-secondary-outline btn-sm">Read Case Study</a>
@@ -339,19 +388,25 @@
                 </div>
                 </div>
                 <!-- Timeline Item 2: Emertxe -->
-                <div class="timeline-item animate-on-scroll" data-aos="fade-up">
+                <div class="timeline-item animate-on-scroll">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="card shadow-sm">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <h5 class="card-title mb-0">Embedded Systems Engineer Intern</h5>
+                        <h3 class="card-title mb-0">Embedded Systems Engineer Intern</h3>
                         <h6 class="card-subtitle text-muted mt-1">Emertxe Information Technologies</h6>
+                        <p class="experience-meta mb-0">Bengaluru, Karnataka • Internship • Embedded Systems</p>
                         </div>
                         <span class="badge bg-secondary">Feb 2024 – Apr 2024</span>
                     </div>
                     <div class="card-body">
                         <p class="card-text mb-3">Engineered a <strong>multi-mode state machine</strong> for PIC microcontrollers with 5 operational modes, improving mode-switching accuracy by <strong>20%</strong>.</p>
+                        <div class="experience-highlights d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge rounded-pill text-bg-primary">Embedded Firmware</span>
+                            <span class="badge rounded-pill text-bg-success">State Machines</span>
+                            <span class="badge rounded-pill text-bg-info">Accuracy +20%</span>
+                        </div>
                         <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                             <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#exp2Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
                         </div>
@@ -366,19 +421,25 @@
                 </div>
                 </div>
                 <!-- Timeline Item 3: IBM -->
-                <div class="timeline-item animate-on-scroll" data-aos="fade-up">
+                <div class="timeline-item animate-on-scroll">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="card shadow-sm">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <h5 class="card-title mb-0">AI/NLP Engineer Intern</h5>
+                        <h3 class="card-title mb-0">AI/NLP Engineer Intern</h3>
                         <h6 class="card-subtitle text-muted mt-1">IBM India Pvt. Ltd.</h6>
+                        <p class="experience-meta mb-0">Remote • Internship • NLP Engineering</p>
                         </div>
                         <span class="badge bg-secondary">Jun 2023 – Aug 2023</span>
                     </div>
                     <div class="card-body">
                         <p class="card-text mb-3">Built an <strong>AI-powered Mental Health Tracker</strong> with NLP sentiment analysis achieving <strong>90% accuracy</strong> in mood detection and <strong>&lt;100ms</strong> API latency.</p>
+                        <div class="experience-highlights d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge rounded-pill text-bg-primary">NLP Pipeline</span>
+                            <span class="badge rounded-pill text-bg-success">90% Accuracy</span>
+                            <span class="badge rounded-pill text-bg-info">API &lt;100ms</span>
+                        </div>
                         <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                             <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#exp3Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
                             <a href="blog/mental-health-ai.html" class="btn btn-secondary-outline btn-sm">Read Case Study</a>
@@ -395,19 +456,25 @@
                 </div>
                 </div>
                 <!-- Timeline Item 4: MathWorks -->
-                <div class="timeline-item animate-on-scroll" data-aos="fade-up">
+                <div class="timeline-item animate-on-scroll">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
                     <div class="card shadow-sm">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <h5 class="card-title mb-0">Machine Learning Engineer Intern</h5>
+                        <h3 class="card-title mb-0">Machine Learning Engineer Intern</h3>
                         <h6 class="card-subtitle text-muted mt-1">MathWorks</h6>
+                        <p class="experience-meta mb-0">Remote • Internship • Applied ML</p>
                         </div>
                         <span class="badge bg-secondary">May 2023 – Sep 2023</span>
                     </div>
                     <div class="card-body">
                         <p class="card-text mb-3">End-to-end AI workflow training in <strong>MATLAB</strong> — data preprocessing, model training, and evaluation. Earned <strong>6 MathWorks certifications</strong> in ML, Deep Learning, and Image Processing.</p>
+                        <div class="experience-highlights d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge rounded-pill text-bg-primary">Applied ML</span>
+                            <span class="badge rounded-pill text-bg-success">Model Training</span>
+                            <span class="badge rounded-pill text-bg-info">6 Certifications</span>
+                        </div>
                         <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
                             <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#exp4Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
                         </div>
@@ -432,8 +499,9 @@
                         <i class="fas fa-laptop-code"></i>
                       </div>
                       <div>
-                        <h5 class="card-title">Software Developer</h5>
+                        <h3 class="card-title">Software Developer</h3>
                         <h6 class="card-subtitle text-muted mb-2">Arya Omnitalk</h6>
+                        <p class="experience-meta mb-2">Pune, Maharashtra • Full-time • AI/ML Systems</p>
                         <span class="badge bg-primary">Aug 2025 – Present</span>
                         <p class="card-text mt-2 mb-2">Building AI/ML systems for highway traffic management — <strong>50,000+ vehicles/day</strong> with <strong>12ms latency</strong>.</p>
                         <button class="btn btn-gradient btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exp1Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
@@ -454,8 +522,9 @@
                                 <i class="fas fa-microchip"></i>
                             </div>
                             <div>
-                                <h5 class="card-title">Embedded Systems Engineer Intern</h5>
+                                <h3 class="card-title">Embedded Systems Engineer Intern</h3>
                                 <h6 class="card-subtitle text-muted mb-2">Emertxe Information Technologies</h6>
+                                <p class="experience-meta mb-2">Bengaluru, Karnataka • Internship • Embedded Systems</p>
                                 <span class="badge bg-secondary">Feb 2024 – Apr 2024</span>
                                 <p class="card-text mt-2 mb-2">Built <strong>multi-mode state machine</strong> for PIC microcontrollers, improving accuracy by <strong>20%</strong>.</p>
                                 <button class="btn btn-gradient btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exp2Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
@@ -475,8 +544,9 @@
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div>
-                                <h5 class="card-title">AI/NLP Engineer Intern</h5>
+                                <h3 class="card-title">AI/NLP Engineer Intern</h3>
                                 <h6 class="card-subtitle text-muted mb-2">IBM India Pvt. Ltd.</h6>
+                                <p class="experience-meta mb-2">Remote • Internship • NLP Engineering</p>
                                 <span class="badge bg-secondary">Jun 2023 – Aug 2023</span>
                                 <p class="card-text mt-2 mb-2">Built <strong>AI Mental Health Tracker</strong> with <strong>90% accuracy</strong> mood detection and <strong>&lt;100ms</strong> API latency.</p>
                                 <button class="btn btn-gradient btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exp3Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
@@ -497,8 +567,9 @@
                                 <i class="fas fa-cogs"></i>
                             </div>
                             <div>
-                                <h5 class="card-title">Machine Learning Engineer Intern</h5>
+                                <h3 class="card-title">Machine Learning Engineer Intern</h3>
                                 <h6 class="card-subtitle text-muted mb-2">MathWorks</h6>
+                                <p class="experience-meta mb-2">Remote • Internship • Applied ML</p>
                                 <span class="badge bg-secondary">May 2023 – Sep 2023</span>
                                 <p class="card-text mt-2 mb-2">End-to-end AI in <strong>MATLAB</strong>. Earned <strong>6 certifications</strong> in ML, Deep Learning, and Image Processing.</p>
                                 <button class="btn btn-gradient btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#exp4Modal"><i class="fas fa-info-circle me-1"></i>More Info</button>
@@ -519,105 +590,79 @@
     <section id="skills">
     <div class="container">
         <div class="text-center animate-on-scroll">
+            <span class="section-kicker">Capability Matrix</span>
             <h2 class="section-heading"><i class="fas fa-cogs me-2" aria-hidden="true"></i>Technical Skills</h2>
             <hr class="my-4">
-            <p class="lead text-muted mb-5">A showcase of my technical expertise, from programming languages to cloud technologies.</p>
+            <p class="lead text-muted mb-3">A practical view of what I can ship end-to-end, from model training to production deployment.</p>
+            <p class="section-note">Balanced across AI engineering, backend systems, cloud operations, and embedded intelligence.</p>
         </div>
 
-        <div class="skills-grid">
-            <!-- AI/ML & Computer Vision -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-brain me-2"></i>AI/ML & Computer Vision</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fas fa-fire me-2"></i>PyTorch</span>
-                    <span class="skill-tag"><i class="fas fa-project-diagram me-2"></i>TensorFlow</span>
-                    <span class="skill-tag"><i class="fas fa-eye me-2"></i>OpenCV</span>
-                    <span class="skill-tag"><i class="fas fa-crosshairs me-2"></i>YOLOv8 / Ultralytics</span>
-                    <span class="skill-tag"><i class="fas fa-bolt me-2"></i>TensorRT</span>
-                    <span class="skill-tag"><i class="fas fa-brain me-2"></i>Scikit-learn</span>
-                    <span class="skill-tag"><i class="fas fa-robot me-2"></i>Agentic AI</span>
-                    <span class="skill-tag"><i class="fas fa-search me-2"></i>RAG Pipelines</span>
-                    <span class="skill-tag"><i class="fas fa-link me-2"></i>LangChain</span>
-                    <span class="skill-tag"><i class="fas fa-brain me-2"></i>Hugging Face</span>
-                    <span class="skill-tag"><i class="fas fa-chart-line me-2"></i>Pandas / NumPy</span>
-                    <span class="skill-tag"><i class="fas fa-language me-2"></i>NLP / NLTK</span>
+        <div class="skills-v2-grid">
+            <article class="skills-pillar-card animate-on-scroll">
+                <h4 class="skills-pillar-title"><i class="fas fa-brain me-2" aria-hidden="true"></i>AI & ML Engineering</h4>
+                <div class="skills-chip-cloud">
+                    <span class="skill-tag">PyTorch</span>
+                    <span class="skill-tag">TensorFlow</span>
+                    <span class="skill-tag">OpenCV</span>
+                    <span class="skill-tag">YOLOv8</span>
+                    <span class="skill-tag">TensorRT</span>
+                    <span class="skill-tag">LangChain</span>
+                    <span class="skill-tag">Hugging Face</span>
+                    <span class="skill-tag">LlamaIndex</span>
+                    <span class="skill-tag">FAISS</span>
+                    <span class="skill-tag">RAG Evaluation</span>
+                    <span class="skill-tag">DeepSORT / ByteTrack</span>
                 </div>
-            </div>
+            </article>
 
-            <!-- Languages -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-code me-2"></i>Languages</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Python</span>
-                    <span class="skill-tag"><i class="fab fa-js-square me-2"></i>JavaScript</span>
-                    <span class="skill-tag"><i class="fas fa-code me-2"></i>TypeScript</span>
-                    <span class="skill-tag"><i class="fas fa-code me-2"></i>C / C++</span>
-                    <span class="skill-tag"><i class="fas fa-database me-2"></i>SQL</span>
-                    <span class="skill-tag"><i class="fab fa-html5 me-2"></i>HTML5 / CSS3</span>
+            <article class="skills-pillar-card animate-on-scroll">
+                <h4 class="skills-pillar-title"><i class="fas fa-server me-2" aria-hidden="true"></i>Backend & Platform</h4>
+                <div class="skills-chip-cloud">
+                    <span class="skill-tag">Django / DRF</span>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Redis</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">WebSockets</span>
+                    <span class="skill-tag">JWT / OAuth</span>
+                    <span class="skill-tag">Celery</span>
+                    <span class="skill-tag">API Versioning</span>
                 </div>
-            </div>
+            </article>
 
-            <!-- Frameworks & Libraries -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-cubes me-2"></i>Web Frameworks & APIs</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Django / DRF</span>
-                    <span class="skill-tag"><i class="fas fa-flask me-2"></i>Flask</span>
-                    <span class="skill-tag"><i class="fas fa-bolt me-2"></i>FastAPI</span>
-                    <span class="skill-tag"><i class="fab fa-react me-2"></i>React.js</span>
-                    <span class="skill-tag"><i class="fab fa-bootstrap me-2"></i>Bootstrap 5</span>
-                    <span class="skill-tag"><i class="fas fa-plug me-2"></i>REST APIs</span>
+            <article class="skills-pillar-card animate-on-scroll">
+                <h4 class="skills-pillar-title"><i class="fas fa-cloud me-2" aria-hidden="true"></i>Cloud, DevOps & Tooling</h4>
+                <div class="skills-chip-cloud">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Weights & Biases</span>
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Gunicorn</span>
+                    <span class="skill-tag">Prometheus / Grafana</span>
+                    <span class="skill-tag">CI/CD Pipelines</span>
                 </div>
-            </div>
+            </article>
 
-            <!-- Databases -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-database me-2"></i>Databases & Storage</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fas fa-database me-2"></i>MySQL</span>
-                    <span class="skill-tag"><i class="fas fa-database me-2"></i>PostgreSQL</span>
-                    <span class="skill-tag"><i class="fas fa-database me-2"></i>MongoDB</span>
-                    <span class="skill-tag"><i class="fas fa-server me-2"></i>Redis</span>
-                    <span class="skill-tag"><i class="fas fa-vector-square me-2"></i>ChromaDB</span>
+            <article class="skills-pillar-card animate-on-scroll">
+                <h4 class="skills-pillar-title"><i class="fas fa-microchip me-2" aria-hidden="true"></i>Embedded & Core Engineering</h4>
+                <div class="skills-chip-cloud">
+                    <span class="skill-tag">NVIDIA Jetson</span>
+                    <span class="skill-tag">Raspberry Pi</span>
+                    <span class="skill-tag">PIC / Arduino</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">C / C++</span>
+                    <span class="skill-tag">RTSP / Video Pipelines</span>
+                    <span class="skill-tag">Serial / I2C / SPI</span>
+                    <span class="skill-tag">Sensor Fusion</span>
+                    <span class="skill-tag">System Debugging</span>
                 </div>
-            </div>
-
-            <!-- Cloud & DevOps -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-cloud me-2"></i>Cloud & DevOps</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fab fa-aws me-2"></i>AWS (EC2, S3, Lambda)</span>
-                    <span class="skill-tag"><i class="fab fa-docker me-2"></i>Docker</span>
-                    <span class="skill-tag"><i class="fas fa-dharmachakra me-2"></i>Kubernetes</span>
-                    <span class="skill-tag"><i class="fab fa-git-alt me-2"></i>Git / GitHub</span>
-                    <span class="skill-tag"><i class="fas fa-sync-alt me-2"></i>CI/CD (GitHub Actions)</span>
-                    <span class="skill-tag"><i class="fab fa-linux me-2"></i>Linux</span>
-                </div>
-            </div>
-
-            <!-- Embedded Systems & IoT -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-microchip me-2"></i>Embedded Systems & IoT</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fas fa-microchip me-2"></i>NVIDIA Jetson</span>
-                    <span class="skill-tag"><i class="fab fa-raspberry-pi me-2"></i>Raspberry Pi</span>
-                    <span class="skill-tag"><i class="fas fa-microchip me-2"></i>Arduino</span>
-                    <span class="skill-tag"><i class="fas fa-microchip me-2"></i>PIC Microcontroller</span>
-                    <span class="skill-tag"><i class="fas fa-square-root-alt me-2"></i>MATLAB / Simulink</span>
-                </div>
-            </div>
-
-            <!-- Developer Tools -->
-            <div class="skill-category animate-on-scroll">
-                <h4 class="category-title"><i class="fas fa-tools me-2"></i>Developer Tools</h4>
-                <div class="skills-tags">
-                    <span class="skill-tag"><i class="fas fa-rocket me-2"></i>Postman</span>
-                    <span class="skill-tag"><i class="fas fa-code me-2"></i>VS Code / Cursor</span>
-                    <span class="skill-tag"><i class="fab fa-python me-2"></i>Jupyter Notebook</span>
-                    <span class="skill-tag"><i class="fas fa-terminal me-2"></i>Shell Scripting</span>
-                    <span class="skill-tag"><i class="fas fa-chart-bar me-2"></i>Weights & Biases</span>
-                </div>
-            </div>
+            </article>
         </div>
     </div>
 </section>
@@ -626,8 +671,10 @@
         <section id="projects">
             <div class="container">
                 <div class="text-center animate-on-scroll">
+                    <span class="section-kicker">Build Portfolio</span>
                     <h2 class="section-heading"><i class="fas fa-project-diagram me-2" aria-hidden="true"></i>Projects</h2>
                     <hr class="my-4">
+                    <p class="section-note mb-4">A mix of production deployments, hackathon-winning systems, and full-stack products engineered for measurable outcomes.</p>
                 </div>
                 <div class="row justify-content-around">
                     <!-- DocuAI Studio v3.1: New RAG Project -->
@@ -635,7 +682,7 @@
                         <article class="card h-100 position-relative">
                             <span class="badge bg-danger text-white position-absolute top-0 end-0 m-2"><i class="fas fa-sparkles me-1"></i>New</span>
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-file-lines me-2" aria-hidden="true"></i>DocuAI Studio v3.1</h5>
+                                <h3 class="card-title"><i class="fas fa-file-lines me-2" aria-hidden="true"></i>DocuAI Studio v3.1</h3>
                                 <p class="card-text">Production-ready <strong>Document AI + RAG</strong> platform with <strong>40+ FastAPI endpoints</strong>, hybrid retrieval (<strong>FAISS + BM25 + RRF</strong>), streaming Q&amp;A, and analytics.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project8Modal">More Info</button>
@@ -649,7 +696,7 @@
                         <article class="card h-100 position-relative">
                             <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2"><i class="fas fa-star me-1"></i>Featured</span>
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-car me-2" aria-hidden="true"></i>VIDES: Vehicle Detection System</h5>
+                                <h3 class="card-title"><i class="fas fa-car me-2" aria-hidden="true"></i>VIDES: Vehicle Detection System</h3>
                                 <p class="card-text">Production-grade vehicle detection processing <strong>50K+ vehicles/day</strong> with YOLOv8 + ByteTrack. Multi-camera RTSP, TensorRT optimization (<strong>12ms latency</strong>), and zero-duplicate tracking.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <a href="blog/vehicle-detection-system.html" class="btn btn-gradient btn-sm">Read More</a>
@@ -663,7 +710,7 @@
                         <article class="card h-100 position-relative">
                             <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2"><i class="fas fa-trophy me-1"></i>SIH Winner</span>
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-seedling me-2" aria-hidden="true"></i>Smart Irrigation System</h5>
+                                <h3 class="card-title"><i class="fas fa-seedling me-2" aria-hidden="true"></i>Smart Irrigation System</h3>
                                 <p class="card-text">IoT-powered irrigation with AI-driven water optimization achieving <strong>30% water savings</strong>. Raspberry Pi + soil sensors + weather APIs. <strong>AIR 1 at Smart India Hackathon 2023</strong>.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project2Modal">More Info</button>
@@ -676,7 +723,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-users me-2" aria-hidden="true"></i>Alumni Management Portal</h5>
+                                <h3 class="card-title"><i class="fas fa-users me-2" aria-hidden="true"></i>Alumni Management Portal</h3>
                                 <p class="card-text">Scalable full-stack platform with <strong>Django + React</strong>, JWT auth, Redis caching, and WebSocket real-time messaging for 10K+ alumni network.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project1Modal">More Info</button>
@@ -689,7 +736,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-brain me-2" aria-hidden="true"></i>Mental Health AI Tracker</h5>
+                                <h3 class="card-title"><i class="fas fa-brain me-2" aria-hidden="true"></i>Mental Health AI Tracker</h3>
                                 <p class="card-text">NLP-powered mood detection achieving <strong>90% accuracy</strong> from free-form text. VADER sentiment analysis + Flask REST API at <strong>&lt;100ms latency</strong>. Built at IBM.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <a href="blog/mental-health-ai.html" class="btn btn-gradient btn-sm">Read More</a>
@@ -702,7 +749,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-eye me-2" aria-hidden="true"></i>Real-Time Object Detection</h5>
+                                <h3 class="card-title"><i class="fas fa-eye me-2" aria-hidden="true"></i>Real-Time Object Detection</h3>
                                 <p class="card-text">Multi-object detection and tracking system using <strong>Python + OpenCV</strong> with real-time video stream processing and bounding box visualization.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <a href="blog/object-detection.html" class="btn btn-gradient btn-sm">Read More</a>
@@ -715,7 +762,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-recycle me-2" aria-hidden="true"></i>E-Waste Management System</h5>
+                                <h3 class="card-title"><i class="fas fa-recycle me-2" aria-hidden="true"></i>E-Waste Management System</h3>
                                 <p class="card-text">IoT smart bins with AI device identification, GPS tracking, and real-time analytics. Reduced collection costs by <strong>40%</strong> and increased efficiency by <strong>60%</strong>.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <a href="blog/e-waste-management.html" class="btn btn-gradient btn-sm">Read More</a>
@@ -728,7 +775,7 @@
                     <div class="col-lg-4 col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100">
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-robot me-2" aria-hidden="true"></i>Line Following Robot</h5>
+                                <h3 class="card-title"><i class="fas fa-robot me-2" aria-hidden="true"></i>Line Following Robot</h3>
                                 <p class="card-text">Autonomous robot with <strong>PID control</strong>, Arduino Mega, and 5-channel IR sensor array. Real-time path detection with interrupt-driven motor control.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <button class="btn btn-gradient btn-sm" data-bs-toggle="modal" data-bs-target="#project3Modal">More Info</button>
@@ -742,7 +789,7 @@
                         <article class="card h-100 position-relative">
                             <span class="badge bg-success position-absolute top-0 end-0 m-2 project-live-badge">Live</span>
                             <div class="card-body d-flex flex-column">
-                                <h5 class="card-title"><i class="fas fa-globe me-2" aria-hidden="true"></i>Portfolio Website</h5>
+                                <h3 class="card-title"><i class="fas fa-globe me-2" aria-hidden="true"></i>Portfolio Website</h3>
                                 <p class="card-text">SEO-optimized portfolio with dark mode, animated backgrounds, and structured data. Built with HTML5, Bootstrap 5, and vanilla JS.</p>
                                 <div class="mt-auto d-flex flex-wrap gap-2">
                                     <a href="#project5Modal" class="btn btn-gradient btn-sm" data-bs-toggle="modal">More Info</a>
@@ -759,15 +806,17 @@
         <section id="education">
             <div class="container">
                 <div class="text-center animate-on-scroll">
+                    <span class="section-kicker">Academic Foundation</span>
                     <h2 class="section-heading"><i class="fas fa-graduation-cap me-2" aria-hidden="true"></i>Education</h2>
                     <hr class="my-4">
+                    <p class="section-note mb-4">Strong electronics foundation with a practical focus on intelligent systems, embedded computing, and applied AI development.</p>
                 </div>
 
                 <div class="row">
                     <div class="col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-university me-2" aria-hidden="true"></i>BE in Electronics and Telecommunication</h5>
+                                <h3 class="card-title"><i class="fas fa-university me-2" aria-hidden="true"></i>BE in Electronics and Telecommunication</h3>
                                 <h6 class="card-subtitle mb-2 text-muted">Dr. Vithalrao Vikhe Patil College of Engineering, Ahilyanagar (2021 – 2025)</h6>
                                 <p class="card-text">CGPA: 7.5/10</p>
                             </div>
@@ -776,7 +825,7 @@
                     <div class="col-md-6 mb-4 animate-on-scroll">
                         <article class="card h-100 shadow-sm">
                             <div class="card-body">
-                                <h5 class="card-title"><i class="fas fa-school me-2" aria-hidden="true"></i>HSC</h5>
+                                <h3 class="card-title"><i class="fas fa-school me-2" aria-hidden="true"></i>HSC</h3>
                                 <h6 class="card-subtitle mb-2 text-muted">Residential Arts, Commerce, and Science Junior College (2020 – 2021)</h6>
                                 <p class="card-text">Percentage: 87.5%</p>
                             </div>
@@ -787,9 +836,9 @@
                 <!-- Extracurricular Activities Card -->
                 <div class="row justify-content-center animate-on-scroll">
                     <div class="col-lg-10">
-                        <article class="card h-100 shadow-lg border-primary mb-4 bg-light">
+                        <article class="card h-100 shadow-lg mb-4">
                             <div class="card-body">
-                                <h4 class="card-title text-primary mb-3"><i class="fas fa-trophy me-2" aria-hidden="true"></i>Extracurricular Activities</h4>
+                                <h4 class="card-title mb-3"><i class="fas fa-trophy me-2" aria-hidden="true"></i>Extracurricular Activities</h4>
                                 <ul class="list-unstyled ms-2">
                                     <li class="mb-3"><span class="badge bg-success me-2">Winner</span><strong> AIR 1 – Smart India Hackathon 2023</strong><br><span class="text-muted small">Recognized for innovative problem-solving at a national level.</span></li>
                                     <li class="mb-3"><span class="badge bg-info me-2">Rank 2</span><strong> SPPU Startup Olympiad 2025</strong><br><span class="text-muted small">Awarded for the Smart Irrigation System idea at the university level.</span></li>
@@ -807,216 +856,28 @@
         <section id="certifications">
             <div class="container">
                 <div class="text-center animate-on-scroll">
+                    <span class="section-kicker">Continuous Learning</span>
                     <h2 class="section-heading"><i class="fas fa-certificate me-2" aria-hidden="true"></i>Certifications</h2>
                     <hr class="my-4">
-                    <p class="lead text-muted mb-5">A collection of my professional certifications and credentials.</p>
-                    </div>
-                    <div class="row" id="certifications-grid">
-                        <!-- Certificates will be rendered here by JS -->
-                    </div>
-                    <div class="text-center mt-4">
-                        <button id="load-more-cert-btn" type="button" class="btn btn-gradient">Load More</button>
-                        <button id="show-less-cert-btn" type="button" class="btn btn-secondary-outline d-none">Show Less</button>
-                    </div>
-                    </section>
-                    <script>
-                    // Certificate data (ordered by impressiveness — AI/ML first)
-                    const certifications = [
-                        {
-                            title: 'Career Essentials in Generative AI',
-                            issuer: 'Microsoft',
-                            date: 'Sep 2023',
-                            link: 'https://www.linkedin.com/learning/certificates/945343f8575e0958170e8038fbcd6a8166106a24ee9b329e1ac77714289ac0f0',
-                            icon: 'fab fa-microsoft',
-                            category: ['ai']
-                        },
-                        {
-                            title: 'Deep Learning Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Aug 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=12dd9cad7-1d2c-4b4b-91b7-beeda802f680&',
-                            icon: 'fas fa-robot',
-                            category: ['matlab', 'ai']
-                        },
-                        {
-                            title: 'Machine Learning Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Aug 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=2c86c398-7a86-4d7d-95e5-9c7f70362202&',
-                            icon: 'fas fa-robot',
-                            category: ['matlab', 'ai']
-                        },
-                        {
-                            title: 'What is Data Science?',
-                            issuer: 'IBM',
-                            date: 'Mar 2023',
-                            link: 'https://www.coursera.org/account/accomplishments/certificate/BTKY4E35PW5Z',
-                            icon: 'fas fa-database',
-                            category: ['data']
-                        },
-                        {
-                            title: 'Image Processing Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Jul 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=0fdab258-1727-4ad4-a074-7c5cea443ec8&',
-                            icon: 'fas fa-image',
-                            category: ['matlab']
-                        },
-                        {
-                            title: 'Postman API Fundamentals Student Expert',
-                            issuer: 'Postman',
-                            date: 'May 2024',
-                            link: 'https://api.badgr.io/public/assertions/GLDMnLdNRiWFWW0DbvzBDw',
-                            icon: 'fas fa-rocket',
-                            category: ['api', 'programming']
-                        },
-                        {
-                            title: 'A.I. for India 2.0',
-                            issuer: 'HCL GUVI',
-                            date: 'Aug 2023',
-                            link: 'https://www.guvi.in/verify-certificate?id=vp07016N8b16X9S192&course=ai_for_in_mar',
-                            icon: 'fas fa-brain',
-                            category: ['ai']
-                        },
-                        {
-                            title: 'Signal Processing Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Aug 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=6751fc9b-6713-4017-834a-9f4eb8af104f&',
-                            icon: 'fas fa-wave-square',
-                            category: ['matlab']
-                        },
-                        {
-                            title: 'Statistics Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Aug 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=f32a1077-a3a1-4679-b95e-86ae5fe24fb0&',
-                            icon: 'fas fa-chart-bar',
-                            category: ['matlab', 'data']
-                        },
-                        {
-                            title: 'Python',
-                            issuer: 'HCL GUVI',
-                            date: 'Aug 2023',
-                            link: 'https://www.guvi.in/certificate.html?id=p311V940S06c17J01A',
-                            icon: 'fab fa-python',
-                            category: ['python', 'programming']
-                        },
-                        {
-                            title: 'Geodata Processing using Python',
-                            issuer: 'ISRO',
-                            date: 'Jan 2024',
-                            link: 'https://www.linkedin.com/in/shubhkulk21/details/certifications/1709784096382/single-media-viewer?type=IMAGE&profileId=ACoAAD_RI18BIVyTeFPNykfkkxOCzmq8iTPELno',
-                            icon: 'fab fa-python',
-                            category: ['python', 'data']
-                        },
-                        {
-                            title: 'MATLAB Onramp',
-                            issuer: 'MathWorks',
-                            date: 'Jun 2023',
-                            link: 'https://matlabacademy.mathworks.com/progress/share/certificate.html?id=65e8ff3c-a083-4e76-b4a2-5184255056e3&',
-                            icon: 'fas fa-file-code',
-                            category: ['matlab', 'programming']
-                        },
-                        {
-                            title: 'Geospatial Analysis using Google Earth Engine',
-                            issuer: 'ISRO',
-                            date: 'N/A',
-                            link: 'https://drive.google.com/file/d/13qAyJBVKxWHpG2FTyF2gGBZjdrZU9z6U/view?usp=drivesdk',
-                            icon: 'fas fa-globe-asia',
-                            category: ['data']
-                        },
-                        {
-                            title: 'Overview of Global Navigation Satellite System',
-                            issuer: 'ISRO',
-                            date: 'Dec 2023',
-                            link: 'https://drive.google.com/file/d/1jMDc_po_n-aW2sIxlm8s28NZSTEupbX4/view?usp=drivesdk',
-                            icon: 'fas fa-satellite-dish',
-                            category: ['networking', 'data']
-                        },
-                        {
-                            title: 'Industrial Electronics',
-                            issuer: 'Yash Autotech Systems',
-                            date: 'Sep 2023',
-                            link: 'https://drive.google.com/file/d/1Pw6hLlcP2m36YylGZxecvf75DnY1wv_7/view?usp=drivesdk',
-                            icon: 'fas fa-microchip',
-                            category: ['programming']
-                        },
-                        {
-                            title: 'What Is Business Analysis?',
-                            issuer: 'LinkedIn',
-                            date: 'Feb 2024',
-                            link: 'https://www.linkedin.com/learning/certificates/db34d18ffe44b7dd6b0d1954b87ea3fc9f980422adddf2c13784f0da573962a3',
-                            icon: 'fab fa-linkedin',
-                            category: ['data']
-                        },
-                        {
-                            title: 'Advanced Excel',
-                            issuer: 'MKCL',
-                            date: 'Feb 2021',
-                            link: '#',
-                            icon: 'fas fa-file-excel',
-                            category: ['data']
-                        }
-                    ];
-
-                    // Render certificates
-                    const certGrid = document.getElementById('certifications-grid');
-                    const loadMoreBtn = document.getElementById('load-more-cert-btn');
-                    const showLessBtn = document.getElementById('show-less-cert-btn');
-                    let certsToShow = 6;
-
-                    function renderCertifications() {
-                        certGrid.innerHTML = '';
-                        certifications.slice(0, certsToShow).forEach(cert => {
-                            certGrid.innerHTML += `
-                            <div class="col-md-6 col-lg-4 mb-4">
-                                <div class="card h-100 shadow-sm">
-                                    <div class="card-body d-flex flex-column">
-                                        <div class="mb-3 text-primary">
-                                            <i class="${cert.icon} fa-2x" aria-hidden="true"></i>
-                                        </div>
-                                        <h5 class="card-title mb-1">${cert.title}</h5>
-                                        <h6 class="card-subtitle mb-2 text-muted">${cert.issuer}</h6>
-                                        <p class="mb-2"><small class="text-muted">${cert.date}</small></p>
-                                        <a href="${cert.link}" class="btn btn-gradient btn-sm mt-auto" target="_blank" rel="noopener">View Certificate</a>
-                                    </div>
-                                </div>
-                            </div>
-                            `;
-                        });
-                        // Button visibility
-                        if (certsToShow >= certifications.length) {
-                            loadMoreBtn.classList.add('d-none');
-                        } else {
-                            loadMoreBtn.classList.remove('d-none');
-                        }
-                        if (certsToShow > 6) {
-                            showLessBtn.classList.remove('d-none');
-                        } else {
-                            showLessBtn.classList.add('d-none');
-                        }
-                    }
-
-                    loadMoreBtn.addEventListener('click', () => {
-                        certsToShow = Math.min(certsToShow + 6, certifications.length);
-                        renderCertifications();
-                    });
-
-                    showLessBtn.addEventListener('click', () => {
-                        certsToShow = 6;
-                        renderCertifications();
-                    });
-
-                    // Initial render
-                    renderCertifications();
-                    </script>
+                    <p class="lead text-muted mb-3">A collection of my professional certifications and credentials.</p>
+                    <p class="section-note mb-4">Focused on AI, machine learning, APIs, and deployment-ready engineering practices.</p>
+                </div>
+                <div class="row" id="certifications-grid">
+                    <!-- Certificates will be rendered here by JS -->
+                </div>
+                <div class="text-center mt-4">
+                    <button id="load-more-cert-btn" type="button" class="btn btn-gradient">Load More</button>
+                    <button id="show-less-cert-btn" type="button" class="btn btn-secondary-outline d-none">Show Less</button>
+                </div>
+            </div>
+        </section>
 
         <!-- Contact Section -->
         <!-- Contact Section (Simplified) -->
         <section id="contact">
             <div class="container">
                 <div class="text-center animate-on-scroll">
+                    <span class="section-kicker">Let&apos;s Build Together</span>
                     <h2 class="section-heading"><i class="fas fa-envelope me-2" aria-hidden="true"></i>Contact Me</h2>
                     <hr class="my-4">
                     <p class="lead text-muted mb-4">
@@ -1026,21 +887,27 @@
                         <i class="fas fa-paper-plane me-2"></i> Send Message
                     </button>
                 </div>
-                <div class="row text-center animate-on-scroll mt-5">
+                <div class="row text-center animate-on-scroll mt-5 g-4">
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <i class="fas fa-map-marker-alt fa-3x mb-3 text-muted" aria-hidden="true"></i>
-                        <h5>Location</h5>
-                        <p class="text-muted">Ahmednagar, Maharashtra, India</p>
+                        <article class="contact-mini-card h-100">
+                            <i class="fas fa-map-marker-alt fa-2x mb-3 text-muted" aria-hidden="true"></i>
+                            <h5>Location</h5>
+                            <p class="text-muted mb-0">Pune, Maharashtra, India</p>
+                        </article>
                     </div>
                     <div class="col-md-4 mb-4 mb-md-0">
-                        <i class="fas fa-phone fa-3x mb-3 text-muted" aria-hidden="true"></i>
-                        <h5>Phone</h5>
-                        <a href="tel:+918308003684" class="text-decoration-none">+91 8308003684</a>
+                        <article class="contact-mini-card h-100">
+                            <i class="fas fa-phone fa-2x mb-3 text-muted" aria-hidden="true"></i>
+                            <h5>Phone</h5>
+                            <a href="tel:+918308003684" class="text-decoration-none">+91 8308003684</a>
+                        </article>
                     </div>
                     <div class="col-md-4">
-                        <i class="fas fa-envelope fa-3x mb-3 text-muted" aria-hidden="true"></i>
-                        <h5>Email</h5>
-                        <a href="mailto:kulkarnishub377@gmail.com" class="text-decoration-none">kulkarnishub377@gmail.com</a>
+                        <article class="contact-mini-card h-100">
+                            <i class="fas fa-envelope fa-2x mb-3 text-muted" aria-hidden="true"></i>
+                            <h5>Email</h5>
+                            <a href="mailto:kulkarnishub377@gmail.com" class="text-decoration-none">kulkarnishub377@gmail.com</a>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -1051,7 +918,7 @@
     <footer class="text-white">
         <div class="container text-center">
             <div class="social-icons mb-3">
-                <a href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=shubhkulk21" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/shubhkulk21" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
                 <a href="https://github.com/kulkarnishub377" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
                 <a href="mailto:kulkarnishub377@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://wa.me/+918308003684" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
@@ -1061,15 +928,6 @@
             <p>Copyright &copy; <span id="copyright-year">2024</span> Shubham Kulkarni. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- Mobile Social Bar -->
-    <div class="social-mobile">
-        <a href="https://linkedin.com/in/shubham-kulkarni-dev" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/shubham-kulkarni-dev" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="mailto:kulkarnishub377@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/918308003684" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-        <a href="tel:+918308003684" aria-label="Phone"><i class="fas fa-phone"></i></a>
-    </div>
 
     <!-- Experience Modals -->
     <!-- Arya Omnitalk Modal -->
@@ -1182,16 +1040,30 @@
                     <h5 class="modal-title" id="contactModalLabel"><i class="fas fa-paper-plane me-2"></i>Send Message</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <iframe 
-                        class="google-form-iframe"
-                        src="https://docs.google.com/forms/d/e/1FAIpQLSf9DJN5xv1zo8QQVXuTURYFYw_7GIqBCmpeN6SZWLgzXjzB9g/viewform?embedded=true" 
-                        width="100%" 
-                        height="500" 
-                        title="Contact Form"
-                        aria-label="Google Contact Form"
-                        loading="lazy"
-                    >Loading…</iframe>
+                <div class="modal-body text-center py-5">
+                    <i class="fas fa-envelope fa-3x mb-3 text-primary"></i>
+                    <h4 class="mb-3">Let's Connect!</h4>
+                    <p class="text-muted mb-4">
+                        Send me an email and I'll get back to you within 24 hours.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="mailto:kulkarnishub377@gmail.com?subject=Opportunity%20from%20Portfolio" 
+                           class="btn btn-gradient btn-lg">
+                            <i class="fas fa-paper-plane me-2"></i>
+                            Send Email
+                        </a>
+                        <a href="https://wa.me/+918308003684" 
+                           class="btn btn-outline-success" 
+                           target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                        </a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-muted small mb-2">Email:</p>
+                        <p><strong>kulkarnishub377@gmail.com</strong></p>
+                        <p class="text-muted small mb-2 mt-3">Phone:</p>
+                        <p><strong><a href="tel:+918308003684" class="text-decoration-none">+91 8308003684</a></strong></p>
+                    </div>
                 </div>
             </div>
         </div>
