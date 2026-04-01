@@ -85,10 +85,14 @@ You only need a modern web browser to view the project. No special software or d
 
 ### 🗺️ Roadmap
 
-*   [ ] Add a blog section to share articles and tutorials.
-*   [ ] Implement a dark/light mode toggle for user preference.
-*   [ ] Add more projects with detailed case studies.
-*   [ ] Enhance animations and transitions for a richer user experience.
+*   [x] Add a blog section to share articles and tutorials.
+*   [x] Implement a dark/light mode toggle for user preference.
+*   [x] Add more projects with detailed case studies.
+*   [x] Enhance animations and transitions for a richer user experience.
+*   [ ] Refactor CSS: remove legacy dead code and consolidate media queries.
+*   [ ] Add CSS/JS minification for production builds.
+*   [ ] Host blog images locally to remove external dependencies.
+*   [ ] Add a custom 404 page.
 
 See the [open issues](https://github.com/kulkarnishub377/sk/issues) for a full list of proposed features (and known issues).
 
@@ -101,7 +105,7 @@ See the [open issues](https://github.com/kulkarnishub377/sk/issues) for a full l
 Feel free to connect with me!
 
 *   **Email:** [kulkarnishub377@gmail.com](mailto:kulkarnishub377@gmail.com)
-*   **LinkedIn:** [linkedin.com/in/shubham-kulkarni-dev](https://www.linkedin.com/in/shubham-kulkarni-dev/)
+*   **LinkedIn:** [linkedin.com/in/shubhkulk21](https://www.linkedin.com/in/shubhkulk21/)
 *   **GitHub:** [github.com/kulkarnishub377](https://github.com/kulkarnishub377)
 
 ---

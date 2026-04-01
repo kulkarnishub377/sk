@@ -592,7 +592,7 @@ const PortfolioApp = {
     html.setAttribute('data-bs-theme', saved);
     
     if (themeIcon) {
-      themeIcon.className = saved === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+      themeIcon.className = saved === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     }
 
     // Toggle theme on button click
@@ -604,7 +604,7 @@ const PortfolioApp = {
       localStorage.setItem('portfolio-theme', next);
       
       if (themeIcon) {
-        themeIcon.className = next === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+        themeIcon.className = next === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
       }
     });
   },

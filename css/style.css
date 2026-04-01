@@ -91,7 +91,6 @@
   background: #f8f9fa !important;
 }
 /* Global Styles & Theming */
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;900&display=swap");
 
 :root {
   /* Font Families */
@@ -383,7 +382,7 @@ h6 {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 123, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(79, 70, 229, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
   transition: transform var(--transition-speed) ease;
 }
 
@@ -429,8 +428,7 @@ h6 {
     gradient-flow 5s ease infinite,
     slide-in-fwd-center 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-  /* Add a subtle shadow to make the text pop */
-  text-shadow: 0 4px 20px var(--shadow-color);
+  /* text-shadow removed: has no visible effect with background-clip: text + transparent fill */
 }
 
 /* Animation for hero text entrance */
@@ -1341,7 +1339,7 @@ footer p a:hover {
 --------------------------------------------------------------*/
 #certifications {
   padding: 80px 0;
-  background-color: #f8f9fa;
+  background-color: var(--surface-2);
 }
 
 #certifications .section-heading {
@@ -1392,26 +1390,26 @@ footer p a:hover {
 .certification-card .card-title {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #343a40;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .certification-card .card-subtitle {
   font-size: 1rem;
   font-weight: 500;
-  color: #6c757d;
+  color: var(--text-muted);
   margin-bottom: 1rem;
 }
 
 .certification-card .card-text {
   font-size: 0.9rem;
-  color: #6c757d;
+  color: var(--text-muted);
   margin-bottom: 1.5rem;
 }
 
 .certification-card .btn-outline-primary {
-  border-color: #007bff;
-  color: #007bff;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
   font-weight: 600;
   padding: 0.5rem 1rem;
   border-radius: 50px;
@@ -1421,7 +1419,7 @@ footer p a:hover {
 }
 
 .certification-card .btn-outline-primary:hover {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: #fff;
 }
 
