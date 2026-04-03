@@ -1,28 +1,46 @@
 # robots.txt for Shubham Kulkarni Portfolio
 # https://kulkarnishub377.github.io/sk/
+# Last Updated: 2026-04-03
 
 User-agent: *
 Allow: /
 Disallow: /admin/
 Disallow: /private/
-Crawl-delay: 1
 
+# Sitemap location for all search engines
 Sitemap: https://kulkarnishub377.github.io/sk/sitemap.xml
 
+# Google-specific directives
 User-agent: Googlebot
 Allow: /
 
 User-agent: Googlebot-Image
 Allow: /
 
+User-agent: Googlebot-News
+Allow: /blog/
+
+# Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
+# Yahoo
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
+# DuckDuckGo
 User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
+
+# Social Media Crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
