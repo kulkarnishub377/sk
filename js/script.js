@@ -8,7 +8,7 @@ const PortfolioApp = {
       navHighlightThreshold: 0.6,
     },
     theme: {
-      default: "light", // Set default to light
+      default: "dark",
       storageKey: "portfolio-theme",
     },
     debounceDelay: 250, // ms
@@ -36,9 +36,9 @@ const PortfolioApp = {
    */
   debounce(func, delay) {
     let timeoutId;
-    return (...args) => {
+    return function(...args) {
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => func.apply(this, args), delay);
+      timeoutId = setTimeout(() => func(...args), delay);
     };
   },
 
@@ -355,7 +355,7 @@ const PortfolioApp = {
                     const path = new URL(url).pathname; // e.g., /blog/ai-ml-trends.html
                     url = `${prodOrigin}${path}`;
                 }
-                console.log('Localhost detected. Sharing production URL:', url);
+                // Localhost detected — sharing production URL instead
             }
 
             // Encode for URL parameters
@@ -530,19 +530,44 @@ const PortfolioApp = {
     const renderCertifications = () => {
       certGrid.innerHTML = '';
       certifications.slice(0, certsToShow).forEach(cert => {
-        certGrid.innerHTML += `
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <div class="mb-3 text-primary">
-                <i class="${cert.icon} fa-2x" aria-hidden="true"></i>
-              </div>
-              <h5 class="card-title mb-1">${cert.title}</h5>
-              <h6 class="card-subtitle mb-2 text-muted">${cert.issuer}</h6>
-              <p class="mb-2"><small class="text-muted">${cert.date}</small></p>
-              <a href="${cert.link}" class="btn btn-gradient btn-sm mt-auto" target="_blank" rel="noopener">View Certificate</a>
-            </div>
-          </div>
-        `;
+        const card = document.createElement('div');
+        card.className = 'card h-100 shadow-sm';
+
+        const body = document.createElement('div');
+        body.className = 'card-body d-flex flex-column';
+
+        const iconWrap = document.createElement('div');
+        iconWrap.className = 'mb-3 text-primary';
+        const icon = document.createElement('i');
+        icon.className = `${cert.icon} fa-2x`;
+        icon.setAttribute('aria-hidden', 'true');
+        iconWrap.appendChild(icon);
+
+        const title = document.createElement('h5');
+        title.className = 'card-title mb-1';
+        title.textContent = cert.title;
+
+        const subtitle = document.createElement('h6');
+        subtitle.className = 'card-subtitle mb-2 text-muted';
+        subtitle.textContent = cert.issuer;
+
+        const dateP = document.createElement('p');
+        dateP.className = 'mb-2';
+        const dateSmall = document.createElement('small');
+        dateSmall.className = 'text-muted';
+        dateSmall.textContent = cert.date;
+        dateP.appendChild(dateSmall);
+
+        const link = document.createElement('a');
+        link.href = cert.link;
+        link.className = 'btn btn-gradient btn-sm mt-auto';
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        link.textContent = 'View Certificate';
+
+        body.append(iconWrap, title, subtitle, dateP, link);
+        card.appendChild(body);
+        certGrid.appendChild(card);
       });
       
       if (certsToShow >= certifications.length) {
@@ -586,7 +611,7 @@ const PortfolioApp = {
     if (!themeToggle) return;
 
     // Load saved theme or set default
-    const saved = localStorage.getItem('portfolio-theme') || 'dark';
+    const saved = localStorage.getItem(this.config.theme.storageKey) || this.config.theme.default;
     html.setAttribute('data-bs-theme', saved);
     
     if (themeIcon) {
@@ -631,7 +656,7 @@ const PortfolioApp = {
       this.initScrollProgress();
       this.initBlogShare();
       this.initCopyrightYear();
-      console.log("Portfolio App Initialized");
+
     });
   },
 };
