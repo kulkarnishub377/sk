@@ -1,0 +1,23 @@
+/* TEAM */
+Developer: Shubham Kulkarni
+Role: AI Engineer & Full-Stack Developer
+Location: Pune, Maharashtra, India
+LinkedIn: https://www.linkedin.com/in/shubhkulk21
+GitHub: https://github.com/kulkarnishub377
+Email: kulkarnishub377@gmail.com
+
+/* SITE */
+Last Updated: 2026-04-22
+Language: English
+Standards: HTML5, CSS3, ES6+
+Framework: Bootstrap 5.3
+Fonts: Poppins, Montserrat, Pacifico (Google Fonts)
+IDE: Visual Studio Code
+Hosting: GitHub Pages
+Domain: kulkarnishub377.github.io/sk/
+
+/* THANKS */
+Bootstrap (getbootstrap.com)
+Font Awesome (fontawesome.com)
+Google Fonts (fonts.google.com)
+Typed.js (mattboldt.com/demos/typed-js)

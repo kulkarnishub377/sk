@@ -1,21 +1,29 @@
 # robots.txt for Shubham Kulkarni Portfolio
 # https://kulkarnishub377.github.io/sk/
-# Last Updated: 2026-04-03
+# Last Updated: 2026-04-22
 
+# Default: Allow all crawlers full access
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
+Disallow: /favicon/
+Disallow: /Site_under_maintaince.html
 
-# Sitemap location for all search engines
+# Block crawling of verification files (not content)
+Disallow: /google8de19ed94a81c4e1.html
+Disallow: /BingSiteAuth.xml
+
+# Sitemap location
 Sitemap: https://kulkarnishub377.github.io/sk/sitemap.xml
 
 # Google-specific directives
 User-agent: Googlebot
 Allow: /
+Allow: /blog/
 
 User-agent: Googlebot-Image
 Allow: /
+Allow: /*.jpg$
+Allow: /*.png$
 
 User-agent: Googlebot-News
 Allow: /blog/
@@ -35,7 +43,17 @@ User-agent: DuckDuckBot
 Allow: /
 Crawl-delay: 1
 
-# Social Media Crawlers
+# Yandex
+User-agent: Yandex
+Allow: /
+Crawl-delay: 2
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+# Social Media Crawlers (Open Graph / Card previews)
 User-agent: facebookexternalhit
 Allow: /
 
@@ -44,3 +62,28 @@ Allow: /
 
 User-agent: Twitterbot
 Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Block AI training scrapers (opt out of AI training datasets)
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /

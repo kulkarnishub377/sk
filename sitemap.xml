@@ -1,127 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ==================== MAIN PAGES ==================== -->
 
   <!-- Homepage -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://kulkarnishub377.github.io/sk/photo_sk.jpg</image:loc>
+      <image:title>Shubham Kulkarni - AI Engineer Portfolio</image:title>
+      <image:caption>Shubham Kulkarni - Senior AI/ML Engineer and Software Developer</image:caption>
+    </image:image>
   </url>
 
   <!-- Blog Index -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog Posts (newest first) -->
+  <!-- ==================== BLOG POSTS (newest first) ==================== -->
+
+  <!-- DocuAI Studio v3.1 — Document AI + RAG Pipeline -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/docuai-studio-v3-1.html</loc>
-    <lastmod>2026-03-30</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- AI/ML Industry Trends 2026 -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/ai-ml-trends.html</loc>
-    <lastmod>2026-02-20</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Generative AI Deep Dive -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/generative-ai.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Smart India Hackathon 2023 Win Story -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/sih-win-2023.html</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Object Detection with Python + OpenCV -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/object-detection.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- IoT Connectivity Deep Dive -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/iot-connectivity.html</loc>
-    <lastmod>2026-02-14</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
+  <!-- AI Agents with LangGraph -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/ai-agent-langgraph.html</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- VIDES: Vehicle Image Detection System -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/vehicle-detection-system.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- RAG Pipeline Architecture -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/rag-pipeline.html</loc>
-    <lastmod>2026-02-10</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
+  <!-- Line Following Robot with PID Control -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/line-follower.html</loc>
-    <lastmod>2026-02-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
+  <!-- Trending AI Programming Languages -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/trending-ai-langs.html</loc>
-    <lastmod>2026-02-06</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Alumni Management Portal -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/alumni-portal.html</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- Mental Health AI Tracker -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/mental-health-ai.html</loc>
-    <lastmod>2026-01-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
+  <!-- Smart Irrigation System (JalTantra) -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/smart-irrigation.html</loc>
-    <lastmod>2026-01-15</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- E-Waste Management System -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/blog/e-waste-management.html</loc>
-    <lastmod>2025-12-10</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
