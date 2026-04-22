@@ -179,7 +179,7 @@ const PortfolioApp = {
             // Close Bootstrap mobile menu if open
             const navbarCollapseEl = document.getElementById("navbarNav");
             if (navbarCollapseEl?.classList.contains("show")) {
-              const bsCollapse = new bootstrap.Collapse(navbarCollapseEl);
+              const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navbarCollapseEl);
               bsCollapse.hide();
             }
             const navHeight =
@@ -531,7 +531,6 @@ const PortfolioApp = {
       certGrid.innerHTML = '';
       certifications.slice(0, certsToShow).forEach(cert => {
         certGrid.innerHTML += `
-        <div class="col-md-6 col-lg-4 mb-4">
           <div class="card h-100 shadow-sm">
             <div class="card-body d-flex flex-column">
               <div class="mb-3 text-primary">
@@ -543,7 +542,6 @@ const PortfolioApp = {
               <a href="${cert.link}" class="btn btn-gradient btn-sm mt-auto" target="_blank" rel="noopener">View Certificate</a>
             </div>
           </div>
-        </div>
         `;
       });
       

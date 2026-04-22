@@ -403,7 +403,7 @@ hr { border-color: var(--border); opacity: 0.7; }
 /* ---------- 17. CERTIFICATIONS ---------- */
 #certifications { padding: 80px var(--container-pad); }
 #certifications .container { padding: 2.5rem 2rem; }
-#certifications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+#certifications-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 1.5rem; }
 .section-heading i, .card-title i { color: var(--primary); font-weight: 700; margin-right: 0.5rem; }
 .cert-icon { font-size: 2.5rem; color: var(--primary); transition: transform var(--speed) ease; }
 .card:hover .cert-icon { transform: scale(1.2) rotate(-10deg); }
