@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-  <!-- ==================== MAIN PAGES ==================== -->
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Homepage -->
   <url>
     <loc>https://kulkarnishub377.github.io/sk/</loc>
     <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://kulkarnishub377.github.io/sk/photo_sk.jpg</image:loc>
-      <image:title>Shubham Kulkarni - AI Engineer Portfolio</image:title>
-      <image:caption>Shubham Kulkarni - Senior AI/ML Engineer and Software Developer</image:caption>
-    </image:image>
   </url>
 
   <!-- Blog Index -->
@@ -26,8 +15,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- ==================== BLOG POSTS (newest first) ==================== -->
 
   <!-- DocuAI Studio v3.1 — Document AI + RAG Pipeline -->
   <url>
@@ -148,5 +135,4 @@
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
-
 </urlset>
