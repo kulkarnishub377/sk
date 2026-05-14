@@ -125,8 +125,8 @@ mask-image:radial-gradient(ellipse 50% 55% at 50% 45%,black,transparent);-webkit
 .live-dot{width:7px;height:7px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);animation:livePulse 2s infinite}
 @keyframes livePulse{0%,100%{opacity:1;box-shadow:0 0 10px var(--green)}50%{opacity:.4;box-shadow:0 0 4px var(--green)}}
 
-.hero h1{font-family:var(--head);font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:900;line-height:1.06;letter-spacing:-2.5px;margin-bottom:10px}
-.hero h1 .em,.sec-title .em{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .hero-title{font-family:var(--head);font-size:clamp(2.5rem,5.5vw,4.5rem);font-weight:900;line-height:1.06;letter-spacing:-2.5px;margin-bottom:10px}
+.hero .hero-title .em,.sec-title .em{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .hero-type{font-family:var(--mono);font-size:.85rem;color:var(--accent);margin-bottom:22px;display:flex;align-items:center;gap:3px;min-height:24px}
 .caret{display:inline-block;width:2px;height:1.15em;background:var(--accent);vertical-align:text-bottom;animation:caretBlink .75s steps(2) infinite}
 @keyframes caretBlink{0%{opacity:1}100%{opacity:0}}
