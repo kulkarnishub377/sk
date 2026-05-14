@@ -31,10 +31,10 @@
   <link rel="manifest" href="site.webmanifest">
 
   <!-- Favicon -->
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="https://kulkarnishub377.github.io/sk/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://kulkarnishub377.github.io/sk/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://kulkarnishub377.github.io/sk/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="https://kulkarnishub377.github.io/sk/favicon/favicon.ico">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -68,13 +68,22 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://kulkarnishub377.github.io/sk/#website",
+        "url": "https://kulkarnishub377.github.io/sk/",
+        "name": "Shubham Kulkarni Portfolio",
+        "alternateName": ["Shubham Kulkarni AI Engineer", "Shubham Kulkarni"],
+        "description": "Official Portfolio of Shubham Kulkarni, AI Engineer & Software Developer."
+      },
+      {
         "@type": "ProfilePage",
         "@id": "https://kulkarnishub377.github.io/sk/#webpage",
         "url": "https://kulkarnishub377.github.io/sk/",
         "name": "Shubham Kulkarni — AI Engineer | Computer Vision, GenAI, Edge AI & MLOps",
         "description": "Shubham Kulkarni is an AI Engineer at Arya Omnitalk specializing in Computer Vision, Generative AI, RAG Pipelines, Edge AI & MLOps.",
         "mainEntity": { "@id": "https://kulkarnishub377.github.io/sk/#person" },
-        "breadcrumb": { "@id": "https://kulkarnishub377.github.io/sk/#breadcrumb" }
+        "breadcrumb": { "@id": "https://kulkarnishub377.github.io/sk/#breadcrumb" },
+        "isPartOf": { "@id": "https://kulkarnishub377.github.io/sk/#website" }
       },
       {
         "@type": "Person",
