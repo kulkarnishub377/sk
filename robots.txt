@@ -1,89 +1,24 @@
-# robots.txt for Shubham Kulkarni Portfolio
-# https://kulkarnishub377.github.io/sk/
-# Last Updated: 2026-04-22
+# Crawl rules for kulkarnishub377.github.io
+# Shubham Kulkarni Portfolio — AI Engineer | Computer Vision, GenAI & MLOps
 
-# Default: Allow all crawlers full access
 User-agent: *
 Allow: /
-Disallow: /favicon/
-Disallow: /Site_under_maintaince.html
 
-# Block crawling of verification files (not content)
-Disallow: /google8de19ed94a81c4e1.html
-Disallow: /BingSiteAuth.xml
+# Block hidden/dev files only
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /.nojekyll
 
-# Sitemap location
-Sitemap: https://kulkarnishub377.github.io/sk/sitemap.xml
-
-# Google-specific directives
-User-agent: Googlebot
-Allow: /
+# Allow important assets explicitly
 Allow: /blog/
+Allow: /css/
+Allow: /js/
+Allow: /favicon/
+Allow: /photo_sk.png
+Allow: /Shubham_Kulkarni_Ao.pdf
+Allow: /site.webmanifest
+Allow: /sitemap.xml
+Allow: /sitemap.xsl
 
-User-agent: Googlebot-Image
-Allow: /
-Allow: /*.jpg$
-Allow: /*.png$
-
-User-agent: Googlebot-News
-Allow: /blog/
-
-# Bing
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Yahoo
-User-agent: Slurp
-Allow: /
-Crawl-delay: 1
-
-# DuckDuckGo
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# Yandex
-User-agent: Yandex
-Allow: /
-Crawl-delay: 2
-
-# Baidu
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 2
-
-# Social Media Crawlers (Open Graph / Card previews)
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: LinkedInBot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-# Block AI training scrapers (opt out of AI training datasets)
-User-agent: GPTBot
-Disallow: /
-
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Bytespider
-Disallow: /
+# Sitemap Location
+Sitemap: https://kulkarnishub377.github.io/sitemap.xml

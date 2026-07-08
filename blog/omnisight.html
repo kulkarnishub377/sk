@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniSight: Autonomous Incident Intelligence | Shubham Kulkarni</title>
+    <meta name="description" content="Architecting an event-driven AI platform for real-time anomaly validation and agentic investigations.">
+    <meta name="keywords" content="OmniSight, AI Platform, Event-Driven Architecture, Anomaly Detection, AI Agents, Incident Intelligence, Shubham Kulkarni, AI Engineer">
+    <meta name="author" content="Shubham Kulkarni">
+    <link rel="canonical" href="https://kulkarnishub377.github.io/blog/omnisight.html">
+
+    <!-- Open Graph Metadata -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://kulkarnishub377.github.io/blog/omnisight.html">
+    <meta property="og:title" content="OmniSight: Autonomous Incident Intelligence">
+    <meta property="og:description" content="Architecting an event-driven AI platform for real-time anomaly validation and agentic investigations.">
+    <meta property="og:image" content="https://kulkarnishub377.github.io/photo_sk.png">
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="OmniSight: Autonomous Incident Intelligence">
+    <meta name="twitter:description" content="Architecting an event-driven AI platform for real-time anomaly validation and agentic investigations.">
+    <meta name="twitter:image" content="https://kulkarnishub377.github.io/photo_sk.png">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "OmniSight: Autonomous Incident Intelligence",
+      "image": "https://kulkarnishub377.github.io/photo_sk.png",
+      "author": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "url": "https://kulkarnishub377.github.io/"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Shubham Kulkarni",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kulkarnishub377.github.io/photo_sk.png"
+        }
+      }
+    }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;700;800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .article-content-wrapper { font-family: 'Inter', sans-serif; color: #2c3e50; }
+        .article-content-wrapper p { font-size: 1.25rem; line-height: 1.85; margin-bottom: 2rem; color: #374151; }
+        .article-content-wrapper h2 { font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 2.25rem; margin-top: 4rem; margin-bottom: 1.5rem; color: #111827; letter-spacing: -0.02em; position: relative; }
+        .article-content-wrapper h2::after { content: ''; display: block; width: 80px; height: 6px; background: linear-gradient(90deg, #3B82F6, transparent); margin-top: 15px; border-radius: 4px; }
+        .dropcap::first-letter { font-family: 'Libre Baskerville', serif; font-size: 4.5rem; float: left; line-height: 0.85; margin-right: 1.25rem; margin-top: 0.2rem; color: #3B82F6; font-weight: 700; }
+        
+        .highlight-box { background: #EFF6FF; border-left: 6px solid #3B82F6; padding: 2.5rem; border-radius: 16px; margin: 3.5rem 0; position: relative; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .highlight-box::before { content: '\f5eb'; font-family: 'Font Awesome 6 Free'; font-weight: 900; position: absolute; top: -20px; right: -20px; font-size: 8rem; color: rgba(59, 130, 246, 0.05); transform: rotate(30deg); }
+        
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin: 3.5rem 0; }
+        .stat-card { background: #ffffff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); text-align: center; border: 1px solid rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .stat-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); border-color: rgba(59, 130, 246, 0.2); }
+        .stat-value { font-size: 3rem; font-weight: 800; background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; display: block; margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; color: #6B7280; font-weight: 700; }
+        
+        .toc-wrapper { background: #ffffff; padding: 2rem; border-radius: 16px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-bottom: 3rem; border: 1px solid #E5E7EB; }
+        .toc-list { list-style: none; padding: 0; margin: 0; }
+        .toc-list li { margin-bottom: 1rem; }
+        .toc-list a { text-decoration: none; color: #4B5563; font-weight: 500; transition: color 0.2s ease; }
+        .toc-list a:hover { color: #3B82F6; }
+        @media (max-width: 992px) { .toc-wrapper { display: none; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-premium">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.html">
+                <i class="fas fa-arrow-left text-secondary" style="font-size: 0.9rem;"></i>
+                <span style="font-family: var(--font-mono); color: var(--text-primary);">Back to Blog</span>
+            </a>
+            <div class="ms-auto d-none d-md-block">
+                <span class="badge bg-light text-dark border fw-medium px-3 py-2">
+                    <i class="fas fa-clock me-2"></i> 10 min read
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="article-header pt-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <span class="hero-tag mb-3 d-inline-block text-white border-0" style="background-color: #3B82F6 !important;">Agentic AI</span>
+                    <h1 class="hero-title display-4 fw-bolder mb-4">OmniSight: Multi-Modal Incident Intelligence</h1>
+                    <p class="lead text-secondary mb-4 mx-auto" style="max-width: 800px; font-size: 1.35rem; line-height: 1.6;">
+                        Architecting a production-grade, event-driven AI platform for real-time anomaly validation and autonomous agentic investigations.
+                    </p>
+                    <div class="d-flex justify-content-center align-items-center gap-4 mt-5 text-muted">
+                        <div class="d-flex align-items-center gap-2">
+                            <img src="../photo_sk.png" alt="Shubham" class="rounded-circle shadow-sm" width="56" height="56">
+                            <div class="text-start">
+                                <span class="d-block fw-bold text-dark">Shubham Kulkarni</span>
+                                <span class="small text-secondary">AI Engineer</span>
+                            </div>
+                        </div>
+                        <div class="vr opacity-25"></div>
+                        <div class="text-start">
+                            <span class="d-block fw-bold text-dark">Updated</span>
+                            <time class="small text-secondary" datetime="2026-06-01">Jun 01, 2026</time>
+                        </div>
+                    </div>
+
+                    <!-- Share Buttons -->
+                    <div class="share-buttons-container justify-content-center mt-4">
+                        <span class="text-muted small fw-bold me-2">SHARE:</span>
+                        <a href="#" class="share-btn linkedin" data-platform="linkedin" aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-btn twitter" data-platform="twitter" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn whatsapp" data-platform="whatsapp" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <button class="share-btn copy-link-btn" aria-label="Copy Link"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="sticky-top" style="top: 120px;">
+                        <div class="toc-wrapper">
+                            <h6 class="text-uppercase text-muted fw-bold mb-4 small" style="letter-spacing: 1px;">Contents</h6>
+                            <ul class="toc-list">
+                                <li><a href="#executive-summary">1. Executive Summary</a></li>
+                                <li><a href="#use-cases">2. Core Use Cases</a></li>
+                                <li><a href="#agentic-engine">3. Agentic Workflow Engine</a></li>
+                                <li><a href="#architecture">4. Architecture & Data Flow</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 article-content-wrapper">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80" alt="OmniSight Dashboard" class="img-fluid rounded-4 mb-5 shadow-sm w-100">
+
+                    <p class="dropcap">
+                        Instead of relying on human operators to stare at monitors and match anomalies across disparate systems, OmniSight automatically validates, deduplicates, and enriches these events in real time. Once an anomaly is detected, an <strong>Agentic Workflow</strong> kicks in to handle the cognitive heavy lifting.
+                    </p>
+
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <span class="stat-value">Agentic</span>
+                            <span class="stat-label">Workflow Engine</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">RAG</span>
+                            <span class="stat-label">Semantic Database</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-value">Multi</span>
+                            <span class="stat-label">Modal Sensors</span>
+                        </div>
+                    </div>
+
+                    <h2 id="executive-summary">1. Executive Summary</h2>
+                    <p>
+                        <strong>OmniSight</strong> (Autonomous Multi-Modal Incident Intelligence Fabric) is an advanced, enterprise-ready AI platform designed to ingest and correlate high-velocity signals from diverse edge sources—including RTSP Cameras, IoT Sensors, Microphones, and Standard Operating Procedure (SOP) Documents.
+                    </p>
+                    <p>
+                        It replaces the traditional "alert fatigue" model with an autonomous investigator. It retrieves semantic evidence from vector memory, reasons through risk factors, generates safety guardrails, and presents a holistic view via a high-end, premium Operator Dashboard built on FastAPI.
+                    </p>
+
+                    <h2 id="use-cases">2. Core Use Cases</h2>
+                    <p>
+                        OmniSight is designed to be highly adaptable to various physical-world monitoring scenarios:
+                    </p>
+                    <ul>
+                        <li><strong>🏭 Smart Manufacturing & Industrial IoT:</strong> A critical CNC machine exhibits an IoT temperature spike while an audio sensor detects a grinding anomaly. OmniSight correlates the two, queries the machine's maintenance manual using RAG, and issues a severe alert recommending shutdown.</li>
+                        <li><strong>🏢 Warehouse Safety & Logistics:</strong> A camera detects a forklift moving at high speed in a pedestrian-only zone. OmniSight logs the safety violation, links it to the safety protocol document, and automatically drafts an incident report for the shift supervisor.</li>
+                        <li><strong>🏙️ Smart City Operations:</strong> Traffic cameras detect a collision, and nearby microphones register a loud impact. OmniSight fuses the multi-modal data, assesses severity, and prepares a structured payload for emergency dispatch APIs.</li>
+                        <li><strong>🔐 Secure Facility Monitoring:</strong> A badge-swipe is registered at a secure door, but the camera detects two faces (tailgating). OmniSight flags the anomaly, cross-references access control policy, and alerts the guard station.</li>
+                    </ul>
+
+                    <h2 id="agentic-engine">3. Agentic Workflow Engine</h2>
+                    <p>
+                        OmniSight moves beyond simple rules-based alerts by utilizing a <strong>Deterministic Agentic Runtime</strong> composed of specialized AI personas, ensuring autonomous action without hallucination:
+                    </p>
+                    <div class="highlight-box">
+                        <h4 class="h5 fw-bold mb-3"><i class="fas fa-users-cog text-primary me-2"></i>The Personas</h4>
+                        <ul class="mb-0">
+                            <li><strong>👁️ Observer:</strong> Continuously monitors the event stream and identifies raw anomalies (e.g., "Temperature > 85°C").</li>
+                            <li><strong>🕵️ Investigator:</strong> Groups related anomalies within specific time-windows and locations into structured <strong>Incidents</strong>.</li>
+                            <li><strong>📚 Retriever:</strong> Queries the Qdrant/Postgres vector database to find relevant SOPs, safety manuals, or past resolutions.</li>
+                            <li><strong>🗺️ Planner:</strong> Analyzes the evidence and formulates a step-by-step resolution plan.</li>
+                            <li><strong>🛡️ Safety Guard:</strong> A deterministic policy engine that reviews the Planner's suggestions to ensure no autonomous actions violate enterprise safety rules.</li>
+                            <li><strong>⚙️ Action Executor:</strong> Dispatches approved actions (e.g., sending emails, creating Jira tickets, triggering webhooks).</li>
+                        </ul>
+                    </div>
+
+                    <h2 id="architecture">4. Architecture & Data Flow</h2>
+                    <p>
+                        The backend is powered by FastAPI, processing JSON payloads at high velocity. The Agent Runtime handles the LLM logic, heavily utilizing RAG to fetch localized safety documents.
+                    </p>
+                    <div class="mermaid my-4">
+graph LR
+    A[Edge Sensors<br>Cameras/IoT] -->|JSON Payloads| B[FastAPI Gateway]
+    B -->|Schema Validation| C[Event Processor]
+    C -->|Time-Window Match| D[Incident Correlator]
+    
+    D --> E[Memory Fabric]
+    E -.->|Vector Search| F[Semantic DB]
+    E -.->|State| G[PostgreSQL]
+    
+    D --> H[Agent Runtime]
+    H -->|RAG| F
+    H -->|Policy Check| I[Safety Guard]
+    I --> J[Action Execution]
+    I --> K[Operator Console]
+    
+    style A fill:#0f172a,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#fff
+                    </div>
+                    
+                    <div class="mt-5 text-center">
+                        <a href="https://github.com/kulkarnishub377/OmniSight" target="_blank" class="btn btn-outline-primary rounded-pill px-4 me-3"><i class="fab fa-github me-2"></i>View GitHub</a>
+                        <a href="https://kulkarnishub377.github.io/OmniSight/" target="_blank" class="btn btn-primary rounded-pill px-4"><i class="fas fa-external-link-alt me-2"></i>Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--bg-surface); border-top: 1px solid var(--border-light);" class="py-5 mt-5">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-3" style="font-family: var(--font-heading);">Shubham Kulkarni</h4>
+            <div class="d-flex justify-content-center gap-3 mb-4">
+                <a href="https://github.com/kulkarnishub377" class="text-secondary"><i class="fab fa-github fa-lg"></i></a>
+                <a href="https://www.linkedin.com/in/shubhkulk21" class="text-secondary"><i class="fab fa-linkedin fa-lg"></i></a>
+            </div>
+            <p class="text-secondary small mb-4">Engineering Safer Systems.</p>
+            <a href="index.html" class="btn btn-outline-dark rounded-pill px-4 hover-lift">Back to Blog</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'neutral' });</script>
+</body>
+</html>
