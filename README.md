@@ -3,7 +3,7 @@
     <p align="center">
         A modern, clean, and fully responsive personal portfolio website built to showcase my skills, projects, and journey as a developer.
         <br />
-        <a href="https://kulkarnishub377.github.io/sk/"><strong>View Live Demo »</strong></a>
+        <a href="https://shubhamkulkarni.me/"><strong>View Live Demo »</strong></a>
         ·
         <a href="https://github.com/kulkarnishub377/sk/issues">Report Bug</a>
         ·
@@ -29,7 +29,7 @@
 
 ### 🎯 About The Project
 
-[![Portfolio Preview](https://user-images.githubusercontent.com/88601825/188274889-e3508869-1a88-4143-8557-81bbe53691e3.png)](https://kulkarnishub377.github.io/sk/)
+[![Portfolio Preview](https://user-images.githubusercontent.com/88601825/188274889-e3508869-1a88-4143-8557-81bbe53691e3.png)](https://shubhamkulkarni.me/)
 
 This project serves as my digital resume and portfolio. It's a carefully crafted space where I present my professional journey, technical skills, and the projects I'm passionate about. The goal was to create an engaging, accessible, and visually appealing platform for visitors, recruiters, and fellow developers.
 
