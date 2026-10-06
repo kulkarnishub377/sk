@@ -229,7 +229,7 @@
       }
       const [name, email, subject, message] = fields.map(f => f.value.trim());
       const body = `${message}\n\n— Sent by: ${name} (${email})\nVia portfolio inquiry`;
-      window.location.href = `mailto:yadnyesh.in@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = `mailto:yadnyeshdhangar@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       if (note) {
         note.classList.remove('err');
         note.textContent = 'Opening your email client with the message ready — just click send!';
