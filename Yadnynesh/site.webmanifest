@@ -1,0 +1,43 @@
+{
+  "name": "Yadnyesh Dhangar — Senior Java Full Stack Developer",
+  "short_name": "Yadnyesh D.",
+  "description": "Portfolio of Yadnyesh Dhangar, AI-Powered Java Full Stack Developer specializing in Spring Boot, Microservices, React.js, AWS, and AI Agents.",
+  "start_url": "./",
+  "scope": "./",
+  "id": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0B0B0C",
+  "theme_color": "#0B0B0C",
+  "categories": [
+    "portfolio",
+    "technology",
+    "software"
+  ],
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "url": "./#projects",
+      "description": "View enterprise projects"
+    },
+    {
+      "name": "Experience",
+      "url": "./#experience",
+      "description": "View professional background"
+    },
+    {
+      "name": "Contact",
+      "url": "./#contact",
+      "description": "Get in touch with Yadnyesh"
+    }
+  ]
+}
