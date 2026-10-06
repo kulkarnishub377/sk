@@ -112,12 +112,14 @@
   // ── Typewriter Console ──
   const tw = $('#typewriter');
   const roles = [
-    'Senior Java Full Stack Developer',
-    'Spring Boot & Spring Cloud Microservices',
-    'Barclays BCPS Core Banking Architect',
-    'T2eorem Hexagonal Trading Engine',
-    'DaVita HIPAA-Compliant Healthcare EHR',
-    'AI-Augmented Software Engineering',
+    'Full-Stack Developer',
+    'Python (FastAPI, Flask & Django) · React',
+    'Google Cloud Vertex AI · Gemini · Multi-Agent',
+    'Vanilla JavaScript · ES Modules · No Bundler',
+    'PostgreSQL · In-Memory Caching · Cloudflare',
+    'OIDC / OAuth2 · SimpleJWT Auth',
+    'pytest · Jest · Test-Driven Discipline',
+    'Docker · CI/CD Pipelines · Production Cloud',
     'AIR 1 National Champion · SIH 2023'
   ];
   if (tw && !reduceMotion) {
@@ -152,6 +154,53 @@
       if (show) p.classList.add('in');
     });
   }));
+
+  // ── Project Modals Interactivity ──
+  const openModal = (id) => {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    if (typeof modal.showModal === 'function') {
+      modal.showModal();
+    } else {
+      modal.setAttribute('open', '');
+    }
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = (modal) => {
+    if (!modal) return;
+    if (typeof modal.close === 'function') {
+      modal.close();
+    } else {
+      modal.removeAttribute('open');
+    }
+    document.body.style.overflow = '';
+  };
+
+  $$('.open-modal-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modalId = btn.dataset.modal;
+      if (modalId) openModal(modalId);
+    });
+  });
+
+  $$('.modal-close, .modal-close-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const modal = btn.closest('dialog');
+      closeModal(modal);
+    });
+  });
+
+  $$('dialog.proj-modal').forEach(modal => {
+    modal.addEventListener('click', e => {
+      if (e.target === modal) closeModal(modal);
+    });
+    modal.addEventListener('cancel', () => {
+      document.body.style.overflow = '';
+    });
+  });
 
   // ── Contact Form (Pre-filled Mailto) ──
   const form = $('#contactForm');
@@ -213,15 +262,15 @@
 
     // Node topology layout in normalized coordinates (0..1)
     const nodes = [
-      { id: 'client', name: 'Client Apps', sub: 'React · Angular', x: 0.13, y: 0.50, color: '#38BDF8', icon: '💻' },
-      { id: 'auth', name: 'Spring Security', sub: 'OAuth2 · JWT', x: 0.35, y: 0.25, color: '#7FA8FF', icon: '🔐' },
-      { id: 'gateway', name: 'Spring Gateway', sub: 'Filter & Route', x: 0.35, y: 0.65, color: '#FF7C4A', icon: '⚡' },
-      { id: 'bcps', name: 'BCPS (Barclays)', sub: 'Payment Core', x: 0.60, y: 0.22, color: '#34D3A0', icon: '🏦' },
-      { id: 't2eorem', name: 'T2eorem Trading', sub: 'Hexagonal P&L', x: 0.60, y: 0.50, color: '#FF5A1F', icon: '📈' },
-      { id: 'davita', name: 'DaVita EHR', sub: 'HIPAA Records', x: 0.60, y: 0.78, color: '#00D2D3', icon: '🏥' },
-      { id: 'kafka', name: 'Apache Kafka', sub: 'Event Pub/Sub', x: 0.84, y: 0.28, color: '#FF9F43', icon: '📨' },
-      { id: 'db', name: 'Database Cluster', sub: 'ACID Replicas', x: 0.85, y: 0.54, color: '#A78BFA', icon: '🗄️' },
-      { id: 'ai', name: 'AI Agent Guard', sub: 'Antigravity / Risk', x: 0.84, y: 0.78, color: '#E056FD', icon: '🤖' }
+      { id: 'client', name: 'Browser UI', sub: 'ES Modules', x: 0.13, y: 0.50, color: '#38BDF8', icon: '💻' },
+      { id: 'auth', name: 'OIDC Provider', sub: 'Login · Tokens', x: 0.35, y: 0.22, color: '#7FA8FF', icon: '🔐' },
+      { id: 'gateway', name: 'nginx Routing', sub: 'Ingress · 5 repos', x: 0.35, y: 0.66, color: '#FF7C4A', icon: '⚡' },
+      { id: 'bcps', name: 'Django BFF', sub: 'Templates · DRF', x: 0.60, y: 0.46, color: '#34D3A0', icon: '🐍' },
+      { id: 't2eorem', name: 'Order Mgmt API', sub: 'API-key auth', x: 0.84, y: 0.20, color: '#FF5A1F', icon: '📦' },
+      { id: 'davita', name: 'BSS · Inventory', sub: 'REST integrations', x: 0.84, y: 0.50, color: '#00D2D3', icon: '📡' },
+      { id: 'kafka', name: 'Camunda BPMN', sub: 'bpmn-js viewer', x: 0.60, y: 0.80, color: '#FF9F43', icon: '🔀' },
+      { id: 'db', name: 'PostgreSQL', sub: 'Django ORM', x: 0.60, y: 0.16, color: '#A78BFA', icon: '🗄️' },
+      { id: 'ai', name: 'Team Mgmt API', sub: 'Permission views', x: 0.84, y: 0.80, color: '#E056FD', icon: '👥' }
     ];
 
     function updateNodeGeometry() {
@@ -267,14 +316,13 @@
       { from: 'client', to: 'gateway' },
       { from: 'gateway', to: 'auth' },
       { from: 'gateway', to: 'bcps' },
-      { from: 'gateway', to: 't2eorem' },
-      { from: 'gateway', to: 'davita' },
-      { from: 'bcps', to: 'kafka' },
-      { from: 't2eorem', to: 'kafka' },
-      { from: 'davita', to: 'db' },
-      { from: 'kafka', to: 'db' },
+      { from: 'bcps', to: 'auth' },
+      { from: 'bcps', to: 'db' },
+      { from: 'bcps', to: 't2eorem' },
+      { from: 'bcps', to: 'davita' },
       { from: 'bcps', to: 'ai' },
-      { from: 'ai', to: 'db' }
+      { from: 'bcps', to: 'kafka' },
+      { from: 't2eorem', to: 'kafka' }
     ];
 
     const packets = [];
@@ -282,14 +330,14 @@
     const pick = arr => arr[Math.floor(Math.random() * arr.length)];
 
     const eventsList = [
-      { type: 'BCPS-PAY', cls: 'ev-bcps', text: 'Barclays payment TX-9142 settled · 21ms' },
-      { type: 'KAFKA', cls: 'ev-kafka', text: 'share.trade.executed pub/sub offset #88491' },
-      { type: 'AUTH-OAUTH', cls: 'ev-auth', text: 'Tenant token verified: Barclays Private Banking' },
-      { type: 'T2EOREM', cls: 'ev-t2eorem', text: 'Hexagonal adapter: Oracle P&L ledger commit' },
-      { type: 'DAVITA-EHR', cls: 'ev-davita', text: 'HIPAA audit trail signed with SHA-256' },
-      { type: 'AI-AGENT', cls: 'ev-ai', text: 'Antigravity agent auto-generated test suite · 0 defects' },
-      { type: 'BCPS-PAY', cls: 'ev-bcps', text: 'Demand draft DD-4819 generated successfully' },
-      { type: 'KAFKA', cls: 'ev-kafka', text: 'Batch replication to AWS S3 data lake' }
+      { type: 'OIDC', cls: 'ev-auth', text: 'Login callback OK · permission-gated view unlocked' },
+      { type: 'DJANGO-BFF', cls: 'ev-bcps', text: 'json_script hydrated order-detail context · 14ms' },
+      { type: 'ORDER-API', cls: 'ev-t2eorem', text: 'GET /orders/ORD-4821 · X-API-Key accepted · 200' },
+      { type: 'BSS', cls: 'ev-davita', text: 'Suborder form POST relayed to BSS · 201 Created' },
+      { type: 'BPMN', cls: 'ev-kafka', text: 'Camunda process instance rendered via bpmn-js' },
+      { type: 'JEST', cls: 'ev-ai', text: '312 module tests passed · pytest 148 passed' },
+      { type: 'NGINX', cls: 'ev-auth', text: 'Route /admin → team-management service (prod)' },
+      { type: 'HELM', cls: 'ev-kafka', text: 'Release ngsd-fe rolled out to staging · 0 errors' }
     ];
 
     function logEvent(item) {
@@ -328,10 +376,10 @@
       // Update HUD
       if (clockEl) clockEl.textContent = clock();
       if (tpsEl && Math.random() < 0.05) {
-        tpsEl.textContent = (1400 + Math.floor(Math.sin(now * 0.002) * 50 + rnd(-10, 15))).toLocaleString();
+        tpsEl.textContent = (120 + Math.floor(Math.sin(now * 0.002) * 18 + rnd(-4, 6))).toLocaleString();
       }
       if (p99El && Math.random() < 0.04) {
-        p99El.textContent = (22 + Math.floor(rnd(-2, 3)));
+        p99El.textContent = (86 + Math.floor(rnd(-8, 9)));
       }
 
       // Spawning
